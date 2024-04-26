@@ -5,7 +5,7 @@
     enable = true;
 
     plugins = with pkgs.vimPlugins; [
-      telescope
+      telescope-nvim
       treesitter
     ];
 
