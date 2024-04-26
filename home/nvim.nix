@@ -4,7 +4,7 @@
   programs.neovim = {
     enable = true;
 
-    extraLuaConfig = "${builtins.readfile ./nvim/init.lua}";
+    extraLuaConfig = "${builtins.readFile ./nvim/init.lua}";
 
     defaultEditor = true;
     viAlias = true;
