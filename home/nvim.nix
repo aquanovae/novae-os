@@ -4,7 +4,16 @@
   programs.neovim = {
     enable = true;
 
-    extraLuaConfig = "${builtins.readFile ./nvim/init.lua}";
+    plugins = with pkgs.vimPlugins; [
+      telescope
+      treesitter
+    ];
+
+    extraLuaConfig = ''
+      ${builtins.readFile ./nvim/init.lua}
+      ${builtins.readFile ./nvim/plugins/telescope.lua}
+      ${builtins.readFile ./nvim/plugins/treesitter.lua}
+    '';
 
     defaultEditor = true;
     viAlias = true;
