@@ -6,7 +6,7 @@
 
     plugins = with pkgs.vimPlugins; [
       telescope-nvim
-      treesitter
+      nvim-treesitter
     ];
 
     extraLuaConfig = ''
