@@ -112,13 +112,12 @@
 	"nvidia_drm"
       ];
 
-      displayManager = {
-        gdm.enable = true;
-        autoLogin = {
-          enable = true;
-	  user = "rico";
-        };
-      };
+      displayManager.gdm.enable = true;
+    };
+
+    displayManager.autoLogin = {
+      enable = true;
+      user = "rico";
     };
 
     pipewire = {
