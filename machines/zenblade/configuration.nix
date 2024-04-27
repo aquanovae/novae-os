@@ -152,9 +152,9 @@
 
 
   users.users.rico = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ];
-     packages = with pkgs; [ ];
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    defaultUserShell = pkgs.zsh;
   };
 
 

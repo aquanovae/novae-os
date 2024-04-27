@@ -5,6 +5,7 @@
 
   imports = [
     ./nvim/nvim.nix
+    ./zsh.nix
   ];
 
   home.stateVersion = "23.11";
