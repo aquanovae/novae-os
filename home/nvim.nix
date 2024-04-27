@@ -1,12 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... }: {
 
-{
   programs.neovim = {
     enable = true;
 
     plugins = with pkgs.vimPlugins; [
       telescope-nvim
-      nvim-treesitter
+      nvim-treesitter.withAllGrammars
     ];
 
     extraLuaConfig = ''

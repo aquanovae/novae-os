@@ -18,7 +18,7 @@
       prime = {
         sync.enable = true;
         amdgpuBusId = "PCI:5:0:0";
-	nvidiaBusId = "PCI:1:0:0";
+	      nvidiaBusId = "PCI:1:0:0";
       };
     };
   };
@@ -64,8 +64,8 @@
       efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
-	efiSupport = true;
-	device = "nodev";
+	      efiSupport = true;
+	      device = "nodev";
       };
     };
 
@@ -74,11 +74,11 @@
       theme = "hexagon_hud";
       themePackages = [
         pkgs.nixos-bgrt-plymouth
-        (pkgs.adi1090x-plymouth-themes.override {
-	  selected_themes = [ "hexagon_hud" ];
-	})
-      ];
-    };
+          (pkgs.adi1090x-plymouth-themes.override {
+	          selected_themes = [ "hexagon_hud" ];
+	        })
+        ];
+      };
 
     consoleLogLevel = 0;
   };
@@ -106,10 +106,10 @@
       enable = true;
       videoDrivers = [
         "amdgpu"
-	"nvidia"
-	"nvidia_modeset"
-	"nvidia_uvm"
-	"nvidia_drm"
+	      "nvidia"
+	      "nvidia_modeset"
+	      "nvidia_uvm"
+	      "nvidia_drm"
       ];
 
       displayManager.gdm.enable = true;
@@ -125,7 +125,7 @@
       pulse.enable = true;
       alsa = {
         enable = true;
-	support32Bit = true;
+	      support32Bit = true;
       };
     };
 
@@ -158,7 +158,7 @@
   };
 
 
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "23.11";
 
 }
 
