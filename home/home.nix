@@ -4,10 +4,11 @@
   home.homeDirectory = "/home/rico";
 
   imports = [
+    ./theme.nix
+
     ./alacritty.nix
     ./nvim/nvim.nix
     ./starship.nix
-    ./theme.nix
     ./zsh.nix
   ];
 
