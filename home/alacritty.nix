@@ -7,9 +7,9 @@
       window.opacity = 0.83;
 
       font = {
-        family = "JetBrainsMono Nerd Font";
-        size = 8;
+        normal.family = "JetBrainsMono Nerd Font";
+        size = 11;
       };
     };
-  }
+  };
 }

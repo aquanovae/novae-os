@@ -133,10 +133,7 @@
   };
 
 
-  programs = {
-    hyprland.enable = true;
-    zsh.enable = true;
-  };
+  programs.hyprland.enable = true;
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -149,8 +146,10 @@
     git
     imagemagick
     neovim
+    starship
     swaybg
     wget
+    zsh
   ];
 
 

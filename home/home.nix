@@ -4,9 +4,10 @@
   home.homeDirectory = "/home/rico";
 
   imports = [
-    ./nvim/nvim.nix
-    ./zsh.nix
     ./alacritty.nix
+    ./nvim/nvim.nix
+    ./starship.nix
+    ./zsh.nix
   ];
 
   home.stateVersion = "23.11";
