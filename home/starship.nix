@@ -1,15 +1,15 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
 
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
 
     settings = {
-      format = lib.concatStrings [
-        "[┌<$git_branch$git_status$rust >](bold dimmed cyan)"
-        "[│](dimmed cyan)[\[$username@$hostname:$directory\]](bold cyan)"
-        "[└$character](bold dimmed cyan)"
-      ];
+      format = ''
+        [┌<$git_branch$git_status$rust >](bold dimmed cyan)
+        [│](dimmed cyan)[\[$username@$hostname:$directory\]](bold cyan)
+        [└$character](bold dimmed cyan)
+      '';
 
       username = {
         format = "[$user]($style)";
@@ -35,12 +35,19 @@
       };
 
       git_status = {
-        format = "[$ahead_behind$all_status]($style)[⌋](bold green)";
+        format = "[ $ahead_behind$all_status]($style)[⌋](bold green)";
         style = "bold red";
-        ahead = "🠕";
-        behind = "🠗";
-        diverged = "⥮";
-        deleted = "𐄂";
+        conflicted = "󰩌 ";
+        ahead = "󰩎 ";
+        behind = "󰥦 ";
+        diverged = "󱪖 ";
+        up_to_date = "󰸩 ";
+        untracked = "󱀶 ";
+        stashed = "󱀳 ";
+        modified = "󱇨 ";
+        staged = "󰻭 ";
+        renamed = "󱀹 ";
+        deleted = "󱀷 ";
       };
 
       rust = {
