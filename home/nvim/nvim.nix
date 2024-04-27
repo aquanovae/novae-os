@@ -9,9 +9,9 @@
     ];
 
     extraLuaConfig = ''
-      ${builtins.readFile ./nvim/init.lua}
-      ${builtins.readFile ./nvim/plugins/telescope.lua}
-      ${builtins.readFile ./nvim/plugins/treesitter.lua}
+      ${builtins.readFile ./init.lua}
+      ${builtins.readFile ./plugins/telescope.lua}
+      ${builtins.readFile ./plugins/treesitter.lua}
     '';
 
     defaultEditor = true;
