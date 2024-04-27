@@ -9,26 +9,26 @@
         size = 12;
       };
 
-      colors = {
+      colors = with config.colors; {
         primary = {
-          background = "${config.colors.bg0}";
-          foreground = "${config.colors.fg}";
+          background = "${bg0}";
+          foreground = "${fg}";
         };
 
         cursor = {
-          cursor = "${config.colors.fg}";
-          text = "${config.colors.bg0}";
+          cursor = "${fg}";
+          text = "${bg0}";
         };
 
         normal = {
-          black = "${config.colors.gray}";
-          red = "${config.colors.red}";
-          green = "${config.colors.green}";
-          yellow = "${config.colors.yellow}";
-          blue = "${config.colors.blue}";
-          magenta = "${config.colors.magenta}";
-          cyan = "${config.colors.cyan}";
-          white = "${config.colors.white}";
+          black = "${gray}";
+          red = "${red}";
+          green = "${green}";
+          yellow = "${yellow}";
+          blue = "${blue}";
+          magenta = "${magenta}";
+          cyan = "${cyan}";
+          white = "${white}";
         };
       };
 
