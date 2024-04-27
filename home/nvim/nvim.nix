@@ -8,8 +8,9 @@
       nvim-treesitter.withAllGrammars
     ];
 
-    extraLuaConfig = ''
+    extraLuaConfig = with config.colors; ''
       ${builtins.readFile ./init.lua}
+      ${builtins.readFile ./colors.lua}
       ${builtins.readFile ./plugins/telescope.lua}
       ${builtins.readFile ./plugins/treesitter.lua}
     '';
