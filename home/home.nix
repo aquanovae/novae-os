@@ -4,7 +4,7 @@
   home.homeDirectory = "/home/rico";
 
   imports = [
-    ./nvim.nix
+    ./nvim/nvim.nix
   ];
 
   home.stateVersion = "23.11";
