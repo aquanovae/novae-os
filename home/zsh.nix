@@ -1,19 +1,19 @@
 { config, pkgs, ... }: {
   
-  zsh = {
+  programs.zsh = {
     enable = true;
 
     enableCompletion = true;
 
     shellAliases = {
-      .. = "cd .."
+      ".." = "cd ..";
 
       ga = "git add";
       gb = "git branch";
       gcm = "git commit -m";
       gd = "git diff";
       gf = "git fetch";
-      gl = "git log --oneline --graph --all -20"
+      gl = "git log --oneline --graph --all -20";
       gll = "git log --oneline --graph --all";
       gm = "git merge";
       gmv = "git mv";
@@ -30,6 +30,6 @@
 
       l = "ls -l --color=auto";
       ll = "ls -la --color=auto";
-    }
+    };
   };
 }
