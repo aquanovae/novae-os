@@ -30,6 +30,8 @@
 
       l = "ls -l --color=auto";
       ll = "ls -la --color=auto";
+
+      nrs = "sudo nixos-rebuild switch --flake ~/rstore/ricos/#zenblade";
     };
   };
 }

@@ -154,6 +154,13 @@
   ];
 
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {
+      fonts = [ "JetBrainsMono" ];
+    })
+  ];
+
+
   users.users.rico = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -162,6 +169,5 @@
 
 
   system.stateVersion = "23.11";
-
 }
 

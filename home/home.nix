@@ -6,6 +6,7 @@
   imports = [
     ./nvim/nvim.nix
     ./zsh.nix
+    ./alacritty.nix
   ];
 
   home.stateVersion = "23.11";
