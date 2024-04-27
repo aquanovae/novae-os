@@ -7,6 +7,7 @@
     ./alacritty.nix
     ./nvim/nvim.nix
     ./starship.nix
+    ./theme.nix
     ./zsh.nix
   ];
 
