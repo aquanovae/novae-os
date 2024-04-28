@@ -28,7 +28,7 @@
           blue = "${blue}";
           magenta = "${magenta}";
           cyan = "${cyan}";
-          white = "${white}";
+          white = "${fg}";
         };
       };
 
