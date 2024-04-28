@@ -62,23 +62,27 @@
     
     loader = {
       efi.canTouchEfiVariables = true;
+      timeout = 1;
       grub = {
         enable = true;
 	      efiSupport = true;
 	      device = "nodev";
+        font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/JetBrainsMonoNerdFont-Regular.ttf";
+        splashImage = /home/rico/rstore/ricos/home/theme/grub-background.png;
       };
     };
 
     plymouth = {
       enable = true;
-      theme = "hexagon_hud";
+      font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/JetBrainsMonoNerdFont-Regular.ttf";
+      theme = "nixos-bgrt";
       themePackages = [
         pkgs.nixos-bgrt-plymouth
-          (pkgs.adi1090x-plymouth-themes.override {
-	          selected_themes = [ "hexagon_hud" ];
-	        })
-        ];
-      };
+        (pkgs.adi1090x-plymouth-themes.override {
+          selected_themes = [ "hexagon_hud" ];
+        })
+      ];
+    };
 
     consoleLogLevel = 0;
   };
