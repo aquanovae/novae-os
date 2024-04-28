@@ -4,7 +4,7 @@
   home.homeDirectory = "/home/rico";
 
   imports = [
-    ./theme.nix
+    ./theme/theme.nix
 
     ./alacritty.nix
     ./nvim/nvim.nix
