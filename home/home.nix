@@ -7,6 +7,7 @@
     ./theme/theme.nix
 
     ./alacritty.nix
+    ./hyprland.nix
     ./nvim/nvim.nix
     ./starship.nix
     ./zsh.nix
