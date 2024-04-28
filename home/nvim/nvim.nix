@@ -4,15 +4,16 @@
     enable = true;
 
     plugins = with pkgs.vimPlugins; [
-      telescope-nvim
+      onedark-nvim
       nvim-treesitter.withAllGrammars
+      telescope-nvim
     ];
 
-    extraLuaConfig = with config.colors; ''
+    extraLuaConfig = ''
       ${builtins.readFile ./init.lua}
-      ${builtins.readFile ./colors.lua}
-      ${builtins.readFile ./plugins/telescope.lua}
+      ${builtins.readFile ./plugins/onedark.lua}
       ${builtins.readFile ./plugins/treesitter.lua}
+      ${builtins.readFile ./plugins/telescope.lua}
     '';
 
     defaultEditor = true;
