@@ -2,7 +2,7 @@ vim.opt.termguicolors = true
 
 require("onedark").setup {
   style = "darker",
-  trasparent = true,
-  termcolors = false,
+  transparent = true,
+  term_colors = false,
 }
 require("onedark").load()
