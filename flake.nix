@@ -10,19 +10,22 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.zenblade = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./machines/zenblade/configuration.nix
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+    nixosConfigurations = with home-manager; {
+      zenblade = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./machines/zenblade/configuration.nix
 
-	      home-manager.nixosModules.home-manager {
-	        home-manager.useGlobalPkgs = true;
-	        home-manager.useUserPackages = true;
-
-	        home-manager.users.rico = import ./home/home.nix;
-	      }
-      ];
+          nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.rico = import ./home/home.nix;
+            };
+          }
+        ];
+      };
     };
   };
 }
