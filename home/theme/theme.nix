@@ -18,19 +18,19 @@
   };
 
   config.colors = {
-    bg0 = "#1f2329";
-    bg1 = "#282c34";
-    bg2 = "#30363f";
-    bg3 = "#323641";
-    fg  = "#a0a8b7";
+    bg0 = "1f2329";
+    bg1 = "282c34";
+    bg2 = "30363f";
+    bg3 = "323641";
+    fg  = "a0a8b7";
 
-    black   = "#0e1013";
-    gray    = "#535965";
-    red     = "#e55561";
-    yellow  = "#e2b86b";
-    green   = "#8ebd6b";
-    cyan    = "#48b0bd";
-    blue    = "#4fa6ed";
-    magenta = "#bf68d9";
+    black   = "0e1013";
+    gray    = "535965";
+    red     = "e55561";
+    yellow  = "e2b86b";
+    green   = "8ebd6b";
+    cyan    = "48b0bd";
+    blue    = "4fa6ed";
+    magenta = "bf68d9";
   };
 }

@@ -11,24 +11,24 @@
 
       colors = with config.colors; {
         primary = {
-          background = "${bg0}";
-          foreground = "${fg}";
+          background = "#${bg0}";
+          foreground = "#${fg}";
         };
 
         cursor = {
-          cursor = "${fg}";
-          text = "${bg0}";
+          cursor = "#${fg}";
+          text = "#${bg0}";
         };
 
         normal = {
-          black = "${gray}";
-          red = "${red}";
-          green = "${green}";
-          yellow = "${yellow}";
-          blue = "${blue}";
-          magenta = "${magenta}";
-          cyan = "${cyan}";
-          white = "${fg}";
+          black = "#${gray}";
+          red = "#${red}";
+          green = "#${green}";
+          yellow = "#${yellow}";
+          blue = "#${blue}";
+          magenta = "#${magenta}";
+          cyan = "#${cyan}";
+          white = "#${fg}";
         };
       };
 
