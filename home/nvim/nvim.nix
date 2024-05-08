@@ -13,6 +13,10 @@
       telescope-nvim
     ];
 
+    extraPackages = with pkgs; [
+      nixd
+    ];
+
     extraLuaConfig = ''
       ${builtins.readFile ./init.lua}
       ${builtins.readFile ./plugins.lua}
