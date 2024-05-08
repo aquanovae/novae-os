@@ -17,8 +17,12 @@ require("ibl").setup {
 }
 
 
+-- Context
+require("treesitter-context").setup()
+
+
 -- Treesitter
-require'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup {
   auto_install = false,
 
   highlight = {

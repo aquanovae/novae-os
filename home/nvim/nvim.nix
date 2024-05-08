@@ -6,6 +6,7 @@
     plugins = with pkgs.vimPlugins; [
       indent-blankline-nvim
       nvim-treesitter.withAllGrammars
+      nvim-treesitter-context
       onedark-nvim
       telescope-nvim
     ];
