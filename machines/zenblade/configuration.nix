@@ -154,6 +154,7 @@
     git
     imagemagick
     neovim
+    nixd
     starship
     swaybg
     wget
