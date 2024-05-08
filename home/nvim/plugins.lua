@@ -10,6 +10,11 @@ require("onedark").load()
 
 
 -- Indent lines
+require("ibl").setup {
+  scope = {
+    enabled = false,
+  },
+}
 
 
 -- Treesitter
