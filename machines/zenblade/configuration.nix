@@ -22,6 +22,13 @@
   ];
 
 
+  programs = {
+    hyprland.enable = true;
+    waybar.enable = true;
+    zsh.enable = true;
+  };
+
+
   hardware = {
     opengl = {
       enable = true;
@@ -152,12 +159,6 @@
     };
 
     printing.enable = true;
-  };
-
-
-  programs = {
-    hyprland.enable = true;
-    zsh.enable = true;
   };
 
 

@@ -10,6 +10,7 @@
     ./hyprland.nix
     ./nvim/nvim.nix
     ./starship.nix
+    ./waybar/waybar.nix
     ./zsh.nix
   ];
 
