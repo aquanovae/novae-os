@@ -4,6 +4,24 @@
     ./hardware-configuration.nix
   ];
 
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+  environment.systemPackages = with pkgs; [
+    alacritty
+    bemenu
+    firefox
+    gh
+    git
+    imagemagick
+    neovim
+    starship
+    swaybg
+    wget
+    zsh
+  ];
+
+
   hardware = {
     opengl = {
       enable = true;
@@ -141,24 +159,6 @@
     hyprland.enable = true;
     zsh.enable = true;
   };
-   
-
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
-    alacritty
-    bemenu
-    firefox
-    gh
-    git
-    imagemagick
-    neovim
-    starship
-    swaybg
-    wget
-    zsh
-  ];
 
 
   fonts.packages = with pkgs; [
