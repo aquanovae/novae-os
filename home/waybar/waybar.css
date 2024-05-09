@@ -1,7 +1,25 @@
 * {
-  color: var(--fg);
   font-family: JetBrainsMono Nerd Font;
   font-size: 13px;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0);
+  color: @fg;
+}
 
-  background-color: var(--bg0);
+.modules-left {
+  border: 2px solid @gray;
+  background-color: @bg-alt;
+}
+
+#custom-os-icon {
+  font-size: 25px;
+  padding: 0px 14px 0px 7px;
+  border-radius: 6px;
+  color: @bg;
+  background-color: @blue;
+}
+
+#hyprland-workspaces {
+  border: 2px solid @gray;
+  background-color: @bg;
 }

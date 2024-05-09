@@ -8,27 +8,34 @@
       bar = {
         layer = "top";
         position = "bottom";
-        height = 34;
+        margin = "0px 6px 6px";
 
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [
+          "custom/os-icon"
+          "hyprland/workspaces"
+        ];
+
+        "custom/os-icon" = {
+          format = "󱄅";
+        };
+
+        reload_style_on_change = true;
       };
     };
 
     style = with config.colors; ''
-      :root {
-        --bg0: #${bg0};
-        --bg1: #${bg1};
-        --fg: #${fg};
+      @define-color bg #${bg0};
+      @define-color bg-alt #${bg1};
+      @define-color fg #${fg};
 
-        --black: #${black};
-        --gray: #${gray};
-        --red: #${red};
-        --yellow: #${yellow};
-        --green: #${green};
-        --cyan: #${cyan};
-        --blue: #${blue};
-        --magenta: #${magenta};
-      }
+      @define-color black #${black};
+      @define-color gray #${gray};
+      @define-color red #${red};
+      @define-color yellow #${yellow};
+      @define-color green #${green};
+      @define-color cyan #${cyan};
+      @define-color blue #${blue};
+      @define-color magenta #${magenta};
 
       ${builtins.readFile ./waybar.css}
     '';
