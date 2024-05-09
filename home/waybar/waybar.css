@@ -1,0 +1,7 @@
+* {
+  color: var(--fg);
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 13px;
+
+  background-color: var(--bg0);
+}
