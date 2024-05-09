@@ -19,7 +19,6 @@
   background-color: @blue;
 }
 
-#hyprland-workspaces {
-  border: 2px solid @gray;
-  background-color: @bg;
+#workspaces button.visible {
+  color: @blue;
 }

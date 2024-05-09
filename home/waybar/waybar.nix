@@ -19,6 +19,14 @@
           format = "󱄅";
         };
 
+        "hyprland/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            terminal = "󰆍";
+            browser = "󰈹";
+          };
+        };
+
         reload_style_on_change = true;
       };
     };
