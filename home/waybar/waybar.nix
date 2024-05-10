@@ -33,7 +33,7 @@
 
     style = with config.colors; ''
       @define-color bg #${bg0};
-      @define-color bg-alt #${bg1};
+      @define-color bg-alt #${bg3};
       @define-color fg #${fg};
 
       @define-color black #${black};
