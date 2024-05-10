@@ -9,10 +9,17 @@ window#waybar {
   color: @fg;
 }
 
+
 .modules-left {
   border: 2px solid @gray;
   background-color: @bg-alt;
 }
+
+.modules-right {
+  border: 2px solid @gray;
+  background-color: @bg-alt;
+}
+
 
 #custom-os-icon {
   font-size: 25px;
@@ -21,6 +28,7 @@ window#waybar {
   color: @bg;
   background-color: @blue;
 }
+
 
 #workspaces {
   border-radius: 5px;
@@ -48,4 +56,10 @@ window#waybar {
 
 #workspaces button:hover label {
   color: @bg;
+}
+
+
+#clock {
+  font-size: 11px;
+  margin: 0px 7px;
 }

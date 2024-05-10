@@ -15,6 +15,10 @@
           "hyprland/workspaces"
         ];
 
+        modules-right = [
+          "clock"
+        ];
+
         "custom/os-icon" = {
           format = "󱄅";
         };
@@ -25,6 +29,11 @@
             terminal = "󰆍";
             browser = "󰈹";
           };
+        };
+
+        clock = {
+          format = " {:%T\n%d/%m/%Y}";
+          interval = 1;
         };
 
         reload_style_on_change = true;
