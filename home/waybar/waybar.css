@@ -32,7 +32,7 @@ window#waybar {
 
 #workspaces {
   border-radius: 5px;
-  margin: 3px 7px;
+  margin: 3px 7px 3px 0px;
   background-color: @bg;
 }
 
@@ -59,7 +59,37 @@ window#waybar {
 }
 
 
+#wireplumber {
+  margin: 3px 0px 3px 7px;
+  padding: 0px 7px;
+  background-color: @bg;
+}
+
+#disk {
+  margin: 3px 0px;
+  padding: 0px 7px;
+  background-color: @bg;
+}
+
+#memory {
+  margin: 3px 0px;
+  padding: 0px 7px;
+  background-color: @bg;
+}
+
+#cpu {
+  margin: 3px 0px;
+  padding: 0px 7px;
+  background-color: @bg;
+}
+
+#battery {
+  margin: 3px 0px;
+  padding: 0px 7px;
+  background-color: @bg;
+}
+
 #clock {
-  font-size: 11px;
-  margin: 0px 7px;
+  font-size: 12px;
+  margin-right: 7px;
 }
