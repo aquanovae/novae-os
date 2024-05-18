@@ -12,29 +12,34 @@
       ];
 
       workspace = [
-        "name:terminal, default:true, on-created-empty:alacritty"
+        "name:terminal, default:true"
         "name:browser, on-created-empty:firefox"
       ];
 
       input = {
         bind = [
+          "super, t, workspace, name:terminal"
+          "super, b, workspace, name:browser"
+
           "super, return, exec, alacritty"
-          "super shift, q, killactive"
+
           "super, o, exec, bemenu-run"
+          "super shift, q, killactive"
+
+          "super, m, workspace, previous"
 
           "super, h, movefocus, l"
           "super, l, movefocus, r"
           "super, k, movefocus, u"
           "super, j, movefocus, d"
 
-          "super, t, workspace, name:terminal"
-          "super, b, workspace, name:browser"
+          "alt, h, movewindow, l"
+          "alt, l, movewindow, r"
+          "alt, k, movewindow, u"
+          "alt, j, movewindow, d"
 
-          "super, S, togglespecialworkspace, magic"
-          "super shift, S, movetoworkspace, special:magic"
-
-          "super, mouse_down, workspace, e+1"
-          "super, mouse_up, workspace, e-1"
+          "super, s, togglespecialworkspace, magic"
+          "super shift, s, movetoworkspace, special:magic"
         ];
 
         kb_layout = "ch";
