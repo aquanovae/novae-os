@@ -27,6 +27,7 @@
 
   programs = {
     hyprland.enable = true;
+    steam.enable = true;
     waybar.enable = true;
     zsh.enable = true;
   };
