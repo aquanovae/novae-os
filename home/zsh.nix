@@ -34,6 +34,7 @@
       l = "ls -l --color=auto";
       ll = "ls -la --color=auto";
 
+      rcs = "sudo nix-collect-garbage --delete-older-than 7d";
       rrs = "sudo nixos-rebuild switch --flake ~/rstore/ricos/#zenblade";
       rus = "sudo nix flake update /home/rico/rstore/ricos && rrs";
     };
