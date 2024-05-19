@@ -10,11 +10,13 @@
       nvim-treesitter.withAllGrammars
       nvim-treesitter-context
       onedark-nvim
+      rustaceanvim
       telescope-nvim
     ];
 
     extraPackages = with pkgs; [
       nixd
+      rust-analyzer
     ];
 
     extraLuaConfig = ''
