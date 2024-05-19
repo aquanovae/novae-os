@@ -8,6 +8,9 @@
     shellAliases = {
       ".." = "cd ..";
 
+      cb = "cargo build";
+      cr = "cargo run";
+
       ga = "git add";
       gb = "git branch";
       gcm = "git commit -m";
