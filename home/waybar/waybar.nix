@@ -6,7 +6,7 @@
 
     settings = {
       bar = with config.colors; let 
-        toSpan = icon: color: size: "<span color='#${color}' size='${size}pt'>${icon}</span>";
+        toSpan = icon: color: "<span color='#${color}' size='11pt'>${icon}</span>";
       in {
         layer = "top";
         position = "bottom";
@@ -19,7 +19,7 @@
         ];
 
         modules-right = [
-          "wireplumber"
+          "pulseaudio"
           "disk"
           "memory"
           "cpu"
@@ -39,9 +39,9 @@
           };
         };
 
-        wireplumber = {
-          format = "${toSpan "{icon}" blue "13"} {volume}%";
-          format-muted = "${toSpan "󰝟" blue "13"}";
+        pulseaudio = {
+          format = "{volume}% ${toSpan "{icon}" blue}";
+          format-muted = "${toSpan "󰝟" blue}";
           format-icons = [
             "󰕿"
             "󰖀"
@@ -50,17 +50,17 @@
         };
 
         disk = {
-          format = "${toSpan "󰋊" blue "12"} {percentage_used}%";
+          format = "{percentage_used}% ${toSpan "󰋊" blue}";
           path = "/";
         };
 
         memory = {
-          format = "${toSpan "󰘚" blue "12"} {used}GB";
+          format = "{used}GB ${toSpan "󰘚" blue}";
           interval = 1;
         };
 
         cpu = {
-          format = "${toSpan "󰍛" blue "13"} {usage}%";
+          format = "{usage}% ${toSpan "󰍛" blue}";
           interval = 1;
         };
 
@@ -68,9 +68,9 @@
           states = {
             low = 20;
           };
-          format = "${toSpan "{icon}" blue "12"} {capacity}%";
-          format-low = "${toSpan "󰂃" red "12"} {capacity}%";
-          format-charging = "${toSpan "󰂄" green "12"} {capacity}%";
+          format = "{capacity}% ${toSpan "{icon}" blue}";
+          format-low = "{capacity}% ${toSpan "󰂃" red}";
+          format-charging = "{capacity}% ${toSpan "󰂄" green}";
           format-icons = [
             "󰁼"
             "󰁾"

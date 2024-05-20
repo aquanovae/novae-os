@@ -59,33 +59,33 @@ window#waybar {
 }
 
 
-#wireplumber {
+#pulseaudio {
+  min-width: 65px;
   margin: 3px 0px 3px 7px;
-  padding: 0px 7px;
   background-color: @bg;
 }
 
 #disk {
+  min-width: 65px;
   margin: 3px 0px;
-  padding: 0px 7px;
   background-color: @bg;
 }
 
 #memory {
+  min-width: 95px;
   margin: 3px 0px;
-  padding: 0px 7px;
   background-color: @bg;
 }
 
 #cpu {
+  min-width: 65px;
   margin: 3px 0px;
-  padding: 0px 7px;
   background-color: @bg;
 }
 
 #battery {
+  min-width: 65px;
   margin: 3px 0px;
-  padding: 0px 7px;
   background-color: @bg;
 }
 
