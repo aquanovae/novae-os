@@ -6,7 +6,7 @@
 
     settings = {
       format = ''
-        [┌<$git_branch$git_status$rust >](bold dimmed cyan)
+        [┌<$git_branch$git_status$nix_shell >](bold dimmed cyan)
         [│](dimmed cyan)[\[$username@$hostname:$directory\]](bold cyan)
         [└$character](bold dimmed cyan)
       '';
@@ -50,10 +50,10 @@
         deleted = "󱀷 ";
       };
 
-      rust = {
-        format = "[ $symbol $numver]($style)";
-        symbol = "rust";
-        style = "yellow";
+      nix_shell = {
+        format = "$symbol[ $name]($style)";
+        style = "cyan";
+        symbol = "[ nix-shell:](bold blue)";
       };
 
       character = {
