@@ -8,7 +8,7 @@
 
       exec-once = [
         "swaybg -m fill -i ~/rstore/ricos/home/theme/wallpaper.png"
-        "hyprctl dispatch workspace name:terminal"
+        "hyprctl dispatch renameworkspace 1 terminal"
       ];
 
       workspace = [
@@ -26,7 +26,7 @@
           "super, o, exec, bemenu-run"
           "super shift, q, killactive"
 
-          "super, m, workspace, previous"
+          "super, m, workspace, +0"
 
           "super, h, movefocus, l"
           "super, l, movefocus, r"
@@ -52,6 +52,11 @@
         touchpad = {
           natural_scroll = true;
         };
+      };
+
+
+      binds = {
+        workspace_back_and_forth = true;
       };
 
 
