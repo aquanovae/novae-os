@@ -15,6 +15,7 @@
     git
     imagemagick
     neovim
+    pamixer
     starship
     swaybg
     wget
@@ -46,6 +47,11 @@
         amdgpuBusId = "PCI:5:0:0";
 	      nvidiaBusId = "PCI:1:0:0";
       };
+    };
+
+    pulseaudio = {
+      enable = true;
+      support32Bit = true;
     };
   };
 
@@ -148,15 +154,6 @@
     displayManager.autoLogin = {
       enable = true;
       user = "rico";
-    };
-
-    pipewire = {
-      enable = true;
-      pulse.enable = true;
-      alsa = {
-        enable = true;
-	      support32Bit = true;
-      };
     };
 
     printing.enable = true;
