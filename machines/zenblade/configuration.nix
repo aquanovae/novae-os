@@ -10,14 +10,11 @@
   environment.systemPackages = with pkgs; [
     alacritty
     bemenu
-    cargo
     firefox
-    gcc
     gh
     git
     imagemagick
     neovim
-    rustc
     starship
     swaybg
     wget
