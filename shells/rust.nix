@@ -5,6 +5,10 @@ stdenv.mkDerivation {
   buildInputs = [ 
     alsa-lib
     cargo
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXi
+    xorg.libXrandr
     rustc
     udev
   ];
