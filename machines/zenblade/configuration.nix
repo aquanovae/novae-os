@@ -27,6 +27,7 @@
     hyprland.enable = true;
     steam.enable = true;
     waybar.enable = true;
+    xwayland.enable = true;
     zsh.enable = true;
   };
 
