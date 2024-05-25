@@ -5,11 +5,15 @@ stdenv.mkDerivation {
   buildInputs = [ 
     alsa-lib
     cargo
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXi
-    xorg.libXrandr
+    libGL
+    libxkbcommon
     rustc
     udev
+    wayland
   ];
+  LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${lib.makeLibraryPath [
+    libGL
+    libxkbcommon
+    wayland
+  ]}";
 }
