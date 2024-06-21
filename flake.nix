@@ -17,12 +17,23 @@
         modules = [
           ./machines/zenblade/configuration.nix
 
-          nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.rico = import ./home/home.nix;
-            };
+          nixosModules.home-manager.home-manager {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.rico = import ./home/home.nix;
+          }
+        ];
+      };
+
+      silverlight = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./machines/silverlight/configuration.nix
+
+          nixosModules.home-manager.home-manager {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.rico = import ./home/home.nix;
           }
         ];
       };
