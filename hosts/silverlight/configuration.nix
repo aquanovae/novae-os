@@ -5,25 +5,16 @@
       inputs.home-manager.nixosModules.default
   ];
 
-  home-manager = {
-    users = {
-      "rico" = import ./../../modules/home/home.nix;
-    };
-  };
+  home-manager.users.rico = import ./../../modules/home/home.nix;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     alacritty
     bemenu
     firefox
-    gh
-    git
     libsForQt5.qt5.qtwayland
     libsForQt5.qt5ct
     looking-glass-client
     lutris
-    neovim
     openal
     pciutils
     prismlauncher
@@ -36,12 +27,10 @@
 
   programs = {
     coolercontrol.enable = true;
-    htop.enable = true;
     hyprland.enable = true;
     steam.enable = true;
     waybar.enable = true;
     xwayland.enable = true;
-    zsh.enable = true;
   };
 
 
@@ -56,7 +45,6 @@
 
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
     kernelModules = [ 
       "amdgpu"
       "i2c-dev"
@@ -81,17 +69,6 @@
       verbose = false;
     };
     
-    loader = {
-      efi.canTouchEfiVariables = true;
-      timeout = 1;
-      grub = {
-        enable = true;
-	      efiSupport = true;
-	      device = "nodev";
-        useOSProber = true;
-      };
-    };
-
     plymouth = {
       enable = true;
       theme = "nixos-bgrt";
@@ -122,12 +99,6 @@
 
 
   networking.hostName = "silverlight";
-
-
-  time.timeZone = "Europe/Zurich";
-  i18n.defaultLocale = "en_GB.UTF-8";
-  console.keyMap = "fr_CH";
-
 
   services = {
     xserver = {
@@ -161,12 +132,6 @@
     })
   ];
 
-
-  users.users.rico = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "i2c" "libvirtd" ];
-    shell = pkgs.zsh;
-  };
 
   virtualisation.libvirtd = {
     enable = true;

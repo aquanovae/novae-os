@@ -17,6 +17,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/silverlight/configuration.nix
+          ./modules/nixos/ricos.nix
         ];
       };
     };
