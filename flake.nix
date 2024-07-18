@@ -10,34 +10,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations = with home-manager;
-    let
-      home-config = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        users.rico = import ./home/home.nix;
-      };
-    in {
-      zenblade = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./machines/zenblade/configuration.nix
-
-          nixosModules.home-manager {
-	          home-manager = home-config;
-          }
-        ];
-      };
-
+  outputs = { self, nixpkgs, ...}@inputs: {
+    nixosConfigurations = {
       silverlight = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
-          ./machines/silverlight/configuration.nix
-
-          nixosModules.home-manager {
-	          home-manager = home-config;
-          }
+          ./hosts/silverlight/configuration.nix
         ];
       };
     };
