@@ -95,7 +95,7 @@
     
     loader = {
       efi.canTouchEfiVariables = true;
-      timeout = 1;
+      timeout = 5;
       grub = {
         enable = true;
 	      efiSupport = true;
