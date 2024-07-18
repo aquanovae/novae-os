@@ -4,10 +4,14 @@
     enable = true;
 
     settings = with config.colors; {
-      monitor = "eDP-1, prefered, auto, 1";
+      monitor = [
+        "eDP-1, prefered, auto, 1"
+        "DP-1, 2560x1440@165, 0x0, 1"
+        "DP-2, 2560x1440@165, 2560x0, 1"
+      ];
 
       exec-once = [
-        "swaybg -m fill -i ~/rstore/ricos/home/theme/wallpaper.png"
+        "swaybg -m fill -i ~/ricos/home/theme/wallpaper.png"
         "hyprctl dispatch renameworkspace 1 terminal"
       ];
 
