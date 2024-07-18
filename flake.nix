@@ -11,16 +11,21 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations = with home-manager; {
+    nixosConfigurations = with home-manager;
+    let
+      home-config = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.rico = import ./home/home.nix;
+      };
+    in {
       zenblade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./machines/zenblade/configuration.nix
 
-          nixosModules.home-manager.home-manager {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.rico = import ./home/home.nix;
+          nixosModules.home-manager {
+	          home-manager = home-config;
           }
         ];
       };
@@ -30,10 +35,8 @@
         modules = [
           ./machines/silverlight/configuration.nix
 
-          nixosModules.home-manager.home-manager {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.rico = import ./home/home.nix;
+          nixosModules.home-manager {
+	          home-manager = home-config;
           }
         ];
       };
