@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  nix.settings.experimental-features = [ "nix-command" "flake" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
@@ -11,7 +11,7 @@
         enable = true;
         efiSupport = true;
         device = "nodev";
-        useOsProber = true;
+        useOSProber = true;
       };
     };
   };
@@ -22,12 +22,12 @@
 
   users.users.rico = {
     isNormalUser = true;
-    extraGroup = [ "wheel" ];
+    extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
 
   nixpkgs.config.allowUnfree = true;
-  environement.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     gh
     git
     neovim

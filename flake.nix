@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ...}@inputs: {
+  outputs = { nixpkgs, ... }@inputs: {
     nixosConfigurations = {
       silverlight = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

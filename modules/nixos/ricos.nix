@@ -1,6 +1,6 @@
-{ config, pkgs, ... }: {
+{ ... }: {
 
   imports = [
-    ./core.nix
+    ./core/core.nix
   ];
 }
