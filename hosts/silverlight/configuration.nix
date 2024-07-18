@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }: {
+{ inputs, pkgs, ... }: {
 
   imports = [
       ./hardware-configuration.nix
@@ -7,7 +7,7 @@
 
   home-manager = {
     users = {
-      "rico" = import ./../../home/home.nix;
+      "rico" = import ./../../modules/home/home.nix;
     };
   };
 
