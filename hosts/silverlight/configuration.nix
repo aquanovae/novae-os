@@ -1,9 +1,15 @@
-{ config, pkgs, ... }: {
+{ inputs, config, pkgs, ... }: {
 
   imports = [
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
   ];
 
+  home-manager = {
+    users = {
+      "rico" = import ./../../home/home.nix;
+    };
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
