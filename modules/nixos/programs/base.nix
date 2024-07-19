@@ -8,7 +8,7 @@ in {
     enable = lib.mkEnableOption "enable base programs";
   };
 
-  config = lib.mkIf cfg.enale {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       alacritty
       firefox

@@ -7,6 +7,7 @@
 
     ./programs/base.nix
     ./programs/gaming.nix
+    ./programs/openrgb.nix
   ];
 
   ricos = {
@@ -17,6 +18,7 @@
     programs = lib.mkIf config.ricos.desktop.enable {
       base.enable = lib.mkDefault true;
       gaming.enable = lib.mkDefault false;
+      openrgb.enable = lib.mkDefault false;
     };
   };
 }

@@ -9,8 +9,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    initrd.verbose = false;
-    console.LogLevel = 0;
     boot = {
       kernelModules = [
         "amdgpu"
@@ -23,6 +21,9 @@ in {
         "rd.systemd.show_status=false"
         "rd.udev.log_level=3"
       ];
+
+      consoleLogLevel = 0;
+      initrd.verbose = false;
 
       plymouth = {
         enable = true;

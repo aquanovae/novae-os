@@ -11,6 +11,11 @@ in {
   config = lib.mkIf cfg.enable {
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+    hardware.pulseaudio = {
+      enable = true;
+      support32Bit = true;
+    };
+
     boot = {
       kernelPackages = pkgs.linuxPackages_zen;
       loader = {
