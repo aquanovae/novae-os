@@ -9,7 +9,6 @@
 
   environment.systemPackages = with pkgs; [
     alacritty
-    bemenu
     firefox
     libsForQt5.qt5.qtwayland
     libsForQt5.qt5ct
@@ -20,22 +19,16 @@
     prismlauncher
     qemu_kvm
     spotify
-    starship
-    swaybg
   ];
 
 
   programs = {
     coolercontrol.enable = true;
-    hyprland.enable = true;
     steam.enable = true;
-    waybar.enable = true;
-    xwayland.enable = true;
   };
 
 
   hardware = {
-    graphics.enable = true;
     i2c.enable = true;
     pulseaudio = {
       enable = true;
@@ -85,8 +78,6 @@
 
 
   systemd.services = {
-    "getty@tty1".enable = false;
-    "autovt@tty1".enable = false;
     openrgb = {
       enable = true;
       postStart = ''
@@ -101,17 +92,6 @@
   networking.hostName = "silverlight";
 
   services = {
-    xserver = {
-      enable = true;
-      videoDrivers = [ "amdgpu" ];
-      displayManager.gdm.enable = true;
-    };
-
-    displayManager.autoLogin = {
-      enable = true;
-      user = "rico";
-    };
-
     hardware.openrgb = {
       enable = true;
       package = pkgs.openrgb-with-all-plugins;
@@ -124,13 +104,6 @@
 
     printing.enable = true;
   };
-
-
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [ "JetBrainsMono" ];
-    })
-  ];
 
 
   virtualisation.libvirtd = {
