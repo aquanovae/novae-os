@@ -5,26 +5,22 @@
       inputs.home-manager.nixosModules.default
   ];
 
+  ricos.programs.gaming.enable = true;
+
   home-manager.users.rico = import ./../../modules/home/home.nix;
 
   environment.systemPackages = with pkgs; [
-    alacritty
-    firefox
     libsForQt5.qt5.qtwayland
     libsForQt5.qt5ct
     looking-glass-client
-    lutris
     openal
     pciutils
-    prismlauncher
     qemu_kvm
-    spotify
   ];
 
 
   programs = {
     coolercontrol.enable = true;
-    steam.enable = true;
   };
 
 
@@ -39,7 +35,6 @@
 
   boot = {
     kernelModules = [ 
-      "amdgpu"
       "i2c-dev"
       "i2c-piix4"
     ];
@@ -49,31 +44,12 @@
     #];
 
     kernelParams = [
-      "quiet"
-      "splash"
-      "loglevel=3"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=3"
       "acpi_enforce_resources=lax"
     ];
 
     initrd = {
       systemd.enable = true;
-      verbose = false;
     };
-    
-    plymouth = {
-      enable = true;
-      theme = "nixos-bgrt";
-      themePackages = [
-        pkgs.nixos-bgrt-plymouth
-        (pkgs.adi1090x-plymouth-themes.override {
-          selected_themes = [ "hexagon_hud" ];
-        })
-      ];
-    };
-
-    consoleLogLevel = 0;
   };
 
 

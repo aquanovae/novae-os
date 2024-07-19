@@ -44,7 +44,7 @@ in {
     };
 
     fonts.packages = with pkgs; [
-      (nerdfonts.overrids {
+      (nerdfonts.override {
         fonts = [ "JetBrainsMono" ];
       })
     ];
