@@ -1,18 +1,18 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
-  cfg = config.ricosHome.zsh;
+  cfg = config.ricos.programs.zsh;
+  home = config.home-manager.users.rico.home;
 in {
 
-  options.ricosHome.zsh = {
-    enable = lib.mkEnableOption "enable zsh home config";
-    hostname = lib.mkOption {
-      type = lib.types.str; 
-    };
+  options.ricos.programs.zsh = {
+    enable = lib.mkEnableOption "enable zsh";
   };
 
-  config = {
-    programs.zsh = {
+  config = lib.mkIf cfg.enable {
+    programs.zsh.enable = true;
+
+    home.programs.zsh = {
       enable = true;
 
       enableCompletion = true;

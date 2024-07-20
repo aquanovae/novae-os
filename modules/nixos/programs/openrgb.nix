@@ -2,6 +2,9 @@
 
 let
   cfg = config.ricos.programs.openrgb;
+
+  openrgb = "${pkgs.openrgb}/bin/openrgb";
+  configPath = "/home/rico/.config/OpenRGB";
 in {
 
   options.ricos.programs.openrgb = {
@@ -29,14 +32,10 @@ in {
 
     users.users.rico.extraGroups = [ "i2c" ];
 
-    systemd.services.openrgb =
-    let
-      openrgb = "${pkgs.openrgb}/bin/openrgb";
-      configPath = "/home/rico/.config/OpenRGB";
-    in {
+    systemd.services.openrgb = {
       enable = true;
       postStart = ''
-        sleep 5
+        sleep 2
         ${openrgb} -p ${configPath}/purple.orp
       '';
 

@@ -1,8 +1,5 @@
 { ... }: {
 
-  home.username = "rico";
-  home.homeDirectory = "/home/rico";
-
   imports = [
     ./theme/theme.nix
 
@@ -11,8 +8,13 @@
     ./nvim/nvim.nix
     ./starship.nix
     ./waybar/waybar.nix
-    ./zsh.nix
+    ./../zsh.nix
   ];
 
-  home.stateVersion = "23.11";
+  home = {
+    username = "rico";
+    homeDirectory = "/home/rico";
+
+    stateVersion = "23.11";
+  };
 }
