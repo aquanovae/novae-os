@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ ... }: {
 
   imports = [
     ./core/core.nix
@@ -9,16 +9,4 @@
     ./programs/gaming.nix
     ./programs/openrgb.nix
   ];
-
-  ricos = {
-    core.enable = lib.mkDefault true;
-    desktop.enable = lib.mkDefault true;
-    silentBoot.enable = lib.mkDefault true;
-
-    programs = lib.mkIf config.ricos.desktop.enable {
-      base.enable = lib.mkDefault true;
-      gaming.enable = lib.mkDefault false;
-      openrgb.enable = lib.mkDefault false;
-    };
-  };
 }

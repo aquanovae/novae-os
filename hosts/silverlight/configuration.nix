@@ -1,33 +1,28 @@
-{ inputs, pkgs, ... }: {
+{ ... }: {
 
   imports = [
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
+    ./hardware-configuration.nix
   ];
 
-  ricos.programs = {
-    gaming.enable = true;
-    openrgb.enable = true;
-  };
+  networking.hostName = "silverlight";
 
-  home-manager.users.rico = import ./../../modules/home/home.nix;
+  ricos = {
+    core.enable = true;
+    silentBoot.enable = true;
+
+    desktop.enable = true;
+    home.enable = true;
+
+    programs = {
+      base.enable = true;
+      openrgb.enable = true;
+      gaming.enable = true;
+    };
+  };
 
   programs = {
     coolercontrol.enable = true;
   };
-
-  networking.hostName = "silverlight";
-
-  services = {
-    printing.enable = true;
-  };
-
-  virtualisation.libvirtd = {
-    enable = true;
-    onBoot = "ignore";
-    onShutdown = "shutdown";
-  };
-  programs.virt-manager.enable = true;
 
   system.stateVersion = "24.05";
 }

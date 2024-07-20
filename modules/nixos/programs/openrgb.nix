@@ -9,18 +9,31 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    services.hardware.openrgb = {
-      enable = true;
-      package = pkgs.openrgb-with-all-plugins;
-      motherboard = "amd";
+    services = {
+      udev.packages = [ pkgs.openrgb ];
+      hardware.openrgb = {
+        enable = true;
+        package = pkgs.openrgb-with-all-plugins;
+        motherboard = "amd";
+      };
     };
+
+    hardware.i2c.enable = true;
+
+    boot = {
+      kernelModules = [ "i2c-dev" "i2c-piix4" ];
+      kernelParams = [ "acpi_enforce_resources=lax" ];
+    };
+
+    environment.systemPackages = [ pkgs.i2c-tools ];
+
+    users.users.rico.extraGroups = [ "i2c" ];
 
     systemd.services.openrgb =
     let
       openrgb = "${pkgs.openrgb}/bin/openrgb";
       configPath = "/home/rico/.config/OpenRGB";
     in {
-
       enable = true;
       postStart = ''
         sleep 5

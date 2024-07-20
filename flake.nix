@@ -12,12 +12,14 @@
 
   outputs = { nixpkgs, ... }@inputs: {
     nixosConfigurations = {
+
       silverlight = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/silverlight/configuration.nix
           ./modules/nixos/ricos.nix
+          ./modules/home/home-manager.nix
         ];
       };
 
@@ -27,6 +29,7 @@
         modules = [
           ./hosts/zenblade/configuration.nix
           ./modules/nixos/ricos.nix
+          ./modules/home/home-manager.nix
         ];
       };
     };
