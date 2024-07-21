@@ -30,12 +30,12 @@ in {
           "hyprland/workspaces"
         ];
 
-        modules-right = [
-          "pulseaudio"
+        modules-right =
+          (if cfg.volume.enable then [ "pulseaudio" ] else []) ++ [
           "disk"
           "memory"
-          "cpu"
-          "battery"
+          "cpu" ] ++
+          (if cfg.battery.enable then [ "battery" ] else []) ++ [
           "clock"
         ];
 
@@ -51,7 +51,7 @@ in {
           };
         };
 
-        pulseaudio = lib.mkIf cfg.volume.enable {
+        pulseaudio = {
           format = "{volume}% ${toSpan "{icon}" theme.blue}";
           format-muted = "${toSpan "󰝟" theme.blue}";
           format-icons = [
@@ -76,7 +76,7 @@ in {
           interval = 1;
         };
 
-        battery = lib.mkIf cfg.battery.enable {
+        battery = {
           states = {
             low = 20;
           };
