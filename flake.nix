@@ -18,8 +18,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/silverlight/configuration.nix
-          ./modules/nixos/ricos.nix
-          ./modules/home/home-manager.nix
+          ./modules/ricos.nix
         ];
       };
 
@@ -28,8 +27,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/zenblade/configuration.nix
-          ./modules/nixos/ricos.nix
-          ./modules/home/home-manager.nix
+          ./modules/ricos.nix
         ];
       };
     };

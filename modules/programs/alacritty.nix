@@ -1,6 +1,8 @@
 { config, pkgs, ... }: {
 
-  programs.alacritty = {
+  environment.systemPackages = [ pkgs.alacritty ];
+
+  home-manager.users.rico.programs.alacritty = {
     enable = true;
 
     settings = {
@@ -9,7 +11,7 @@
         size = 12;
       };
 
-      colors = with config.colors; {
+      colors = with config.ricos.theme; {
         primary = {
           background = "#${bg0}";
           foreground = "#${fg}";

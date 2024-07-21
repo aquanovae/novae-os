@@ -7,21 +7,16 @@
   networking.hostName = "silverlight";
 
   ricos = {
-    core.enable = true;
-    silentBoot.enable = true;
-
-    desktop.enable = true;
-    home.enable = true;
+    desktop.bar = {
+      volume.enable = false;
+      battery.enable = false;
+    };
 
     programs = {
-      base.enable = true;
       openrgb.enable = true;
       gaming.enable = true;
+      coolercontrol.enable = true;
     };
-  };
-
-  programs = {
-    coolercontrol.enable = true;
   };
 
   system.stateVersion = "24.05";

@@ -35,7 +35,7 @@ in {
     systemd.services.openrgb = {
       enable = true;
       postStart = ''
-        sleep 2
+        sleep 5
         ${openrgb} -p ${configPath}/purple.orp
       '';
 

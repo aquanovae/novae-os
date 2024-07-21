@@ -1,6 +1,6 @@
-{ config, lib, ... }: with lib; {
+{ lib, ... }: with lib; {
   
-  options.colors = {
+  options.ricos.theme = {
     bg0 = mkOption { type = types.str; };
     bg1 = mkOption { type = types.str; };
     bg2 = mkOption { type = types.str; };
@@ -17,7 +17,7 @@
     magenta = mkOption { type = types.str; };
   };
 
-  config.colors = {
+  config.ricos.theme = {
     bg0 = "1f2329";
     bg1 = "282c34";
     bg2 = "30363f";

@@ -1,14 +1,16 @@
-{ config, pkgs, lib, ... }: {
+{ ... }: {
 
-  programs.starship = {
+  programs.starship.enable = true;
+
+  home-manager.users.rico.programs.starship = {
     enable = true;
     enableZshIntegration = true;
 
     settings = {
       format = ''
-        [┌<$git_branch$git_status$nix_shell >](bold dimmed cyan)
-        [│](dimmed cyan)[\[$username@$hostname:$directory\]](bold cyan)
-        [└$character](bold dimmed cyan)
+        [┌<$git_branch$git_status$nix_shell >](bold cyan)
+        [│](cyan)[\[$username@$hostname:$directory\]](bold cyan)
+        [└$character](bold cyan)
       '';
 
       username = {

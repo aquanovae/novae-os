@@ -1,9 +1,11 @@
-{ config, pkgs, ... }: {
+{ config, ... }: with config.ricos.theme; {
 
-  wayland.windowManager.hyprland = {
+  programs.hyprland.enable = true;
+
+  home-manager.users.rico.wayland.windowManager.hyprland = {
     enable = true;
 
-    settings = with config.colors; {
+    settings = {
       monitor = [
         "eDP-1, prefered, auto, 1"
         "DP-1, 2560x1440@165, 0x0, 1"
@@ -11,7 +13,7 @@
       ];
 
       exec-once = [
-        "swaybg -m fill -i ~/ricos/home/theme/wallpaper.png"
+        "swaybg -m fill -i /home/rico/ricos/modules/system/theme/wallpaper.png"
         "hyprctl dispatch renameworkspace 1 terminal"
       ];
 
@@ -58,11 +60,9 @@
         };
       };
 
-
       binds = {
         workspace_back_and_forth = true;
       };
-
 
       general = {
         gaps_in = 3;
@@ -76,7 +76,6 @@
         layout = "dwindle";
       };
 
-
       decoration = {
         rounding = 7;
 
@@ -87,7 +86,6 @@
         };
       };
 
-
       animations = {
         enabled = true;
 
@@ -97,7 +95,6 @@
           "workspaces, 1, 3, default, slide"
         ];
       };
-
 
       misc = {
         force_default_wallpaper = 0;

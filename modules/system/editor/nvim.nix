@@ -1,6 +1,8 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
 
-  programs.neovim = {
+  environment.systemPackages = [ pkgs.neovim ];
+
+  home-manager.users.rico.programs.neovim = {
     enable = true;
 
     plugins = with pkgs.vimPlugins; [
