@@ -8,6 +8,7 @@ in {
   home-manager.users.rico.programs.waybar.settings.bar = {
     "custom/os-icon" = {
       format = "󱄅";
+      tooltip = false;
     };
 
     "hyprland/workspaces" = {
@@ -16,6 +17,7 @@ in {
         terminal = "󰆍";
         browser = "󰈹";
       };
+      tooltip = false;
     };
 
     pulseaudio = {
@@ -26,21 +28,26 @@ in {
         "󰖀"
         "󰕾"
       ];
+      tooltip = false;
     };
 
     disk = {
       format = "{percentage_used}% ${toSpan "󰋊" theme.blue}";
       path = "/";
+      interval = 3;
+      tooltip = false;
     };
 
     memory = {
       format = "{used}GB ${toSpan "󰘚" theme.blue}";
       interval = 1;
+      tooltip = false;
     };
 
     cpu = {
       format = "{usage}% ${toSpan "󰍛" theme.blue}";
       interval = 1;
+      tooltip = false;
     };
 
     battery = {
@@ -57,10 +64,12 @@ in {
         "󰂂"
       ];
       interval = 3;
+      tooltip = false;
     };
 
     clock = {
-      format = " {:%T\n%d/%m/%Y}";
+      format = "{:%H:%M}";
+      tooltip-format = "{:%d/%m/%Y}";
       interval = 1;
     };
   };

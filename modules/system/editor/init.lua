@@ -19,7 +19,7 @@ opt.wrap = false
 opt.hlsearch = false
 opt.incsearch = true
 
-opt.scrolloff = 11
+opt.scrolloff = 13
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)

@@ -1,4 +1,8 @@
-{ config, ... }: with config.ricos.theme; {
+{ config, ... }:
+
+let
+  theme = config.ricos.theme;
+in {
 
   programs.hyprland.enable = true;
 
@@ -17,37 +21,7 @@
         "hyprctl dispatch renameworkspace 1 terminal"
       ];
 
-      workspace = [
-        "name:terminal, default:true"
-        "name:browser, on-created-empty:firefox"
-      ];
-
       input = {
-        bind = [
-          "super, t, workspace, name:terminal"
-          "super, b, workspace, name:browser"
-
-          "super, return, exec, alacritty"
-
-          "super, o, exec, bemenu-run"
-          "super shift, q, killactive"
-
-          "super, m, workspace, +0"
-
-          "super, h, movefocus, l"
-          "super, l, movefocus, r"
-          "super, k, movefocus, u"
-          "super, j, movefocus, d"
-
-          "alt, h, movewindow, l"
-          "alt, l, movewindow, r"
-          "alt, k, movewindow, u"
-          "alt, j, movewindow, d"
-
-          "super, s, togglespecialworkspace, magic"
-          "super shift, s, movetoworkspace, special:magic"
-        ];
-
         kb_layout = "ch";
         kb_variant = "fr_nodeadkeys";
         kb_model = "asus_laptop";
@@ -70,8 +44,8 @@
 
         border_size = 2;
 
-        "col.active_border" = "rgb(${blue}) rgb(${magenta}) 45deg";
-        "col.inactive_border" = "rgb(${gray})";
+        "col.active_border" = "rgb(${theme.blue}) rgb(${theme.magenta}) 45deg";
+        "col.inactive_border" = "rgb(${theme.gray})";
 
         layout = "dwindle";
       };

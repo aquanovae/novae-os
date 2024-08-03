@@ -9,7 +9,6 @@ window#waybar {
   color: @fg;
 }
 
-
 .modules-left {
   border: 2px solid @gray;
   background-color: @bg-alt;
@@ -20,7 +19,6 @@ window#waybar {
   background-color: @bg-alt;
 }
 
-
 #custom-os-icon {
   font-size: 25px;
   padding: 0px 14px 0px 8px;
@@ -28,7 +26,6 @@ window#waybar {
   color: @bg;
   background-color: @blue;
 }
-
 
 #workspaces {
   border-radius: 5px;
@@ -58,38 +55,14 @@ window#waybar {
   color: @bg;
 }
 
-
-#pulseaudio {
-  min-width: 65px;
-  margin: 3px;
+#pulseaudio, #disk, #memory, #cpu, #battery, #clock {
   background-color: @bg;
 }
 
-#disk {
+#pulseaudio, #disk, #cpu, #battery, #clock {
   min-width: 65px;
-  margin: 3px;
-  background-color: @bg;
 }
 
 #memory {
   min-width: 95px;
-  margin: 3px;
-  background-color: @bg;
-}
-
-#cpu {
-  min-width: 65px;
-  margin: 3px;
-  background-color: @bg;
-}
-
-#battery {
-  min-width: 65px;
-  margin: 3px;
-  background-color: @bg;
-}
-
-#clock {
-  font-size: 12px;
-  margin: 3px;
 }

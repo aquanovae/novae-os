@@ -4,11 +4,6 @@
     graphics.enable = true;
   };
 
-  systemd.services = {
-    "getty@tty1".enable = false;
-    "autovt@tty1".enable = false;
-  };
-
   services = {
     xserver = {
       enable = true;
@@ -29,9 +24,9 @@
 
   programs.xwayland.enable = true;
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [ "JetBrainsMono" ];
-    })
-  ];
+  # Fix for autologin
+  systemd.services = {
+    "getty@tty1".enable = false;
+    "autovt@tty1".enable = false;
+  };
 }

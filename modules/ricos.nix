@@ -12,6 +12,7 @@
     ./desktop/desktop.nix
     ./desktop/hyprland.nix
     ./desktop/bar/waybar.nix
+    ./desktop/bar/bar-modules.nix
 
     ./programs/programs.nix
     ./programs/alacritty.nix

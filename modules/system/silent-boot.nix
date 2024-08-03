@@ -1,10 +1,7 @@
 { pkgs, ... }: {
 
   boot = {
-    kernelModules = [
-      "amdgpu"
-    ];
-
+    kernelModules = [ "amdgpu" ];
     kernelParams = [
       "quiet"
       "splash"

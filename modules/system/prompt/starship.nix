@@ -1,9 +1,6 @@
 { ... }: {
 
-  programs.starship = {
-    enable = true;
-    interactiveOnly = false;
-  };
+  programs.starship.enable = true;
 
   home-manager.users.rico.programs.starship = {
     enable = true;
