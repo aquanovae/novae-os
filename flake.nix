@@ -13,6 +13,7 @@
   outputs = { nixpkgs, ... }@inputs: {
     nixosConfigurations = {
 
+      # Desktop computer
       silverlight = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
@@ -22,6 +23,7 @@
         ];
       };
 
+      # Laptop
       zenblade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };

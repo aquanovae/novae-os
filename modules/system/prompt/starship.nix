@@ -1,6 +1,9 @@
 { ... }: {
 
-  programs.starship.enable = true;
+  programs.starship = {
+    enable = true;
+    interactiveOnly = false;
+  };
 
   home-manager.users.rico.programs.starship = {
     enable = true;
@@ -8,7 +11,7 @@
 
     settings = {
       format = ''
-        [┌<$git_branch$git_status$nix_shell >](bold cyan)
+        [┌<$nix_shell$git_branch$git_status](bold cyan)
         [│](cyan)[\[$username@$hostname:$directory\]](bold cyan)
         [└$character](bold cyan)
       '';
@@ -32,12 +35,13 @@
       };
 
       git_branch = {
-        format = "[ $symbol$branch:⌈]($style)";
-        style = "bold green";
+        format = "[ $symbol]($style)[$branch\\[ ](green)";
+        style = "bold blue";
+        symbol = "git:";
       };
 
       git_status = {
-        format = "[ $ahead_behind$all_status]($style)[⌋](bold green)";
+        format = "[$ahead_behind$all_status]($style)[\\]](green)";
         style = "bold red";
         conflicted = "󰩌 ";
         ahead = "󰩎 ";
@@ -53,8 +57,8 @@
       };
 
       nix_shell = {
-        format = "$symbol[ $name]($style)";
-        style = "cyan";
+        format = "$symbol[$name]($style)";
+        style = "yellow";
         symbol = "[ nix-shell:](bold blue)";
       };
 
