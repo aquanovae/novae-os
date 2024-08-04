@@ -1,5 +1,11 @@
 { pkgs, ... }: {
 
+  imports = [
+    ./bindings.nix
+    ./hyprland.nix
+    ./waybar/waybar.nix
+  ];
+
   hardware = {
     graphics.enable = true;
   };
@@ -17,10 +23,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    bemenu
-    swaybg
-  ];
+  environment.systemPackages = [ pkgs.swaybg ];
 
   programs.xwayland.enable = true;
 

@@ -1,5 +1,12 @@
 { pkgs, ... }: {
 
+  imports = [
+    ./home-manager.nix
+    ./nvim/nvim.nix
+    ./silent-boot.nix
+    ./theme/theme.nix
+  ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 

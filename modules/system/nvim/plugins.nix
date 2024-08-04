@@ -1,5 +1,6 @@
 { pkgs, ... }: {
 
+  home-manager.users.rico.programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       indent-blankline-nvim
       lsp-zero-nvim
@@ -7,7 +8,6 @@
       nvim-treesitter.withAllGrammars
       nvim-treesitter-context
       onedark-nvim
-      otter-nvim
       rustaceanvim
       telescope-nvim
     ];
@@ -47,8 +47,6 @@
 
       require("lsp-zero")
       require("lspconfig").nixd.setup {}
-      require("otter").activate({
-        "lua",
-      }, true, true, nil)
     '';
+  };
 }

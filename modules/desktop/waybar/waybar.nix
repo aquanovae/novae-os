@@ -4,6 +4,11 @@ let
   cfg = config.ricos.desktop.bar;
 in {
 
+  imports = [
+    ./modules.nix
+    ./style.nix
+  ];
+
   options.ricos.desktop.bar = {
     volume.enable = lib.mkEnableOption "enable volume";
     battery.enable = lib.mkEnableOption "enable battery";

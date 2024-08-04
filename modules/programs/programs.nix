@@ -4,6 +4,12 @@ let
   cfg = config.ricos.programs;
 in {
 
+  imports = [
+    ./alacritty.nix
+    ./gaming.nix
+    ./openrgb.nix
+  ];
+
   options.ricos.programs = {
     coolercontrol.enable = lib.mkEnableOption "enable coolercontrol";
   };
