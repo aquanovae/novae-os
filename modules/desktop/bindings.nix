@@ -1,30 +1,69 @@
 { ... }: {
 
-  home-manager.users.rico.wayland.windowManager.hyprland.settings.inputs.bind = [
-    "super, t, workspace, name:terminal"
-    "super, b, workspace, name:browser"
+  home-manager.users.rico.wayland.windowManager.hyprland.extraConfig = ''
+    bind = super, 1, workspace, 1
+    bind = super, 2, workspace, 2
+    bind = super, 3, workspace, 3
+    bind = super, 4, workspace, 4
+    bind = super, 5, workspace, 5
+    bind = super, 6, workspace, 6
+    bind = super, 7, workspace, 7
+    bind = super, 8, workspace, 8
+    bind = super, 9, workspace, 9
+    bind = super, 0, workspace, 10
 
-    "super, return, exec, alacritty"
+    bind = super, H, movefocus, l
+    bind = super, L, movefocus, r
+    bind = super, K, movefocus, u
+    bind = super, J, movefocus, d
 
-    "super, o, exec, bemenu-run"
-    "super shift, q, killactive"
+    bind = super, N, swapactiveworkspaces, 0 1
 
-    "super, m, workspace, +0"
+    bind = super, Return, exec, alacritty
 
-    "super, h, movefocus, l"
-    "super, l, movefocus, r"
-    "super, k, movefocus, u"
-    "super, j, movefocus, d"
+    bindr = super, Super_L, exec, pkill bemenu-run || bemenu-run
+    bind = super shift, Q, killactive
 
-    "alt, h, movewindow, l"
-    "alt, l, movewindow, r"
-    "alt, k, movewindow, u"
-    "alt, j, movewindow, d"
+    bind = super, M, submap, move
+    submap = move
+    bind = , Escape, submap, reset
+    bind = , catchall, exec,
 
-    "super, s, togglespecialworkspace, magic"
-    "super shift, s, movetoworkspace, special:magic"
-  ];
-  home-manager.users.rico.wayland.windowManager.hyprland.settings.inputs.submap = [
-    "resize"
-  ];
+    bind = , H, movefocus, l
+    bind = , L, movefocus, r
+    bind = , K, movefocus, u
+    bind = , J, movefocus, d
+    bind = shift, H, movewindow, l
+    bind = shift, L, movewindow, r
+    bind = shift, K, movewindow, u
+    bind = shift, J, movewindow, d
+
+    bind = , 1, workspace, 1
+    bind = , 2, workspace, 2
+    bind = , 3, workspace, 3
+    bind = , 4, workspace, 4
+    bind = , 5, workspace, 5
+    bind = , 6, workspace, 6
+    bind = , 7, workspace, 7
+    bind = , 8, workspace, 8
+    bind = , 9, workspace, 9
+    bind = , 0, workspace, 10
+    bind = shift, 1, movetoworkspacesilent, 1
+    bind = shift, 2, movetoworkspacesilent, 2
+    bind = shift, 3, movetoworkspacesilent, 3
+    bind = shift, 4, movetoworkspacesilent, 4
+    bind = shift, 5, movetoworkspacesilent, 5
+    bind = shift, 6, movetoworkspacesilent, 6
+    bind = shift, 7, movetoworkspacesilent, 7
+    bind = shift, 8, movetoworkspacesilent, 8
+    bind = shift, 9, movetoworkspacesilent, 9
+    bind = shift, 0, movetoworkspacesilent, 10
+
+    bind = , N, swapactiveworkspaces, 0 1
+    submap = reset
+
+    bind = , XF86AudioPlay, exec, playerctl play-pause
+    bind = , XF86AudioNext, exec, playerctl next
+    bind = , XF86AudioPrev, exec, playerctl previous
+  '';
 }

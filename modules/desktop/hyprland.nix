@@ -18,8 +18,28 @@ in {
 
       exec-once = [
         "swaybg -m fill -i /home/rico/ricos/modules/system/theme/wallpaper.png"
-        "hyprctl dispatch renameworkspace 1 terminal"
       ];
+
+      windowrulev2 = [
+        "pseudo, class:(coolercontrol)"
+      ];
+
+      general = {
+        gaps_in = 3;
+        gaps_out = 6;
+
+        border_size = 2;
+
+        "col.active_border" = "rgb(${theme.blue}) rgb(${theme.magenta}) 45deg";
+        "col.inactive_border" = "rgb(${theme.gray})";
+
+        layout = "dwindle";
+      };
+
+      dwindle = {
+        pseudotile = true;
+        force_split = 2;
+      };
 
       input = {
         kb_layout = "ch";
@@ -36,18 +56,6 @@ in {
 
       binds = {
         workspace_back_and_forth = true;
-      };
-
-      general = {
-        gaps_in = 3;
-        gaps_out = 6;
-
-        border_size = 2;
-
-        "col.active_border" = "rgb(${theme.blue}) rgb(${theme.magenta}) 45deg";
-        "col.inactive_border" = "rgb(${theme.gray})";
-
-        layout = "dwindle";
       };
 
       decoration = {

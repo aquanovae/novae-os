@@ -14,6 +14,7 @@ in {
       gh
       git
       neofetch
+      playerctl
       spotify
       tree
     ];
