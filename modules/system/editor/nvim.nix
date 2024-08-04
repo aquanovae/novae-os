@@ -5,25 +5,32 @@
   home-manager.users.rico.programs.neovim = {
     enable = true;
 
-    plugins = with pkgs.vimPlugins; [
-      indent-blankline-nvim
-      lsp-zero-nvim
-      nvim-lspconfig
-      nvim-treesitter.withAllGrammars
-      nvim-treesitter-context
-      onedark-nvim
-      rustaceanvim
-      telescope-nvim
-    ];
+    extraLuaConfig = /*lua*/ ''
+      local o = vim.o
+      local opt = vim.opt
 
-    extraPackages = with pkgs; [
-      nixd
-      rust-analyzer
-    ];
+      opt.syntax = enable
 
-    extraLuaConfig = ''
-      ${builtins.readFile ./init.lua}
-      ${builtins.readFile ./plugins.lua}
+      opt.number = true
+      opt.relativenumber = true
+      opt.cursorline = true
+
+      opt.tabstop = 2
+      opt.shiftwidth = 2
+      opt.softtabstop = 2
+      opt.expandtab = true
+      opt.autoindent = true
+      opt.smartindent = true
+
+      opt.wrap = false
+
+      opt.hlsearch = false
+      opt.incsearch = true
+
+      opt.scrolloff = 13
+
+      vim.g.mapleader = " "
+      vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
     '';
 
     defaultEditor = true;
