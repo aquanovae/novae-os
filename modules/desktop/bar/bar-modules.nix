@@ -12,11 +12,20 @@ in {
     };
 
     "hyprland/workspaces" = {
-      format = "{icon}";
-      format-icons = {
-        terminal = "󰆍";
-        browser = "󰈹";
+      format = "{id} {windows}";
+      window-rewrite-default = "󰘔";
+      window-rewrite = {
+        alacritty = "󰆍";
+        coolercontrol = "󰄪";
+        firefox = "󰈹";
+        spotify = "󰓇";
+        "title<steam>" = "󰓓";
       };
+      tooltip = false;
+    };
+
+    "hyprland/submap" = {
+      format = "{}";
       tooltip = false;
     };
 

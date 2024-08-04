@@ -2,8 +2,6 @@
 
 let
   cfg = config.ricos.desktop.bar;
-
-  theme = config.ricos.theme;
 in {
 
   options.ricos.desktop.bar = {
@@ -27,6 +25,7 @@ in {
         modules-left = [
           "custom/os-icon"
           "hyprland/workspaces"
+          "hyprland/submap"
         ];
 
         modules-right =
@@ -40,23 +39,6 @@ in {
 
        reload_style_on_change = true;
       };
-
-      style = ''
-        @define-color bg #${theme.bg0};
-        @define-color bg-alt #${theme.bg3};
-        @define-color fg #${theme.fg};
-
-        @define-color black #${theme.black};
-        @define-color gray #${theme.gray};
-        @define-color red #${theme.red};
-        @define-color yellow #${theme.yellow};
-        @define-color green #${theme.green};
-        @define-color cyan #${theme.cyan};
-        @define-color blue #${theme.blue};
-        @define-color magenta #${theme.magenta};
-
-        ${builtins.readFile ./waybar.css}
-      '';
     };
   };
 }

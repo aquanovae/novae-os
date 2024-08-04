@@ -11,8 +11,11 @@
 
     ./desktop/desktop.nix
     ./desktop/hyprland.nix
+    ./desktop/bindings.nix
+    ./desktop/bemenu.nix
     ./desktop/bar/waybar.nix
     ./desktop/bar/bar-modules.nix
+    ./desktop/bar/style.nix
 
     ./programs/programs.nix
     ./programs/alacritty.nix
