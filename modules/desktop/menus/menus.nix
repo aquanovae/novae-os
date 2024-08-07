@@ -43,6 +43,7 @@ in {
         "--af '#${theme.fg}'"
       ];
     in {
+
       bemenuFlags = "${lib.strings.concatStringsSep " " flags}";
     };
   };
