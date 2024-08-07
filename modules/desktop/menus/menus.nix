@@ -25,6 +25,7 @@ in {
         "--wrap"
         "--center"
         "--width-factor 0.25"
+        "--fn 'JetBrainsMono Nerd Font' 13"
         "--border 2"
         "--border-radius 5"
         "--bdr '#${theme.blue}'"
