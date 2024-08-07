@@ -6,6 +6,7 @@ in {
 
   imports = [
     ./powermenu.nix
+    ./quicklaunch.nix
   ];
 
   options.ricos.desktop.menus = {

@@ -21,7 +21,7 @@
 
     bind = super, Return, exec, alacritty
 
-    bindr = super, Super_L, exec, pkill bemenu-run || bemenu-run
+    bindr = super, Super_L, exec, pkill quicklaunch || quicklaunch
 
     bind = super shift, Q, killactive
     bind = super, Escape, exec, powermenu
