@@ -1,5 +1,9 @@
 { pkgs, ... }: {
 
+  imports = [
+    ./plugins.nix
+  ];
+
   environment.systemPackages = [ pkgs.neovim ];
 
   home-manager.users.rico.programs.neovim = {

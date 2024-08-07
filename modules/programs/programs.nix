@@ -19,6 +19,7 @@ in {
       firefox
       gh
       git
+      grub2_efi
       neofetch
       playerctl
       spotify

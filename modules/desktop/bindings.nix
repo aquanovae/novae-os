@@ -1,6 +1,6 @@
 { ... }: {
 
-  home-manager.users.rico.wayland.windowManager.hyprland.extraConfig = ''
+  home-manager.users.rico.wayland.windowManager.hyprland.extraConfig = /*hyprlang*/ ''
     bind = super, 1, workspace, 1
     bind = super, 2, workspace, 2
     bind = super, 3, workspace, 3
@@ -22,7 +22,9 @@
     bind = super, Return, exec, alacritty
 
     bindr = super, Super_L, exec, pkill bemenu-run || bemenu-run
+
     bind = super shift, Q, killactive
+    bind = super, Escape, exec, powermenu
 
     bind = super, M, submap, move
     submap = move

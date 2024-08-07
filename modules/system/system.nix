@@ -3,6 +3,7 @@
   imports = [
     ./home-manager.nix
     ./nvim/nvim.nix
+    ./prompt/prompt.nix
     ./silent-boot.nix
     ./theme/theme.nix
   ];
@@ -22,6 +23,7 @@
       timeout = 2;
       grub = {
         enable = true;
+        default = "saved";
         efiSupport = true;
         device = "nodev";
         useOSProber = true;

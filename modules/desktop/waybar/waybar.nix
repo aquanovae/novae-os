@@ -5,7 +5,7 @@ let
 in {
 
   imports = [
-    ./modules.nix
+    ./modules/modules.nix
     ./style.nix
   ];
 

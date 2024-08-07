@@ -8,6 +8,7 @@
       nvim-treesitter.withAllGrammars
       nvim-treesitter-context
       onedark-nvim
+      otter-nvim
       rustaceanvim
       telescope-nvim
     ];
@@ -47,6 +48,7 @@
 
       require("lsp-zero")
       require("lspconfig").nixd.setup {}
+      --require("otter").activate("rust", true, true, nil)
     '';
   };
 }
