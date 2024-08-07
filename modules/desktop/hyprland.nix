@@ -20,10 +20,6 @@ in {
         "swaybg -m fill -i /home/rico/ricos/modules/system/theme/wallpaper.png"
       ];
 
-      #windowrulev2 = [
-        #"pseudo, class:(coolercontrol)"
-      #];
-
       general = {
         gaps_in = 3;
         gaps_out = 6;
