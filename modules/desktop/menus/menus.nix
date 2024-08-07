@@ -1,7 +1,6 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.ricos.desktop.menus;
   theme = config.ricos.theme;
 in {
 
@@ -23,9 +22,6 @@ in {
         "--list 13 down"
         "--fixed height"
         "--wrap"
-        "--binding vim"
-        "--vim-esc-exits"
-        "--vim-normal-mode"
         "--center"
         "--width-factor 0.25"
         "--border 2"

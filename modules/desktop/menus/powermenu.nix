@@ -23,6 +23,25 @@ let
   selectTime = "bemenu --prompt '󰔛' ${flags}";
 
   powermenu = pkgs.writeShellScriptBin "powermenu" ''
+    function runMenu {
+      case $(echo "${menuOptions}" | ${runMenu}) in
+        "󰤁 Poweroff")
+          systemctl poweroff;;
+        "󰔛 Timer")
+          setTimer;;
+        "󰤄 Suspend")
+          systemctl suspend;;
+        "󰜉 Reboot")
+          systemctl reboot;;
+        "󱑡 Reboot into firmware")
+          systemctl reboot --firmware-setup;;
+        "󰖳 Reboot inot windows")
+          grub-reboot 2 && systemctl reboot;;
+        *)
+          ;;
+      esac
+    }
+
     function setTimer {
       case $(echo "${timePresets}" | ${selectTime}) in
         "󰔟 3 minutes")
@@ -40,22 +59,7 @@ let
       esac
     }
 
-    case $(echo "${menuOptions}" | ${runMenu}) in
-      "󰤁 Poweroff")
-        systemctl poweroff;;
-      "󰔛 Timer")
-        setTimer;;
-      "󰤄 Suspend")
-        systemctl suspend;;
-      "󰜉 Reboot")
-        systemctl reboot;;
-      "󱑡 Reboot into firmware")
-        systemctl reboot --firmware-setup;;
-      "󰖳 Reboot inot windows")
-        grub-reboot 2 && systemctl reboot;;
-      *)
-        ;;
-    esac
+    runMenu
   '';
 in {
 
