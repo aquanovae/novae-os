@@ -44,7 +44,7 @@ in {
 
       rcg = "sudo nix-collect-garbage --delete-older-than 3d";
       rrs = "sudo nixos-rebuild switch --flake ~/ricos/#${hostname}";
-      rfu = "sudo nix flake update /home/rico/ricos && rrs";
+      rfu = "sudo nix flake update /home/rico/ricos && rrs && rcg";
     };
   };
 }
