@@ -2,7 +2,13 @@
 
 let
   theme = config.ricos.theme;
+
+  shutdowntime = pkgs.writeShellScriptBin "shutdowntime" ''
+    shutdown --show 2>&1 | grep -Eo "[0-9]{2}:[0-9]{2}"
+  '';
 in {
+
+  environment.systemPackages = [ shutdowntime ];
 
   home-manager.users.rico.programs.waybar = {
     settings.bar = {
@@ -34,12 +40,4 @@ in {
       }
     '';
   };
-
-  environment.systemPackages =
-  let
-    shutdowntime = pkgs.writeShellScriptBin "shutdowntime" ''
-      shutdown --show 2>&1 | \
-        grep -Eo "[0-9]{2}:[0-9]{2}"
-    '';
-  in [ shutdowntime ];
 }
