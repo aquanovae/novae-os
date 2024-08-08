@@ -2,11 +2,13 @@
 
 let
   cfg = config.ricos.desktop.bar;
+  theme = config.ricos.theme;
 in {
 
   imports = [
-    ./modules.nix
-    ./style.nix
+    ./custom.nix
+    ./desktop-info.nix
+    ./system-info.nix
   ];
 
   options.ricos.desktop.bar = {
@@ -43,8 +45,31 @@ in {
           "clock"
         ];
 
-       reload_style_on_change = true;
+        reload_style_on_change = true;
       };
+
+      style = /*css*/ ''
+        * {
+          border-radius: 7px;
+        }
+
+        window#waybar {
+          font-family: JetBrainsMono Nerd Font;
+          font-size: 13px;
+          background-color: rgba(0, 0, 0, 0);
+          color: #${theme.fg};
+        }
+
+        .modules-left {
+          border: 2px solid #${theme.gray};
+          background-color: #${theme.bg3};
+        }
+
+        .modules-right {
+          border: 2px solid #${theme.gray};
+          background-color: #${theme.bg3};
+        }
+      '';
     };
   };
 }
