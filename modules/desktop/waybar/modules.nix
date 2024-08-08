@@ -5,6 +5,10 @@ let
   toSpan = icon: color: "<span color='#${color}' size='11pt'>${icon}</span>";
 in {
 
+  imports = [
+    ./shutdowntime.nix
+  ];
+
   home-manager.users.rico.programs.waybar.settings.bar = {
     "custom/os-icon" = {
       format = "󱄅";
@@ -27,6 +31,12 @@ in {
     "hyprland/submap" = {
       format = "{}";
       tooltip = false;
+    };
+
+    "custom/shutdowntime" = {
+      exec = "shutdowntime";
+      interval = 1;
+      format = "{} 󱫌";
     };
 
     pulseaudio = {

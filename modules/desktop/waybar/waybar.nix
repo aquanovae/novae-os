@@ -33,7 +33,8 @@ in {
           "hyprland/submap"
         ];
 
-        modules-right =
+        modules-right = [
+          "custom/shutdowntime" ] ++
           (if cfg.volume.enable then [ "pulseaudio" ] else []) ++ [
           "disk"
           "memory"

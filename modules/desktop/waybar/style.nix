@@ -78,5 +78,11 @@ in {
     #memory {
       min-width: 95px;
     }
+
+    #custom-shutdowntime {
+      color: #${theme.bg0};
+      background-color: #${theme.red};
+      min-width: 75px;
+    }
   '';
 }
