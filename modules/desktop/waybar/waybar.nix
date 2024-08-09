@@ -40,7 +40,8 @@ in {
           (if cfg.volume.enable then [ "pulseaudio" ] else []) ++ [
           "disk"
           "memory"
-          "cpu" ] ++
+          "cpu"
+          "custom/gpu-info" ] ++
           (if cfg.battery.enable then [ "battery" ] else []) ++ [
           "clock"
         ];

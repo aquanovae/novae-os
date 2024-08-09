@@ -3,18 +3,33 @@
 let
   theme = config.ricos.theme;
 
+  gpu-info = pkgs.writeShellScriptBin "gpu-info" ''
+    radeontop -b 3 -d - -l 1 | \
+      grep -Eo "gpu [0-9]+\." | \
+      sed -e "s/gpu //" -e "s/\./%/"
+  '';
+
   shutdowntime = pkgs.writeShellScriptBin "shutdowntime" ''
     shutdown --show 2>&1 | grep -Eo "[0-9]{2}:[0-9]{2}"
   '';
 in {
 
-  environment.systemPackages = [ shutdowntime ];
+  environment.systemPackages = [
+    gpu-info
+    shutdowntime
+  ];
 
   home-manager.users.rico.programs.waybar = {
     settings.bar = {
       "custom/os-icon" = {
         format = "󱄅";
         tooltip = false;
+      };
+
+      "custom/gpu-info" = {
+        exec = "gpu-info";
+        interval = 1;
+        format = "{} 󰾲";
       };
 
       "custom/shutdowntime" = {
@@ -31,6 +46,11 @@ in {
         border-radius: 5px;
         color: #${theme.bg0};
         background-color: #${theme.blue};
+      }
+
+      #custom-gpu-info {
+        background-color: #${theme.bg0};
+        min-width: 65px;
       }
 
       #custom-shutdowntime {

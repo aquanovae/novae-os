@@ -23,6 +23,7 @@ in {
       grub2_efi
       neofetch
       playerctl
+      radeontop
       spotify
       tree
     ];
