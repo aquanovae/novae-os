@@ -37,6 +37,7 @@ in {
       '';
       interval = 1;
       format = "${toSpan "󰝚" theme.green} {}";
+      tooltip = false;
     };
 
     "custom/shutdowntime" = {
@@ -45,6 +46,7 @@ in {
       '';
       interval = 1;
       format = "{} 󱫌";
+      tooltip = false;
     };
 
     pulseaudio = {
@@ -81,6 +83,7 @@ in {
       '';
       interval = 1;
       format = "{} ${toSpan "󰾲" theme.blue}";
+      tooltip = false;
     };
 
     battery = {
