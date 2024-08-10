@@ -2,7 +2,6 @@
 
 let
   cfg = config.ricos.desktop.bar;
-  theme = config.ricos.theme;
 in {
 
   imports = [
@@ -32,6 +31,10 @@ in {
           "custom/os-icon"
           "hyprland/workspaces"
           "hyprland/submap"
+        ];
+
+        modules-center = [
+          "custom/playerctl-info"
         ];
 
         modules-right = [

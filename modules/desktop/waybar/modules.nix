@@ -5,6 +5,11 @@ let
 
   toSpan = icon: color: "<span color='#${color}' size='11pt'>${icon}</span>";
 
+  playerctl-info = pkgs.writeShellScriptBin "playerctl-info" ''
+    [[ $(playerctl status) == "Playing" ]] && \
+      playerctl metadata -f "{{artist}} - {{title}}"
+  '';
+
   gpu-info = pkgs.writeShellScriptBin "gpu-info" ''
     radeontop -b 3 -d - -l 1 | \
       grep -Eo "gpu [0-9]+\." | \
@@ -18,6 +23,7 @@ in {
 
   environment.systemPackages = [
     gpu-info
+    playerctl-info
     shutdowntime
   ];
 
@@ -43,6 +49,12 @@ in {
     "hyprland/submap" = {
       format = "{}";
       tooltip = false;
+    };
+
+    "custom/playerctl-info" = {
+      exec = "playerctl-info";
+      interval = 1;
+      format = "󰝚 {}";
     };
 
     "custom/shutdowntime" = {
