@@ -1,17 +1,20 @@
 { config, pkgs, ... }:
 
 let
-  runMenu = "bemenu --prompt '󱓞' ${config.ricos.desktop.menus.bemenuFlags}";
+  flags = config.ricos.desktop.menus.bemenuFlags;
 
   desktopFilesPath = /run/current-system/sw/share/applications;
+in {
 
-  quicklaunch = pkgs.writeShellScriptBin "quicklaunch" ''
+  environment.systemPackages = [ (pkgs.writeShellScriptBin "quicklaunch" ''
     selection=$(
-      ls -1 ${desktopFilesPath} | \
+      pkill bemenu || \
+        ls -1 ${desktopFilesPath} | \
         grep ".desktop" | \
         sed -e "s/\.desktop//" -e "s/.*\.//" | \
         tr "[:upper:]" "[:lower:]" | \
-        ${runMenu}
+        sort | \
+        bemenu -p "󱓞" ${flags}
     )
 
     desktopfile=$(
@@ -20,8 +23,5 @@ let
     )
 
     dex "${desktopFilesPath}/$desktopfile"
-  '';
-in {
-
-  environment.systemPackages = [ quicklaunch ];
+  '') ];
 }

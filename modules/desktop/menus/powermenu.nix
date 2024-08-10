@@ -19,12 +19,15 @@ let
   '';
 
   flags = "${config.ricos.desktop.menus.bemenuFlags}";
-  runMenu = "bemenu --prompt '󰐥' ${flags}";
-  selectTime = "bemenu --prompt '󰔛' ${flags}";
+in {
 
-  powermenu = pkgs.writeShellScriptBin "powermenu" ''
+  environment.systemPackages = [ (pkgs.writeShellScriptBin "powermenu" ''
     function runMenu {
-      case $(echo "${menuOptions}" | ${runMenu}) in
+      case $(
+        pkill bemenu || \
+          echo "${menuOptions}" | \
+          bemenu -p "󰐥" ${flags}
+      ) in
         "󰤁 Poweroff")
           systemctl poweroff;;
         "󰔛 Timer")
@@ -43,7 +46,11 @@ let
     }
 
     function setTimer {
-      case $(echo "${timePresets}" | ${selectTime}) in
+      case $(
+        pkill bemenu || \
+          echo "${timePresets}" | \
+          bemenu -p "󰔛" ${flags}
+      ) in
         "󰔟 3 minutes")
           shutdown 3;;
         "󰔟 10 minutes")
@@ -60,8 +67,5 @@ let
     }
 
     runMenu
-  '';
-in {
-
-  environment.systemPackages = [ powermenu ];
+  '') ];
 }
