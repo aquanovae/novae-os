@@ -4,28 +4,7 @@ let
   theme = config.ricos.theme;
 
   toSpan = icon: color: "<span color='#${color}' size='11pt'>${icon}</span>";
-
-  playerctl-info = pkgs.writeShellScriptBin "playerctl-info" ''
-    [[ $(playerctl status) == "Playing" ]] && \
-      playerctl metadata -f "{{artist}} - {{title}}"
-  '';
-
-  gpu-info = pkgs.writeShellScriptBin "gpu-info" ''
-    radeontop -b 3 -d - -l 1 | \
-      grep -Eo "gpu [0-9]+\." | \
-      sed -e "s/gpu //" -e "s/\./%/"
-  '';
-
-  shutdowntime = pkgs.writeShellScriptBin "shutdowntime" ''
-    shutdown --show 2>&1 | grep -Eo "[0-9]{2}:[0-9]{2}"
-  '';
 in {
-
-  environment.systemPackages = [
-    gpu-info
-    playerctl-info
-    shutdowntime
-  ];
 
   home-manager.users.rico.programs.waybar.settings.bar = {
     "custom/os-icon" = {
@@ -52,13 +31,18 @@ in {
     };
 
     "custom/playerctl-info" = {
-      exec = "playerctl-info";
+      exec = pkgs.writeShellScript "playerctl-info" ''
+        [[ $(playerctl status) == "Playing" ]] && \
+          playerctl metadata -f "{{artist}} - {{title}}"
+      '';
       interval = 1;
-      format = "󰝚 {}";
+      format = "${toSpan "󰝚" theme.green} {}";
     };
 
     "custom/shutdowntime" = {
-      exec = "shutdowntime";
+      exec = pkgs.writeShellScript "shutdowntime" ''
+        shutdown --show 2>&1 | grep -Eo "[0-9]{2}:[0-9]{2}"
+      '';
       interval = 1;
       format = "{} 󱫌";
     };
@@ -90,7 +74,11 @@ in {
     };
 
     "custom/gpu-info" = {
-      exec = "gpu-info";
+      exec = pkgs.writeShellScript "gpu-info" ''
+        radeontop -b 3 -d - -l 1 | \
+          grep -Eo "gpu [0-9]+\." | \
+          sed -e "s/gpu //" -e "s/\./%/"
+      '';
       interval = 1;
       format = "{} ${toSpan "󰾲" theme.blue}";
     };
