@@ -20,8 +20,7 @@ in {
     let
       flags = [
         "--ignorecase"
-        "--list 13 down"
-        "--fixed height"
+        "--list -1 down"
         "--wrap"
         "--center"
         "--width-factor 0.25"
