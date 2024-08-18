@@ -16,6 +16,7 @@ in {
 
   config = {
     environment.systemPackages = with pkgs; [
+      devenv
       dex
       firefox
       gh
@@ -36,6 +37,8 @@ in {
       coolercontrol.enable = cfg.coolercontrol.enable;
     };
 
-    users.users.rico.extraGroups = [ "adbusers" ];
+    nix.extraOptions = ''
+      trusted-users = root rico
+    '';
   };
 }
