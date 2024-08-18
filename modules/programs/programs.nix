@@ -19,8 +19,10 @@ in {
       dex
       firefox
       gh
+      gimp
       git
       grub2_efi
+      inkscape
       neofetch
       playerctl
       radeontop
@@ -29,8 +31,11 @@ in {
     ];
 
     programs = {
+      adb.enable = true;
       htop.enable = true;
       coolercontrol.enable = cfg.coolercontrol.enable;
     };
+
+    users.users.rico.extraGroups = [ "adbusers" ];
   };
 }
