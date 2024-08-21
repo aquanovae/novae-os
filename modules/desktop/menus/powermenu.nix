@@ -1,22 +1,22 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
-  menuOptions = ''
-    󰤁 Poweroff
-    󰔛 Timer
-    󰤄 Suspend
-    󰜉 Reboot
-    󱑡 Reboot into firmware
-    󰖳 Reboot into windows
-  '';
+  menuOptions = [
+    "󰤁 Poweroff"
+    "󰔛 Timer"
+    "󰤄 Suspend"
+    "󰜉 Reboot"
+    "󱑡 Reboot into firmware"
+    "󰖳 Reboot into windows"
+  ];
 
-  timePresets = ''
-    󰔟 3 minutes
-    󰔟 10 minutes
-    󰔟 30 minutes
-    󰔟 1 houre
-    󱫧 Cancel
-  '';
+  timePresets = [
+    "󰔟 3 minutes"
+    "󰔟 10 minutes"
+    "󰔟 30 minutes"
+    "󰔟 1 houre"
+    "󱫧 Cancel"
+  ];
 
   flags = "${config.ricos.desktop.menus.bemenuFlags}";
 in {
@@ -25,7 +25,7 @@ in {
     function runMenu {
       case $(
         pkill bemenu || \
-          echo "${menuOptions}" | \
+          echo "${lib.strings.concatStringsSep "\n" menuOptions}" | \
           bemenu -p "󰐥" ${flags}
       ) in
         "󰤁 Poweroff")
@@ -48,7 +48,7 @@ in {
     function setTimer {
       case $(
         pkill bemenu || \
-          echo "${timePresets}" | \
+          echo "${lib.strings.concatStringsSep "\n" timePresets}" | \
           bemenu -p "󰔛" ${flags}
       ) in
         "󰔟 3 minutes")

@@ -21,6 +21,7 @@ in {
       flags = [
         "--ignorecase"
         "--list -1 down"
+        "--prefix '>'"
         "--wrap"
         "--center"
         "--width-factor 0.25"
@@ -36,8 +37,8 @@ in {
         "--cf '#${theme.bg0}'"
         "--nb '#${theme.bg0}'"
         "--nf '#${theme.fg}'"
-        "--hb '#${theme.blue}'"
-        "--hf '#${theme.bg0}'"
+        "--hb '#${theme.bg0}'"
+        "--hf '#${theme.blue}'"
         "--ab '#${theme.bg0}'"
         "--af '#${theme.fg}'"
       ];
