@@ -1,9 +1,7 @@
 { pkgs, ... }: {
 
   imports = [
-    ./home-manager.nix
-    ./nvim/nvim.nix
-    ./prompt/prompt.nix
+    ./menus/menus.nix
     ./silent-boot.nix
     ./theme/theme.nix
   ];
@@ -38,7 +36,10 @@
   users.users.rico = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
   };
+
+  programs.zsh.enable = true;
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {

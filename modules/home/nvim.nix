@@ -1,6 +1,8 @@
 { pkgs, ... }: {
 
-  home-manager.users.rico.programs.neovim = {
+  programs.neovim = {
+    enable = true;
+
     plugins = with pkgs.vimPlugins; [
       indent-blankline-nvim
       lsp-zero-nvim
@@ -19,7 +21,32 @@
     ];
 
     extraLuaConfig = /*lua*/ ''
-      vim.opt.termguicolors = true
+      local o = vim.o
+      local opt = vim.opt
+
+      opt.syntax = enable
+      opt.termguicolors = true
+
+      opt.number = true
+      opt.relativenumber = true
+      opt.cursorline = true
+
+      opt.tabstop = 2
+      opt.shiftwidth = 2
+      opt.softtabstop = 2
+      opt.expandtab = true
+      opt.autoindent = true
+      opt.smartindent = true
+
+      opt.hlsearch = false
+      opt.incsearch = true
+
+      opt.scrolloff = 13
+      opt.wrap = false
+
+      vim.g.mapleader = " "
+      vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+
 
       require("onedark").setup {
         style = "darker",
@@ -50,5 +77,10 @@
       require("lspconfig").nixd.setup {}
       --require("otter").activate("rust", true, true, nil)
     '';
+
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
   };
 }

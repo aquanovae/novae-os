@@ -1,8 +1,6 @@
 { ... }: {
 
-  programs.starship.enable = true;
-
-  home-manager.users.rico.programs.starship = {
+  programs.starship = {
     enable = true;
     enableZshIntegration = true;
 

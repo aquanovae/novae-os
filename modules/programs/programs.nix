@@ -5,7 +5,6 @@ let
 in {
 
   imports = [
-    ./alacritty.nix
     ./gaming.nix
     ./openrgb.nix
   ];

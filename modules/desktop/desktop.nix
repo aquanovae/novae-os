@@ -1,9 +1,6 @@
 { pkgs, ... }: {
 
   imports = [
-    ./bindings.nix
-    ./hyprland.nix
-    ./menus/menus.nix
     ./waybar/waybar.nix
   ];
 
