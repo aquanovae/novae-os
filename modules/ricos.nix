@@ -1,12 +1,25 @@
-{ inputs, ... }: {
+{ inputs, lib, ... }: {
 
   imports = [
-    ./desktop/desktop.nix
-    ./programs/programs.nix
+    ./programs.nix
     ./system/system.nix
 
     inputs.home-manager.nixosModules.default
   ];
 
-  home-manager.users.rico = import ./home/home.nix;
+  options.ricos = {
+    programs = {
+      enableCoolercontrol = lib.mkEnableOption "enable coolercontrol";
+      enableOpenrgb = lib.mkEnableOption "enable openrgb";
+    };
+
+    waybar = {
+      enableVolume = lib.mkEnableOption "show volume module in bar";
+      enableBattery = lib.mkEnableOption "show battery module in bar";
+    };
+  };
+
+  config = {
+    home-manager.users.rico = import ./home/home.nix;
+  };
 }

@@ -1,9 +1,5 @@
 { pkgs, ... }: {
 
-  imports = [
-    ./waybar/waybar.nix
-  ];
-
   hardware = {
     graphics.enable = true;
   };

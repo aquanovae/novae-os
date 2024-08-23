@@ -1,10 +1,10 @@
-{ config, ... }:
+{ osConfig, ... }:
 
 let
-  theme = config.ricos.theme;
+  theme = osConfig.ricos.theme;
 in {
 
-  home-manager.users.rico.programs.waybar.style = /*css*/ ''
+  programs.waybar.style = /*css*/ ''
     * {
       border-radius: 7px;
     }

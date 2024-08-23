@@ -1,12 +1,12 @@
-{ config, pkgs, ... }:
+{ osConfig, pkgs, ... }:
 
 let
-  theme = config.ricos.theme;
+  theme = osConfig.ricos.theme;
 
   toSpan = icon: color: "<span color='#${color}' size='11pt'>${icon}</span>";
 in {
 
-  home-manager.users.rico.programs.waybar.settings.bar = {
+  programs.waybar.settings.bar = {
     "custom/os-icon" = {
       format = "󱄅";
       tooltip = false;

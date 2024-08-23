@@ -1,6 +1,8 @@
 { pkgs, ... }: {
 
   imports = [
+    ./desktop.nix
+    ./openrgb.nix
     ./menus/menus.nix
     ./silent-boot.nix
     ./theme/theme.nix
