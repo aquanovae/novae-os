@@ -7,7 +7,7 @@
   networking.hostName = "silverlight";
 
   ricos = {
-    enbaleNvidia = false;
+    enableNvidia = false;
 
     programs = {
       enableCoolercontrol = true;
