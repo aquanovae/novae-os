@@ -23,7 +23,10 @@
 
   environment.systemPackages = [ pkgs.swaybg ];
 
-  programs.xwayland.enable = true;
+  programs = {
+    hyprland.enable = true;
+    xwayland.enable = true;
+  };
 
   # Fix for autologin
   systemd.services = {
