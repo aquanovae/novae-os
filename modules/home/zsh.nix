@@ -1,14 +1,10 @@
-{ config, pkgs, ... }:
+{ osConfig, ... }:
 
 let
-  hostname = config.networking.hostName;
+  hostname = osConfig.networking.hostName;
 in {
 
-  programs.zsh.enable = true;
-
-  users.users.rico.shell = pkgs.zsh;
-
-  home-manager.users.rico.programs.zsh = {
+  programs.zsh = {
     enable = true;
 
     enableCompletion = true;

@@ -18,7 +18,7 @@ let
     "󱫧 Cancel"
   ];
 
-  flags = "${config.ricos.desktop.menus.bemenuFlags}";
+  flags = "${config.ricos.menus.bemenuFlags}";
 in {
 
   environment.systemPackages = [ (pkgs.writeShellScriptBin "powermenu" ''

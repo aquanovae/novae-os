@@ -9,14 +9,14 @@ in {
     ./quicklaunch.nix
   ];
 
-  options.ricos.desktop.menus = {
+  options.ricos.menus = {
     bemenuFlags = lib.mkOption { type = lib.types.str; };
   };
 
   config = {
     environment.systemPackages = [ pkgs.bemenu ];
 
-    ricos.desktop.menus = 
+    ricos.menus = 
     let
       flags = [
         "--ignorecase"
