@@ -1,17 +1,13 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.ricos.programs.openrgb;
+  cfg = config.ricos.programs;
 
   openrgb = "${pkgs.openrgb}/bin/openrgb";
   configPath = "/home/rico/.config/OpenRGB";
 in {
 
-  options.ricos.programs.openrgb = {
-    enable = lib.mkEnableOption "enable openrgb";
-  };
-
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.enableOpenrgb {
     services = {
       udev.packages = [ pkgs.openrgb ];
       hardware.openrgb = {
