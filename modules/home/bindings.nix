@@ -64,8 +64,15 @@
     bind = , N, swapactiveworkspaces, 0 1
     submap = reset
 
+    bind = , XF86AudioMute, exec, pamixer -t
+    binde = , XF86AudioRaiseVolume, exec, pamixer -i 5
+    binde = , XF86AudioLowerVolume, exec, pamixer -d 5
+
     bind = , XF86AudioPlay, exec, playerctl play-pause
     bind = , XF86AudioNext, exec, playerctl next
     bind = , XF86AudioPrev, exec, playerctl previous
+
+    binde = , XF86MonBrightnessUp, exec, brightnessctl set 5%+
+    binde = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
   '';
 }
