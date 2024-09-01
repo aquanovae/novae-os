@@ -7,6 +7,7 @@ in {
   config = lib.mkIf cfg.enableNvidia {
     hardware = {
       nvidia = {
+      	open = false;
         modesetting.enable = true;
         powerManagement.enable = true;
         nvidiaSettings = true;
