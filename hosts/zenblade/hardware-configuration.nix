@@ -8,40 +8,20 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/90a5dd7a-20df-4dfe-a723-ebd5eda4b11e";
-      fsType = "btrfs";
-      options = [ "subvol=@root" ];
-    };
-
-  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/202a0c1b-adc1-4226-81b5-40c192b1a341";
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/90a5dd7a-20df-4dfe-a723-ebd5eda4b11e";
-      fsType = "btrfs";
-      options = [ "subvol=@home" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/90a5dd7a-20df-4dfe-a723-ebd5eda4b11e";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" ];
-    };
-
-  fileSystems."/home/rico/rstore" =
-    { device = "/dev/disk/by-uuid/90a5dd7a-20df-4dfe-a723-ebd5eda4b11e";
-      fsType = "btrfs";
-      options = [ "subvol=@rstore" ];
+    { device = "/dev/disk/by-uuid/195abbd2-fab5-4be8-9a43-2f12ff8871fd";
+      fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/EA5C-8B75";
+    { device = "/dev/disk/by-uuid/3969-43D0";
       fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices = [ ];
