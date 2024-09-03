@@ -1,5 +1,10 @@
 { pkgs, ... }: {
 
+  imports = [
+    ./silent-boot.nix
+    ./user.nix
+  ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
