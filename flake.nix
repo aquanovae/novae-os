@@ -16,7 +16,10 @@
       # Desktop computer
       silverlight = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          username = "rico";
+          inherit inputs;
+        };
         modules = [
           ./hosts/silverlight
           ./modules
@@ -26,7 +29,10 @@
       # Laptop
       zenblade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          username = "rico";
+          inherit inputs;
+        };
         modules = [
           ./hosts/zenblade
           ./modules

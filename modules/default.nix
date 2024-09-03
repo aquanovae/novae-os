@@ -1,6 +1,7 @@
 { inputs, lib, ... }: {
 
   imports = [
+    ./core
     ./programs.nix
     ./system/system.nix
 
