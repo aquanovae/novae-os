@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
 
   hardware = {
     graphics.enable = true;
@@ -13,11 +13,18 @@
 
     displayManager.autoLogin = {
       enable = true;
-      user = "rico";
+      user = "${username}";
     };
   };
 
-  environment.systemPackages = [ pkgs.swaybg ];
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+    dex
+    pamixer
+    playerctl
+    radeontop
+    swaybg
+  ];
 
   programs = {
     hyprland.enable = true;

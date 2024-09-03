@@ -2,6 +2,7 @@
 
   imports = [
     ./core
+    ./desktop-environment
     ./programs.nix
     ./system/system.nix
 

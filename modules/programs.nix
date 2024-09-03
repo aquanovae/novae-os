@@ -5,9 +5,7 @@ let
 in {
 
   environment.systemPackages = with pkgs; [
-    brightnessctl
     devenv
-    dex
     firefox
     gh
     gimp
@@ -16,10 +14,7 @@ in {
     inkscape
     lutris
     neofetch
-    pamixer
-    playerctl
     prismlauncher
-    radeontop
     spotify
     tree
   ];
