@@ -1,8 +1,4 @@
-{ config, username, ... }:
-
-let
-  hostname = config.networking.hostName;
-in {
+{ username, ... }: {
 
   programs.zsh.enable = true;
 
@@ -40,9 +36,11 @@ in {
       l = "ls -l --color=auto";
       ll = "ls -la --color=auto";
 
-      rcg = "sudo nix-collect-garbage --delete-older-than 3d";
-      rrs = "sudo nixos-rebuild switch --flake ~/ricos/#${hostname}";
+      rcg = "sudo nix-collect-garbage --delete-older-than +7";
+      rrs = "sudo nixos-rebuild switch --flake ~/ricos/";
       rfu = "sudo nix flake update /home/rico/ricos && rrs && rcg";
+
+      tree = "tree --dirsfirst";
     };
   };
 }
