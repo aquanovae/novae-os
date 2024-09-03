@@ -20,6 +20,7 @@
         efiSupport = true;
         device = "nodev";
         useOSProber = true;
+        splashImage = ./grub-background.png;
       };
     };
   };
