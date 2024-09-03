@@ -2,6 +2,7 @@
 
   imports = [
     ./silent-boot.nix
+    ./starship.nix
     ./theme.nix
     ./user.nix
     ./zsh.nix

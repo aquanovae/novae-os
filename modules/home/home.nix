@@ -5,7 +5,6 @@
     ./bindings.nix
     ./hyprland.nix
     ./nvim.nix
-    ./starship.nix
     ./waybar/waybar.nix
   ];
 
