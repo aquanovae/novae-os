@@ -1,10 +1,12 @@
-{ osConfig, ... }:
+{ config, username, ... }:
 
 let
-  hostname = osConfig.networking.hostName;
+  hostname = config.networking.hostName;
 in {
 
-  programs.zsh = {
+  programs.zsh.enable = true;
+
+  home-manager.users.${username}.programs.zsh = {
     enable = true;
 
     enableCompletion = true;

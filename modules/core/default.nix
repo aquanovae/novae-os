@@ -4,6 +4,7 @@
     ./silent-boot.nix
     ./theme.nix
     ./user.nix
+    ./zsh.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
