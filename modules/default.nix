@@ -4,7 +4,7 @@
     ./programs.nix
     ./system/system.nix
 
-    inputs.home-manager.nixosModules.default
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   options.ricos = {

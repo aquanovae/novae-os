@@ -18,8 +18,8 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/silverlight/configuration.nix
-          ./modules/ricos.nix
+          ./hosts/silverlight
+          ./modules
         ];
       };
 
@@ -28,8 +28,8 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/zenblade/configuration.nix
-          ./modules/ricos.nix
+          ./hosts/zenblade
+          ./modules
         ];
       };
     };
