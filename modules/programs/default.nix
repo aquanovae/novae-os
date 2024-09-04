@@ -1,8 +1,4 @@
-{ config, pkgs, ... }:
-
-let
-  cfg = config.ricos.programs;
-in {
+{ pkgs, ... }: {
 
   imports = [
     ./alacritty.nix
@@ -26,7 +22,6 @@ in {
   ];
 
   programs = {
-    coolercontrol.enable = cfg.enableCoolercontrol;
     htop.enable = true;
     steam.enable = true;
   };

@@ -7,13 +7,6 @@
   networking.hostName = "silverlight";
 
   ricos = {
-    enableNvidia = false;
-
-    programs = {
-      enableCoolercontrol = true;
-      enableOpenrgb = true;
-    };
-
     waybar = {
       enableVolume = false;
       enableBattery = false;

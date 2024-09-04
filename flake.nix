@@ -24,6 +24,8 @@
         modules = [
           ./hosts/silverlight
           ./modules
+          ./modules/programs/coolercontrol.nix
+          ./modules/programs/openrgb.nix
         ];
       };
 

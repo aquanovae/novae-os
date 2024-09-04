@@ -10,13 +10,6 @@
   };
 
   ricos = {
-    enableNvidia = true;
-
-    programs = {
-      enableCoolercontrol = false;
-      enableOpenrgb = false;
-    };
-
     waybar = {
       enableVolume = true;
       enableBattery = true;
