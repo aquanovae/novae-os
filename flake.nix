@@ -11,52 +11,51 @@
   };
 
   outputs = { nixpkgs, ... }@inputs: {
-    nixosConfigurations = {
-
-      # Desktop computer
-      silverlight = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+    nixosConfigurations = let
+      base = {
         specialArgs = {
           username = "rico";
           de-setup = "desktop";
           inherit inputs;
         };
         modules = [
-          ./hosts/silverlight
+          ./hosts
           ./modules
+        ];
+      };
+    in {
+
+      silverlight = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = base.specialArgs // {
+          hostname = "silverlight";
+        };
+        modules = base.modules ++ [
           ./modules/programs/coolercontrol.nix
           ./modules/programs/gaming.nix
           ./modules/programs/openrgb.nix
         ];
       };
 
-      # Laptop
       zenblade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          username = "rico";
+        specialArgs = base.specialArgs // {
+          hostname = "zenblade";
           de-setup = "laptop";
-          inherit inputs;
         };
-        modules = [
-          ./hosts/zenblade
-          ./modules
+        modules = base.modules ++ [
           ./modules/core/nvidia.nix
         ];
       };
 
-      # Live image
       live-image = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
+        specialArgs = base.specialArgs // {
+          hostname = "live-image";
           username = "nixos";
           de-setup = "minimal";
-          inherit inputs;
         };
-        modules = [
-          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-          ./modules
-        ];
+        modules = base.modules;
       };
     };
   };
