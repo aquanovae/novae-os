@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ flags }: { lib, pkgs, ... }:
 
 let
   menuOptions = [
@@ -17,8 +17,6 @@ let
     "󰔟 1 houre"
     "󱫧 Cancel"
   ];
-
-  flags = "${config.ricos.menus.bemenuFlags}";
 in {
 
   environment.systemPackages = [ (pkgs.writeShellScriptBin "powermenu" ''

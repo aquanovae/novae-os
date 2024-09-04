@@ -1,8 +1,6 @@
-{ config, pkgs, ... }:
+{ flags }: { pkgs, ... }:
 
 let
-  flags = config.ricos.menus.bemenuFlags;
-
   desktopFilesPath = /run/current-system/sw/share/applications;
 in {
 
