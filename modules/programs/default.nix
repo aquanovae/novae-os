@@ -2,7 +2,6 @@
 
   imports = [
     ./alacritty.nix
-    ./openrgb.nix
     ./nvim.nix
   ];
 
@@ -10,12 +9,8 @@
     devenv
     firefox
     gh
-    gimp
     git
-    grub2_efi
-    inkscape
     neofetch
-    spotify
     tree
   ];
 

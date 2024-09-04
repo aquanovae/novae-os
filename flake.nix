@@ -31,9 +31,7 @@
           hostname = "silverlight";
         };
         modules = base.modules ++ [
-          ./modules/programs/coolercontrol.nix
-          ./modules/programs/gaming.nix
-          ./modules/programs/openrgb.nix
+          ./modules/programs/desktop.nix
         ];
       };
 
@@ -45,6 +43,7 @@
         };
         modules = base.modules ++ [
           ./modules/core/nvidia.nix
+          ./modules/programs/laptop.nix
         ];
       };
 
