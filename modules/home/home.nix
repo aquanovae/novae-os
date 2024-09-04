@@ -2,8 +2,6 @@
 
   imports = [
     ./alacritty.nix
-    ./bindings.nix
-    ./hyprland.nix
     ./nvim.nix
     ./waybar/waybar.nix
   ];

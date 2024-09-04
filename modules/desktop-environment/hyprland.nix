@@ -1,10 +1,10 @@
-{ osConfig, ... }:
+{ config, username, ... }:
 
 let
-  theme = osConfig.ricos.theme;
+  theme = config.ricos.theme;
 in {
 
-  wayland.windowManager.hyprland = {
+  home-manager.users.${username}.wayland.windowManager.hyprland = {
     enable = true;
 
     settings = {

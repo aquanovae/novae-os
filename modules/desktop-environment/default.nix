@@ -1,5 +1,10 @@
 { pkgs, username, ... }: {
 
+  imports = [
+    ./bindings.nix
+    ./hyprland.nix
+  ];
+
   hardware = {
     graphics.enable = true;
   };
