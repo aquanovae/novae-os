@@ -9,13 +9,6 @@
     wireless.iwd.enable = true;
   };
 
-  ricos = {
-    waybar = {
-      enableVolume = true;
-      enableBattery = true;
-    };
-  };
-
   system.stateVersion = "23.11";
 }
 

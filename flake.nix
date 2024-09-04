@@ -18,6 +18,7 @@
         system = "x86_64-linux";
         specialArgs = {
           username = "rico";
+          de-setup = "desktop";
           inherit inputs;
         };
 
@@ -34,6 +35,7 @@
         system = "x86_64-linux";
         specialArgs = {
           username = "rico";
+          de-setup = "laptop";
           inherit inputs;
         };
 

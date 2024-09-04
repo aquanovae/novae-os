@@ -1,4 +1,4 @@
-{ inputs, lib, username, ... }: {
+{ inputs, username, ... }: {
 
   imports = [
     ./core
@@ -8,14 +8,7 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  options.ricos = {
-    waybar = {
-      enableVolume = lib.mkEnableOption "show volume module in bar";
-      enableBattery = lib.mkEnableOption "show battery module in bar";
-    };
-  };
-
-  config.home-manager.users.${username}.home = {
+  home-manager.users.${username}.home = {
     username = "${username}";
     homeDirectory = "/home/${username}";
 
