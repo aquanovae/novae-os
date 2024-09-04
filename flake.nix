@@ -21,7 +21,6 @@
           de-setup = "desktop";
           inherit inputs;
         };
-
         modules = [
           ./hosts/silverlight
           ./modules
@@ -38,11 +37,24 @@
           de-setup = "laptop";
           inherit inputs;
         };
-
         modules = [
           ./hosts/zenblade
           ./modules
           ./modules/core/nvidia.nix
+        ];
+      };
+
+      # Live image
+      live-image = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          username = "nixos";
+          de-setup = "minimal";
+          inherit inputs;
+        };
+        modules = [
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+          ./modules
         ];
       };
     };
