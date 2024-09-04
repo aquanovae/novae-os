@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
 
-  programs.neovim = {
+  home-manager.users.${username}.programs.neovim = {
     enable = true;
 
     plugins = with pkgs.vimPlugins; [

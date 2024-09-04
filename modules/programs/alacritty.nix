@@ -1,10 +1,10 @@
-{ osConfig, ... }:
+{ config, username, ... }:
 
 let
-  theme = osConfig.ricos.theme;
+  theme = config.ricos.theme;
 in {
 
-  programs.alacritty = {
+  home-manager.users.${username}.programs.alacritty = {
     enable = true;
 
     settings = {

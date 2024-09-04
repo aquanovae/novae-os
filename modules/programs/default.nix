@@ -5,7 +5,9 @@ let
 in {
 
   imports = [
+    ./alacritty.nix
     ./openrgb.nix
+    ./nvim.nix
   ];
 
   environment.systemPackages = with pkgs; [

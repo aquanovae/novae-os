@@ -1,4 +1,4 @@
-{ inputs, lib, ... }: {
+{ inputs, lib, username, ... }: {
 
   imports = [
     ./core
@@ -22,7 +22,10 @@
     };
   };
 
-  config = {
-    home-manager.users.rico = import ./home/home.nix;
+  config.home-manager.users.${username}.home = {
+    username = "${username}";
+    homeDirectory = "/home/${username}";
+
+    stateVersion = "23.11";
   };
 }
