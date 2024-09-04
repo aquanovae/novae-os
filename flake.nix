@@ -25,6 +25,7 @@
           ./hosts/silverlight
           ./modules
           ./modules/programs/coolercontrol.nix
+          ./modules/programs/gaming.nix
           ./modules/programs/openrgb.nix
         ];
       };

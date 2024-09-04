@@ -14,15 +14,12 @@
     git
     grub2_efi
     inkscape
-    lutris
     neofetch
-    prismlauncher
     spotify
     tree
   ];
 
   programs = {
     htop.enable = true;
-    steam.enable = true;
   };
 }
