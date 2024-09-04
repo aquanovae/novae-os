@@ -3,7 +3,7 @@
   imports = [
     ./core
     ./desktop-environment
-    ./programs.nix
+    ./programs
     ./system/system.nix
 
     inputs.home-manager.nixosModules.home-manager
