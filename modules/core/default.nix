@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }: {
+{ pkgs, ... }: {
 
   imports = [
     ./silent-boot.nix
@@ -17,7 +17,7 @@
       efi.canTouchEfiVariables = true;
       timeout = 2;
       grub = {
-        enable = lib.mkDefault true;
+        enable = true;
         default = "saved";
         efiSupport = true;
         device = "nodev";

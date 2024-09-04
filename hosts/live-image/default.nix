@@ -6,7 +6,10 @@
 
   boot = {
     kernelPackages = lib.mkForce pkgs.linuxPackages;
-    loader.timeout = lib.mkForce 10;
+    loader = {
+      timeout = lib.mkForce 10;
+      grub.enable = lib.mkForce true;
+    };
   };
 
   home-manager.users.${username}.home.file = {

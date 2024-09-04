@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
 
-  users.users.rico = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
