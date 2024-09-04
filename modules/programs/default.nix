@@ -4,6 +4,10 @@ let
   cfg = config.ricos.programs;
 in {
 
+  imports = [
+    ./openrgb.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     devenv
     firefox

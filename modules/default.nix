@@ -4,7 +4,6 @@
     ./core
     ./desktop-environment
     ./programs
-    ./system/system.nix
 
     inputs.home-manager.nixosModules.home-manager
   ];
