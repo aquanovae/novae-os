@@ -1,7 +1,6 @@
 { pkgs, ... }: {
 
   imports = [
-    ./nvidia.nix
     ./silent-boot.nix
     ./starship.nix
     ./theme.nix

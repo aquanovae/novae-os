@@ -9,8 +9,6 @@
   ];
 
   options.ricos = {
-    enableNvidia = lib.mkEnableOption "enable nvidia";
-
     programs = {
       enableCoolercontrol = lib.mkEnableOption "enable coolercontrol";
       enableOpenrgb = lib.mkEnableOption "enable openrgb";

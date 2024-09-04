@@ -20,6 +20,7 @@
           username = "rico";
           inherit inputs;
         };
+
         modules = [
           ./hosts/silverlight
           ./modules
@@ -33,9 +34,11 @@
           username = "rico";
           inherit inputs;
         };
+
         modules = [
           ./hosts/zenblade
           ./modules
+          ./modules/core/nvidia.nix
         ];
       };
     };
