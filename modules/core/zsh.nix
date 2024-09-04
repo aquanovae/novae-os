@@ -1,4 +1,8 @@
-{ username, ... }: {
+{ username, ... }:
+
+let
+  ricosPath = "/home/rico/ricos";
+in {
 
   programs.zsh.enable = true;
 
@@ -37,8 +41,9 @@
       ll = "ls -la --color=auto";
 
       rcg = "sudo nix-collect-garbage --delete-older-than +7";
-      rrs = "sudo nixos-rebuild switch --flake ~/ricos/";
-      rfu = "sudo nix flake update /home/rico/ricos && rrs && rcg";
+      rrs = "sudo nixos-rebuild switch --flake ${ricosPath}";
+      rfu = "sudo nix flake update ${ricosPath} && rrs && rcg";
+      rbi = "sudo nix build ${ricosPath}/#nixosConfigurations.live-image.config.system.build.isoImage";
 
       tree = "tree --dirsfirst";
     };
