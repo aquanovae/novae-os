@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 let
   theme = config.ricos.theme;
@@ -32,9 +32,5 @@ in {
   imports = [
     (import ./powermenu.nix { flags = flags; })
     (import ./quicklaunch.nix { flags = flags; })
-  ];
-
-  environment.systemPackages = with pkgs; [
-    bemenu
   ];
 }
