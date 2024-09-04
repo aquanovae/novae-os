@@ -3,7 +3,6 @@
   imports = [
     ./alacritty.nix
     ./nvim.nix
-    ./waybar/waybar.nix
   ];
 
   home = {

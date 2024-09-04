@@ -3,6 +3,7 @@
   imports = [
     ./bindings.nix
     ./hyprland.nix
+    ./waybar
   ];
 
   hardware = {

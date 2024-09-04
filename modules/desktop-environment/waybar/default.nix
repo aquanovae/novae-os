@@ -1,7 +1,7 @@
-{ osConfig, ... }:
+{ config, username, ... }:
 
 let
-  cfg = osConfig.ricos.waybar;
+  cfg = config.ricos.waybar;
 in {
 
   imports = [
@@ -9,7 +9,7 @@ in {
     ./style.nix
   ];
 
-  programs.waybar = {
+  home-manager.users.${username}.programs.waybar = {
     enable = true;
     systemd.enable = true;
 
