@@ -4,4 +4,6 @@
     lutris
     prismlauncher
   ];
+
+  programs.steam.enable = true;
 }
