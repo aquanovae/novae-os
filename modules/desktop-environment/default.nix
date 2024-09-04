@@ -7,9 +7,7 @@
     ./waybar
   ];
 
-  hardware = {
-    graphics.enable = true;
-  };
+  hardware.opengl.enable = true;
 
   services = {
     xserver = {
