@@ -2,6 +2,8 @@
 
 let
   theme = config.ricos.theme;
+
+  wallpaper = "/home/rico/.config/hypr/wallpaper.png";
 in {
 
   home-manager.users.${username}.wayland.windowManager.hyprland = {
@@ -15,7 +17,7 @@ in {
       ];
 
       exec-once = [
-        "swaybg -m fill -i /home/rico/ricos/modules/system/theme/wallpaper.png"
+        "swaybg -m fill -i ${wallpaper}"
       ];
 
       general = {

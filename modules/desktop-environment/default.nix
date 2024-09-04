@@ -24,6 +24,12 @@
     };
   };
 
+  # Fix for autologin
+  systemd.services = {
+    "getty@tty1".enable = false;
+    "autovt@tty1".enable = false;
+  };
+
   environment.systemPackages = with pkgs; [
     brightnessctl
     dex
@@ -38,9 +44,8 @@
     xwayland.enable = true;
   };
 
-  # Fix for autologin
-  systemd.services = {
-    "getty@tty1".enable = false;
-    "autovt@tty1".enable = false;
+  home-manager.users.${username}.home = {
+    file.".config/hypr/wallpaper.png".source =
+      ./wallpaper.png;
   };
 }
