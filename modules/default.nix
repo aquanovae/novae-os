@@ -9,11 +9,6 @@
   ];
 
   options.ricos = {
-    programs = {
-      enableCoolercontrol = lib.mkEnableOption "enable coolercontrol";
-      enableOpenrgb = lib.mkEnableOption "enable openrgb";
-    };
-
     waybar = {
       enableVolume = lib.mkEnableOption "show volume module in bar";
       enableBattery = lib.mkEnableOption "show battery module in bar";
