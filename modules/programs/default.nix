@@ -10,6 +10,7 @@
     firefox
     gh
     git
+    grub2_efi
     neofetch
     tree
   ];
