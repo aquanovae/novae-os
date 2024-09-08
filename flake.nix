@@ -2,14 +2,14 @@
   description = "RicOS config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ricos.url = "github:RicoProductions/ricos";
+    ricos.url = "github:RicoProductions/ricos/master";
   };
 
   outputs = { nixpkgs, ... }@inputs: {
