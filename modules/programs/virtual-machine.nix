@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
 
   boot = {
     initrd.kernelModules = [
@@ -11,18 +11,26 @@
     ];
   };
 
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      pacakges = [ pkgs.qemu_kvm ];
+      ovmf.enable = true;
+    };
+  };
+
+  programs.virt-manager.enable = true;
+
+  home-manager.users.${username}.dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
+    };
+  };
+
+  users.users.${username}.extraGroups = [ "libvirtd" ];
+
   environment.systemPackages = with pkgs; [
-    OVMF
     pciutils
-    qemu
-    (writeShellScriptBin "windows-vm" ''
-      qemu-system-x86_64 \
-        -machine q35 \
-        -accel kvm \
-        -cpu host,topoext,kvm=off \
-        -smp 12,sockets=1,cores=6,threads=2 \
-        -m 16G \
-        -drive file=/dev/nvme1n1,if=virtio
-    '')
   ];
 }
