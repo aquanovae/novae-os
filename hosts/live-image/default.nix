@@ -15,4 +15,16 @@
   home-manager.users.${username}.home.file = {
     "ricos".source = inputs.ricos;
   };
+
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      nerdfonts
+      material-design-icons
+    ];
+    fontDir = {
+      enable = true;
+      decompressFonts = true;
+    };
+  };
 }
