@@ -12,6 +12,11 @@ in {
       package = pkgs.openrgb.overrideAttrs {
         version = "experimental";
         src = inputs.openrgb-experimental;
+        postPatch = ''
+          patchShebangs scripts/build-udev-rules.sh
+          substituteInPlace scripts/build-udev-rules.sh \
+            --replace "/usr/bin/env chmod" "${pkgs.coreutils}/bin/chmod"
+        '';
       };
       motherboard = "amd";
     };
