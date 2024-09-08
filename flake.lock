@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1720042825,
-        "narHash": "sha256-A0vrUB6x82/jvf17qPCpxaM+ulJnD8YZwH9Ci0BsAzE=",
+        "lastModified": 1725703823,
+        "narHash": "sha256-tDgM4d8mLK0Hd6YMB2w1BqMto1XBXADOzPEaLl10VI4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e1391fb22e18a36f57e6999c7a9f966dc80ac073",
+        "rev": "208df2e558b73b6a1f0faec98493cb59a25f62ba",
         "type": "github"
       },
       "original": {
@@ -66,6 +66,30 @@
         "type": "github"
       }
     },
+    "home-manager_4": {
+      "inputs": {
+        "nixpkgs": [
+          "ricos",
+          "ricos",
+          "ricos",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1720042825,
+        "narHash": "sha256-A0vrUB6x82/jvf17qPCpxaM+ulJnD8YZwH9Ci0BsAzE=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "e1391fb22e18a36f57e6999c7a9f966dc80ac073",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-24.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1725407940,
@@ -84,11 +108,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1725001927,
-        "narHash": "sha256-eV+63gK0Mp7ygCR0Oy4yIYSNcum2VQwnZamHxYTNi+M=",
+        "lastModified": 1725407940,
+        "narHash": "sha256-tiN5Rlg/jiY0tyky+soJZoRzLKbPyIdlQ77xVgREDNM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6e99f2a27d600612004fbd2c3282d614bfee6421",
+        "rev": "6f6c45b5134a8ee2e465164811e451dcb5ad86e3",
         "type": "github"
       },
       "original": {
@@ -114,11 +138,63 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1725001927,
+        "narHash": "sha256-eV+63gK0Mp7ygCR0Oy4yIYSNcum2VQwnZamHxYTNi+M=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "6e99f2a27d600612004fbd2c3282d614bfee6421",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "openrgb-experimental": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1725754464,
+        "narHash": "sha256-NHI576eeekZwpnDAENAYBGA54kWplPIHtcGceglXZMU=",
+        "owner": "CalcProgrammer1",
+        "repo": "OpenRGB",
+        "rev": "cc21027db2745a096175a88fd9fb5afc2adab6aa",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "CalcProgrammer1",
+        "repo": "OpenRGB",
+        "type": "gitlab"
+      }
+    },
     "ricos": {
       "inputs": {
         "home-manager": "home-manager_2",
         "nixpkgs": "nixpkgs_2",
         "ricos": "ricos_2"
+      },
+      "locked": {
+        "lastModified": 1725621083,
+        "narHash": "sha256-7zhwnO3+eyz5t+2RD1mCuKsmhju0h4xACsbcjCLP6jo=",
+        "owner": "RicoProductions",
+        "repo": "ricos",
+        "rev": "751be345b5e80b9cdc87bf450c3391c6a8899b80",
+        "type": "github"
+      },
+      "original": {
+        "owner": "RicoProductions",
+        "repo": "ricos",
+        "type": "github"
+      }
+    },
+    "ricos_2": {
+      "inputs": {
+        "home-manager": "home-manager_3",
+        "nixpkgs": "nixpkgs_3",
+        "ricos": "ricos_3"
       },
       "locked": {
         "lastModified": 1725539356,
@@ -134,10 +210,10 @@
         "type": "github"
       }
     },
-    "ricos_2": {
+    "ricos_3": {
       "inputs": {
-        "home-manager": "home-manager_3",
-        "nixpkgs": "nixpkgs_3"
+        "home-manager": "home-manager_4",
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1725460600,
@@ -157,6 +233,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "openrgb-experimental": "openrgb-experimental",
         "ricos": "ricos"
       }
     }

@@ -10,6 +10,11 @@
     };
 
     ricos.url = "github:RicoProductions/ricos";
+
+    openrgb-experimental = {
+      url = "gitlab:CalcProgrammer1/OpenRGB";
+      flake = false;
+    };
   };
 
   outputs = { nixpkgs, ... }@inputs: {

@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ inputs, pkgs, username, ... }:
 
 let
   openrgb = "${pkgs.openrgb}/bin/openrgb";
@@ -9,7 +9,10 @@ in {
     udev.packages = [ pkgs.openrgb ];
     hardware.openrgb = {
       enable = true;
-      package = pkgs.openrgb-with-all-plugins;
+      package = pkgs.openrgb.overrideAttrs {
+        version = "experimental";
+        src = inputs.openrgb-experimental;
+      };
       motherboard = "amd";
     };
   };
