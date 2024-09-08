@@ -8,7 +8,7 @@
     kernelPackages = lib.mkForce pkgs.linuxPackages;
     loader = {
       timeout = lib.mkForce 10;
-      grub.enable = lib.mkForce true;
+      grub.enable = lib.mkForce false;
     };
   };
 
