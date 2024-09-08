@@ -1,14 +1,27 @@
 { pkgs, ... }: {
 
+  boot = {
+    initrd.kernelModules = [
+      "vfio-pci"
+      "vfio"
+      "vfio_iommu_type1"
+    ];
+    kernelParams = [
+      "vfio-pci.ids=1002:164e"
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
+    OVMF
+    pciutils
     qemu
-    (pkgs.writeShellScriptBin "windows-vm" ''
+    (writeShellScriptBin "windows-vm" ''
       qemu-system-x86_64 \
         -machine q35 \
         -accel kvm \
         -cpu host,kvm=off \
         -smp 12,sockets=1,cores=6,threads=2 \
-        -m 12G \
+        -m 16G \
     '')
   ];
 }
