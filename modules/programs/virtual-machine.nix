@@ -19,9 +19,10 @@
       qemu-system-x86_64 \
         -machine q35 \
         -accel kvm \
-        -cpu host,kvm=off \
+        -cpu host,topoext,kvm=off \
         -smp 12,sockets=1,cores=6,threads=2 \
         -m 16G \
+        -drive file=/dev/nvme1n1,if=virtio
     '')
   ];
 }
