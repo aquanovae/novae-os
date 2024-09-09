@@ -56,11 +56,11 @@
     "ricos": {
       "flake": false,
       "locked": {
-        "lastModified": 1725900520,
-        "narHash": "sha256-/w5WXj2UScMtzcXNdiDwr2MgNrFTwOhqlRCuk4JeE1U=",
+        "lastModified": 1725921648,
+        "narHash": "sha256-BaipS00BBtIXvkijLxK5rwfNfQb+jZToRa3jLA+lbPw=",
         "owner": "RicoProductions",
         "repo": "ricos",
-        "rev": "7e11489277674e22f0b8fe0f7e5c9908c86d0418",
+        "rev": "a5fb1e7310f5769f66308808e9d08b2a7fff405e",
         "type": "github"
       },
       "original": {
