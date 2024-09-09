@@ -18,11 +18,6 @@
       url = "gitlab:CalcProgrammer1/OpenRGB";
       flake = false;
     };
-
-    looking-glass = {
-      url = "github:gnif/LookingGlass";
-      flake = false;
-    };
   };
 
   outputs = { nixpkgs, ... }@inputs: {

@@ -21,29 +21,13 @@
         "type": "github"
       }
     },
-    "looking-glass": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1725508888,
-        "narHash": "sha256-Rn/LVJ9ejAWAAxGHlF/+ysaz4uzaeikCLnRO5dOvMXc=",
-        "owner": "gnif",
-        "repo": "LookingGlass",
-        "rev": "4e8201da07c5c78fe0d764a064f3fcd929f5bef7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gnif",
-        "repo": "LookingGlass",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1725693463,
-        "narHash": "sha256-ZPzhebbWBOr0zRWW10FfqfbJlan3G96/h3uqhiFqmwg=",
+        "lastModified": 1725826545,
+        "narHash": "sha256-L64N1rpLlXdc94H+F6scnrbuEu+utC03cDDVvvJGOME=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "68e7dce0a6532e876980764167ad158174402c6f",
+        "rev": "f4c846aee8e1e29062aa8514d5e0ab270f4ec2f9",
         "type": "github"
       },
       "original": {
@@ -88,7 +72,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "looking-glass": "looking-glass",
         "nixpkgs": "nixpkgs",
         "openrgb-experimental": "openrgb-experimental",
         "ricos": "ricos"
