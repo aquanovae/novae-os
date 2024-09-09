@@ -53,6 +53,7 @@
         };
         modules = base.modules ++ [
           ./modules/core/nvidia.nix
+          ./modules/core/wireless.nix
           ./modules/programs/laptop.nix
         ];
       };
@@ -64,7 +65,9 @@
           username = "nixos";
           de-setup = "minimal";
         };
-        modules = base.modules;
+        modules = base.modules ++ [
+          ./modules/core/wireless.nix
+        ];
       };
     };
   };
