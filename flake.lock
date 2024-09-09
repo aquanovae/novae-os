@@ -21,6 +21,23 @@
         "type": "github"
       }
     },
+    "looking-glass": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1670533203,
+        "narHash": "sha256-NFSNTNbDgxwCDCAYRZug9rOkdxc9I65BFhYKZBo1wBc=",
+        "owner": "gnif",
+        "repo": "LookingGlass",
+        "rev": "188f25c6bf6e4525652222be7408f628d7fec1fc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gnif",
+        "ref": "Release/B6",
+        "repo": "LookingGlass",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1725693463,
@@ -38,6 +55,22 @@
       }
     },
     "openrgb-experimental": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1725754464,
+        "narHash": "sha256-NHI576eeekZwpnDAENAYBGA54kWplPIHtcGceglXZMU=",
+        "owner": "CalcProgrammer1",
+        "repo": "OpenRGB",
+        "rev": "cc21027db2745a096175a88fd9fb5afc2adab6aa",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "CalcProgrammer1",
+        "repo": "OpenRGB",
+        "type": "gitlab"
+      }
+    },
+    "openrgb-experimental_2": {
       "flake": false,
       "locked": {
         "lastModified": 1725754464,
@@ -72,6 +105,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "looking-glass": "looking-glass",
         "nixpkgs": "nixpkgs",
         "openrgb-experimental": "openrgb-experimental",
         "ricos": "ricos"
