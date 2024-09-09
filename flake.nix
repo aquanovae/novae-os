@@ -9,7 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ricos.url = "github:RicoProductions/ricos";
+    ricos = {
+      url = "github:RicoProductions/ricos";
+      flake = false;
+    };
   };
 
   outputs = { nixpkgs, ... }@inputs: {
