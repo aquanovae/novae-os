@@ -20,7 +20,7 @@
     };
 
     looking-glass = {
-      url = "github:gnif/LookingGlass/Release/B6";
+      url = "github:gnif/LookingGlass";
       flake = false;
     };
   };

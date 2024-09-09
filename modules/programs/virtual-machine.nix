@@ -1,4 +1,4 @@
-{ inputs, pkgs, username, ... }: {
+{ config, inputs, pkgs, username, ... }: {
 
   boot = {
     initrd.kernelModules = [
@@ -6,16 +6,19 @@
       "vfio"
       "vfio_iommu_type1"
     ];
+
     extraModulePackages = [
-      (pkgs.linuxKernel.packages.linux_zen.kvmfr.overrideAttrs {
-        version = "B6";
+      (config.boot.kernelPackages.kvmfr.overrideAttrs {
+        version = "experimental";
         src = inputs.looking-glass;
-        sourceRoot = "${inputs.looking-glass}/module";
+        sourceRoot = "source/module";
       })
     ];
+
     kernelModules = [
       "kvmfr"
     ];
+
     kernelParams = [
       "vfio-pci.ids=1002:164e"
     ];
