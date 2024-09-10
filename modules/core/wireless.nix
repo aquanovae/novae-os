@@ -1,4 +1,7 @@
 { ... }: {
 
-  networking.wireless.iwd.enable = true;
+  networking.wireless = {
+    enable = false;
+    iwd.enable = true;
+  };
 }
