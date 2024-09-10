@@ -40,10 +40,10 @@ in {
       l = "ls -l --color=auto";
       ll = "ls -la --color=auto";
 
-      rcg = "sudo nix-collect-garbage --delete-older-than 3d";
-      rrs = "sudo nixos-rebuild switch --flake ${ricosPath}";
-      rfu = "sudo nix flake update ${ricosPath} && rrs && rcg";
       rbi = "sudo nix build ${ricosPath}/#nixosConfigurations.live-image.config.system.build.isoImage";
+      rcg = "sudo nix-collect-garbage --delete-older-than 3d";
+      rfu = "sudo nix flake update ${ricosPath} && rrs";
+      rrs = "sudo nixos-rebuild switch --flake ${ricosPath}";
 
       tree = "tree --dirsfirst";
     };
