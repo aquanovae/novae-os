@@ -1,8 +1,16 @@
-{ pkgs, ... }: {
+{ hostname, lib, pkgs, ... }: {
 
   imports = [
-    ./alacritty.nix
     ./nvim.nix
+
+  ] ++ lib.optionals (hostname == "silverlight") [
+    ./alacritty.nix
+    ./coolercontrol.nix
+    ./gaming.nix
+    ./image-editor.nix
+    ./openrgb.nix
+    ./spotify.nix
+    ./virtual-machine.nix
   ];
 
   environment.systemPackages = with pkgs; [

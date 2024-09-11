@@ -40,9 +40,7 @@
         specialArgs = base.specialArgs // {
           hostname = "silverlight";
         };
-        modules = base.modules ++ [
-          ./modules/programs/desktop.nix
-        ];
+        modules = base.modules;
       };
 
       zenblade = nixpkgs.lib.nixosSystem {
