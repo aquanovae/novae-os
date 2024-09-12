@@ -2,6 +2,8 @@
 
   imports = [
     ./nvim.nix
+    ./starship.nix
+    ./zsh.nix
 
   ] ++ lib.optionals (hostname == "silverlight") [
     ./alacritty.nix

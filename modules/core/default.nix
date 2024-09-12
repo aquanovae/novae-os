@@ -2,10 +2,8 @@
 
   imports = [
     ./silent-boot.nix
-    ./starship.nix
     ./theme.nix
     ./user.nix
-    ./zsh.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
