@@ -52,7 +52,6 @@
         modules = base.modules ++ [
           ./modules/core/nvidia.nix
           ./modules/core/wireless.nix
-          ./modules/programs/laptop.nix
         ];
       };
 
