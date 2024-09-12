@@ -21,50 +21,43 @@
   };
 
   outputs = { nixpkgs, ... }@inputs: {
-    nixosConfigurations = let
-      base = {
-        specialArgs = {
-          username = "rico";
-          de-setup = "desktop";
-          inherit inputs;
-        };
-        modules = [
-          ./hosts
-          ./modules
-        ];
-      };
+    nixosConfigurations =
+    let
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./hosts
+        ./modules
+      ];
     in {
 
       silverlight = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = base.specialArgs // {
+        specialArgs = specialArgs // {
           hostname = "silverlight";
+          username = "rico";
+          de-setup = "desktop";
         };
-        modules = base.modules;
+        modules = modules;
       };
 
       zenblade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = base.specialArgs // {
+        specialArgs = specialArgs // {
           hostname = "zenblade";
+          username = "rico";
           de-setup = "laptop";
         };
-        modules = base.modules ++ [
-          ./modules/core/nvidia.nix
-          ./modules/core/wireless.nix
-        ];
+        modules = modules;
       };
 
       live-image = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = base.specialArgs // {
+        specialArgs = specialArgs // {
           hostname = "live-image";
           username = "nixos";
           de-setup = "minimal";
         };
-        modules = base.modules ++ [
-          ./modules/core/wireless.nix
-        ];
+        modules = modules;
       };
     };
   };

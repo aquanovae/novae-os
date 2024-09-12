@@ -1,9 +1,16 @@
-{ pkgs, ... }: {
+{ hostname, lib, pkgs, ... }: {
 
   imports = [
     ./silent-boot.nix
     ./theme.nix
     ./user.nix
+
+  ] ++ lib.optionals (hostname == "zenblade") [
+    ./nvidia.nix
+    ./wireless.nix
+
+  ] ++ lib.optionals (hostname == "live-image") [
+    ./wireless.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
