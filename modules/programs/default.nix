@@ -8,6 +8,7 @@
   ] ++ lib.optionals (hostname == "silverlight") [
     ./alacritty.nix
     ./coolercontrol.nix
+    ./firefox.nix
     ./gaming.nix
     ./image-editor.nix
     ./openrgb.nix
@@ -16,13 +17,13 @@
 
   ] ++ lib.optionals (hostname == "zenblade") [
     ./alacritty.nix
+    ./firefox.nix
     ./image-editor.nix
     ./spotify.nix
   ];
 
   environment.systemPackages = with pkgs; [
     devenv
-    firefox
     gh
     git
     grub2_efi
