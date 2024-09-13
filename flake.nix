@@ -35,7 +35,6 @@
         specialArgs = specialArgs // {
           hostname = "silverlight";
           username = "rico";
-          de-setup = "desktop";
         };
         modules = modules;
       };
@@ -45,7 +44,6 @@
         specialArgs = specialArgs // {
           hostname = "zenblade";
           username = "rico";
-          de-setup = "laptop";
         };
         modules = modules;
       };
@@ -64,7 +62,6 @@
         specialArgs = specialArgs // {
           hostname = "live-image";
           username = "nixos";
-          de-setup = "minimal";
         };
         modules = modules;
       };
