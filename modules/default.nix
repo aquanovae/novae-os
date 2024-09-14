@@ -1,11 +1,12 @@
-{ inputs, username, ... }: {
+{ hostname, inputs, lib, username, ... }: {
 
   imports = [
     ./core
-    ./desktop-environment
     ./programs
-
     inputs.home-manager.nixosModules.home-manager
+
+  ] ++ lib.optionals (hostname != "minix-server") [
+    ./desktop-environment
   ];
 
   home-manager.users.${username}.home = {
