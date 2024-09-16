@@ -7,7 +7,7 @@
 
       settings = {
         PermitRootLogin = "no";
-        PasswordAutentication = false;
+        PasswordAuthentication = false;
       };
     };
 
