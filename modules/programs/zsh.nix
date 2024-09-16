@@ -1,7 +1,7 @@
 { username, ... }:
 
 let
-  ricosPath = "/home/rico/ricos";
+  ricosPath = "/home/${username}/ricos";
 in {
 
   programs.zsh.enable = true;
