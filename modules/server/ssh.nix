@@ -1,12 +1,18 @@
-{ config, lib, ... }: {
+{ config, lib, username, ... }: {
 
   config = lib.mkIf config.ricos.server.ssh.enable {
     services.openssh = {
       enable = true;
+      ports = [ 777 ];
 
       settings = {
         PermitRootLogin = "no";
+        PasswordAutentication = false;
       };
     };
+
+    users.users.${username}.openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcGJirjfFVjalp0oCE9QxtSVkQm+eB3pqqeizfZwgXw rico"
+    ];
   };
 }
