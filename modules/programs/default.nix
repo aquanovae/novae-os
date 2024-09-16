@@ -1,25 +1,16 @@
-{ hostname, lib, pkgs, ... }: {
+{ config, lib, pkgs, ... }:
+
+let
+  cfg = config.ricos.programs;
+in {
 
   imports = [
+    ./alacritty.nix
+    ./openrgb.nix
     ./nvim.nix
     ./starship.nix
-    ./zsh.nix
-
-  ] ++ lib.optionals (hostname == "silverlight") [
-    ./alacritty.nix
-    ./coolercontrol.nix
-    ./firefox.nix
-    ./gaming.nix
-    ./image-editor.nix
-    ./openrgb.nix
-    ./spotify.nix
     ./virtual-machine.nix
-
-  ] ++ lib.optionals (hostname == "zenblade") [
-    ./alacritty.nix
-    ./firefox.nix
-    ./image-editor.nix
-    ./spotify.nix
+    ./zsh.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -29,9 +20,23 @@
     grub2_efi
     neofetch
     tree
+
+  ] ++ lib.optionals cfg.defaultDesktopApps.enable [
+    firefox
+    spotify
+
+  ] ++ lib.optionals cfg.gamingApps.enable [
+    lutris
+    prismlauncher
+
+  ] ++ lib.optionals cfg.imageEditingApps.enable [
+    inkscape
+    gimp
   ];
 
   programs = {
+    coolercontrol.enable = cfg.coolercontrol.enable;
     htop.enable = true;
+    steam.enable = cfg.gamingApps.enable;
   };
 }

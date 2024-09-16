@@ -1,10 +1,12 @@
-{ ... }: {
+{ config, lib, ... }: {
 
-  services.openssh = {
-    enable = true;
+  config = lib.mkIf config.ricos.server.ssh.enable {
+    services.openssh = {
+      enable = true;
 
-    settings = {
-      PermitRootLogin = "no";
+      settings = {
+        PermitRootLogin = "no";
+      };
     };
   };
 }

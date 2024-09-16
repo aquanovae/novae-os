@@ -1,4 +1,4 @@
-{ hostname, lib, pkgs, ... }: {
+{ hostname, lib, pkgs, username, ... }: {
 
   imports = [
     ./silent-boot.nix
@@ -30,6 +30,13 @@
         splashImage = ./grub-background.png;
       };
     };
+  };
+
+  home-manager.users.${username}.home = {
+    username = "${username}";
+    homeDirectory = "/home/${username}";
+
+    stateVersion = "24.05";
   };
 
   services.pipewire.enable = false;

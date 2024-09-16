@@ -4,6 +4,22 @@
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
   ];
 
+  ricos = {
+    desktopEnvironment = {
+      enable = true;
+      waybar.modules = "minimal";
+    };
+
+    programs = {
+      coolercontrol.enable = false;
+      defaultDesktopApps.enable = true;
+      gamingApps.enable = false;
+      imageEditingApps.enable = false;
+      openrgb.enable = false;
+      virtualisationApps.enable = false;
+    };
+  };
+
   boot = {
     kernelPackages = lib.mkForce pkgs.linuxPackages;
     loader = {
