@@ -40,11 +40,11 @@
     "openrgb-experimental": {
       "flake": false,
       "locked": {
-        "lastModified": 1726340979,
-        "narHash": "sha256-2Bb7ZTBXFd/sUr6v12Q96tO62/7BhIHJH2NUbyFLlz4=",
+        "lastModified": 1726427270,
+        "narHash": "sha256-5R+qu0+FFCMRKTmMbJF3sE9c3dHFyjpTtOgnhb9m9ZU=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "8c642ac92317560da3633032071ffdd514c7724b",
+        "rev": "d45d2bf7fc2a5ff490e34e2bfd58cc58b3af5b89",
         "type": "gitlab"
       },
       "original": {
@@ -56,11 +56,11 @@
     "ricos": {
       "flake": false,
       "locked": {
-        "lastModified": 1726405213,
-        "narHash": "sha256-rEWP7bx5yje2zI1IkNT8QRwvrLyThNIRUOdlPvmeJjc=",
+        "lastModified": 1726494664,
+        "narHash": "sha256-UjWhrSiH2JhOIuLEQUJjq94xFjYsDPDrGu85xhnqdJo=",
         "owner": "RicoProductions",
         "repo": "ricos",
-        "rev": "1f5914e7bef8102e87f656b49e5886f7f48d5bb9",
+        "rev": "e3c0ab2cc909efc2fbc09c01a3ea280d23d7792f",
         "type": "github"
       },
       "original": {
