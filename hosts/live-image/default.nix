@@ -1,4 +1,4 @@
-{ inputs, lib, modulesPath, pkgs, username, ... }: {
+{ lib, modulesPath, pkgs, ... }: {
 
   imports = [
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
