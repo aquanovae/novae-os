@@ -27,9 +27,5 @@
     };
   };
 
-  home-manager.users.${username}.home.file = {
-    "ricos".source = inputs.ricos;
-  };
-
   fonts.fontconfig.enable = true;
 }

@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ricos = {
-      url = "github:RicoProductions/ricos";
-      flake = false;
-    };
-
     openrgb-experimental = {
       url = "gitlab:CalcProgrammer1/OpenRGB";
       flake = false;
