@@ -10,13 +10,12 @@
       waybar.modules = "minimal";
     };
 
+    hardware = {
+      wireless.enable = true;
+    };
+
     programs = {
-      coolercontrol.enable = false;
       defaultDesktopApps.enable = true;
-      gamingApps.enable = false;
-      imageEditingApps.enable = false;
-      openrgb.enable = false;
-      virtualisationApps.enable = false;
     };
   };
 

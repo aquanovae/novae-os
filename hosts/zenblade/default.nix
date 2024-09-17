@@ -10,13 +10,15 @@
       waybar.modules = "laptop";
     };
 
+    hardware = {
+      # Nvidia currently fails to build. Probably upstream issue
+      nvidia.enable = false;
+      wireless.enable = true;
+    };
+
     programs = {
-      coolercontrol.enable = false;
       defaultDesktopApps.enable = true;
-      gamingApps.enable = false;
       imageEditingApps.enable = true;
-      openrgb.enable = false;
-      virtualisationApps.enable = false;
     };
   };
 

@@ -1,13 +1,11 @@
-{ hostname, inputs, lib, ... }: {
+{ inputs, lib, ... }: {
 
   imports = [
     ./core
     ./desktop-environment
+    ./hardware
     ./programs
     inputs.home-manager.nixosModules.home-manager
-
-  ] ++ lib.optionals (hostname == "minix-server") [
-    ./server
   ];
 
   options.ricos = {
