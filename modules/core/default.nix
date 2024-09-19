@@ -39,9 +39,12 @@
     support32Bit = true;
   };
 
-  time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "en_GB.UTF-8";
   console.keyMap = "fr_CH";
+  time = {
+    timeZone = "Europe/Zurich";
+    hardwareClockInLocalTime = true;
+  };
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {
