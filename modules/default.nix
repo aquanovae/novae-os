@@ -28,6 +28,7 @@
       imageEditingApps.enable = lib.mkEnableOption "image editing apps";
       openrgb.enable = lib.mkEnableOption "openrgb";
       virtualisationApps.enable = lib.mkEnableOption "virtualisation apps";
+      vscode.enable = lib.mkEnableOption "visual studio code";
     };
 
     server = {
