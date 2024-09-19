@@ -53,28 +53,11 @@
         "type": "gitlab"
       }
     },
-    "ricos": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1726494664,
-        "narHash": "sha256-UjWhrSiH2JhOIuLEQUJjq94xFjYsDPDrGu85xhnqdJo=",
-        "owner": "RicoProductions",
-        "repo": "ricos",
-        "rev": "e3c0ab2cc909efc2fbc09c01a3ea280d23d7792f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "RicoProductions",
-        "repo": "ricos",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "openrgb-experimental": "openrgb-experimental",
-        "ricos": "ricos"
+        "openrgb-experimental": "openrgb-experimental"
       }
     }
   },
