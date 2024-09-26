@@ -18,7 +18,8 @@ in {
 
       desktopfile=$(
         ls -1 ${desktopFilesPath} | \
-          grep -i $selection
+          grep -i $selection | \
+          sed 1q
       )
 
       dex "${desktopFilesPath}/$desktopfile"
