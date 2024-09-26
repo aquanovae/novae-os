@@ -73,9 +73,9 @@
       bind = , XF86AudioNext, exec, playerctl next
       bind = , XF86AudioPrev, exec, playerctl previous
 
-      bind = alt, XF86AudioPlay, exec, playerctl play-pause
-      bind = alt, XF86AudioNext, exec, playerctl next
-      bind = alt, XF86AudioPrev, exec, playerctl previous
+      bind = alt, XF86AudioMute, exec, playerctl play-pause
+      bind = alt, XF86AudioRaiseVolume, exec, playerctl next
+      bind = alt, XF86AudioLowerVolume, exec, playerctl previous
 
       binde = , XF86MonBrightnessUp, exec, brightnessctl set 5%+
       binde = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
