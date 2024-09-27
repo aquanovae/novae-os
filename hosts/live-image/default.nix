@@ -1,8 +1,23 @@
-{ inputs, lib, modulesPath, pkgs, username, ... }: {
+{ lib, modulesPath, pkgs, ... }: {
 
   imports = [
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
   ];
+
+  ricos = {
+    desktopEnvironment = {
+      enable = true;
+      waybar.modules = "minimal";
+    };
+
+    hardware = {
+      wireless.enable = true;
+    };
+
+    programs = {
+      defaultDesktopApps.enable = true;
+    };
+  };
 
   boot = {
     kernelPackages = lib.mkForce pkgs.linuxPackages;
@@ -12,7 +27,5 @@
     };
   };
 
-  home-manager.users.${username}.home.file = {
-    "ricos".source = inputs.ricos;
-  };
+  fonts.fontconfig.enable = true;
 }

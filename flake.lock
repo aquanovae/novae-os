@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1725703823,
-        "narHash": "sha256-tDgM4d8mLK0Hd6YMB2w1BqMto1XBXADOzPEaLl10VI4=",
+        "lastModified": 1726818100,
+        "narHash": "sha256-z2V74f5vXqkN5Q+goFlhbFXY/dNaBAyeLpr2bxu4Eic=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "208df2e558b73b6a1f0faec98493cb59a25f62ba",
+        "rev": "1bbc1a5a1f4de7401c92db85b2119ed21bb4139d",
         "type": "github"
       },
       "original": {
@@ -23,11 +23,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1725693463,
-        "narHash": "sha256-ZPzhebbWBOr0zRWW10FfqfbJlan3G96/h3uqhiFqmwg=",
+        "lastModified": 1726838390,
+        "narHash": "sha256-NmcVhGElxDbmEWzgXsyAjlRhUus/nEqPC5So7BOJLUM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "68e7dce0a6532e876980764167ad158174402c6f",
+        "rev": "944b2aea7f0a2d7c79f72468106bc5510cbf5101",
         "type": "github"
       },
       "original": {
@@ -40,41 +40,24 @@
     "openrgb-experimental": {
       "flake": false,
       "locked": {
-        "lastModified": 1725754464,
-        "narHash": "sha256-NHI576eeekZwpnDAENAYBGA54kWplPIHtcGceglXZMU=",
+        "lastModified": 1726427270,
+        "narHash": "sha256-5R+qu0+FFCMRKTmMbJF3sE9c3dHFyjpTtOgnhb9m9ZU=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "cc21027db2745a096175a88fd9fb5afc2adab6aa",
+        "rev": "d45d2bf7fc2a5ff490e34e2bfd58cc58b3af5b89",
         "type": "gitlab"
       },
       "original": {
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
         "type": "gitlab"
-      }
-    },
-    "ricos": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1725820801,
-        "narHash": "sha256-vVGUhTsxZA+rtj9eoLsH3BxSrHTd4XNf5oAJZfzLBWA=",
-        "owner": "RicoProductions",
-        "repo": "ricos",
-        "rev": "c8d6b9cb12153130f19906995213e41d62a4da13",
-        "type": "github"
-      },
-      "original": {
-        "owner": "RicoProductions",
-        "repo": "ricos",
-        "type": "github"
       }
     },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "openrgb-experimental": "openrgb-experimental",
-        "ricos": "ricos"
+        "openrgb-experimental": "openrgb-experimental"
       }
     }
   },

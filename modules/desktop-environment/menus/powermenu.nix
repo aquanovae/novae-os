@@ -1,4 +1,4 @@
-{ flags }: { lib, pkgs, ... }:
+{ flags }: { config, lib, pkgs, ... }:
 
 let
   menuOptions = [
@@ -19,51 +19,53 @@ let
   ];
 in {
 
-  environment.systemPackages = [ (pkgs.writeShellScriptBin "powermenu" ''
-    function runMenu {
-      case $(
-        pkill bemenu || \
-          echo "${lib.strings.concatStringsSep "\n" menuOptions}" | \
-          bemenu -p "󰐥" ${flags}
-      ) in
-        "󰤁 Poweroff")
-          systemctl poweroff;;
-        "󰔛 Timer")
-          setTimer;;
-        "󰤄 Suspend")
-          systemctl suspend;;
-        "󰜉 Reboot")
-          systemctl reboot;;
-        "󱑡 Reboot into firmware")
-          systemctl reboot --firmware-setup;;
-        "󰖳 Reboot inot windows")
-          grub-reboot 2 && systemctl reboot;;
-        *)
-          ;;
-      esac
-    }
+  config = lib.mkIf config.ricos.desktopEnvironment.enable {
+    environment.systemPackages = [ (pkgs.writeShellScriptBin "powermenu" ''
+      function runMenu {
+        case $(
+          pkill bemenu || \
+            echo "${lib.strings.concatStringsSep "\n" menuOptions}" | \
+            bemenu -p "󰐥" ${flags}
+        ) in
+          "󰤁 Poweroff")
+            systemctl poweroff;;
+          "󰔛 Timer")
+            setTimer;;
+          "󰤄 Suspend")
+            systemctl suspend;;
+          "󰜉 Reboot")
+            systemctl reboot;;
+          "󱑡 Reboot into firmware")
+            systemctl reboot --firmware-setup;;
+          "󰖳 Reboot inot windows")
+            grub-reboot 2 && systemctl reboot;;
+          *)
+            ;;
+        esac
+      }
 
-    function setTimer {
-      case $(
-        pkill bemenu || \
-          echo "${lib.strings.concatStringsSep "\n" timePresets}" | \
-          bemenu -p "󰔛" ${flags}
-      ) in
-        "󰔟 3 minutes")
-          shutdown 3;;
-        "󰔟 10 minutes")
-          shutdown 10;;
-        "󰔟 30 minutes")
-          shutdown 30;;
-        "󰔟 1 houre")
-          shutdown 60;;
-        "󱫧 Cancel")
-          shutdown -c;;
-        *)
-          ;;
-      esac
-    }
+      function setTimer {
+        case $(
+          pkill bemenu || \
+            echo "${lib.strings.concatStringsSep "\n" timePresets}" | \
+            bemenu -p "󰔛" ${flags}
+        ) in
+          "󰔟 3 minutes")
+            shutdown 3;;
+          "󰔟 10 minutes")
+            shutdown 10;;
+          "󰔟 30 minutes")
+            shutdown 30;;
+          "󰔟 1 houre")
+            shutdown 60;;
+          "󱫧 Cancel")
+            shutdown -c;;
+          *)
+            ;;
+        esac
+      }
 
-    runMenu
-  '') ];
+      runMenu
+    '') ];
+  };
 }

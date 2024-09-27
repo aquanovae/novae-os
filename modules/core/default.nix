@@ -1,11 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
 
   imports = [
     ./silent-boot.nix
-    ./starship.nix
     ./theme.nix
     ./user.nix
-    ./zsh.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -27,6 +25,13 @@
     };
   };
 
+  home-manager.users.${username}.home = {
+    username = "${username}";
+    homeDirectory = "/home/${username}";
+
+    stateVersion = "24.05";
+  };
+
   services.pipewire.enable = false;
 
   hardware.pulseaudio = {
@@ -34,9 +39,12 @@
     support32Bit = true;
   };
 
-  time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "en_GB.UTF-8";
   console.keyMap = "fr_CH";
+  time = {
+    timeZone = "Europe/Zurich";
+    hardwareClockInLocalTime = true;
+  };
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {
