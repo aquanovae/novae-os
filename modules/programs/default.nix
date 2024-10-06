@@ -19,13 +19,16 @@ in {
     git
     grub2_efi
     neofetch
+    pulseaudio
     tree
 
   ] ++ lib.optionals cfg.defaultDesktopApps.enable [
     firefox
+    pavucontrol
     spotify
 
   ] ++ lib.optionals cfg.gamingApps.enable [
+    discord
     lutris
     prismlauncher
 

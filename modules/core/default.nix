@@ -32,10 +32,16 @@
     stateVersion = "24.05";
   };
 
-  services.pipewire.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   hardware.pulseaudio = {
-    enable = true;
+    enable = false;
     support32Bit = true;
   };
 
