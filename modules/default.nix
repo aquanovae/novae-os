@@ -33,8 +33,6 @@
       vscode.enable = lib.mkEnableOption "visual studio code";
     };
 
-    server = {
-      ssh.enable = lib.mkEnableOption "ssh config";
-    };
+    server.enable = lib.mkEnableOption "server configs";
   };
 }
