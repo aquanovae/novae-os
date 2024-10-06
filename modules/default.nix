@@ -5,6 +5,8 @@
     ./desktop-environment
     ./hardware
     ./programs
+    ./server
+
     inputs.home-manager.nixosModules.home-manager
   ];
 
