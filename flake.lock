@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726818100,
-        "narHash": "sha256-z2V74f5vXqkN5Q+goFlhbFXY/dNaBAyeLpr2bxu4Eic=",
+        "lastModified": 1726989464,
+        "narHash": "sha256-Vl+WVTJwutXkimwGprnEtXc/s/s8sMuXzqXaspIGlwM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1bbc1a5a1f4de7401c92db85b2119ed21bb4139d",
+        "rev": "2f23fa308a7c067e52dfcc30a0758f47043ec176",
         "type": "github"
       },
       "original": {
@@ -23,11 +23,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1726838390,
-        "narHash": "sha256-NmcVhGElxDbmEWzgXsyAjlRhUus/nEqPC5So7BOJLUM=",
+        "lastModified": 1728193676,
+        "narHash": "sha256-PbDWAIjKJdlVg+qQRhzdSor04bAPApDqIv2DofTyynk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "944b2aea7f0a2d7c79f72468106bc5510cbf5101",
+        "rev": "ecbc1ca8ffd6aea8372ad16be9ebbb39889e55b6",
         "type": "github"
       },
       "original": {
@@ -40,11 +40,11 @@
     "openrgb-experimental": {
       "flake": false,
       "locked": {
-        "lastModified": 1726427270,
-        "narHash": "sha256-5R+qu0+FFCMRKTmMbJF3sE9c3dHFyjpTtOgnhb9m9ZU=",
+        "lastModified": 1728161211,
+        "narHash": "sha256-+spXyT4Roc6pLAfzTBBPoHIgc69lJ+gYMpiTs+NdTdY=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "d45d2bf7fc2a5ff490e34e2bfd58cc58b3af5b89",
+        "rev": "a7cdbb384490ad15010754f0d7b8baef3864eff4",
         "type": "gitlab"
       },
       "original": {
