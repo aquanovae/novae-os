@@ -5,9 +5,7 @@
   ];
 
   ricos = {
-    server = {
-      ssh.enable = true;
-    };
+    server.enable = true;
   };
 
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages;

@@ -1,6 +1,6 @@
 { config, lib, username, ... }: {
 
-  config = lib.mkIf config.ricos.server.ssh.enable {
+  config = lib.mkIf config.ricos.server.enable {
     services.openssh = {
       enable = true;
       ports = [ 777 ];

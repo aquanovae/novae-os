@@ -42,7 +42,7 @@ in {
 
       rbi = "sudo nix build ${ricosPath}/#nixosConfigurations.live-image.config.system.build.isoImage";
       rcg = "sudo nix-collect-garbage --delete-older-than 3d";
-      rfu = "sudo nix flake update ${ricosPath} && rrs";
+      rfu = "sudo nix flake update --commit-lock-file ${ricosPath} && rrs";
       rrs = "sudo nixos-rebuild switch --flake ${ricosPath}";
 
       tree = "tree --dirsfirst";
