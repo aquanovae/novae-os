@@ -19,6 +19,7 @@
       bind = super, J, movefocus, d
 
       bind = super, N, swapactiveworkspaces, 0 1
+      bind = super, F, fullscreen, 1
 
       bind = super, Return, exec, alacritty
 
