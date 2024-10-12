@@ -19,6 +19,7 @@
     programs = {
       defaultDesktopApps.enable = true;
       imageEditingApps.enable = true;
+      virtualisationApps.enable = true;
       vscode.enable = true;
     };
   };
