@@ -15,10 +15,12 @@ in {
 
   environment.systemPackages = with pkgs; [
     devenv
+    expect
     gh
     git
     grub2_efi
     neofetch
+    nix-output-monitor
     pulseaudio
     tree
 
