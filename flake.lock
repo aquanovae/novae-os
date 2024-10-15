@@ -23,11 +23,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1728627514,
-        "narHash": "sha256-r+SF9AnHrTg+bk6YszoKfV9lgyw+yaFUQe0dOjI0Z2o=",
+        "lastModified": 1728740863,
+        "narHash": "sha256-u+rxA79a0lyhG+u+oPBRtTDtzz8kvkc9a6SWSt9ekVc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c505ebf777526041d792a49d5f6dd4095ea391a7",
+        "rev": "a3f9ad65a0bf298ed5847629a57808b97e6e8077",
         "type": "github"
       },
       "original": {
@@ -40,11 +40,11 @@
     "openrgb-experimental": {
       "flake": false,
       "locked": {
-        "lastModified": 1728441248,
-        "narHash": "sha256-3yNhIytv7nyFVSoCXyzO1SdkuK0qjLEBH66NHTpH9CQ=",
+        "lastModified": 1728951872,
+        "narHash": "sha256-kNGpe4GcOuqFI4EvzWUgZ9B+UwVB3912zXdxNePAue0=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "d5ef41bb80f443ab0872211b3109d037912d3c3a",
+        "rev": "300abac9a822564fb808cfd94f930a84631fc49c",
         "type": "gitlab"
       },
       "original": {
