@@ -11,8 +11,7 @@
     };
 
     hardware = {
-      # Nvidia currently fails to build. Probably upstream issue
-      nvidia.enable = false;
+      #nvidia.enable = true;
       wireless.enable = true;
     };
 
