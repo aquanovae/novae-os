@@ -30,6 +30,8 @@ in {
     ];
 
     environment.systemPackages = with pkgs; [
+      linuxKernel.packages.linux_zen.kvmfr
+      looking-glass-client
       OVMFFull
       qemu
       (writeShellScriptBin "windows-vm" ''
@@ -40,8 +42,10 @@ in {
           -smp 12 \
           -m 10G \
           -device vfio-pci,host=01:00.0 \
+          -acpitable file=/home/rico/vm/battery.dat \
           -drive if=pflash,format=raw,readonly=on,file=/tmp/OVMF_CODE.fd \
           -drive if=pflash,format=raw,file=/tmp/OVMF_VARS.ms.fd \
+          -display sdl \
           ${diskPath}
       '')
     ];
