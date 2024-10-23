@@ -33,6 +33,7 @@ in {
     discord
     lutris
     prismlauncher
+    wowup-cf
 
   ] ++ lib.optionals cfg.imageEditingApps.enable [
     inkscape
