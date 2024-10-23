@@ -26,6 +26,7 @@ let
       -drive if=pflash,format=raw,file=/tmp/OVMF_VARS.ms.fd \
       ${diskPath} &
 
+    sleep 1
     looking-glass-client
   '';
 in {
