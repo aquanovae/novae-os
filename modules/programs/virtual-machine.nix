@@ -26,7 +26,7 @@ in {
     systemd.tmpfiles.rules = [
       "C /tmp/OVMF_VARS.ms.fd 0600 rico users - ${pkgs.OVMFFull.fd}/FV/OVMF_VARS.ms.fd"
       "C /tmp/OVMF_CODE.fd 0600 rico users - ${pkgs.OVMFFull.fd}/FV/OVMF_CODE.fd"
-      "z /dev/vfio/9 - rico users -"
+      "z /dev/vfio/11 - rico users -"
       "f /dev/shm/looking-glass 0660 rico users -"
     ];
 
