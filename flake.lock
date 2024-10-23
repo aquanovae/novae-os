@@ -21,6 +21,24 @@
         "type": "github"
       }
     },
+    "looking-glass-experimental": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728953530,
+        "narHash": "sha256-DBmCJRlB7KzbWXZqKA0X4VTpe+DhhYG5uoxsblPXVzg=",
+        "ref": "refs/heads/master",
+        "rev": "e25492a3a36f7e1fde6e3c3014620525a712a64a",
+        "revCount": 3389,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/gnif/LookingGlass"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/gnif/LookingGlass"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1728627514,
@@ -56,6 +74,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "looking-glass-experimental": "looking-glass-experimental",
         "nixpkgs": "nixpkgs",
         "openrgb-experimental": "openrgb-experimental"
       }
