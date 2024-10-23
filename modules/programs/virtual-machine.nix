@@ -50,13 +50,19 @@ in {
           -smp 12 \
           -m 10G \
           -vga virtio \
-          -display sdl \
+          -display none \
           -device vfio-pci,host=01:00.0 \
           -acpitable file=/home/rico/vm/battery.dat \
-          -drive if=pflash,format=raw,readonly=on,file=/tmp/OVMF_CODE.fd \
-          -drive if=pflash,format=raw,file=/tmp/OVMF_VARS.ms.fd \
           -device ivshmem-plain,memdev=ivshmem,bus=pcie.0 \
           -object memory-backend-file,id=ivshmem,share=on,mem-path=/dev/shm/looking-glass,size=32M \
+          -spice port=5900,disable-ticketing=on \
+          -device virtio-serial \
+          -chardev spicevmc,id=vdagent,debug=0,name=vdagent \
+          -device virtserialport,chardev=vdagent,name=com.redhat.spice.0 \
+          -device virtio-mouse-pci \
+          -device virtio-keyboard-pci \
+          -drive if=pflash,format=raw,readonly=on,file=/tmp/OVMF_CODE.fd \
+          -drive if=pflash,format=raw,file=/tmp/OVMF_VARS.ms.fd \
           ${diskPath}
       '')
     ];
