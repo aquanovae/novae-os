@@ -6,33 +6,53 @@
     ./hardware
     ./programs
     ./server
+    ./virtual-machine
 
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  options.ricos = {
+  options.ricos = with lib; {
     desktopEnvironment = {
-      enable = lib.mkEnableOption "desktop environment";
-      waybar.modules = lib.mkOption {
-        type = lib.types.enum [ "desktop" "laptop" "minimal" ];
+      enable = mkEnableOption "desktop environment";
+      waybar.modules = mkOption {
+        type = types.enum [ "desktop" "laptop" "minimal" ];
       };
     };
 
     hardware = {
-      nvidia.enable = lib.mkEnableOption "nvidia config";
-      wireless.enable = lib.mkEnableOption "wireless config";
+      nvidia.enable = mkEnableOption "nvidia config";
+      wireless.enable = mkEnableOption "wireless config";
     };
 
     programs = {
-      coolercontrol.enable = lib.mkEnableOption "coolercontrol";
-      defaultDesktopApps.enable = lib.mkEnableOption "default desktop apps";
-      gamingApps.enable = lib.mkEnableOption "gaming apps";
-      imageEditingApps.enable = lib.mkEnableOption "image editing apps";
-      openrgb.enable = lib.mkEnableOption "openrgb";
-      virtualisationApps.enable = lib.mkEnableOption "virtualisation apps";
-      vscode.enable = lib.mkEnableOption "visual studio code";
+      coolercontrol.enable = mkEnableOption "coolercontrol";
+      defaultDesktopApps.enable = mkEnableOption "default desktop apps";
+      gamingApps.enable = mkEnableOption "gaming apps";
+      imageEditingApps.enable = mkEnableOption "image editing apps";
+      openrgb.enable = mkEnableOption "openrgb";
+      vscode.enable = mkEnableOption "visual studio code";
     };
 
-    server.enable = lib.mkEnableOption "server configs";
+    server.enable = mkEnableOption "server configs";
+
+    virtualMachine = {
+      enable = mkEnableOption "virtual machine";
+      coreCount = mkOption {
+        type = types.str;
+      };
+      memory = mkOption {
+        type = types.str;
+      };
+      gpuPassthrough = {
+        enable = mkEnableOption "enable gpu passthrough for virtual machine";
+        gpuId = mkOption {
+          type = types.str;
+        };
+        gpuPciId = mkOption {
+          type = types.str;
+        };
+        fakeBattery.enable = mkEnableOption "fake battery for virtual machine";
+      };
+    };
   };
 }

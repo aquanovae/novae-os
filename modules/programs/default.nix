@@ -9,7 +9,6 @@ in {
     ./openrgb.nix
     ./nvim.nix
     ./starship.nix
-    ./virtual-machine.nix
     ./zsh.nix
   ];
 

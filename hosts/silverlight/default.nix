@@ -16,7 +16,13 @@
       gamingApps.enable = true;
       imageEditingApps.enable = true;
       openrgb.enable = true;
-      virtualisationApps.enable = true;
+    };
+
+    virtualMachine = {
+      enable = true;
+      coreCount = "20";
+      memory = "16G";
+      gpuPassthrough.enable = false;
     };
   };
 
