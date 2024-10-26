@@ -9,7 +9,7 @@ let
     "-cpu host,kvm=off"
     "-smp ${cfg.coreCount}"
     "-m ${cfg.memory}"
-    "-vga virtio"
+    "-device virtio-vga,edid=on,xres=1904,yres=1023"
     "-display none"
     "-device ivshmem-plain,memdev=ivshmem,bus=pcie.0"
     "-object memory-backend-file,id=ivshmem,share=on,mem-path=/dev/shm/looking-glass,size=32M"

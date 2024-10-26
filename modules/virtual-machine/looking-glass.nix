@@ -20,7 +20,6 @@ in {
 
       settings = {
         win = {
-          fullScreen = true;
           alerts = false;
         };
 
