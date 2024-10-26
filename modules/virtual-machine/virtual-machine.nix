@@ -3,7 +3,7 @@
 let
   cfg = config.ricos.virtualMachine;
 
-  qemuFlags = [
+  options = [
     "-machine q35,kernel_irqchip=on"
     "-accel kvm"
     "-cpu host,kvm=off"
@@ -29,10 +29,12 @@ let
     "-acpitable file=/home/rico/vm/battery.dat"
   ];
 
+  qemuOptions = "${lib.strings.concatStringsSep " " options}";
+
   diskPath = "/home/${username}/vm/win-10";
 
   launch-script = pkgs.writeShellScriptBin "windows-vm" ''
-    qemu-system-x86_64 "${lib.strings.concatStringsSep " " qemuFlags} ${diskPath}" &
+    qemu-system-x86_64  ${qemuOptions} ${diskPath} &
     sleep 1
     looking-glass-client
   '';
