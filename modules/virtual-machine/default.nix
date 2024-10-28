@@ -26,7 +26,7 @@ let
     "-device vfio-pci,host=${cfg.gpuPassthrough.gpuPciId}"
 
   ] ++ lib.optionals cfg.gpuPassthrough.fakeBattery.enable [
-    "-acpitable file=/home/rico/vm/battery.dat"
+    "-acpitable file=/home/${username}/vm/battery.dat"
   ];
 
   qemuOptions = "${lib.strings.concatStringsSep " " options}";
@@ -74,5 +74,9 @@ in {
       "C /tmp/OVMF_CODE.fd 0600 ${username} users - ${pkgs.OVMFFull.fd}/FV/OVMF_CODE.fd"
       "z /dev/vfio/11 - ${username} users -"
     ];
+
+    home-manager.users.${username}.home = lib.mkIf cfg.gpuPassthrough.fakeBattery.enable {
+      file."vm/battery.dat".source = ./fake-battery.dat;
+    };
   };
 }
