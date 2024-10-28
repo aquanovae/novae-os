@@ -26,6 +26,7 @@ in {
         input = {
           escapeKey = "KEY_INSERT";
           ignoreWindowsKeys = true;
+          grabKeyboard = false;
         };
       };
     };
