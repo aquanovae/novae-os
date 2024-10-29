@@ -33,11 +33,19 @@ let
 
   diskPath = "/home/${username}/vm/win-10";
 
-  launch-script = pkgs.writeShellScriptBin "windows-vm" ''
+  vm-launch-script = pkgs.writeShellScriptBin "windows-vm" ''
     qemu-system-x86_64  ${qemuOptions} ${diskPath} &
     sleep 1
     looking-glass-client
   '';
+
+  vm-desktop-file = pkgs.makeDesktopItem {
+    name = "windows-vm";
+    desktopName = "windows-vm";
+    type = "Application";
+    exec = "${vm-launch-script}/bin/windows-vm";
+    terminal = false;
+  };
 in {
 
   imports = [
@@ -48,7 +56,8 @@ in {
     environment.systemPackages = [
       pkgs.OVMFFull
       pkgs.qemu
-      launch-script
+      vm-launch-script
+      vm-desktop-file
     ];
 
     boot = lib.mkIf cfg.gpuPassthrough.enable {
@@ -75,8 +84,10 @@ in {
       "z /dev/vfio/11 - ${username} users -"
     ];
 
-    home-manager.users.${username}.home = lib.mkIf cfg.gpuPassthrough.fakeBattery.enable {
-      file."vm/battery.dat".source = ./fake-battery.dat;
+    home-manager.users.${username} = {
+      home = lib.mkIf cfg.gpuPassthrough.fakeBattery.enable {
+        file."vm/battery.dat".source = ./fake-battery.dat;
+      };
     };
   };
 }
