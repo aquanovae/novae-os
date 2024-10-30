@@ -19,15 +19,15 @@ in {
       package = looking-glass-client-experimental;
 
       settings = {
-        win = {
-          alerts = false;
-        };
-
         input = {
           escapeKey = "KEY_INSERT";
           ignoreWindowsKeys = true;
           grabKeyboard = false;
+          autoCapture = true;
         };
+
+        egl.vsync = true;
+        opengl.vsync = true;
       };
     };
 
