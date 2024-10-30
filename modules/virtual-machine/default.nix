@@ -21,6 +21,7 @@ let
     "-device virtio-keyboard-pci"
     "-drive if=pflash,format=raw,readonly=on,file=/tmp/OVMF_CODE.fd"
     "-drive if=pflash,format=raw,file=/tmp/OVMF_VARS.ms.fd"
+    "-nic user,id=nic0,smb=/home/${username}/rstore"
 
   ] ++ lib.optionals cfg.gpuPassthrough.enable [
     "-device vfio-pci,host=${cfg.gpuPassthrough.gpuPciId}"
@@ -55,7 +56,9 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
       pkgs.OVMFFull
-      pkgs.qemu
+      (pkgs.qemu.override {
+        smbdSupport = true;
+      })
       vm-launch-script
       vm-desktop-file
     ];
