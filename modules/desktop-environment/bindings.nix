@@ -27,6 +27,7 @@
 
       bind = super shift, Q, killactive
       bind = super, Escape, exec, powermenu
+      bind = super shift, Escape, exec, hyprlock
 
       bind = super, M, submap, move
       submap = move
