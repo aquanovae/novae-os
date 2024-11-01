@@ -13,16 +13,23 @@ in {
         };
 
         background = [{
+          monitor = "";
           path = "/home/rico/.config/hypr/wallpaper.png";
           blur_passes = 3;
           blur_size = 5;
         }];
 
-        input_field = [{
-          size = "200, 50";
+        input-field = [{
+          monitor = "";
+          position = "300, 0";
+          halign = "left";
+          valign = "center";
+          size = "200, 30";
           outline_thickness = 2;
-          outter_color = "rgb(${theme.blue})";
+          rounding = 5;
+          outer_color = "rgb(${theme.blue})";
           inner_color = "rgb(${theme.bg0})";
+          fade_on_empty = false;
         }];
       };
     };
