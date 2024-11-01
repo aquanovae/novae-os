@@ -10,6 +10,7 @@ in {
       settings = {
         general = {
           hide_cursor = true;
+          no_fade_in = true;
         };
 
         background = [
