@@ -1,9 +1,15 @@
+# ------------------------------------------------------------------------------
+# Common configuration for all menus
+# Import submodules
+# ------------------------------------------------------------------------------
 { config, lib, ... }:
 
 let
   theme = config.ricos.theme;
 
+  # Define bemenu flags used by all menus
   flags = lib.concatStringsSep " " [
+    "--single-instance"
     "--ignorecase"
     "--list -1 down"
     "--prefix '>'"
