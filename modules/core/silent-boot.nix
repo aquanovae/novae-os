@@ -1,7 +1,13 @@
+# ------------------------------------------------------------------------------
+# Hide log messages on boot
+# ------------------------------------------------------------------------------
 { pkgs, ... }: {
 
   boot = {
+    # Load GPU driver early to display splash screen
     kernelModules = [ "amdgpu" ];
+
+    # Log message suppression
     kernelParams = [
       "quiet"
       "splash"
@@ -13,6 +19,7 @@
     consoleLogLevel = 0;
     initrd.verbose = false;
 
+    # Splash screen config
     plymouth = {
       enable = true;
       theme = "nixos-bgrt";

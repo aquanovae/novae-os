@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------------
+# Laptop configuration
+# ------------------------------------------------------------------------------
 { ... }: {
 
   imports = [
@@ -11,6 +14,7 @@
     };
 
     hardware = {
+      # Unused because GPU is passed to virtual machine
       #nvidia.enable = true;
       wireless.enable = true;
     };

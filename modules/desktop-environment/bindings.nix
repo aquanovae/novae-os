@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------------
+# Key bindings for window manager
+# ------------------------------------------------------------------------------
 { config, lib, username, ... }: {
 
   config = lib.mkIf config.ricos.desktopEnvironment.enable {
