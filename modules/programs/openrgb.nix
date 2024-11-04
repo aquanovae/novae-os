@@ -15,6 +15,7 @@ in {
 
       hardware.openrgb = {
         enable = true;
+        motherboard = "amd";
 
         # Override package with experimental version
         package = pkgs.openrgb.overrideAttrs {
@@ -26,28 +27,30 @@ in {
               --replace "/usr/bin/env chmod" "${pkgs.coreutils}/bin/chmod"
           '';
         };
-        motherboard = "amd";
       };
     };
 
+    # Enable i2c access
     hardware.i2c.enable = true;
+    environment.systemPackages = [ pkgs.i2c-tools ];
+    users.users.${username}.extraGroups = [ "i2c" ];
 
     boot = {
+      # Load i2c drivers
       kernelModules = [ "i2c-dev" "i2c-piix4" ];
       kernelParams = [ "acpi_enforce_resources=lax" ];
     };
 
-    environment.systemPackages = [ pkgs.i2c-tools ];
-
-    users.users.${username}.extraGroups = [ "i2c" ];
-
     systemd.services.openrgb = {
       enable = true;
+
+      # Load profile on startup
       postStart = ''
         sleep 5
         ${openrgb} -p ${configPath}/purple.orp
       '';
 
+      # Turn off LEDs on shutdown
       preStop = ''
         ${openrgb} -p ${configPath}/off.orp
       '';

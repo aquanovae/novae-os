@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------------
+# Shell configuration
+# ------------------------------------------------------------------------------
 { username, ... }:
 
 let
@@ -14,9 +17,7 @@ in {
     shellAliases = {
       ".." = "cd ..";
 
-      cb = "cargo build";
-      cr = "cargo run";
-
+      # Aliases for git
       ga = "git add";
       gb = "git branch";
       gcm = "git commit -m";
@@ -37,9 +38,11 @@ in {
       gstp = "git stash pop";
       gsw = "git switch";
 
+      # Aliases for ls
       l = "ls -l --color=auto";
       ll = "ls -la --color=auto";
 
+      # Aliases for system management
       rbi = "sudo nix build ${ricosPath}/#nixosConfigurations.live-image.config.system.build.isoImage";
       rcg = "sudo nix-collect-garbage --delete-older-than 3d";
       rfu = "sudo nix flake update --commit-lock-file ${ricosPath} && rrs";

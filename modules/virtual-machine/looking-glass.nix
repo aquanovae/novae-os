@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------------
+# Looking glass configuration
+# ------------------------------------------------------------------------------
 { config, inputs, lib, pkgs, username, ... }:
 
 let
@@ -18,6 +21,7 @@ in {
       enable = true;
       package = looking-glass-client-experimental;
 
+      # Looking glass app settings
       settings = {
         input = {
           escapeKey = "KEY_INSERT";
@@ -35,6 +39,7 @@ in {
       looking-glass-kvmfr-experimental
     ];
 
+    # Give user access to shared memory file
     systemd.tmpfiles.rules = [
       "f /dev/shm/looking-glass 0660 ${username} users -"
     ];
