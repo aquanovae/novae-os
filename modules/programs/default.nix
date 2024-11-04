@@ -1,5 +1,9 @@
+# ------------------------------------------------------------------------------
+# Install programs
+# ------------------------------------------------------------------------------
 { config, lib, pkgs, ... }:
 
+# Warnings to be dealt with someday
 let
   cfg = config.ricos.programs;
 in {

@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------------
+# Openrgb configuration
+# ------------------------------------------------------------------------------
 { config, inputs, lib, pkgs, username, ... }:
 
 let
@@ -7,9 +10,13 @@ in {
 
   config = lib.mkIf config.ricos.programs.openrgb.enable {
     services = {
+      # Install udev rules
       udev.packages = [ pkgs.openrgb ];
+
       hardware.openrgb = {
         enable = true;
+
+        # Override package with experimental version
         package = pkgs.openrgb.overrideAttrs {
           version = "experimental";
           src = inputs.openrgb-experimental;

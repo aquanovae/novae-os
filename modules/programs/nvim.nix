@@ -1,8 +1,12 @@
+# ------------------------------------------------------------------------------
+# Neovim configuration
+# ------------------------------------------------------------------------------
 { pkgs, username, ... }: {
 
   home-manager.users.${username}.programs.neovim = {
     enable = true;
 
+    # Install plugins
     plugins = with pkgs.vimPlugins; [
       indent-blankline-nvim
       lsp-zero-nvim
@@ -15,6 +19,7 @@
       telescope-nvim
     ];
 
+    # Programs required by plugins
     extraPackages = with pkgs; [
       nixd
       rust-analyzer
@@ -46,7 +51,6 @@
 
       vim.g.mapleader = " "
       vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-
 
       require("onedark").setup {
         style = "darker",

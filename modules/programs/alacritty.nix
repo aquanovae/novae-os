@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------------
+# Alacritty configuration
+# ------------------------------------------------------------------------------
 { config, lib, username, ... }:
 
 let
@@ -9,11 +12,13 @@ in {
       enable = true;
 
       settings = {
+        # Set font
         font = {
           normal.family = "JetBrainsMono Nerd Font";
           size = 12;
         };
 
+        # Apply theme
         colors = {
           primary = {
             background = "#${theme.bg0}";
@@ -37,6 +42,7 @@ in {
           };
         };
 
+        # Enable semi-transparent window
         window.opacity = 0.83;
       };
     };

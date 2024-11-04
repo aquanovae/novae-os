@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------------
+# Desktop environment configuration
+# ------------------------------------------------------------------------------
 { config, lib, pkgs, username, ... }: {
 
   imports = [
@@ -9,27 +12,34 @@
   ];
 
   config = lib.mkIf config.ricos.desktopEnvironment.enable {
+    # Enable graphics
     hardware.opengl.enable = true;
 
     services = {
+      # Xserver has to be enabled even when using wayland
+      # due to confusing name scheme
       xserver = {
         enable = true;
         videoDrivers = [ "amdgpu" ];
+
+        # Enable display manager
         displayManager.gdm.enable = true;
       };
 
+      # Setup auto login
       displayManager.autoLogin = {
         enable = true;
         user = "${username}";
       };
     };
 
-    # Fix for autologin
+    # Fix black screen on boot when auto login is enabled
     systemd.services = {
       "getty@tty1".enable = false;
       "autovt@tty1".enable = false;
     };
 
+    # Required programs for desktop environment
     environment.systemPackages = with pkgs; [
       bemenu
       brightnessctl
@@ -45,6 +55,7 @@
       xwayland.enable = true;
     };
 
+    # Copy wallpaper to .config
     home-manager.users.${username}.home = {
       file.".config/hypr/wallpaper.png".source = ./wallpaper.png;
     };

@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------------
+# Task bar configuration
+# ------------------------------------------------------------------------------
 { config, lib, username, ... }:
 
 let
@@ -37,6 +40,7 @@ in {
           "memory"
           "cpu"
           "custom/gpu-info"
+
         ] ++ lib.optionals (cfg.modules == "laptop") [
           "custom/shutdowntime"
           "volume"
@@ -44,6 +48,7 @@ in {
           "memory"
           "cpu"
           "battery"
+
         ] ++ [
           "clock"
         ];

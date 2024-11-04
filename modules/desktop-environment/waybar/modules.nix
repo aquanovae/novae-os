@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------------
+# Task bar modules configuartion
+# ------------------------------------------------------------------------------
 { config, lib, pkgs, username, ... }:
 
 let
@@ -8,13 +11,19 @@ in {
 
   config = lib.mkIf config.ricos.desktopEnvironment.enable {
     home-manager.users.${username}.programs.waybar.settings.bar = {
+
+      # Decorative module displaying distro logo
       "custom/os-icon" = {
         format = "󱄅";
         tooltip = false;
       };
 
+      # Display window manager active workspaces
       "hyprland/workspaces" = {
         format = "{id} {windows}";
+        tooltip = false;
+
+        # Assign logo to programs
         window-rewrite-default = "󰘔";
         window-rewrite = {
           alacritty = "󰆍";
@@ -23,33 +32,33 @@ in {
           spotify = "󰓇";
           "title<steam>" = "󰓓";
         };
-        tooltip = false;
       };
 
-      "hyprland/submap" = {
-        format = "{}";
-        tooltip = false;
-      };
-
+      # Display currently playing track info
       "custom/playerctl-info" = {
+        format = "${toSpan "󰝚" theme.green} {}";
+        tooltip = false;
+        interval = 1;
+
         exec = pkgs.writeShellScript "playerctl-info" ''
           [[ $(playerctl status) == "Playing" ]] && \
             playerctl metadata -f "{{artist}} - {{title}}"
         '';
-        interval = 1;
-        format = "${toSpan "󰝚" theme.green} {}";
-        tooltip = false;
       };
 
+      # Display shutdown time if shutdown timer is active
       "custom/shutdowntime" = {
+        format = "{} 󱫌";
+        tooltip = false;
+        interval = 1;
+
         exec = pkgs.writeShellScript "shutdowntime" ''
           shutdown --show 2>&1 | grep -Eo "[0-9]{2}:[0-9]{2}"
         '';
-        interval = 1;
-        format = "{} 󱫌";
-        tooltip = false;
       };
 
+      # Display volume info
+      # To be switched to pipewire module
       pulseaudio = {
         format = "{volume}% ${toSpan "{icon}" theme.blue}";
         format-muted = "${toSpan "󰝟" theme.blue}";
@@ -57,6 +66,7 @@ in {
         tooltip = false;
       };
 
+      # Display disk usage
       disk = {
       format = "{percentage_used}% ${toSpan "󰋊" theme.blue}";
       path = "/";
@@ -64,29 +74,36 @@ in {
         tooltip = false;
       };
 
+      # Display memory usage
       memory = {
         format = "{used}GB ${toSpan "󰘚" theme.blue}";
         interval = 1;
         tooltip = false;
         };
 
+      # Display CPU usage
       cpu = {
         format = "{usage}% ${toSpan "󰍛" theme.blue}";
         interval = 1;
         tooltip = false;
       };
 
+      # Display GPU usage
       "custom/gpu-info" = {
+        format = "{} ${toSpan "󰾲" theme.blue}";
+        tooltip = false;
+        interval = 1;
+
+        # radeontop is rather slow
+        # Probably can find lighter program
         exec = pkgs.writeShellScript "gpu-info" ''
           radeontop -b 3 -d - -l 1 | \
             grep -Eo "gpu [0-9]+\." | \
             sed -e "s/gpu //" -e "s/\./%/"
         '';
-        interval = 1;
-        format = "{} ${toSpan "󰾲" theme.blue}";
-        tooltip = false;
       };
 
+      # Display battery status
       battery = {
         states = { low = 20; };
         format = "{capacity}% ${toSpan "{icon}" theme.blue}";
@@ -97,6 +114,7 @@ in {
         tooltip = false;
       };
 
+      # Display time and date on hover
       clock = {
         format = "{:%H:%M}";
         tooltip-format = "{:%d/%m/%Y}";
