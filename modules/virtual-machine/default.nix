@@ -6,7 +6,7 @@
 let
   cfg = config.ricos.virtualMachine;
 
-  qemuOptions = lib.concatStringsSep " " [
+  qemuOptions = lib.concatStringsSep " " ([
     "-machine q35,kernel_irqchip=on"
     "-accel kvm"
     "-cpu host,kvm=off"
@@ -43,7 +43,7 @@ let
 
   ] ++ lib.optionals cfg.gpuPassthrough.fakeBattery.enable [
     "-acpitable file=/home/${username}/vm/battery.dat"
-  ];
+  ]);
 
   diskPath = "/home/${username}/vm/win-10";
 
