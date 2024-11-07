@@ -42,6 +42,12 @@ in {
           };
         };
 
+        keyboard.bindings = [{
+          mods = "Control";
+          key = "Enter";
+          action = "SpawnNewInstance";
+        }];
+
         # Enable semi-transparent window
         window.opacity = 0.83;
       };
