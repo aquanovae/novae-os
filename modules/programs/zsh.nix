@@ -42,6 +42,9 @@ in {
       l = "ls -l --color=auto";
       ll = "ls -la --color=auto";
 
+      # Alias to run nix-shell with zsh
+      nix-shell = "nix-shell --run zsh";
+
       # Aliases for system management
       rbi = "sudo nix build ${ricosPath}/#nixosConfigurations.live-image.config.system.build.isoImage";
       rcg = "sudo nix-collect-garbage --delete-older-than 3d";
