@@ -9,7 +9,7 @@ let
   qemuOptions = lib.concatStringsSep " " ([
     "-machine q35,kernel_irqchip=on"
     "-accel kvm"
-    "-cpu host,kvm=off"
+    "-cpu host,topoext,kvm=off"
 
     # Vm hardware settings
     "-smp ${cfg.coreCount}"
@@ -80,6 +80,15 @@ in {
 
     # Capture GPU on boot
     boot = lib.mkIf cfg.gpuPassthrough.enable {
+      blacklistedKernelModules = [
+        "nouveau"
+        "nvidiafb"
+        "nvidia"
+        "nvidia-uvm"
+        "nvidia-drm"
+        "nvidia-modeset"
+      ];
+
       initrd.kernelModules = [
         "vfio-pci"
         "vfio"
