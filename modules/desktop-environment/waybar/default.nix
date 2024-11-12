@@ -4,7 +4,7 @@
 { config, lib, username, ... }:
 
 let
-  cfg = config.ricos.desktopEnvironment.waybar;
+  cfg = config.ricos.desktopEnvironment;
 in {
 
   imports = [
@@ -12,7 +12,7 @@ in {
     ./style.nix
   ];
 
-  config = lib.mkIf config.ricos.desktopEnvironment.enable {
+  config = lib.mkIf cfg.enable {
     home-manager.users.${username}.programs.waybar = {
       enable = true;
       systemd.enable = true;
@@ -30,18 +30,18 @@ in {
           "hyprland/submap"
         ];
 
-        modules-center = lib.mkIf (cfg.modules != "minimal") [
+        modules-center = lib.mkIf (cfg.mode != "minimal") [
           "custom/playerctl-info"
         ];
 
-        modules-right = lib.optionals (cfg.modules == "desktop") [
+        modules-right = lib.optionals (cfg.mode == "desktop") [
           "custom/shutdowntime"
           "disk"
           "memory"
           "cpu"
           "custom/gpu-info"
 
-        ] ++ lib.optionals (cfg.modules == "laptop") [
+        ] ++ lib.optionals (cfg.mode == "laptop") [
           "custom/shutdowntime"
           "volume"
           "disk"

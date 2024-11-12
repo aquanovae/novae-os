@@ -39,7 +39,7 @@ let
     "-nic user,id=nic0,smb=/home/${username}/rstore"
 
   ] ++ lib.optionals cfg.gpuPassthrough.enable [
-    "-device vfio-pci,host=${cfg.gpuPassthrough.gpuPciId}"
+    "-device vfio-pci,host=${cfg.gpuPassthrough.gpuPciId},romfile=/home/rico/vm/GA107.bin"
 
   ] ++ lib.optionals cfg.gpuPassthrough.fakeBattery.enable [
     "-acpitable file=/home/${username}/vm/battery.dat"

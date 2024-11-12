@@ -17,7 +17,7 @@
   options.ricos = with lib; {
     desktopEnvironment = {
       enable = mkEnableOption "desktop environment";
-      waybar.modules = mkOption {
+      mode = mkOption {
         type = types.enum [ "desktop" "laptop" "minimal" ];
       };
     };

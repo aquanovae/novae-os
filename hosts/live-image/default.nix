@@ -10,7 +10,7 @@
   ricos = {
     desktopEnvironment = {
       enable = true;
-      waybar.modules = "minimal";
+      mode = "minimal";
     };
 
     hardware = {
