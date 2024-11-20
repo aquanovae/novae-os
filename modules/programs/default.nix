@@ -12,6 +12,7 @@ in {
     ./alacritty.nix
     ./openrgb.nix
     ./nvim.nix
+    ./ranger.nix
     ./starship.nix
     ./zsh.nix
   ];

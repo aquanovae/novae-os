@@ -51,6 +51,7 @@
       # Open programs
       bind = super, Return, exec, alacritty
       bindr = super, Super_L, exec, quicklaunch
+      bind = super, E, exec, [float; size 75% 75%] alacritty -e ranger
 
       # Preselect split direction
       bind = alt, J, layoutmsg, preselect l
