@@ -19,10 +19,16 @@ in {
 
       settings.bar = {
         layer = "top";
-        position = "bottom";
-        margin = "0px 6px 6px";
         spacing = 7;
         reload_style_on_change = true;
+
+        position = if cfg.mode == "laptop"
+          then "top"
+          else "bottom";
+
+        margin = if cfg.mode == "laptop"
+          then "6px 6px 0px"
+          else "0px 6px 6px";
 
         modules-left = [
           "custom/os-icon"
