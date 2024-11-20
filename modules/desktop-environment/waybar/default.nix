@@ -49,7 +49,7 @@ in {
 
         ] ++ lib.optionals (cfg.mode == "laptop") [
           "custom/shutdowntime"
-          "volume"
+          "wireplumber"
           "disk"
           "memory"
           "cpu"

@@ -74,7 +74,7 @@ in {
         min-width: 75px;
       }
 
-      #pulseaudio,
+      #wireplumber,
       #disk,
       #memory,
       #cpu,
@@ -84,7 +84,7 @@ in {
         background-color: #${theme.bg0};
       }
 
-      #pulseaudio,
+      #wireplumber,
       #disk,
       #cpu,
       #battery,

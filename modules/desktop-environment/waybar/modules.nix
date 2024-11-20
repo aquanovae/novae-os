@@ -59,7 +59,7 @@ in {
 
       # Display volume info
       # To be switched to pipewire module
-      pulseaudio = {
+      wireplumber = {
         format = "{volume}% ${toSpan "{icon}" theme.blue}";
         format-muted = "${toSpan "󰝟" theme.blue}";
         format-icons = [ "󰕿" "󰖀" "󰕾" ];
