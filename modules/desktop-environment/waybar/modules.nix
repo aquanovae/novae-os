@@ -30,6 +30,8 @@ in {
           coolercontrol = "󰔐";
           discord = "󰋎";
           firefox = "󰈹";
+          gimp = "󱇣";
+          inkscape = "󰕙";
           openrgb = "󰌬";
           pavucontrol = "󰙪";
           spotify = "󰓇";
