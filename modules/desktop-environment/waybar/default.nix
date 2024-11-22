@@ -33,7 +33,7 @@ in {
         modules-left = [
           "custom/os-icon"
           "hyprland/workspaces"
-          "hyprland/submap"
+          "custom/new-window-direction"
         ];
 
         modules-center = lib.mkIf (cfg.mode != "minimal") [

@@ -54,8 +54,8 @@
       bind = super, E, exec, [float; size 75% 75%] alacritty -e ranger
 
       # Preselect split direction
-      bind = alt, J, layoutmsg, preselect l
-      bind = alt, K, layoutmsg, preselect r
+      bind = alt, H, exec, hyprctl keyword dwindle:force_split 1
+      bind = alt, L, exec, hyprctl keyword dwindle:force_split 2
 
       # Close program
       bind = super shift, Q, killactive

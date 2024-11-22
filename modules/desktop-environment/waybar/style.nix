@@ -62,10 +62,11 @@ in {
         color: #${theme.bg0};
       }
 
-      #submap {
-        padding: 0px 5px;
-        color: #${theme.red};
+      #custom-new-window-direction {
+        font-size: 21px;
+        color: #${theme.magenta};
         background-color: #${theme.bg0};
+        min-width: 30px;
       }
 
       #custom-shutdowntime {
