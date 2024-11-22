@@ -27,10 +27,13 @@ in {
         window-rewrite-default = "󰘔";
         window-rewrite = {
           alacritty = "󰆍";
-          coolercontrol = "󰄪";
+          coolercontrol = "󰔐";
+          discord = "󰋎";
           firefox = "󰈹";
+          openrgb = "󰌬";
+          pavucontrol = "󰙪";
           spotify = "󰓇";
-          "title<steam>" = "󰓓";
+          steam = "󰓓";
         };
       };
 
