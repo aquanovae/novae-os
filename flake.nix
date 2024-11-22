@@ -2,6 +2,7 @@
   description = "RicOS config";
 
   inputs = {
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
     home-manager = {
@@ -23,55 +24,62 @@
     };
   };
 
-  outputs = { nixpkgs, ... }@inputs: {
-    nixosConfigurations =
-    let
-      specialArgs = { inherit inputs; };
+  outputs = { nixpkgs, self, ... }@inputs: let
+
+    inherit (self) outputs;
+    system = "x86_64-linux";
+
+  in {
+    nixosConfigurations = let
+
+      specialArgs = { inherit inputs outputs system; };
       modules = [
         ./hosts
         ./modules
       ];
-    in {
 
-      # Desktop computer
+    in {
       silverlight = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system modules;
         specialArgs = specialArgs // {
           hostname = "silverlight";
           username = "rico";
         };
-        modules = modules;
       };
 
-      # Laptop
       zenblade = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system modules;
         specialArgs = specialArgs // {
           hostname = "zenblade";
           username = "rico";
         };
-        modules = modules;
       };
 
-      # Home server
       minix-server = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system modules;
         specialArgs = specialArgs // {
           hostname = "minix-server";
           username = "nix-host";
         };
-        modules = modules;
       };
 
-      # Custom ISO image
       live-image = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system modules;
         specialArgs = specialArgs // {
           hostname = "live-image";
           username = "nixos";
         };
-        modules = modules;
       };
     };
+
+    packages.${system} = let
+
+      pkgs = import nixpkgs { inherit system; };
+      packages = [
+      ];
+
+    in nixpkgs.lib.attrsets.genAttrs packages (
+      packageName: pkgs.callPackage ./packages/${packageName}.nix { inherit inputs; }
+    );
   };
 }
