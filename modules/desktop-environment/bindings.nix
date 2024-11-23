@@ -51,7 +51,10 @@
       # Open programs
       bind = super, Return, exec, alacritty
       bind = super, O, exec, quicklaunch
-      bind = super, E, exec, [float; size 75% 75%] alacritty -e ranger
+
+      # Special workspace for file explorer
+      bind = super, E, exec, [workspace ranger; float; size 75% 75%] pgrep ranger || alacritty -e ranger
+      bind = super, E, togglespecialworkspace, ranger
 
       # Preselect split direction
       bind = alt, H, exec, hyprctl keyword dwindle:force_split 1
