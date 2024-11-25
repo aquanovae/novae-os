@@ -15,18 +15,19 @@
 
     hardware = {
       # Unused because GPU is passed to virtual machine
-      #nvidia.enable = true;
+      nvidia.enable = true;
       wireless.enable = true;
     };
 
     programs = {
       defaultDesktopApps.enable = true;
+      gamingApps.enable = true;
       imageEditingApps.enable = true;
       vscode.enable = true;
     };
 
     virtualMachine = {
-      enable = true;
+      #enable = true;
       coreCount = "12";
       memory = "10G";
       gpuPassthrough = {

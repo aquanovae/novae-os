@@ -20,7 +20,12 @@
       # due to confusing name scheme
       xserver = {
         enable = true;
-        videoDrivers = [ "amdgpu" ];
+        videoDrivers = [
+          "amdgpu"
+
+        ] ++ lib.optionals config.ricos.hardware.nvidia.enable [
+          "nvidia"
+        ];
 
         # Enable display manager
         displayManager.gdm.enable = true;
