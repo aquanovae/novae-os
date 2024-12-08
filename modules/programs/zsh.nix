@@ -17,6 +17,10 @@ in {
     shellAliases = {
       ".." = "cd ..";
 
+      # Aliases for cargo
+      cb = "cargo build";
+      cr = "cargo run";
+
       # Aliases for git
       ga = "git add";
       gb = "git branch";
@@ -43,7 +47,8 @@ in {
       ll = "ls -la --color=auto";
 
       # Alias to run nix-shell with zsh
-      nix-shell = "nix-shell --run zsh";
+      ns = "nix-shell --run zsh";
+      nsp = "nix-shell --run -p";
 
       # Aliases for system management
       rbi = "sudo nix build ${ricosPath}/#nixosConfigurations.live-image.config.system.build.isoImage";
