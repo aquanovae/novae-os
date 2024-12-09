@@ -14,7 +14,7 @@
 
   config = lib.mkIf config.ricos.desktopEnvironment.enable {
     # Enable graphics
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
 
     services = {
       # Xserver has to be enabled even when using wayland
