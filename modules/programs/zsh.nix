@@ -15,8 +15,6 @@ in {
     enableCompletion = true;
 
     shellAliases = {
-      ".." = "cd ..";
-
       # Aliases for cargo
       cb = "cargo build";
       cr = "cargo run";
@@ -56,7 +54,11 @@ in {
       rfu = "sudo nix flake update --commit-lock-file ${ricosPath} && rrs";
       rrs = "sudo nixos-rebuild switch --flake ${ricosPath} --impure";
 
+      # Other aliases
+      ".." = "cd ..";
+      nsg = "l /nix/store | grep";
       tree = "tree --dirsfirst";
+
     };
   };
 }
