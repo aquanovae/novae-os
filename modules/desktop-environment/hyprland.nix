@@ -15,7 +15,12 @@ in {
 
       settings = {
         windowrulev2 = [
-          "workspace rconfig title:[rconfig]"
+
+          "workspace rconfig, title:[rconfig]"
+
+          "workspace ranger, title:[ranger]"
+          "float, title:[ranger]"
+          "size 75% 75%, title:[ranger]"
         ];
 
         monitor = [

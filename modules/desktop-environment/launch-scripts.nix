@@ -1,5 +1,20 @@
 { pkgs, ... }: let 
 
+  ranger = pkgs.writeShellScriptBin "launch-ranger" ''
+    
+    condition() {
+      hyprctl -j clients | \
+        jq ".[].title" | \
+        grep "ranger"
+    }
+
+    launch() {
+      alacritty -T ranger -e ranger &
+    }
+
+    condition || launch
+  '';
+
   rconfig = pkgs.writeShellScriptBin "launch-rconfig" ''
 
     condition() {
@@ -19,6 +34,7 @@
 in {
 
   environment.systemPackages = [
+    ranger
     rconfig
   ];
 }

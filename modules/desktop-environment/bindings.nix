@@ -57,7 +57,7 @@
       bind = super, R, togglespecialworkspace, rconfig
 
       # Special workspace for file explorer
-      bind = super, E, exec, [workspace ranger; float; size 75% 75%] pgrep ranger || alacritty -e ranger
+      bind = super, E, exec, launch-ranger
       bind = super, E, togglespecialworkspace, ranger
 
       # Preselect split direction
