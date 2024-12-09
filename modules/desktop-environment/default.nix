@@ -63,7 +63,15 @@
 
     # Copy wallpaper to .config
     home-manager.users.${username}.home = {
-      file.".config/hypr/wallpaper.png".source = ./wallpaper.png;
+      file.".config/hypr/wallpaper.png"
+        .source = ./wallpaper.png;
+
+      pointerCursor = {
+        package = pkgs.lyra-cursors;
+        name = "LyraP-cursors";
+        x11.enable = true;
+        gtk.enable = true;
+      };
     };
   };
 }
