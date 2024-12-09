@@ -20,6 +20,7 @@ in {
   environment.systemPackages = with pkgs; [
     devenv
     expect
+    jq
     gh
     git
     grub2_efi

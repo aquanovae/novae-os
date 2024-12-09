@@ -7,6 +7,7 @@
     ./bindings.nix
     ./hyprland.nix
     ./hyprlock.nix
+    ./launch-scripts.nix
     ./menus
     ./waybar
   ];

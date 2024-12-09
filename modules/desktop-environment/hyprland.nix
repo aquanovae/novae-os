@@ -14,6 +14,10 @@ in {
       enable = true;
 
       settings = {
+        windowrulev2 = [
+          "workspace rconfig title:[rconfig]"
+        ];
+
         monitor = [
           # Monitors for desktop computer
           "DP-1, 2560x1440@165, 0x0, 1"

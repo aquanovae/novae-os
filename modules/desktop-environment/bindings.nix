@@ -52,6 +52,10 @@
       bind = super, Return, exec, alacritty
       bind = super, O, exec, quicklaunch
 
+      # Special workspace to edit config
+      bind = super, R, exec, launch-rconfig
+      bind = super, R, togglespecialworkspace, rconfig
+
       # Special workspace for file explorer
       bind = super, E, exec, [workspace ranger; float; size 75% 75%] pgrep ranger || alacritty -e ranger
       bind = super, E, togglespecialworkspace, ranger
