@@ -21,12 +21,14 @@
       openrgb.enable = true;
     };
 
+    /*
     virtualMachine = {
       enable = true;
       coreCount = "20";
       memory = "16G";
       gpuPassthrough.enable = false;
     };
+    */
   };
 
   system.stateVersion = "24.05";
