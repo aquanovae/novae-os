@@ -1,11 +1,13 @@
 # ------------------------------------------------------------------------------
 # Install programs
 # ------------------------------------------------------------------------------
-{ config, lib, pkgs, ... }:
+{ config, lib, outputs, pkgs, system, ... }:
 
 # Warnings to be dealt with someday
 let
   cfg = config.ricos.programs;
+
+  extraPkgs = outputs.packages.${system};
 in {
 
   imports = [
@@ -18,6 +20,7 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
+    extraPkgs.daily-playlist
     devenv
     expect
     jq
