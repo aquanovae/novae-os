@@ -25,7 +25,7 @@
 
     launch() {
       alacritty -T rconfig --working-directory /home/rico/ricos &
-      sleep 0.01
+      sleep 0.03
       alacritty -T rconfig --working-directory /home/rico/ricos -e vim &
     }
 
