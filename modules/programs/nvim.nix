@@ -21,6 +21,7 @@
 
     # Programs required by plugins
     extraPackages = with pkgs; [
+      cargo
       ccls
       nixd
       rust-analyzer
