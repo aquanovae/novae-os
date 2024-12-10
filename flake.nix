@@ -10,6 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    daily-playlist = {
+      url = "github:RicoProductions/daily-playlist";
+      flake = false;
+    };
+
     # Experimental has a controller for dram rgb
     # To switch to stable when released
     openrgb-experimental = {
@@ -76,6 +81,7 @@
 
       pkgs = import nixpkgs { inherit system; };
       packages = [
+        "daily-playlist"
       ];
 
     in nixpkgs.lib.attrsets.genAttrs packages (

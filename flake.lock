@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "daily-playlist": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733723790,
+        "narHash": "sha256-neUnDPLIm4ybIVI8aLd9i1ynIbVYYSn7//w/vhh9jL8=",
+        "owner": "RicoProductions",
+        "repo": "daily-playlist",
+        "rev": "06cc7a7fb6d7815943aebd8c07fe7d6d84c5b9fa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "RicoProductions",
+        "repo": "daily-playlist",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -72,6 +88,7 @@
     },
     "root": {
       "inputs": {
+        "daily-playlist": "daily-playlist",
         "home-manager": "home-manager",
         "looking-glass-experimental": "looking-glass-experimental",
         "nixpkgs": "nixpkgs",
