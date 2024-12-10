@@ -54,11 +54,11 @@
 
       # Special workspace to edit config
       bind = super, R, exec, launch-rconfig
-      bind = super, R, togglespecialworkspace, rconfig
+      bind = super, R, togglespecialworkspace, cfg
 
       # Special workspace for file explorer
       bind = super, E, exec, launch-ranger
-      bind = super, E, togglespecialworkspace, ranger
+      bind = super, E, togglespecialworkspace, exp
 
       # Preselect split direction
       bind = alt, H, exec, hyprctl keyword dwindle:force_split 1

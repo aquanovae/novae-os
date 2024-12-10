@@ -16,9 +16,9 @@ in {
       settings = {
         windowrulev2 = [
 
-          "workspace rconfig, title:(rconfig)"
+          "workspace cfg, title:(rconfig)"
 
-          "workspace ranger, title:(ranger)"
+          "workspace exp, title:(ranger)"
           "float, title:(ranger]"
           "size 75% 75%, title:(ranger)"
 

@@ -20,8 +20,11 @@ in {
 
       # Display window manager active workspaces
       "hyprland/workspaces" = {
-        format = "{id} {windows}";
+        format = "{name} {windows}";
         tooltip = false;
+
+        show-special = true;
+        special-visible-only = true;
 
         # Assign logo to programs
         window-rewrite-default = "󰘔";
