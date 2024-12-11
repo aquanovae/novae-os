@@ -16,6 +16,7 @@ in {
     ./nvim.nix
     ./ranger.nix
     ./starship.nix
+    ./spotify.nix
     ./zsh.nix
   ];
 
@@ -35,7 +36,6 @@ in {
   ] ++ lib.optionals cfg.defaultDesktopApps.enable [
     firefox
     pavucontrol
-    spotify
 
   ] ++ lib.optionals cfg.gamingApps.enable [
     discord
