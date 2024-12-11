@@ -39,6 +39,8 @@ in {
           pavucontrol = "󰙪";
           spotify = "󰓇";
           steam = "󰓓";
+          "title<ranger>" = "󰝰";
+          "title<rconfig>" = "󱇧";
         };
       };
 
