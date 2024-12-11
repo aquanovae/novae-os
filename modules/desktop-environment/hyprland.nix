@@ -19,7 +19,7 @@ in {
           "workspace cfg, title:(rconfig)"
 
           "workspace exp, title:(ranger)"
-          "float, title:(ranger]"
+          "float, title:(ranger)"
           "size 75% 75%, title:(ranger)"
 
           "tile, class:(Alacritty)"
