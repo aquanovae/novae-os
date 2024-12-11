@@ -56,7 +56,7 @@ in {
 
       # Other aliases
       ".." = "cd ..";
-      nsg = "l /nix/store | grep";
+      nsg = "l /nix/store | grep -i";
       tree = "tree --dirsfirst";
 
     };
