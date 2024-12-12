@@ -23,8 +23,6 @@ in {
           "size 75% 75%, title:(ranger)"
 
           "tile, class:(Alacritty)"
-
-          "workspace 5, title:(steam)"
         ];
 
         monitor = [
