@@ -1,21 +1,23 @@
-{ inputs, pkgs, ... }: {
+{ config, inputs, lib, pkgs, ... }: {
 
   imports = [
     inputs.spicetify-nix.nixosModules.default
   ];
 
-  programs.spicetify = let
+  config = lib.mkIf config.ricos.programs.spotify.enable {
+    programs.spicetify = let
 
-     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-  in {
+       spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in {
 
-    enable = true;
+      enable = true;
 
-    theme = spicePkgs.themes.lucid;
-    colorScheme = "dark";
+      theme = spicePkgs.themes.lucid;
+      colorScheme = "dark";
 
-    enabledExtensions = with spicePkgs.extensions; [
-      hidePodcasts
-    ];
+      enabledExtensions = with spicePkgs.extensions; [
+        hidePodcasts
+      ];
+    };
   };
 }

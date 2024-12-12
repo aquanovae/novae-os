@@ -21,8 +21,9 @@
 
     programs = {
       defaultDesktopApps.enable = true;
-      gamingApps.enable = true;
       imageEditingApps.enable = true;
+      spotify.enable = true;
+      steam.enable = true;
       vscode.enable = true;
     };
 

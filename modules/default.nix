@@ -30,9 +30,10 @@
     programs = {
       coolercontrol.enable = mkEnableOption "coolercontrol";
       defaultDesktopApps.enable = mkEnableOption "default desktop apps";
-      gamingApps.enable = mkEnableOption "gaming apps";
       imageEditingApps.enable = mkEnableOption "image editing apps";
       openrgb.enable = mkEnableOption "openrgb";
+      spotify.enable = mkEnableOption "spotify";
+      steam.enable = mkEnableOption "steam";
       vscode.enable = mkEnableOption "visual studio code";
     };
 

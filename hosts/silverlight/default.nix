@@ -16,9 +16,10 @@
     programs = {
       coolercontrol.enable = true;
       defaultDesktopApps.enable = true;
-      gamingApps.enable = true;
       imageEditingApps.enable = true;
       openrgb.enable = true;
+      spotify.enable = true;
+      steam.enable = true;
     };
 
     /*

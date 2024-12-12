@@ -22,14 +22,10 @@ in {
 
   environment.systemPackages = with pkgs; [
     extraPkgs.daily-playlist
-    devenv
-    expect
     jq
     gh
     git
-    grub2_efi
     neofetch
-    nix-output-monitor
     pulseaudio
     tree
 
@@ -37,23 +33,14 @@ in {
     firefox
     pavucontrol
 
-  ] ++ lib.optionals cfg.gamingApps.enable [
-    discord
-    lutris
-    prismlauncher
-    wowup-cf
-
   ] ++ lib.optionals cfg.imageEditingApps.enable [
     inkscape
     gimp
-
-  ] ++ lib.optionals cfg.vscode.enable [
-    vscode
   ];
 
   programs = {
     coolercontrol.enable = cfg.coolercontrol.enable;
     htop.enable = true;
-    steam.enable = cfg.gamingApps.enable;
+    steam.enable = cfg.steam.enable;
   };
 }
