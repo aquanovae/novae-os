@@ -22,7 +22,6 @@
       timeout = 2;
       grub = {
         enable = true;
-        default = "saved";
         efiSupport = true;
         device = "nodev";
         useOSProber = true;
