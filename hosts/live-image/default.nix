@@ -7,6 +7,8 @@
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
   ];
 
+  networking.hostName = "live-image";
+
   ricos = {
     desktopEnvironment = {
       enable = true;

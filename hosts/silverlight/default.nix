@@ -7,6 +7,8 @@
     ./hardware-configuration.nix
   ];
 
+  networking.hostName = "silverlight";
+
   ricos = {
     desktopEnvironment = {
       enable = true;

@@ -7,6 +7,8 @@
     ./hardware-configuration.nix
   ];
 
+  networking.hostName = "minix-server";
+
   ricos = {
     server.enable = true;
   };

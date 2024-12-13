@@ -34,57 +34,61 @@
     };
   };
 
+
   outputs = { nixpkgs, self, ... }@inputs: let
 
     inherit (self) outputs;
     system = "x86_64-linux";
 
   in {
+
     nixosConfigurations = let
 
-      specialArgs = { inherit inputs outputs system; };
-      modules = [
-        ./hosts
-        ./modules
-      ];
+      specialArgs = { 
+        inherit inputs outputs system;
+        username = "aquanovae";
+      };
 
     in {
+
       silverlight = nixpkgs.lib.nixosSystem {
-        inherit system modules;
-        specialArgs = specialArgs // {
-          hostname = "silverlight";
-          username = "rico";
-        };
+        inherit system specialArgs;
+        modules = [
+          ./hosts/silverlight
+          ./modules
+        ];
       };
 
       zenblade = nixpkgs.lib.nixosSystem {
-        inherit system modules;
-        specialArgs = specialArgs // {
-          hostname = "zenblade";
-          username = "rico";
-        };
+        inherit system specialArgs;
+        modules = [
+          ./hosts/zenblade
+          ./modules
+        ];
       };
 
       minix-server = nixpkgs.lib.nixosSystem {
-        inherit system modules;
-        specialArgs = specialArgs // {
-          hostname = "minix-server";
-          username = "nix-host";
-        };
+        inherit system specialArgs;
+        modules = [
+          ./hosts/minix-server
+          ./modules
+        ];
       };
 
       live-image = nixpkgs.lib.nixosSystem {
-        inherit system modules;
-        specialArgs = specialArgs // {
-          hostname = "live-image";
-          username = "nixos";
-        };
+        inherit system specialArgs;
+        modules = [
+          ./hosts/live-image
+          ./modules
+        ];
       };
     };
+
 
     packages.${system} = let
 
       pkgs = import nixpkgs { inherit system; };
+
       packages = [
         "daily-playlist"
       ];
