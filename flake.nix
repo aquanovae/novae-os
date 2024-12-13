@@ -1,5 +1,5 @@
 {
-  description = "RicOS config";
+  description = "Novae OS config";
 
   inputs = {
 
@@ -16,7 +16,7 @@
     };
 
     daily-playlist = {
-      url = "github:RicoProductions/daily-playlist";
+      url = "github:aquanovae/daily-playlist";
       flake = false;
     };
 

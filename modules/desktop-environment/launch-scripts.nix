@@ -1,4 +1,4 @@
-{ pkgs, ... }: let 
+{ pkgs, username, ... }: let 
 
   ranger = pkgs.writeShellScriptBin "launch-ranger" ''
     
@@ -24,9 +24,9 @@
     }
 
     launch() {
-      alacritty -T rconfig --working-directory /home/rico/ricos &
+      alacritty -T rconfig --working-directory /home/${username}/novae-os &
       sleep 0.03
-      alacritty -T rconfig --working-directory /home/rico/ricos -e vim &
+      alacritty -T rconfig --working-directory /home/${username}/novae-os -e vim &
     }
 
     condition || launch

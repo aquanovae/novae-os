@@ -6,7 +6,7 @@
 let
   theme = config.ricos.theme;
 
-  wallpaper = "/home/rico/.config/hypr/wallpaper.png";
+  wallpaper = "/home/${username}/.config/hypr/wallpaper.png";
 in {
 
   config = lib.mkIf config.ricos.desktopEnvironment.enable {
