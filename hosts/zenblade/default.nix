@@ -7,6 +7,8 @@
     ./hardware-configuration.nix
   ];
 
+  networking.hostName = "zenblade";
+
   ricos = {
     desktopEnvironment = {
       enable = true;
