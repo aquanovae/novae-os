@@ -5,13 +5,13 @@
       "locked": {
         "lastModified": 1734085610,
         "narHash": "sha256-Krrd0zVkorrAPgaYQbDATkADUQI+STWQRTUEwvFhs/s=",
-        "owner": "RicoProductions",
+        "owner": "aquanovae",
         "repo": "daily-playlist",
         "rev": "ec1371dd46ea8f2f86c52f16206448b39283c4ee",
         "type": "github"
       },
       "original": {
-        "owner": "RicoProductions",
+        "owner": "aquanovae",
         "repo": "daily-playlist",
         "type": "github"
       }
