@@ -22,13 +22,9 @@ in {
         spacing = 7;
         reload_style_on_change = true;
 
-        position = if cfg.mode == "laptop"
-          then "top"
-          else "bottom";
+        position = "top";
 
-        margin = if cfg.mode == "laptop"
-          then "6px 6px 0px"
-          else "0px 6px 6px";
+        margin = "6px 6px 0px";
 
         modules-left = [
           "custom/os-icon"
