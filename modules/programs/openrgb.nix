@@ -4,7 +4,7 @@
 { config, inputs, lib, pkgs, username, ... }: let
 
   openrgb = "${pkgs.openrgb}/bin/openrgb";
-  configPath = "/home/rico/.config/OpenRGB";
+  configPath = "/home/${username}/.config/OpenRGB";
 
 in {
 
