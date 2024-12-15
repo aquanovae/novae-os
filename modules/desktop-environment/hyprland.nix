@@ -4,12 +4,12 @@
 { config, lib, username, ... }:
 
 let
-  theme = config.ricos.theme;
+  theme = config.novaeOs.theme;
 
   wallpaper = "/home/${username}/.config/hypr/wallpaper.png";
 in {
 
-  config = lib.mkIf config.ricos.desktopEnvironment.enable {
+  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
     home-manager.users.${username}.wayland.windowManager.hyprland = {
       enable = true;
 

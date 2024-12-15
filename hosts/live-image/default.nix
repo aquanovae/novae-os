@@ -9,7 +9,7 @@
 
   networking.hostName = "live-image";
 
-  ricos = {
+  novaeOs = {
     desktopEnvironment = {
       enable = true;
       mode = "minimal";

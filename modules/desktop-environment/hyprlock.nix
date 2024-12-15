@@ -4,8 +4,8 @@
 { config, lib, pkgs, username, ... }:
 
 let
-  cfg = config.ricos.desktopEnvironment;
-  theme = config.ricos.theme;
+  cfg = config.novaeOs.desktopEnvironment;
+  theme = config.novaeOs.theme;
 
   # Script to get laptop battery level
   battery-level = pkgs.writeShellScriptBin "battery-level" ''
@@ -15,7 +15,7 @@ let
   '';
 in {
 
-  config = lib.mkIf config.ricos.desktopEnvironment.enable {
+  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
     home-manager.users.${username}.programs.hyprlock = {
       enable = true;
 

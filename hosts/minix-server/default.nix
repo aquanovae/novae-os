@@ -9,7 +9,7 @@
 
   networking.hostName = "minix-server";
 
-  ricos = {
+  novaeOs = {
     server.enable = true;
   };
 

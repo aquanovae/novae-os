@@ -8,7 +8,7 @@ let
   configPath = "/home/rico/.config/OpenRGB";
 in {
 
-  config = lib.mkIf config.ricos.programs.openrgb.enable {
+  config = lib.mkIf config.novaeOs.programs.openrgb.enable {
     services = {
       # Install udev rules
       udev.packages = [ pkgs.openrgb ];

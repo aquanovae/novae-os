@@ -4,10 +4,10 @@
 { config, lib, username, ... }:
 
 let
-  theme = config.ricos.theme;
+  theme = config.novaeOs.theme;
 in {
 
-  config = lib.mkIf config.ricos.programs.defaultDesktopApps.enable {
+  config = lib.mkIf config.novaeOs.programs.defaultDesktopApps.enable {
     home-manager.users.${username}.programs.alacritty = {
       enable = true;
 

@@ -12,7 +12,7 @@
     ./waybar
   ];
 
-  config = lib.mkIf config.ricos.desktopEnvironment.enable {
+  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
     # Enable graphics
     hardware.graphics.enable = true;
 
@@ -24,7 +24,7 @@
         videoDrivers = [
           "amdgpu"
 
-        ] ++ lib.optionals config.ricos.hardware.nvidia.enable [
+        ] ++ lib.optionals config.novaeOs.hardware.nvidia.enable [
           "nvidia"
         ];
 

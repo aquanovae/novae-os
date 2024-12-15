@@ -9,7 +9,7 @@
 
   networking.hostName = "silverlight";
 
-  ricos = {
+  novaeOs = {
     desktopEnvironment = {
       enable = true;
       mode = "desktop";

@@ -16,7 +16,7 @@ let
   };
 in {
 
-  config = lib.mkIf config.ricos.virtualMachine.enable {
+  config = lib.mkIf config.novaeOs.virtualMachine.enable {
     home-manager.users.${username}.programs.looking-glass-client = {
       enable = true;
       package = looking-glass-client-experimental;

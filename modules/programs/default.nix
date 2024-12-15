@@ -5,7 +5,7 @@
 
 # Warnings to be dealt with someday
 let
-  cfg = config.ricos.programs;
+  cfg = config.novaeOs.programs;
 
   extraPkgs = outputs.packages.${system};
 in {

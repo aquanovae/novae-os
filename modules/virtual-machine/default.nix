@@ -4,7 +4,7 @@
 { config, lib, pkgs, username, ... }:
 
 let
-  cfg = config.ricos.virtualMachine;
+  cfg = config.novaeOs.virtualMachine;
 
   qemuOptions = lib.concatStringsSep " " ([
     "-machine q35,kernel_irqchip=on"

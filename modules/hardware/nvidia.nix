@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 { config, lib, ... }: {
 
-  config = lib.mkIf config.ricos.hardware.nvidia.enable {
+  config = lib.mkIf config.novaeOs.hardware.nvidia.enable {
     hardware.nvidia = {
       # Enable nvidia drivers
       open = true;

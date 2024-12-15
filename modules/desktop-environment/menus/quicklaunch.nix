@@ -29,7 +29,7 @@ let
   '';
 in {
 
-  config = lib.mkIf config.ricos.desktopEnvironment.enable {
+  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
     environment.systemPackages = [
       quicklaunchScript
     ];

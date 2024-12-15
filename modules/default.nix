@@ -14,7 +14,7 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  options.ricos = with lib; {
+  options.novaeOs = with lib; {
     desktopEnvironment = {
       enable = mkEnableOption "desktop environment";
       mode = mkOption {

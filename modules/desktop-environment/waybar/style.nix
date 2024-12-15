@@ -1,10 +1,10 @@
 { config, lib, username, ... }:
 
 let
-  theme = config.ricos.theme;
+  theme = config.novaeOs.theme;
 in {
 
-  config = lib.mkIf config.ricos.desktopEnvironment.enable {
+  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
     home-manager.users.${username}.programs.waybar.style = /*css*/ ''
       * {
         border-radius: 7px;

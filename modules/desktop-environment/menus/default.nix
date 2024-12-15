@@ -4,7 +4,7 @@
 { config, lib, ... }:
 
 let
-  theme = config.ricos.theme;
+  theme = config.novaeOs.theme;
 
   # Define bemenu flags used by all menus
   flags = lib.concatStringsSep " " [

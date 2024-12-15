@@ -9,7 +9,7 @@
 
   networking.hostName = "zenblade";
 
-  ricos = {
+  novaeOs = {
     desktopEnvironment = {
       enable = true;
       mode = "laptop";

@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 { lib, ... }: with lib; {
   
-  options.ricos.theme = {
+  options.novaeOs.theme = {
     bg0 = mkOption { type = types.str; };
     bg1 = mkOption { type = types.str; };
     bg2 = mkOption { type = types.str; };
@@ -20,7 +20,7 @@
     magenta = mkOption { type = types.str; };
   };
 
-  config.ricos.theme = {
+  config.novaeOs.theme = {
     bg0 = "1f2329";
     bg1 = "282c34";
     bg2 = "30363f";

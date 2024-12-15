@@ -1,4 +1,4 @@
-{ pkgs, username, ... }: let 
+{ config, lib, pkgs, username, ... }: let 
 
   ranger = pkgs.writeShellScriptBin "launch-ranger" ''
     
@@ -33,8 +33,10 @@
   '';
 in {
 
-  environment.systemPackages = [
-    ranger
-    rconfig
-  ];
+  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
+    environment.systemPackages = [
+      ranger
+      rconfig
+    ];
+  };
 }

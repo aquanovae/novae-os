@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 { config, lib, username, ... }: {
 
-  config = lib.mkIf config.ricos.desktopEnvironment.enable {
+  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
     home-manager.users.${username}.wayland.windowManager.hyprland.extraConfig = /*hyprlang*/ ''
       # Focus workspace
       bind = super, 1, workspace, 1

@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 { config, lib, username, ... }: {
 
-  config = lib.mkIf config.ricos.server.enable {
+  config = lib.mkIf config.novaeOs.server.enable {
     services.openssh = {
       enable = true;
       ports = [ 777 ];

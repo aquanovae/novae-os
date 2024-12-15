@@ -4,12 +4,12 @@
 { config, lib, pkgs, username, ... }:
 
 let
-  theme = config.ricos.theme;
+  theme = config.novaeOs.theme;
 
   toSpan = icon: color: "<span color='#${color}' size='11pt'>${icon}</span>";
 in {
 
-  config = lib.mkIf config.ricos.desktopEnvironment.enable {
+  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
     home-manager.users.${username}.programs.waybar.settings.bar = {
 
       # Decorative module displaying distro logo

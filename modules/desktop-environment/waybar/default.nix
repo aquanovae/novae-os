@@ -4,7 +4,7 @@
 { config, lib, username, ... }:
 
 let
-  cfg = config.ricos.desktopEnvironment;
+  cfg = config.novaeOs.desktopEnvironment;
 in {
 
   imports = [
