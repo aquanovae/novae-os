@@ -66,6 +66,12 @@
         style = "darker",
         transparent = true,
         term_colors = false,
+        code_style = {
+          keywords = "bold",
+        },
+        highlights = {
+          ["@variable.member"] = { fg = "$blue" },
+        },
       }
       require("onedark").load()
 
