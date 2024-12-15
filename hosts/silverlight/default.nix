@@ -15,6 +15,8 @@
       mode = "desktop";
     };
 
+    hardware.wireless.enable = true;
+
     programs = {
       coolercontrol.enable = true;
       defaultDesktopApps.enable = true;
