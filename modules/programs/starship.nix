@@ -9,9 +9,9 @@
 
     settings = {
       format = ''
-        [┌<$nix_shell$git_branch$git_status](bold cyan)
-        [│](cyan)[\[$username@$hostname:$directory\]](bold cyan)
-        [└$character](bold cyan)
+        [┏━<$nix_shell$git_branch$git_status](bold cyan)
+        [┃](cyan)[\[$username@$hostname:$directory\]](bold cyan)
+        [┗╸$character](bold cyan)
       '';
 
       username = {
@@ -63,9 +63,9 @@
 
       character = {
         format = "$symbol ";
-        success_symbol = "[>>>](bold green)";
-        error_symbol = "[>>>](bold red)";
-        vicmd_symbol = "[<<<](bold purple)";
+        success_symbol = "[━>](bold green)";
+        error_symbol = "[━>](bold red)";
+        vicmd_symbol = "[╺>](bold purple)";
       };
     };
   };
