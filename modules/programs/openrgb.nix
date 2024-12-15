@@ -1,11 +1,11 @@
 # ------------------------------------------------------------------------------
 # Openrgb configuration
 # ------------------------------------------------------------------------------
-{ config, inputs, lib, pkgs, username, ... }:
+{ config, inputs, lib, pkgs, username, ... }: let
 
-let
   openrgb = "${pkgs.openrgb}/bin/openrgb";
   configPath = "/home/rico/.config/OpenRGB";
+
 in {
 
   config = lib.mkIf config.novaeOs.programs.openrgb.enable {
@@ -38,6 +38,11 @@ in {
     boot = {
       # Load i2c drivers
       kernelModules = [ "i2c-dev" "i2c-piix4" ];
+
+      # Conflicts with DRAM i2c interface
+      blacklistedKernelModules = [ "spd5118" ];
+
+      # Resolve conflict with SMBus controller
       kernelParams = [ "acpi_enforce_resources=lax" ];
     };
 
