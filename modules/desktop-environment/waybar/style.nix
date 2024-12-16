@@ -1,11 +1,13 @@
-{ config, lib, username, ... }:
+{ config, lib, username, ... }: let
 
-let
   theme = config.novaeOs.theme;
+
 in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
+
     home-manager.users.${username}.programs.waybar.style = /*css*/ ''
+
       * {
         border-radius: 7px;
       }
@@ -52,6 +54,10 @@ in {
 
       #workspaces button.active label {
         color: #${theme.blue};
+      }
+
+      #workspaces button.special label {
+        color: #${theme.yellow};
       }
 
       #workspaces button:hover {
