@@ -28,7 +28,7 @@ in {
         background = [
           # Set blured wallpaper as background
           { monitor = "";
-            path = "/home/rico/.config/hypr/wallpaper.png";
+            path = "/home/${username}/.config/hypr/wallpaper.png";
             blur_passes = 3;
             blur_size = 5;
           }
