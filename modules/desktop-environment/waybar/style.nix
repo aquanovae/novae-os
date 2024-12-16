@@ -68,11 +68,10 @@ in {
         color: #${theme.bg0};
       }
 
-      #custom-new-window-direction {
-        font-size: 21px;
-        color: #${theme.magenta};
-        background-color: #${theme.bg0};
-        min-width: 30px;
+      #custom-playerctl-info {
+        padding: 0px 11px;
+        color: #${theme.fg};
+        background-color: alpha(#${theme.bg0}, 0.67);
       }
 
       #custom-shutdowntime {

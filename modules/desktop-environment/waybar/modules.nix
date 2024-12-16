@@ -21,11 +21,17 @@ in {
 
       # Display window manager active workspaces
       "hyprland/workspaces" = {
-        format = "{name} {windows}";
-        tooltip = false;
+        format = "{icon} {windows}";
+        format-icons = {
+          cfg = "󱇧";
+          exp = "󰝰";
+        };
 
+        all-outputs = true;
         show-special = true;
         special-visible-only = true;
+
+        tooltip = false;
 
         # Assign logo to programs
         window-rewrite-default = "󰘔";
@@ -40,14 +46,12 @@ in {
           pavucontrol = "󰙪";
           spotify = "󰓇";
           steam = "󰓓";
-          "title<ranger>" = "󰝰";
-          "title<rconfig>" = "󱇧";
         };
       };
 
       # Display currently playing track info
       "custom/playerctl-info" = {
-        format = "${toSpan "󰝚" theme.green} {}";
+        format = "${toSpan "󰓇" theme.green}  {}";
         tooltip = false;
         interval = 1;
 
