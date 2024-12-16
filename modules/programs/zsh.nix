@@ -1,10 +1,10 @@
 # ------------------------------------------------------------------------------
 # Shell configuration
 # ------------------------------------------------------------------------------
-{ username, ... }:
+{ config, username, ... }: let
 
-let
-  novae-os = "/home/${username}/novae-os";
+  novae-os = "/home/${username}/novae-os/";
+
 in {
 
   programs.zsh.enable = true;
@@ -51,7 +51,7 @@ in {
       # Aliases for system management
       nbi = "sudo nix build ${novae-os}/#nixosConfigurations.live-image.config.system.build.isoImage";
       ncg = "sudo nix-collect-garbage --delete-older-than 3d";
-      nfu = "nix flake update ${novae-os}";
+      nfu = "nix flake update --flake ${novae-os}";
       nrs = "sudo nixos-rebuild switch --impure --flake ${novae-os}";
 
       # Other aliases
