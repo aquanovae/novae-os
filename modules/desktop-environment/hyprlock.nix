@@ -1,9 +1,8 @@
 # ------------------------------------------------------------------------------
 # Lock screen configuration
 # ------------------------------------------------------------------------------
-{ config, lib, pkgs, username, ... }:
+{ config, lib, pkgs, username, ... }: let
 
-let
   cfg = config.novaeOs.desktopEnvironment;
   theme = config.novaeOs.theme;
 
@@ -13,6 +12,7 @@ let
 
     echo "$battery_level% 󰁹"
   '';
+
 in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
@@ -52,13 +52,13 @@ in {
         label = [
           # Disply username
           { monitor = "";
-            position = "220, 23";
+            position = "220, 25";
             halign = "left";
             valign = "center";
 
             text = "$USER";
             font_family = "JetBrainsMono Nerd Font";
-            font_size = "13";
+            font_size = "11";
           }
 
           # Display time
