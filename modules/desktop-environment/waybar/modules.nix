@@ -1,15 +1,16 @@
 # ------------------------------------------------------------------------------
 # Task bar modules configuartion
 # ------------------------------------------------------------------------------
-{ config, lib, pkgs, username, ... }:
+{ config, lib, pkgs, username, ... }: let
 
-let
   theme = config.novaeOs.theme;
 
   toSpan = icon: color: "<span color='#${color}' size='11pt'>${icon}</span>";
+
 in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
+
     home-manager.users.${username}.programs.waybar.settings.bar = {
 
       # Decorative module displaying distro logo
@@ -42,30 +43,6 @@ in {
           "title<ranger>" = "󰝰";
           "title<rconfig>" = "󱇧";
         };
-      };
-
-      # Display direction new windows will spawn
-      "custom/new-window-direction" = {
-        format = "{}";
-        tooltip = false;
-        interval = 1;
-
-        exec = pkgs.writeShellScript "new-window-direction" ''
-          case $(
-            hyprctl getoption dwindle:force_split | \
-              grep int | \
-              sed -e "s/int: //"
-          ) in
-            1)
-              echo "󰁎"
-              ;;
-            2)
-              echo "󰁕"
-              ;;
-            *)
-            ;;
-          esac
-        '';
       };
 
       # Display currently playing track info

@@ -4,7 +4,9 @@
 { config, lib, username, ... }: {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
+
     home-manager.users.${username}.wayland.windowManager.hyprland.extraConfig = /*hyprlang*/ ''
+
       # Focus workspace
       bind = super, 1, workspace, 1
       bind = super, 2, workspace, 2
@@ -59,10 +61,6 @@
       # Special workspace for file explorer
       bind = super, E, exec, launch-ranger
       bind = super, E, togglespecialworkspace, exp
-
-      # Preselect split direction
-      bind = alt, H, exec, hyprctl keyword dwindle:force_split 1
-      bind = alt, L, exec, hyprctl keyword dwindle:force_split 2
 
       # Close program
       bind = super shift, Q, killactive
