@@ -4,6 +4,7 @@
 { pkgs, username, ... }: {
 
   home-manager.users.${username}.programs.neovim = {
+
     enable = true;
 
     # Install plugins
@@ -29,6 +30,7 @@
 
     # Nvim config
     extraLuaConfig = /*lua*/ ''
+
       local o = vim.o
       local opt = vim.opt
 
@@ -53,7 +55,7 @@
       opt.hlsearch = false
       opt.incsearch = true
 
-      -- 
+      -- Layout
       opt.scrolloff = 13
       opt.wrap = false
 
@@ -66,11 +68,13 @@
         style = "darker",
         transparent = true,
         term_colors = false,
+
         code_style = {
           keywords = "bold",
         },
+
         highlights = {
-          ["@variable.member"] = { fg = "$blue" },
+          ["@variable.member.nix"] = { fg = "$blue" },
         },
       }
       require("onedark").load()
