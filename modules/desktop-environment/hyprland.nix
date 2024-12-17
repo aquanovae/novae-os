@@ -1,21 +1,22 @@
 # ------------------------------------------------------------------------------
 # Window manager configuration
 # ------------------------------------------------------------------------------
-{ config, lib, username, ... }:
+{ config, lib, username, ... }: let
 
-let
   theme = config.novaeOs.theme;
-
   wallpaper = "/home/${username}/.config/hypr/wallpaper.png";
+
 in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
+
     home-manager.users.${username}.wayland.windowManager.hyprland = {
+
       enable = true;
 
       settings = {
-        windowrulev2 = [
 
+        windowrulev2 = [
           "workspace cfg, title:(rconfig)"
 
           "workspace exp, title:(ranger)"
@@ -37,6 +38,9 @@ in {
         exec-once = [
           # Set wallapaper
           "swaybg -m fill -i ${wallpaper}"
+
+          # Launch status bar
+          "waybar &"
         ];
 
         general = {

@@ -1,10 +1,10 @@
 # ------------------------------------------------------------------------------
 # Task bar configuration
 # ------------------------------------------------------------------------------
-{ config, lib, username, ... }:
+{ config, lib, username, ... }: let
 
-let
   cfg = config.novaeOs.desktopEnvironment;
+
 in {
 
   imports = [
@@ -13,9 +13,10 @@ in {
   ];
 
   config = lib.mkIf cfg.enable {
+
     home-manager.users.${username}.programs.waybar = {
+
       enable = true;
-      systemd.enable = true;
 
       settings.bar = {
         layer = "top";
