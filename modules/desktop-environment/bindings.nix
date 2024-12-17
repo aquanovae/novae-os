@@ -55,12 +55,12 @@
       bind = super, O, exec, quicklaunch
 
       # Special workspace to edit config
-      bind = super, R, exec, launch-rconfig
-      bind = super, R, togglespecialworkspace, cfg
+      bind = super, R, exec, launch-config
+      bind = super, R, togglespecialworkspace, config
 
       # Special workspace for file explorer
       bind = super, E, exec, launch-ranger
-      bind = super, E, togglespecialworkspace, exp
+      bind = super, E, togglespecialworkspace, ranger
 
       # Close program
       bind = super shift, Q, killactive

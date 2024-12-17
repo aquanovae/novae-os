@@ -23,8 +23,8 @@ in {
       "hyprland/workspaces" = {
         format = "{icon} {windows}";
         format-icons = {
-          cfg = "󱇧";
-          exp = "󰝰";
+          config = "󱇧";
+          ranger = "󰝰";
         };
 
         all-outputs = true;

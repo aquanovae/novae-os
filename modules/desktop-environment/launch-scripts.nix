@@ -1,6 +1,6 @@
 { config, lib, pkgs, username, ... }: let 
 
-  ranger = pkgs.writeShellScriptBin "launch-ranger" ''
+  launch-ranger = pkgs.writeShellScriptBin "launch-ranger" ''
     
     condition() {
       hyprctl -j clients | \
@@ -15,18 +15,18 @@
     condition || launch
   '';
 
-  rconfig = pkgs.writeShellScriptBin "launch-rconfig" ''
+  launch-config = pkgs.writeShellScriptBin "launch-config" ''
 
     condition() {
       hyprctl -j clients | \
         jq ".[].title" | \
-        grep "rconfig"
+        grep "config"
     }
 
     launch() {
-      alacritty -T rconfig --working-directory /home/${username}/novae-os &
+      alacritty -T config --working-directory /home/${username}/novae-os &
       sleep 0.03
-      alacritty -T rconfig --working-directory /home/${username}/novae-os -e vim &
+      alacritty -T config --working-directory /home/${username}/novae-os -e vim &
     }
 
     condition || launch
@@ -35,8 +35,8 @@ in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
     environment.systemPackages = [
-      ranger
-      rconfig
+      launch-ranger
+      launch-config
     ];
   };
 }
