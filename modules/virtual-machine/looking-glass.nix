@@ -1,25 +1,13 @@
 # ------------------------------------------------------------------------------
 # Looking glass configuration
 # ------------------------------------------------------------------------------
-{ config, inputs, lib, pkgs, username, ... }:
-
-let
-  looking-glass-kvmfr-experimental = config.boot.kernelPackages.kvmfr.overrideAttrs {
-    version = "experimental";
-    src = inputs.looking-glass-experimental;
-  };
-
-  looking-glass-client-experimental = pkgs.looking-glass-client.overrideAttrs {
-    version = "experimental";
-    src = inputs.looking-glass-experimental;
-    patches = [];
-  };
-in {
+{ config, lib, username, ... }: {
 
   config = lib.mkIf config.novaeOs.virtualMachine.enable {
+
     home-manager.users.${username}.programs.looking-glass-client = {
       enable = true;
-      package = looking-glass-client-experimental;
+      #package = looking-glass-client-experimental;
 
       # Looking glass app settings
       settings = {
@@ -36,7 +24,8 @@ in {
     };
 
     environment.systemPackages = [
-      looking-glass-kvmfr-experimental
+      #looking-glass-kvmfr-experimental
+      config.boot.kernelPackages.kvmfr
     ];
 
     # Give user access to shared memory file

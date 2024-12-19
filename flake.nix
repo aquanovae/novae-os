@@ -26,12 +26,6 @@
       url = "gitlab:CalcProgrammer1/OpenRGB";
       flake = false;
     };
-
-    # Encountering compilation error with stable release
-    looking-glass-experimental = {
-      url = "git+https://github.com/gnif/LookingGlass?submodules=1";
-      flake = false;
-    };
   };
 
 
