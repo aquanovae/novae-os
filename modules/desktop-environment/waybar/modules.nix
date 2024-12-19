@@ -56,8 +56,7 @@ in {
         interval = 1;
 
         exec = pkgs.writeShellScript "playerctl-info" ''
-          [[ $(playerctl status) == "Playing" ]] && \
-            playerctl metadata -f "{{artist}} - {{title}}"
+          playerctl metadata -sf "{{artist}} - {{title}}"
         '';
       };
 
