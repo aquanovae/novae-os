@@ -1,9 +1,8 @@
 # ------------------------------------------------------------------------------
 # Virtual machine configuration
 # ------------------------------------------------------------------------------
-{ config, lib, pkgs, username, ... }:
+{ config, lib, pkgs, username, ... }: let
 
-let
   cfg = config.novaeOs.virtualMachine;
 
   qemuOptions = lib.concatStringsSep " " ([
@@ -36,7 +35,7 @@ let
     "-drive if=pflash,format=raw,file=/tmp/OVMF_VARS.ms.fd"
 
     # Host guest file share
-    "-nic user,id=nic0,smb=/home/${username}/rstore"
+    "-nic user,id=nic0,smb=/home/${username}/"
 
   ] ++ lib.optionals cfg.gpuPassthrough.enable [
     "-device vfio-pci,host=${cfg.gpuPassthrough.gpuPciId},romfile=/home/rico/vm/GA107.bin"
@@ -62,6 +61,7 @@ let
     exec = "${vm-launch-script}/bin/windows-vm";
     terminal = false;
   };
+
 in {
 
   imports = [
@@ -69,6 +69,7 @@ in {
   ];
 
   config = lib.mkIf cfg.enable {
+
     environment.systemPackages = [
       pkgs.OVMFFull
       (pkgs.qemu.override {
