@@ -39,11 +39,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1734344598,
-        "narHash": "sha256-wNX3hsScqDdqKWOO87wETUEi7a/QlPVgpC/Lh5rFOuA=",
+        "lastModified": 1734800693,
+        "narHash": "sha256-IkE+72r4yiC1ZyMfo8EHdEZAs2wQRwNJ2aRwzFbR3Hk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "83ecd50915a09dca928971139d3a102377a8d242",
+        "rev": "99f54cdfef395bb3de1c7b8dd422412de65b038d",
         "type": "github"
       },
       "original": {
@@ -71,11 +71,11 @@
     "openrgb-experimental": {
       "flake": false,
       "locked": {
-        "lastModified": 1734126823,
-        "narHash": "sha256-l4SahOzkkZdzIssgW1/vpbnWf4ZZg5iu5tr9Z2pF30A=",
+        "lastModified": 1734716499,
+        "narHash": "sha256-wkL3VNN8OMiZ65nUowNnZ4CgRrQ4Up5CjMgRLNnW5GI=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "1bfd0fbd1f7a0e4ab8171bb8c7220f91c1f36c0a",
+        "rev": "38732a8fb4164ce6226b1b2902bdf7e3b5ec56e5",
         "type": "gitlab"
       },
       "original": {
@@ -101,11 +101,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1734581787,
-        "narHash": "sha256-hp4sP3gF/LIJRwCv9x3yteSFP1xVK0J6socGrJEd6Hs=",
+        "lastModified": 1734754523,
+        "narHash": "sha256-ywne/i+kIvU6r20dZvib0CprD28aQUYsZKxjAY/hcT8=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "9df915be725751fccde78f2dfe59025bb1bfbb14",
+        "rev": "8008cc4f52eb02f503ae6f68c10373c30b8de3dc",
         "type": "github"
       },
       "original": {
