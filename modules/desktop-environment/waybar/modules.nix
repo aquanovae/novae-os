@@ -56,7 +56,8 @@ in {
         interval = 1;
 
         exec = pkgs.writeShellScript "playerctl-info" ''
-          playerctl metadata -sf "{{artist}} - {{title}}"
+          playerctl metadata -sf "{{artist}} - {{title}}" | \
+            sed -e "s/&/&amp;/g"
         '';
       };
 
