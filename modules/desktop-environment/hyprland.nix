@@ -3,18 +3,48 @@
 # ------------------------------------------------------------------------------
 { config, lib, username, ... }: let
 
+  cfg = config.novaeOs.desktopEnvironment;
+
   theme = config.novaeOs.theme;
   wallpaper = "/home/${username}/.config/hypr/wallpaper.png";
 
 in {
 
-  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
+  config = lib.mkIf cfg.enable {
 
     home-manager.users.${username}.wayland.windowManager.hyprland = {
 
       enable = true;
 
       settings = {
+
+        monitor = [
+          ", prefered, auto, 1"
+
+        ] ++ lib.optionals (cfg.mode == "desktop") [
+          # Monitors for desktop computer
+          "DP-1, 2560x1440@165, 0x0, 1"
+          "DP-2, 2560x1440@165, 2560x0, 1"
+        ];
+        
+
+        workspace = [
+
+        ] ++ lib.optionals (cfg.mode == "desktop") [
+          # Assign odd workpaces to left monitor and even to right
+          "1, monitor:DP-1"
+          "3, monitor:DP-1"
+          "5, monitor:DP-1"
+          "7, monitor:DP-1"
+          "9, monitor:DP-1"
+
+          "2, monitor:DP-2"
+          "4, monitor:DP-2"
+          "6, monitor:DP-2"
+          "8, monitor:DP-2"
+          "10, monitor:DP-2"
+        ];
+
 
         windowrulev2 = [
           "workspace config, title:(config)"
@@ -24,14 +54,6 @@ in {
           "size 75% 75%, title:(ranger)"
         ];
 
-        monitor = [
-          # Monitors for desktop computer
-          "DP-1, 2560x1440@165, 0x0, 1"
-          "DP-2, 2560x1440@165, 2560x0, 1"
-
-          # Monitor for laptop
-          "eDP-1, prefered, auto, 1"
-        ];
 
         exec-once = [
           # Set wallapaper
@@ -40,6 +62,7 @@ in {
           # Launch status bar
           "waybar &"
         ];
+
 
         general = {
           # Appearance config
@@ -54,10 +77,12 @@ in {
           layout = "dwindle";
         };
 
+
         dwindle = {
           pseudotile = true;
           force_split = 2;
         };
+
 
         input = {
           # Keyboard config
@@ -75,11 +100,13 @@ in {
           };
         };
 
+
         binds = {
           # Switch to last used workspace when trying to focus
           # curently active one
           workspace_back_and_forth = true;
         };
+
 
         decoration = {
           # Round window corners
@@ -93,6 +120,7 @@ in {
           };
         };
 
+
         animations = {
           enabled = true;
           animation = [
@@ -102,10 +130,12 @@ in {
           ];
         };
 
+
         cursor = {
           # Hide cursor when inactive
           inactive_timeout = 17;
         };
+
 
         misc = {
           # Disable annoying shit
