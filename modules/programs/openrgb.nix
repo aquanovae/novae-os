@@ -18,7 +18,7 @@ in {
         motherboard = "amd";
 
         # Override package with experimental version
-        package = pkgs.openrgb.overrideAttrs {
+        package = pkgs.openrgb-with-all-plugins.overrideAttrs {
           version = "experimental";
           src = inputs.openrgb-experimental;
           postPatch = ''
