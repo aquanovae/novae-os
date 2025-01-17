@@ -23,6 +23,7 @@
 
     programs = {
       defaultDesktopApps.enable = true;
+      documentEditingApps.enable = true;
       imageEditingApps.enable = true;
       spotify.enable = true;
       steam.enable = true;

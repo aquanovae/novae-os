@@ -1,13 +1,12 @@
 # ------------------------------------------------------------------------------
 # Install programs
 # ------------------------------------------------------------------------------
-{ config, lib, outputs, pkgs, system, ... }:
+{ config, lib, outputs, pkgs, system, ... }: let
 
-# Warnings to be dealt with someday
-let
   cfg = config.novaeOs.programs;
 
   extraPkgs = outputs.packages.${system};
+
 in {
 
   imports = [
@@ -36,6 +35,10 @@ in {
   ] ++ lib.optionals cfg.imageEditingApps.enable [
     inkscape
     gimp
+
+  ] ++ lib.optionals cfg.documentEditingApps.enable [
+    onlyoffice-desktopeditors
+    pdf4qt
   ];
 
   programs = {
