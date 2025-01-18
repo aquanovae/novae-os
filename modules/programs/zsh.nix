@@ -49,7 +49,7 @@ in {
       nsp = "nix-shell --run -p";
 
       # Aliases for system management
-      nbi = "sudo nix build ${novae-os}/#nixosConfigurations.live-image.config.system.build.isoImage";
+      nbi = "sudo nix build --impure ${novae-os}/#nixosConfigurations.live-image.config.system.build.isoImage";
       ncg = "sudo nix-collect-garbage --delete-older-than 3d";
       nfu = "nix flake update --flake ${novae-os}";
       nrs = "sudo nixos-rebuild switch --impure --flake ${novae-os}";
