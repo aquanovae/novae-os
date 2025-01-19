@@ -31,12 +31,16 @@ in {
       gmv     = "git mv";
       gp      = "git push";
       gpl     = "git pull";
+      gplr    = "git pull --rebase=true";
       gr      = "git rebase";
       grm     = "git rm";
+      grst    = "git reset";
       grstr   = "git restore";
+      grstrs  = "git restore --staged";
       gs      = "git status";
       gst     = "git stash";
       gstl    = "git stash list";
+      gstm    = "git stash -m";
       gstp    = "git stash pop";
       gsw     = "git switch";
 
