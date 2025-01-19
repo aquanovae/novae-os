@@ -38,7 +38,7 @@ in {
 
   ] ++ lib.optionals cfg.documentEditingApps.enable [
     onlyoffice-desktopeditors
-    pdf4qt
+    pdfarranger
   ];
 
   programs = {
