@@ -46,7 +46,7 @@ in {
 
       # Alias to run nix-shell with zsh
       ns = "nix-shell --run zsh";
-      nsp = "nix-shell --run -p";
+      nsp = "nix-shell --run zsh -p";
 
       # Aliases for system management
       nbi = "sudo nix build --impure ${novae-os}/#nixosConfigurations.live-image.config.system.build.isoImage";
