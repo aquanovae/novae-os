@@ -1,19 +1,37 @@
 # ------------------------------------------------------------------------------
 # Program launcher script
 # ------------------------------------------------------------------------------
-{ flags }: { config, lib, pkgs, ... }:
+{ flags }: { config, lib, pkgs, ... }: let
 
-let
   desktopFilesPath = /run/current-system/sw/share/applications;
 
+  grepBlacklistedEntries = "-e " + lib.strings.concatStringsSep " -e " [
+    "htop"
+    "nixos-manual"
+    "xdg-desktop-portal"
+    "xterm"
+    "xwayland"
+  ];
+
   quicklaunchScript = pkgs.writeShellScriptBin "quicklaunch" ''
-    # Run formated desktop files list through bemenu
-    selection=$(
+    # Get list of desktop files
+    full_list=$(
       ls -1 ${desktopFilesPath} | \
         grep ".desktop" | \
         sed -e "s/\.desktop//" -e "s/.*\.//" | \
         tr "[:upper:]" "[:lower:]" | \
-        sort | \
+        sort
+    )
+
+    # Filter blacklisted entries
+    list=$(
+      echo "$full_list" | \
+        grep -v ${grepBlacklistedEntries}
+    )
+
+    # Run desktop files list through bemenu
+    selection=$(
+      echo "$list" | \
         bemenu -p "󱓞" ${flags}
     )
 
@@ -27,6 +45,7 @@ let
     # Run selected program
     dex "${desktopFilesPath}/$desktopfile"
   '';
+
 in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
