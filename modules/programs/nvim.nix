@@ -18,6 +18,7 @@
       otter-nvim
       rustaceanvim
       telescope-nvim
+      wgsl-vim
     ];
 
     # Programs required by plugins
@@ -26,6 +27,7 @@
       ccls
       nixd
       rust-analyzer
+      wgsl-analyzer
     ];
 
     # Nvim config
@@ -102,8 +104,9 @@
 
       -- LSP
       require("lsp-zero")
-      require("lspconfig").nixd.setup {}
       require("lspconfig").ccls.setup {}
+      require("lspconfig").nixd.setup {}
+      require("lspconfig").wgsl_analyzer.setup {}
     '';
 
     # Make nvim default
