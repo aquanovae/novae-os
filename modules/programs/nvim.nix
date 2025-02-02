@@ -26,6 +26,7 @@
       cargo
       ccls
       nixd
+      rustc
       rust-analyzer
       wgsl-analyzer
     ];
@@ -35,6 +36,8 @@
 
       local o = vim.o
       local opt = vim.opt
+
+      vim.hl = vim.highlight
 
       -- Syntax
       opt.syntax = enable
@@ -76,7 +79,23 @@
         },
 
         highlights = {
+          ["@keyword"] = { fg = "$red", fmt = "bold" },
+          ["@keyword.import"] = { fg = "$red", fmt = "bold" },
+          ["@keyword.function"] = { fg = "$red", fmt = "bold" },
+          ["@keyword.modifier"] = { fg = "$red", fmt = "bold" },
+          ["@keyword.type"] = { fg = "$red", fmt = "bold" },
+          ["@lsp.mod.attribute"] = { fg = "$purple" },
+          ["@lsp.mod.crateRoot"] = { fg = "$yellow" },
+          ["@lsp.type.enum"] = { fg = "$fg", fmt = "bold,italic" },
+          ["@lsp.type.enumMember"] = { fg = "$light_grey" },
+          ["@lsp.type.parameter"] = { fg = "$fg", fmt = "italic" },
+          ["@lsp.type.struct"] = { fg = "$fg", fmt = "bold,italic" },
+          ["@operator"] = { fg = "$cyan" },
+          ["@type"] = { fg = "$fg", fmt = "bold,italic" },
+          ["@variable.parameter"] = { fg = "$fg", fmt = "italic" },
+
           ["@variable.member.nix"] = { fg = "$blue" },
+          ["@attribute.wgsl"] = { fg = "$purple" },
         },
       }
       require("onedark").load()
