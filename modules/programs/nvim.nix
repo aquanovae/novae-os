@@ -88,10 +88,12 @@
           ["@lsp.mod.crateRoot"] = { fg = "$yellow" },
           ["@lsp.type.enum"] = { fg = "$fg", fmt = "bold,italic" },
           ["@lsp.type.enumMember"] = { fg = "$light_grey" },
+          ["@lsp.typemod.keyword.constant"] = { fg = "$red", fmt = "bold" },
           ["@lsp.type.parameter"] = { fg = "$fg", fmt = "italic" },
           ["@lsp.type.struct"] = { fg = "$fg", fmt = "bold,italic" },
           ["@operator"] = { fg = "$cyan" },
           ["@type"] = { fg = "$fg", fmt = "bold,italic" },
+          ["@variable.builtin"] = { fg = "$yellow", fmt = "italic" },
           ["@variable.parameter"] = { fg = "$fg", fmt = "italic" },
 
           ["@variable.member.nix"] = { fg = "$blue" },
