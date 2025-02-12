@@ -9,5 +9,6 @@ in rustPlatform.buildRustPackage {
 
   src = inputs.daily-playlist;
 
-  cargoHash = "sha256-B75tW2YEIsHhTKLEN7aPC+TbSSTuVLj0dFgHJufNV/4=";
+  useFetchCargoVendor = true;
+  cargoHash = "sha256-3eGj2YedGeYFdN7X6RoSrQj0oh7siFTc6+w7fzENVyM=";
 }
