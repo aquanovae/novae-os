@@ -25,7 +25,9 @@
     extraPackages = with pkgs; [
       cargo
       ccls
+      fd
       nixd
+      ripgrep
       rustc
       rust-analyzer
       wgsl-analyzer
