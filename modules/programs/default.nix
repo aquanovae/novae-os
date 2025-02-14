@@ -1,11 +1,9 @@
 # ------------------------------------------------------------------------------
 # Install programs
 # ------------------------------------------------------------------------------
-{ config, lib, outputs, pkgs, system, ... }: let
+{ config, inputs, lib, pkgs, ... }: let
 
   cfg = config.novaeOs.programs;
-
-  extraPkgs = outputs.packages.${system};
 
 in {
 
@@ -20,7 +18,7 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
-    extraPkgs.daily-playlist
+    inputs.daily-playlist
     jq
     gh
     git

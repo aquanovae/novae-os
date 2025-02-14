@@ -17,7 +17,7 @@
 
     daily-playlist = {
       url = "github:aquanovae/daily-playlist";
-      flake = false;
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Experimental has a controller for dram rgb
@@ -29,17 +29,13 @@
   };
 
 
-  outputs = { nixpkgs, self, ... }@inputs: let
-
-    inherit (self) outputs;
-    system = "x86_64-linux";
-
-  in {
+  outputs = { nixpkgs, ... }@inputs: {
 
     nixosConfigurations = let
 
+      system = "x86_64-linux";
       specialArgs = { 
-        inherit inputs outputs system;
+        inherit inputs;
         username = "aquanovae";
       };
 
@@ -77,18 +73,5 @@
         ];
       };
     };
-
-
-    packages.${system} = let
-
-      pkgs = import nixpkgs { inherit system; };
-
-      packages = [
-        "daily-playlist"
-      ];
-
-    in nixpkgs.lib.attrsets.genAttrs packages (
-      packageName: pkgs.callPackage ./packages/${packageName}.nix { inherit inputs; }
-    );
   };
 }
