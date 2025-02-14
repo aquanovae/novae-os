@@ -34,8 +34,11 @@
     nixosConfigurations = let
 
       system = "x86_64-linux";
+      extraPkgs = {
+        daily-playlist = inputs.daily-playlist.packages.${system}.default;
+      };
       specialArgs = { 
-        inherit inputs;
+        inherit inputs extraPkgs;
         username = "aquanovae";
       };
 
