@@ -48,21 +48,19 @@ in {
       l       = "ls -l --color=auto";
       ll      = "ls -la --color=auto";
 
-      # Alias to run nix-shell with zsh
-      ns      = "nix-shell --run zsh";
-      nsp     = "nix-shell --run zsh -p";
-
-      # Aliases for system management
+      # Nix aliases
       nbi     = "sudo nix build --impure ${novae-os}/#nixosConfigurations.live-image.config.system.build.isoImage";
       ncg     = "sudo nix-collect-garbage --delete-older-than 3d";
+      nd      = "nix develop -c zsh";
       nfu     = "nix flake update --flake ${novae-os}";
       nrs     = "sudo nixos-rebuild switch --impure --flake ${novae-os}";
+      ns      = "nix-shell --run zsh";
       nsg     = "l /nix/store | grep -i";
+      nsp     = "nix-shell --run zsh -p";
 
       # Other aliases
       ".."    = "cd ..";
       tree    = "tree --dirsfirst";
-
     };
   };
 }
