@@ -20,6 +20,7 @@
     programs = {
       coolercontrol.enable = true;
       defaultDesktopApps.enable = true;
+      documentEditingApps.enable = true;
       imageEditingApps.enable = true;
       openrgb.enable = true;
       spotify.enable = true;
