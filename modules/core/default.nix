@@ -38,17 +38,6 @@
     stateVersion = "24.05";
   };
 
-  # Audio setup
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
-    };
-  };
-
   # Language and time config
   i18n.defaultLocale = "en_GB.UTF-8";
   console.keyMap = "fr_CH";
@@ -56,9 +45,4 @@
     timeZone = "Europe/Zurich";
     hardwareClockInLocalTime = true;
   };
-
-  # Add jetbrains font
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
 }

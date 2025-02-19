@@ -37,7 +37,20 @@
         enable = true;
         user = "${username}";
       };
+
+      # Audio setup
+      pipewire = {
+        enable = true;
+        pulse.enable = true;
+        alsa = {
+          enable = true;
+          support32Bit = true;
+        };
+      };
     };
+
+    # Needed by pipewire
+    security.rtkit.enable = true;
 
     # Fix black screen on boot when auto login is enabled
     systemd.services = {
@@ -60,6 +73,11 @@
       hyprland.enable = true;
       xwayland.enable = true;
     };
+
+    # Add jetbrains font
+    fonts.packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+    ];
 
     # Copy wallpaper to .config
     home-manager.users.${username} = {

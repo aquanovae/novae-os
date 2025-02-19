@@ -13,8 +13,13 @@
     server.enable = true;
   };
 
-  # Override kernel config
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
+  boot = {
+    # Override kernel config
+    kernelPackages = lib.mkForce pkgs.linuxPackages;
+
+    # Disable plymouth
+    plymouth.enable = lib.mkForce false;
+  };
 
   system.stateVersion = "24.05";
 }
