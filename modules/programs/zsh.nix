@@ -54,6 +54,7 @@ in {
       nd      = "nix develop -c zsh";
       nfu     = "nix flake update --flake ${novae-os}";
       nrs     = "sudo nixos-rebuild switch --impure --flake ${novae-os}";
+      nrsm    = "NIX_SSHOPTS='-i ~/.ssh/minix -p 777' nixos-rebuild switch --flake ~/novae-os/#minix-server --target-host aquanovae@aquanovae.space --use-remote-sudo";
       ns      = "nix-shell --run zsh";
       nsg     = "l /nix/store | grep -i";
       nsp     = "nix-shell --run zsh -p";
