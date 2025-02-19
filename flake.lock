@@ -8,11 +8,11 @@
         "src": "src"
       },
       "locked": {
-        "lastModified": 1739879577,
-        "narHash": "sha256-M7Cw/GV1Bu2xTa1h84q8DPl4TnkILYEx57OpL1KRnMU=",
+        "lastModified": 1739999359,
+        "narHash": "sha256-oeV65qYa5JG21IR+DpqYo8jDxMsqqOflATUzvyT7Xh4=",
         "owner": "aquanovae",
         "repo": "daily-playlist",
-        "rev": "82aacfc3f6e3859f3f72658e958c2b3f2ebaf7ad",
+        "rev": "db71e5ddd9a92852624e9a2975426e5eec86af25",
         "type": "github"
       },
       "original": {
@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1739845242,
-        "narHash": "sha256-rNMXpDubNWGLTs45MuoH9YHtXfXye/fn2u4YMSTPt9I=",
+        "lastModified": 1739992710,
+        "narHash": "sha256-9kEscmGnXHjSgcqyJR4TzzHhska4yz1inSQs6HuO9qU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5cfbf5cc37a3bd1da07ae84eea1b828909c4456b",
+        "rev": "1c189f011447810af939a886ba7bee33532bb1f9",
         "type": "github"
       },
       "original": {
@@ -43,11 +43,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1739736696,
-        "narHash": "sha256-zON2GNBkzsIyALlOCFiEBcIjI4w38GYOb+P+R4S8Jsw=",
+        "lastModified": 1739866667,
+        "narHash": "sha256-EO1ygNKZlsAC9avfcwHkKGMsmipUk1Uc0TbrEZpkn64=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d74a2335ac9c133d6bbec9fc98d91a77f1604c1f",
+        "rev": "73cf49b8ad837ade2de76f87eb53fc85ed5d4680",
         "type": "github"
       },
       "original": {
@@ -60,11 +60,11 @@
     "openrgb-experimental": {
       "flake": false,
       "locked": {
-        "lastModified": 1739807193,
-        "narHash": "sha256-+TohXE8QZIzrLiB/Ae/U+KwKD1M9IMVmATyHiIlz75w=",
+        "lastModified": 1739907722,
+        "narHash": "sha256-3QFqSrTyNbBm3B62UnAcmeQYH0jmSp0IWh2z9awHJvk=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "c57d58d49b94d4696182b1622776651eac90c6d8",
+        "rev": "bf4f5480bea7447d2d59a06cd7cc2ea7a57fd097",
         "type": "gitlab"
       },
       "original": {
@@ -106,11 +106,11 @@
     "src": {
       "flake": false,
       "locked": {
-        "lastModified": 1739879433,
-        "narHash": "sha256-K1ULyskIWWKl0UgwoRmcBAIUcjkHUSAfB1ctvb+Csbg=",
+        "lastModified": 1739879577,
+        "narHash": "sha256-M7Cw/GV1Bu2xTa1h84q8DPl4TnkILYEx57OpL1KRnMU=",
         "owner": "aquanovae",
         "repo": "daily-playlist",
-        "rev": "7f3cac1871f69828082e629442c3c529ce53d133",
+        "rev": "82aacfc3f6e3859f3f72658e958c2b3f2ebaf7ad",
         "type": "github"
       },
       "original": {
