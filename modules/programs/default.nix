@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
 # Install programs
 # ------------------------------------------------------------------------------
-{ config, extraPkgs, lib, pkgs, ... }: let
+{ config, lib, pkgs, ... }: let
 
   cfg = config.novaeOs.programs;
 
@@ -18,7 +18,6 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
-    extraPkgs.daily-playlist
     jq
     gh
     git
