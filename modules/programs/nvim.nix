@@ -27,6 +27,7 @@
       ccls
       fd
       nixd
+      python313Packages.python-lsp-server
       ripgrep
       rustc
       rust-analyzer
@@ -129,6 +130,7 @@
       require("lsp-zero")
       require("lspconfig").ccls.setup {}
       require("lspconfig").nixd.setup {}
+      require("lspconfig").pylsp.setup {}
       require("lspconfig").wgsl_analyzer.setup {}
     '';
 
