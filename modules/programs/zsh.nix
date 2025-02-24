@@ -49,6 +49,7 @@ in {
       ll      = "ls -la --color=auto";
 
       # Nix aliases
+      nb      = "nix build";
       nbi     = "sudo nix build --impure ${novae-os}/#nixosConfigurations.live-image.config.system.build.isoImage";
       ncg     = "sudo nix-collect-garbage --delete-older-than 3d";
       nd      = "nix develop -c zsh";
