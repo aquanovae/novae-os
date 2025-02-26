@@ -28,6 +28,9 @@ in {
   ] ++ lib.optionals cfg.defaultDesktopApps.enable [
     firefox
 
+  ] ++ lib.optionals cfg.discord.enable [
+    discord
+
   ] ++ lib.optionals cfg.imageEditingApps.enable [
     inkscape
     gimp

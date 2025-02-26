@@ -29,6 +29,7 @@
 
     programs = {
       coolercontrol.enable = mkEnableOption "coolercontrol";
+      discord.enable = mkEnableOption "discord";
       defaultDesktopApps.enable = mkEnableOption "default desktop apps";
       documentEditingApps.enable = mkEnableOption "document editing apps";
       imageEditingApps.enable = mkEnableOption "image editing apps";
