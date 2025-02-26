@@ -27,7 +27,6 @@ in {
 
   ] ++ lib.optionals cfg.defaultDesktopApps.enable [
     firefox
-    pavucontrol
 
   ] ++ lib.optionals cfg.imageEditingApps.enable [
     inkscape

@@ -65,6 +65,7 @@
       dex
       pamixer
       playerctl
+      pwvucontrol
       radeontop
       swaybg
     ];
