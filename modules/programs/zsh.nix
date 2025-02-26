@@ -54,6 +54,7 @@ in {
       ncg     = "sudo nix-collect-garbage --delete-older-than 3d";
       nd      = "nix develop -c zsh";
       nfu     = "nix flake update --flake ${novae-os}";
+      nr      = "nix run";
       nrs     = "sudo nixos-rebuild switch --impure --flake ${novae-os}";
       nrsm    = "NIX_SSHOPTS='-i ~/.ssh/minix -p 777' nixos-rebuild switch --flake ~/novae-os/#minix-server --target-host aquanovae@aquanovae.space --use-remote-sudo";
       ns      = "nix-shell --run zsh";
