@@ -1,9 +1,5 @@
-# ------------------------------------------------------------------------------
-# Common configuration for all menus
-# ------------------------------------------------------------------------------
-{ config, lib, ... }:
+{ config, lib, ... }: let
 
-let
   theme = config.novaeOs.theme;
 
   # Define bemenu flags used by all menus
@@ -32,6 +28,7 @@ let
     "--ab '#${theme.bg0}'"
     "--af '#${theme.fg}'"
   ];
+
 in {
 
   imports = [

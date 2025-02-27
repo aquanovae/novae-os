@@ -1,6 +1,3 @@
-# ------------------------------------------------------------------------------
-# Core configuration shared for all hosts
-# ------------------------------------------------------------------------------
 { pkgs, username, ... }: {
 
   imports = [
@@ -13,10 +10,8 @@
   nixpkgs.config.allowUnfree = true;
 
   boot = {
-    # Use zen kernel
     kernelPackages = pkgs.linuxPackages_zen;
 
-    # Grub config
     loader = {
       efi.canTouchEfiVariables = true;
       timeout = 2;
@@ -30,7 +25,6 @@
     };
   };
 
-  # Base home manager config
   home-manager.users.${username}.home = {
     username = "${username}";
     homeDirectory = "/home/${username}";
@@ -38,7 +32,6 @@
     stateVersion = "24.05";
   };
 
-  # Language and time config
   i18n.defaultLocale = "en_GB.UTF-8";
   console.keyMap = "fr_CH";
   time = {

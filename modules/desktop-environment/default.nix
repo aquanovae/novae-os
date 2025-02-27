@@ -63,6 +63,7 @@
       bemenu
       brightnessctl
       dex
+      firefox
       pamixer
       playerctl
       pwvucontrol

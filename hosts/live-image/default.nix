@@ -1,6 +1,3 @@
-# ------------------------------------------------------------------------------
-# Custom ISO configuration
-# ------------------------------------------------------------------------------
 { lib, modulesPath, pkgs, ... }: {
 
   imports = [
@@ -18,17 +15,11 @@
     hardware = {
       wireless.enable = true;
     };
-
-    programs = {
-      defaultDesktopApps.enable = true;
-    };
   };
 
   boot = {
-    # Override kernel config
     kernelPackages = lib.mkForce pkgs.linuxPackages;
 
-    # Override grub config
     loader = {
       timeout = lib.mkForce 10;
       grub.enable = lib.mkForce false;

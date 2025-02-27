@@ -99,7 +99,13 @@
           ["@variable.builtin"] = { fg = "$yellow", fmt = "italic" },
           ["@variable.parameter"] = { fg = "$fg", fmt = "italic" },
 
+          ["@function.builtin.bash"] = { fg = "$yellow" },
+          ["@function.call.bash"] = { fg = "$yellow" },
+          ["@function.bash"] = { fg = "$yellow" },
+
           ["@variable.member.nix"] = { fg = "$blue" },
+          ["@variable.nix"] = { fg = "$fg", fmt = "italic" },
+
           ["@attribute.wgsl"] = { fg = "$purple" },
         },
       }

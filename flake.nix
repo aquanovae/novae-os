@@ -1,6 +1,7 @@
 {
   description = "Novae OS config";
 
+
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -20,8 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Experimental has a controller for dram rgb
-    # To switch to stable when released
     openrgb-experimental = {
       url = "gitlab:CalcProgrammer1/OpenRGB";
       flake = false;

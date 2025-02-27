@@ -1,6 +1,3 @@
-# ------------------------------------------------------------------------------
-# Home server configuration
-# ------------------------------------------------------------------------------
 { lib, pkgs, ... }: {
 
   imports = [
@@ -14,10 +11,8 @@
   };
 
   boot = {
-    # Override kernel config
     kernelPackages = lib.mkForce pkgs.linuxPackages;
 
-    # Disable plymouth
     plymouth.enable = lib.mkForce false;
   };
 

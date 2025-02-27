@@ -7,7 +7,7 @@ let
   theme = config.novaeOs.theme;
 in {
 
-  config = lib.mkIf config.novaeOs.programs.defaultDesktopApps.enable {
+  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
     home-manager.users.${username}.programs.alacritty = {
       enable = true;
 

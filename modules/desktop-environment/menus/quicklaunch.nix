@@ -1,6 +1,3 @@
-# ------------------------------------------------------------------------------
-# Program launcher script
-# ------------------------------------------------------------------------------
 { flags }: { config, lib, pkgs, ... }: let
 
   desktopFilesPath = /run/current-system/sw/share/applications;

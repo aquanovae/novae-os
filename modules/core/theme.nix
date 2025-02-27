@@ -1,14 +1,11 @@
-# ------------------------------------------------------------------------------
-# Shared theme colors
-# ------------------------------------------------------------------------------
 { lib, ... }: with lib; {
   
   options.novaeOs.theme = {
-    bg0 = mkOption { type = types.str; };
-    bg1 = mkOption { type = types.str; };
-    bg2 = mkOption { type = types.str; };
-    bg3 = mkOption { type = types.str; };
-    fg  = mkOption { type = types.str; };
+    bg0     = mkOption { type = types.str; };
+    bg1     = mkOption { type = types.str; };
+    bg2     = mkOption { type = types.str; };
+    bg3     = mkOption { type = types.str; };
+    fg      = mkOption { type = types.str; };
 
     black   = mkOption { type = types.str; };
     gray    = mkOption { type = types.str; };
@@ -21,11 +18,11 @@
   };
 
   config.novaeOs.theme = {
-    bg0 = "1f2329";
-    bg1 = "282c34";
-    bg2 = "30363f";
-    bg3 = "323641";
-    fg  = "a0a8b7";
+    bg0     = "1f2329";
+    bg1     = "282c34";
+    bg2     = "30363f";
+    bg3     = "323641";
+    fg      = "a0a8b7";
 
     black   = "0e1013";
     gray    = "535965";

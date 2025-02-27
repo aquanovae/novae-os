@@ -1,6 +1,3 @@
-# ------------------------------------------------------------------------------
-# Desktop computer configuration
-# ------------------------------------------------------------------------------
 { ... }: {
 
   imports = [
@@ -15,11 +12,8 @@
       mode = "desktop";
     };
 
-    hardware.wireless.enable = true;
-
     programs = {
       coolercontrol.enable = true;
-      defaultDesktopApps.enable = true;
       discord.enable = true;
       documentEditingApps.enable = true;
       imageEditingApps.enable = true;

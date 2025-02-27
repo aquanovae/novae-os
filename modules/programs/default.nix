@@ -1,6 +1,3 @@
-# ------------------------------------------------------------------------------
-# Install programs
-# ------------------------------------------------------------------------------
 { config, lib, pkgs, ... }: let
 
   cfg = config.novaeOs.programs;
@@ -24,9 +21,6 @@ in {
     neofetch
     pulseaudio
     tree
-
-  ] ++ lib.optionals cfg.defaultDesktopApps.enable [
-    firefox
 
   ] ++ lib.optionals cfg.discord.enable [
     discord

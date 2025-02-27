@@ -16,13 +16,11 @@
     };
 
     hardware = {
-      # Unused because GPU is passed to virtual machine
       nvidia.enable = true;
       wireless.enable = true;
     };
 
     programs = {
-      defaultDesktopApps.enable = true;
       documentEditingApps.enable = true;
       imageEditingApps.enable = true;
       spotify.enable = true;

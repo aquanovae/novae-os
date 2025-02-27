@@ -1,9 +1,5 @@
-# ------------------------------------------------------------------------------
-# Powermenu script
-# ------------------------------------------------------------------------------
-{ flags }: { config, lib, pkgs, ... }:
+{ flags }: { config, lib, pkgs, ... }: let
 
-let
   menuOptions = lib.concatStringsSep "\n" [
     "󰤁 Poweroff"
     "󰔛 Timer"
@@ -72,6 +68,7 @@ let
 
     runMenu
   '';
+
 in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
