@@ -28,6 +28,8 @@ in {
   ] ++ lib.optionals cfg.documentEditingApps.enable [
     onlyoffice-desktopeditors
     pdfarranger
+  ] ++ lib.optionals cfg.vscode.enable [
+    vscode
   ];
 
   programs = {

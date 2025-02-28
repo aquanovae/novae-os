@@ -3,6 +3,7 @@
   desktopFilesPath = /run/current-system/sw/share/applications;
 
   blacklistedEntries = "-e " + lib.strings.concatStringsSep " -e " [
+    "code-url-handler"
     "htop"
     "nixos-manual"
     "xdg-desktop-portal"
