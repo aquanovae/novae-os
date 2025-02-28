@@ -1,6 +1,3 @@
-# ------------------------------------------------------------------------------
-# Desktop environment configuration
-# ------------------------------------------------------------------------------
 { config, lib, pkgs, username, ... }: {
 
   imports = [
@@ -13,32 +10,21 @@
   ];
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
-    # Enable graphics
     hardware.graphics.enable = true;
 
     services = {
-      # Xserver has to be enabled even when using wayland
-      # due to confusing name scheme
+      # Xserver has to be enabled even when using wayland due to confusing name scheme
       xserver = {
         enable = true;
-        videoDrivers = [
-          "amdgpu"
-
-        ] ++ lib.optionals config.novaeOs.hardware.nvidia.enable [
-          "nvidia"
-        ];
-
-        # Enable display manager
         displayManager.gdm.enable = true;
+        videoDrivers = [ "amdgpu" ];
       };
 
-      # Setup auto login
       displayManager.autoLogin = {
         enable = true;
         user = "${username}";
       };
 
-      # Audio setup
       pipewire = {
         enable = true;
         pulse.enable = true;
@@ -58,7 +44,6 @@
       "autovt@tty1".enable = false;
     };
 
-    # Required programs for desktop environment
     environment.systemPackages = with pkgs; [
       bemenu
       brightnessctl
@@ -66,6 +51,7 @@
       firefox
       pamixer
       playerctl
+      pulseaudio
       pwvucontrol
       radeontop
       swaybg
@@ -76,16 +62,14 @@
       xwayland.enable = true;
     };
 
-    # Add jetbrains font
     fonts.packages = with pkgs; [
       nerd-fonts.jetbrains-mono
     ];
 
-    # Copy wallpaper to .config
     home-manager.users.${username} = {
+      gtk.enable = true;
       home = {
-        file.".config/hypr/wallpaper.png"
-          .source = ./wallpaper.png;
+        file.".config/hypr/wallpaper.png".source = ./wallpaper.png;
 
         pointerCursor = {
           package = pkgs.lyra-cursors;
@@ -94,8 +78,6 @@
           gtk.enable = true;
         };
       };
-
-      gtk.enable = true;
     };
   };
 }

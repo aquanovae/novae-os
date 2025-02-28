@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# Alacritty configuration
-# ------------------------------------------------------------------------------
-{ config, lib, username, ... }:
+{ config, lib, username, ... }: let
 
-let
   theme = config.novaeOs.theme;
+
 in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
@@ -12,13 +9,13 @@ in {
       enable = true;
 
       settings = {
-        # Set font
+        window.opacity = 0.83;
+
         font = {
           normal.family = "JetBrainsMono Nerd Font";
           size = 12;
         };
 
-        # Apply theme
         colors = {
           primary = {
             background = "#${theme.bg0}";
@@ -47,9 +44,6 @@ in {
           key = "Enter";
           action = "SpawnNewInstance";
         }];
-
-        # Enable semi-transparent window
-        window.opacity = 0.83;
       };
     };
   };

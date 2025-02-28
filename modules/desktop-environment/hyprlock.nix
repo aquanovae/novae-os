@@ -1,17 +1,7 @@
-# ------------------------------------------------------------------------------
-# Lock screen configuration
-# ------------------------------------------------------------------------------
 { config, lib, pkgs, username, ... }: let
 
   cfg = config.novaeOs.desktopEnvironment;
   theme = config.novaeOs.theme;
-
-  # Script to get laptop battery level
-  battery-level = pkgs.writeShellScriptBin "battery-level" ''
-    battery_level=$(cat /sys/class/power_supply/BAT0/capacity)
-
-    echo "$battery_level% 󰁹"
-  '';
 
 in {
 
@@ -25,14 +15,15 @@ in {
           no_fade_in = true;
         };
 
+
         background = [
-          # Set blured wallpaper as background
           { monitor = "";
             path = "/home/${username}/.config/hypr/wallpaper.png";
             blur_passes = 3;
             blur_size = 5;
           }
         ];
+
 
         shape = [
           # Box around usernam and input field
@@ -48,6 +39,7 @@ in {
             border_color = "rgb(${theme.bg2})";
           }
         ];
+
 
         label = [
           # Disply username
@@ -79,11 +71,19 @@ in {
             halign = "left";
             valign = "center";
 
-            text = "cmd[update:60000] ${battery-level}/bin/battery-level";
             font_family = "JetBrainsMono Nerd Font";
             font_size = "11";
+            text = let 
+
+              battery-level = pkgs.writeShellScriptBin "battery-level" ''
+                battery_level=$(cat /sys/class/power_supply/BAT0/capacity)
+                echo "$battery_level% 󰁹"
+              '';
+
+            in "cmd[update:60000] ${battery-level}/bin/battery-level";
           }
         ];
+
 
         input-field = [
           # Password input field

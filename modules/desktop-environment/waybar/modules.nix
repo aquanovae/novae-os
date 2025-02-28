@@ -1,16 +1,11 @@
-# ------------------------------------------------------------------------------
-# Task bar modules configuartion
-# ------------------------------------------------------------------------------
 { config, lib, pkgs, username, ... }: let
 
   theme = config.novaeOs.theme;
-
   toSpan = icon: color: "<span color='#${color}' size='11pt'>${icon}</span>";
 
 in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
-
     home-manager.users.${username}.programs.waybar.settings.bar = {
 
       # Decorative module displaying distro logo
@@ -18,6 +13,7 @@ in {
         format = "󱄅";
         tooltip = false;
       };
+
 
       # Display window manager active workspaces
       "hyprland/workspaces" = {
@@ -30,7 +26,6 @@ in {
         all-outputs = true;
         show-special = true;
         special-visible-only = true;
-
         tooltip = false;
 
         # Assign logo to programs
@@ -49,6 +44,7 @@ in {
         };
       };
 
+
       # Display currently playing track info
       "custom/playerctl-info" = {
         format = "${toSpan "󰓇" theme.green}  {}";
@@ -61,6 +57,7 @@ in {
         '';
       };
 
+
       # Display shutdown time if shutdown timer is active
       "custom/shutdowntime" = {
         format = "{} 󱫌";
@@ -68,9 +65,11 @@ in {
         interval = 1;
 
         exec = pkgs.writeShellScript "shutdowntime" ''
-          shutdown --show 2>&1 | grep -Eo "[0-9]{2}:[0-9]{2}"
+          shutdown --show 2>&1 | \
+            grep -Eo "[0-9]{2}:[0-9]{2}"
         '';
       };
+
 
       # Display volume info
       wireplumber = {
@@ -80,6 +79,7 @@ in {
         tooltip = false;
       };
 
+
       # Display disk usage
       disk = {
       format = "{percentage_used}% ${toSpan "󰋊" theme.blue}";
@@ -88,6 +88,7 @@ in {
         tooltip = false;
       };
 
+
       # Display memory usage
       memory = {
         format = "{used}GB ${toSpan "󰘚" theme.blue}";
@@ -95,12 +96,14 @@ in {
         tooltip = false;
         };
 
+
       # Display CPU usage
       cpu = {
         format = "{usage}% ${toSpan "󰍛" theme.blue}";
         interval = 1;
         tooltip = false;
       };
+
 
       # Display GPU usage
       "custom/gpu-info" = {
@@ -117,6 +120,7 @@ in {
         '';
       };
 
+
       # Display battery status
       battery = {
         states = { low = 20; };
@@ -127,6 +131,7 @@ in {
         interval = 1;
         tooltip = false;
       };
+
 
       # Display time and date on hover
       clock = {

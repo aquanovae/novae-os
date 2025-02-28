@@ -7,7 +7,7 @@ in {
   imports = [
     ./alacritty.nix
     ./openrgb.nix
-    ./nvim.nix
+    ./nvim
     ./ranger.nix
     ./starship.nix
     ./spotify.nix
@@ -19,16 +19,12 @@ in {
     gh
     git
     neofetch
-    pulseaudio
     tree
-
   ] ++ lib.optionals cfg.discord.enable [
     discord
-
   ] ++ lib.optionals cfg.imageEditingApps.enable [
     inkscape
     gimp
-
   ] ++ lib.optionals cfg.documentEditingApps.enable [
     onlyoffice-desktopeditors
     pdfarranger

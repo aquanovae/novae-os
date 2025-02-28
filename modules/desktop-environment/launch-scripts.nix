@@ -1,7 +1,6 @@
 { config, lib, pkgs, username, ... }: let 
 
   launch-ranger = pkgs.writeShellScriptBin "launch-ranger" ''
-    
     condition() {
       hyprctl -j clients | \
         jq ".[].title" | \
@@ -16,7 +15,6 @@
   '';
 
   launch-config = pkgs.writeShellScriptBin "launch-config" ''
-
     condition() {
       hyprctl -j clients | \
         jq ".[].title" | \
@@ -31,6 +29,7 @@
 
     condition || launch
   '';
+
 in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {

@@ -32,7 +32,7 @@
 in {
 
   imports = [
-    (import ./powermenu.nix { flags = flags; })
-    (import ./quicklaunch.nix { flags = flags; })
+    (import ./powermenu.nix { inherit flags; })
+    (import ./quicklaunch.nix { inherit flags; })
   ];
 }

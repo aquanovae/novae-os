@@ -2,7 +2,7 @@
 
   desktopFilesPath = /run/current-system/sw/share/applications;
 
-  grepBlacklistedEntries = "-e " + lib.strings.concatStringsSep " -e " [
+  blacklistedEntries = "-e " + lib.strings.concatStringsSep " -e " [
     "htop"
     "nixos-manual"
     "xdg-desktop-portal"
@@ -23,7 +23,7 @@
     # Filter blacklisted entries
     list=$(
       echo "$full_list" | \
-        grep -v ${grepBlacklistedEntries}
+        grep -v ${blacklistedEntries}
     )
 
     # Run desktop files list through bemenu

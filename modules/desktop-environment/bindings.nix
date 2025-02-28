@@ -1,10 +1,6 @@
-# ------------------------------------------------------------------------------
-# Key bindings for window manager
-# ------------------------------------------------------------------------------
 { config, lib, username, ... }: {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
-
     home-manager.users.${username}.wayland.windowManager.hyprland.extraConfig = /*hyprlang*/ ''
 
       # Focus workspace

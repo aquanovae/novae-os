@@ -15,6 +15,7 @@
   ];
 
   options.novaeOs = with lib; {
+
     desktopEnvironment = {
       enable = mkEnableOption "desktop environment";
       mode = mkOption {
