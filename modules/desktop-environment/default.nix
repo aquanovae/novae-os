@@ -1,4 +1,4 @@
-{ config, lib, pkgs, username, ... }: {
+{ config, extraPkgs, lib, pkgs, username, ... }: {
 
   imports = [
     ./bindings.nix
@@ -48,7 +48,7 @@
       bemenu
       brightnessctl
       dex
-      firefox
+      extraPkgs.zen-browser
       pamixer
       playerctl
       pulseaudio

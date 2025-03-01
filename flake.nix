@@ -3,7 +3,6 @@
 
 
   inputs = {
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -21,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    zen-browser = {
+      url = "https://github.com/zen-browser/desktop/releases/download/twilight/zen-x86_64.AppImage";
+      flake = false;
+    };
+
     openrgb-experimental = {
       url = "gitlab:CalcProgrammer1/OpenRGB";
       flake = false;
@@ -33,8 +37,10 @@
     nixosConfigurations = let
 
       system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
       extraPkgs = {
         daily-playlist = inputs.daily-playlist.packages.${system}.default;
+        zen-browser = pkgs.callPackage ./extra-pkgs/zen-browser.nix { inherit inputs; };
       };
       specialArgs = { 
         inherit inputs extraPkgs;
