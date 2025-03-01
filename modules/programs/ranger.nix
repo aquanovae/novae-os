@@ -1,11 +1,11 @@
-{ pkgs, username, ... }: {
+{ extraPkgs, username, ... }: {
   
   home-manager.users.${username}.programs.ranger = {
     enable = true;
 
     rifle = [
       { condition = "ext x?pdf?";
-        command = "${pkgs.firefox}/bin/firefox \"$@\"";
+        command = "${extraPkgs.zen-browser}/bin/zen-browser \"$@\" &";
       }
     ];
   };
