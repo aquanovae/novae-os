@@ -26,7 +26,7 @@
     )
 
     selection=$(
-      echo "$full_list" | \
+      echo "$filtered_list" | \
         bemenu -p "󱓞" ${flags}
     )
 
