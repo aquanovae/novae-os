@@ -56,7 +56,8 @@ in {
       nfu     = "nix flake update --flake ${novae-os}";
       nr      = "nix run";
       nrs     = "sudo nixos-rebuild switch --impure --flake ${novae-os}";
-      nrsm    = "NIX_SSHOPTS='-i ~/.ssh/minix -p 777' nixos-rebuild switch --flake ~/novae-os/#minix-server --target-host aquanovae@aquanovae.space --use-remote-sudo";
+      nrsm    = "NIX_SSHOPTS='-i ~/.ssh/minix -p 777' nixos-rebuild switch --flake ~/novae-os/#minix --target-host aquanovae@aquanovae.space --use-remote-sudo";
+      nrsv    = "sudo nixos-rebuild switch --impure --flake ${novae-os} --verbose --print-build-logs";
       ns      = "nix-shell --run zsh";
       nsg     = "l /nix/store | grep -i";
       nsp     = "nix-shell --run zsh -p";
@@ -64,6 +65,7 @@ in {
       # Other aliases
       ".."    = "cd ..";
       tree    = "tree --dirsfirst";
+      sshm    = "ssh -i ~/.ssh/minix -p 777 aquanovae@aquanovae.space";
     };
   };
 }

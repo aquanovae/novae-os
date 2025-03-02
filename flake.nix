@@ -65,10 +65,10 @@
         ];
       };
 
-      minix-server = nixpkgs.lib.nixosSystem {
+      minix = nixpkgs.lib.nixosSystem {
         inherit system specialArgs;
         modules = [
-          ./hosts/minix-server
+          ./hosts/minix
           ./modules
         ];
       };
