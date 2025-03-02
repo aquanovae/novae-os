@@ -13,7 +13,6 @@
     hardware.graphics.enable = true;
 
     services = {
-      # Xserver has to be enabled even when using wayland due to confusing name scheme
       xserver = {
         enable = true;
         displayManager.gdm.enable = true;
@@ -62,9 +61,7 @@
       xwayland.enable = true;
     };
 
-    fonts.packages = with pkgs; [
-      nerd-fonts.jetbrains-mono
-    ];
+    fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
     home-manager.users.${username} = {
       gtk.enable = true;

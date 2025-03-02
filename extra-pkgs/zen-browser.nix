@@ -7,6 +7,7 @@
   desktopFilePath = "$out/share/applications/${pname}.desktop";
 
 in appimageTools.wrapType2 {
+
   inherit pname version src;
 
   extraInstallCommands = ''

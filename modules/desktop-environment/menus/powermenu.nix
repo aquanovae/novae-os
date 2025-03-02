@@ -18,7 +18,6 @@
   ];
 
   powermenuScript = pkgs.writeShellScriptBin "powermenu" ''
-    # Main powermenu
     function runMenu {
       selection=$(
         echo -e "${menuOptions}" | \
@@ -43,7 +42,6 @@
       esac
     }
 
-    # Timer preset submenu
     function setTimer {
       selection=$(
         echo -e "${timePresets}" | \
@@ -72,8 +70,6 @@
 in {
 
   config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
-    environment.systemPackages = [ 
-      powermenuScript
-    ];
+    environment.systemPackages = [ powermenuScript ];
   };
 }

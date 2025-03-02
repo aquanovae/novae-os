@@ -12,7 +12,6 @@
 
   boot = {
     kernelPackages = lib.mkForce pkgs.linuxPackages;
-
     plymouth.enable = lib.mkForce false;
   };
 

@@ -1,13 +1,13 @@
 { config, lib, pkgs, username, ... }: let 
 
   launch-ranger = pkgs.writeShellScriptBin "launch-ranger" ''
-    condition() {
+    function condition() {
       hyprctl -j clients | \
         jq ".[].title" | \
         grep "ranger"
     }
 
-    launch() {
+    function launch() {
       alacritty -T ranger -e ranger &
     }
 
@@ -15,13 +15,13 @@
   '';
 
   launch-config = pkgs.writeShellScriptBin "launch-config" ''
-    condition() {
+    function condition() {
       hyprctl -j clients | \
         jq ".[].title" | \
         grep "config"
     }
 
-    launch() {
+    function launch() {
       alacritty -T config --working-directory /home/${username}/novae-os &
       sleep 0.03
       alacritty -T config --working-directory /home/${username}/novae-os -e vim &
