@@ -35,16 +35,6 @@
         },
       }
 
-      -- Syntax highlighting
-      require("treesitter-context").setup()
-      require("nvim-treesitter.configs").setup {
-        auto_install = false,
-
-        highlight = {
-          enable = true,
-        },
-      }
-
       -- Fuzzy file finder
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>s", builtin.find_files, {})

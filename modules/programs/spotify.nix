@@ -5,7 +5,6 @@
   ];
 
   config = lib.mkIf config.novaeOs.programs.spotify.enable {
-
     programs.spicetify = let
 
        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};

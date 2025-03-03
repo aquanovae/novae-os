@@ -1,15 +1,10 @@
-# ------------------------------------------------------------------------------
-# Looking glass configuration
-# ------------------------------------------------------------------------------
 { config, lib, username, ... }: {
 
   config = lib.mkIf config.novaeOs.virtualMachine.enable {
-
     home-manager.users.${username}.programs.looking-glass-client = {
       enable = true;
       #package = looking-glass-client-experimental;
 
-      # Looking glass app settings
       settings = {
         input = {
           escapeKey = "KEY_INSERT";
@@ -24,7 +19,6 @@
     };
 
     environment.systemPackages = [
-      #looking-glass-kvmfr-experimental
       config.boot.kernelPackages.kvmfr
     ];
 

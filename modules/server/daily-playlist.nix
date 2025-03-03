@@ -2,9 +2,7 @@
 
   config = lib.mkIf config.novaeOs.server.enable {
 
-    environment.systemPackages = [
-      extraPkgs.daily-playlist
-    ];
+    environment.systemPackages = [ extraPkgs.daily-playlist ];
 
     systemd = {
       timers.daily-playlist = {

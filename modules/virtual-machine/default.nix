@@ -1,6 +1,3 @@
-# ------------------------------------------------------------------------------
-# Virtual machine configuration
-# ------------------------------------------------------------------------------
 { config, lib, pkgs, username, ... }: let
 
   cfg = config.novaeOs.virtualMachine;
@@ -46,14 +43,12 @@
 
   diskPath = "/home/${username}/vm/win-10";
 
-  # Script to launch vm
   vm-launch-script = pkgs.writeShellScriptBin "windows-vm" ''
     qemu-system-x86_64  ${qemuOptions} ${diskPath} &
     sleep 1
     looking-glass-client
   '';
 
-  # Create desktop file for script
   vm-desktop-file = pkgs.makeDesktopItem {
     name = "windows-vm";
     desktopName = "windows-vm";
@@ -69,7 +64,6 @@ in {
   ];
 
   config = lib.mkIf cfg.enable {
-
     environment.systemPackages = [
       pkgs.OVMFFull
       (pkgs.qemu.override {

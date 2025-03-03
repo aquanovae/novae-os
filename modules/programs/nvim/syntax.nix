@@ -1,21 +1,24 @@
 { username, ... }: {
 
   home-manager.users.${username}.programs.neovim.extraLuaConfig = /*lua*/ ''
-
     local opt = vim.opt
 
     vim.hl = vim.highlight
     opt.syntax = enable
     opt.termguicolors = true
 
+    require("treesitter-context").setup()
+    require("nvim-treesitter.configs").setup {
+      auto_install = false,
+      highlight = { enable = true },
+    }
+
     require("onedark").setup {
       style = "darker",
       transparent = true,
       term_colors = false,
 
-      code_style = {
-        keywords = "bold",
-      },
+      code_style = { keywords = "bold" },
 
       highlights = {
         ["@keyword"] = { fg = "$red", fmt = "bold" },
