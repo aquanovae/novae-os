@@ -60,11 +60,11 @@
     "openrgb-experimental": {
       "flake": false,
       "locked": {
-        "lastModified": 1740853494,
-        "narHash": "sha256-3v5kYtpb+HQ9w8tv+l/AgvfzjwcknCv1DOHiY8d+86Y=",
+        "lastModified": 1741019868,
+        "narHash": "sha256-H2yM4b57uByRbtRKX9brQNVAzEFyRi/MnEsCDdGdJOg=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "3e32a5b36ce9ac85c920f6e60f1daeee01662757",
+        "rev": "e91b5434fa9c85d1f46dc88d2794ee682f1d603f",
         "type": "gitlab"
       },
       "original": {
@@ -138,7 +138,7 @@
     "zen-browser": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-YcEjy8syDT78AKPZZPGtXJiqzJ4p/pywcBQ3EDE7eqI=",
+        "narHash": "sha256-tckFesm14EY37bi0+JFovrY4jS8Po1c5sgyxVXc4uG4=",
         "type": "file",
         "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen-x86_64.AppImage"
       },
