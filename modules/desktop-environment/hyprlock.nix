@@ -18,7 +18,7 @@ in {
 
         background = [
           { monitor = "";
-            path = "/home/${username}/.config/hypr/wallpaper.png";
+            path = "screenshot";
             blur_passes = 3;
             blur_size = 5;
           }
