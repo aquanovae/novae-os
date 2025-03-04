@@ -47,7 +47,7 @@ in {
         general = {
           layout = "dwindle";
           gaps_in = 3;
-          gaps_out = 6;
+          gaps_out = 0;
           border_size = 2;
           "col.active_border" = "rgb(${theme.blue}) rgb(${theme.magenta}) 45deg";
           "col.inactive_border" = "rgb(${theme.gray})";
