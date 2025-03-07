@@ -25,8 +25,13 @@
       flake = false;
     };
 
-    openrgb-experimental = {
+    openrgb = {
       url = "gitlab:CalcProgrammer1/OpenRGB";
+      flake = false;
+    };
+
+    openrgb-effects-plugin = {
+      url = "git+https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin?submodules=1";
       flake = false;
     };
   };
