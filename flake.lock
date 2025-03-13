@@ -27,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742416832,
-        "narHash": "sha256-ycok0eJJcoknqaibdv/TEEEOUqovC42XCqbfLDYmnoQ=",
+        "lastModified": 1742447757,
+        "narHash": "sha256-Q0KXcHQmum8L6IzGhhkVhjFMKY6BvYa/rhmLP26Ws8o=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "eb0f617aecbaf1eff5bacec789891e775af2f5a3",
+        "rev": "94605dcadefeaff6b35c8931c9f38e4f4dc7ad0a",
         "type": "github"
       },
       "original": {
@@ -140,7 +140,7 @@
     "zen-browser": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-NgHY+5sR1MYKAtbRaDFhj5a4YrGtn11UIKt5Gi1ux6c=",
+        "narHash": "sha256-6H1t2kOI40ntu01FxDVLOYoHRFucU0VSsucWs7ps8ug=",
         "type": "file",
         "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen-x86_64.AppImage"
       },
