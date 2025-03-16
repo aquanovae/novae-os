@@ -48,6 +48,7 @@
       brightnessctl
       dex
       extraPkgs.zen-browser
+      firefox
       pamixer
       playerctl
       pulseaudio
