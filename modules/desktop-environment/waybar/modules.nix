@@ -68,6 +68,10 @@ in {
           shutdown --show 2>&1 | \
             grep -Eo "[0-9]{2}:[0-9]{2}"
         '';
+
+        on-click = pkgs.writeShellScript "shutdown-cancel" ''
+          shutdown -c
+        '';
       };
 
 
