@@ -76,7 +76,7 @@ in {
       #custom-shutdowntime {
         color: #${theme.bg0};
         background-color: #${theme.red};
-        min-width: 75px;
+        min-width: 80px;
       }
 
       #wireplumber,
@@ -89,17 +89,20 @@ in {
         background-color: #${theme.bg0};
       }
 
+      /* width = (str_length + 1) * 10 */
+
       #wireplumber,
       #disk,
       #cpu,
       #battery,
       #custom-gpu-info,
       #clock {
-        min-width: 65px;
+        min-width: 70px;
       }
 
-      #memory {
-        min-width: 95px;
+      #memory,
+      #clock {
+        min-width: 100px;
       }
     '';
   };
