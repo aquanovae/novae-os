@@ -17,8 +17,8 @@
     "󱫧 Cancel"
   ];
 
-  powermenuScript = pkgs.writeShellScriptBin "powermenu" ''
-    function runMenu {
+  powermenuScript = pkgs.writeShellScriptBin "powermenu" /*bash*/ ''
+    function run_menu {
       selection=$(
         echo -e "${menuOptions}" | \
           bemenu -p "󰐥" ${flags}
@@ -28,7 +28,7 @@
         "󰤁 Poweroff")
           systemctl poweroff;;
         "󰔛 Timer")
-          setTimer;;
+          set_timer;;
         "󰤄 Suspend")
           systemctl suspend;;
         "󰜉 Reboot")
@@ -42,7 +42,7 @@
       esac
     }
 
-    function setTimer {
+    function set_timer {
       selection=$(
         echo -e "${timePresets}" | \
           bemenu -p "󰔛" ${flags}
@@ -64,7 +64,7 @@
       esac
     }
 
-    runMenu
+    run_menu
   '';
 
 in {

@@ -11,7 +11,7 @@
     "xwayland"
   ];
 
-  quicklaunchScript = pkgs.writeShellScriptBin "quicklaunch" ''
+  quicklaunchScript = pkgs.writeShellScriptBin "quicklaunch" /*bash*/ ''
     full_list=$(
       ls -1 ${desktopFilesPath} | \
         grep ".desktop" | \
