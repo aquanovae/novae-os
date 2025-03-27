@@ -46,13 +46,13 @@ in {
       ll      = "ls -la --color=auto";
 
       # Nix aliases
-      nb      = "nix build";
+      nb      = "nix build -vL";
       nbi     = "sudo nix build --impure ${novae-os}/#nixosConfigurations.live-image.config.system.build.isoImage";
       ncg     = "sudo nix-collect-garbage --delete-older-than 3d";
       nd      = "nix develop -c zsh";
       nfu     = "nix flake update --flake ${novae-os}";
-      nr      = "nix run --option substitute false";
-      nra     = "nix run --option substitute false . --";
+      nr      = "nix run -vL --option substitute false";
+      nra     = "nix run -vL --option substitute false . --";
       nrs     = "sudo nixos-rebuild switch --impure --flake ${novae-os}";
       nrsm    = "NIX_SSHOPTS='-i ~/.ssh/minix -p 777' nixos-rebuild switch --flake ~/novae-os/#minix --target-host aquanovae@aquanovae.space --use-remote-sudo";
       nrsv    = "sudo nixos-rebuild switch --impure --flake ${novae-os} --verbose --print-build-logs";
