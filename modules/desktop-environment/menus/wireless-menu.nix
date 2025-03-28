@@ -12,7 +12,7 @@
 
   station = "station wlan0";
 
-  wirelessmenuScript = pkgs.writeShellScriptBin "wireless-menu" /*bash*/ ''
+  wirelessMenuScript = pkgs.writeShellScriptBin "wireless-menu" /*bash*/ ''
     function run_menu {
       iwctl ${station} scan
 
@@ -90,14 +90,20 @@
         connect="connect-hidden"
       fi
 
-      iwctl ${station} $connect "$network_name" --dont-ask
+      timeout 2 \
+        iwctl ${station} $connect "$network_name" --dont-ask
+
+      pkill iwctl
 
       if [[ $? -ne 0 ]]; then
         password=$(
           prompt_password_menu
         )
 
-        iwctl ${station} $connect "$network_name" --passphrase "$password"
+        timeout 2 \
+          iwctl ${station} $connect "$network_name" --passphrase "$password"
+
+        pkill iwctl
       fi
     }
 
@@ -128,9 +134,20 @@
     run_menu
   '';
 
+  desktopFile = pkgs.makeDesktopItem {
+    name = "wireless-menu";
+    desktopName = "wireless-menu";
+    type = "Application";
+    exec = "${wirelessMenuScript}/bin/wireless-menu";
+    terminal = false;
+  };
+
 in {
 
   config = lib.mkIf (desktopEnvironment.enable && wireless.enable) {
-    environment.systemPackages = [ wirelessmenuScript ];
+    environment.systemPackages = [
+      desktopFile
+      wirelessMenuScript
+    ];
   };
 }
