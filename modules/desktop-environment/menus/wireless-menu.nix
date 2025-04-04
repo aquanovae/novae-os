@@ -65,7 +65,7 @@
         "󱛄 Refresh")
           connect_menu;;
         *)
-          connect "$selected" 0;;
+          [[ -n $selected ]] && connect "$selected" 0;;
       esac
     }
 
