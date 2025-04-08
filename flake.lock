@@ -40,6 +40,22 @@
         "type": "github"
       }
     },
+    "moon-fly": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744004844,
+        "narHash": "sha256-bKMABgpstoYtDe1R9p4UnX3/uwrRXQw74Rlgyn3T9ic=",
+        "owner": "bluz71",
+        "repo": "vim-moonfly-colors",
+        "rev": "755ef16bd99074666e467e2410a3dd2e86874182",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bluz71",
+        "repo": "vim-moonfly-colors",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1743827369,
@@ -94,6 +110,7 @@
       "inputs": {
         "daily-playlist": "daily-playlist",
         "home-manager": "home-manager",
+        "moon-fly": "moon-fly",
         "nixpkgs": "nixpkgs",
         "openrgb": "openrgb",
         "openrgb-effects-plugin": "openrgb-effects-plugin",

@@ -1,4 +1,11 @@
-{ pkgs, username, ... }: {
+{ inputs, pkgs, username, ... }: let 
+
+  moon-fly = pkgs.vimUtils.buildVimPlugin {
+    name = "moon-fly";
+    src = inputs.moon-fly;
+  };
+
+in {
 
   home-manager.users.${username}.programs.neovim = {
     plugins = with pkgs.vimPlugins; [
@@ -7,9 +14,10 @@
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       nvim-treesitter-context
+      moon-fly
       onedark-nvim
       otter-nvim
-      rustaceanvim
+      #rustaceanvim
       telescope-nvim
       wgsl-vim
     ];
@@ -44,6 +52,7 @@
       require("lspconfig").ccls.setup {}
       require("lspconfig").nixd.setup {}
       require("lspconfig").pylsp.setup {}
+      require("lspconfig").rust_analyzer.setup {}
       require("lspconfig").wgsl_analyzer.setup {}
     '';
   };

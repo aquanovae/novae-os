@@ -34,6 +34,11 @@
       url = "git+https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin?submodules=1";
       flake = false;
     };
+
+    moon-fly = {
+      url = "github:bluz71/vim-moonfly-colors";
+      flake = false;
+    };
   };
 
 
