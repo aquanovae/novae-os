@@ -6,16 +6,11 @@
 
   config = lib.mkIf config.novaeOs.programs.spotify.enable {
     programs.spicetify = let
-
        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-
     in {
-
       enable = true;
-
       theme = spicePkgs.themes.hazy;
-      colorScheme = "dark";
-
+      colorScheme = "Base";
       enabledExtensions = with spicePkgs.extensions; [
         hidePodcasts
       ];
