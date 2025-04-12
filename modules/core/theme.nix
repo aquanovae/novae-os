@@ -18,19 +18,19 @@
   };
 
   config.novaeOs.theme = {
-    bg0     = "1f2329";
-    bg1     = "282c34";
-    bg2     = "30363f";
-    bg3     = "323641";
-    fg      = "a0a8b7";
+    bg0     = "202020";
+    bg1     = "303030";
+    bg2     = "404040";
+    bg3     = "505050";
+    fg      = "bdbdbd";
 
-    black   = "0e1013";
-    gray    = "535965";
-    red     = "e55561";
-    yellow  = "e2b86b";
-    green   = "8ebd6b";
-    cyan    = "48b0bd";
-    blue    = "4fa6ed";
-    magenta = "bf68d9";
+    black   = "323437";
+    gray    = "949494";
+    red     = "ff5d5d";
+    yellow  = "e3c78a";
+    green   = "8cc85f";
+    cyan    = "79dac8";
+    blue    = "80a0ff";
+    magenta = "ae81ff";
   };
 }

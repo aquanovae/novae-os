@@ -50,7 +50,7 @@ in {
           gaps_out = 0;
           border_size = 2;
           "col.active_border" = "rgb(${theme.blue}) rgb(${theme.magenta}) 45deg";
-          "col.inactive_border" = "rgb(${theme.gray})";
+          "col.inactive_border" = "rgb(${theme.bg3})";
         };
 
         dwindle = {

@@ -19,13 +19,13 @@ in {
       }
 
       .modules-left {
-        border: 2px solid #${theme.gray};
-        background-color: #${theme.bg3};
+        border: 2px solid #${theme.bg3};
+        background-color: #${theme.bg1};
       }
 
       .modules-right {
-        border: 2px solid #${theme.gray};
-        background-color: #${theme.bg3};
+        border: 2px solid #${theme.bg3};
+        background-color: #${theme.bg1};
       }
 
       #custom-os-icon {
