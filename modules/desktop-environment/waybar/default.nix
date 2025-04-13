@@ -16,7 +16,7 @@ in {
       settings.bar = {
         layer = "top";
         position = "top";
-        margin = "3px 0px 6px";
+        margin = "3px 3px 0px";
         spacing = 7;
         reload_style_on_change = true;
 
