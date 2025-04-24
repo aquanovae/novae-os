@@ -2,8 +2,6 @@
 
   config = lib.mkIf config.novaeOs.server.enable {
 
-    environment.systemPackages = [ extraPkgs.daily-playlist ];
-
     systemd = {
       timers.daily-playlist = {
         enable = true;
@@ -15,9 +13,9 @@
       };
 
       services.daily-playlist = {
-        path = [ extraPkgs.daily-playlist ];
+        path = [ extraPkgs.spotify-manager ];
         script = ''
-          daily-playlist generate
+          spotify-manager generate
         '';
       };
     };

@@ -67,7 +67,7 @@ in {
         color: #${theme.bg0};
       }
 
-      #custom-playerctl-info {
+      #custom-spotify-info {
         padding: 0px 11px;
         color: #${theme.fg};
         background-color: alpha(#${theme.bg0}, 0.67);

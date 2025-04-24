@@ -64,6 +64,9 @@
       # Open powermenu
       bind = super, Escape, exec, powermenu
 
+      # Open spotify menu
+      bind = super, P, exec, spotify-menu
+
       # Lock screen
       bind = super shift, Escape, exec, hyprlock
 

@@ -46,14 +46,13 @@ in {
 
 
       # Display currently playing track info
-      "custom/playerctl-info" = {
+      "custom/spotify-info" = {
         format = "${toSpan "󰓇" theme.green}  {}";
         tooltip = false;
-        interval = 1;
+        restart-interval = 1;
 
-        exec = pkgs.writeShellScript "playerctl-info" ''
-          playerctl metadata -sf "{{artist}} - {{title}}" | \
-            sed -e "s/&/&amp;/g"
+        exec = pkgs.writeShellScript "spotify-info" ''
+          spotify-manager track-info
         '';
       };
 

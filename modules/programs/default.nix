@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: let
+{ config, extraPkgs, lib, pkgs, ... }: let
 
   cfg = config.novaeOs.programs;
 
@@ -15,6 +15,7 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
+    extraPkgs.spotify-manager
     jq
     gh
     git

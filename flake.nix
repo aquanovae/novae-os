@@ -15,8 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    daily-playlist = {
-      url = "github:aquanovae/daily-playlist";
+    spotify-manager = {
+      url = "github:aquanovae/spotify-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -49,7 +49,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
       extraPkgs = {
-        daily-playlist = inputs.daily-playlist.packages.${system}.default;
+        spotify-manager = inputs.spotify-manager.packages.${system}.default;
         zen-browser = pkgs.callPackage ./extra-pkgs/zen-browser.nix { inherit inputs; };
       };
       specialArgs = { 

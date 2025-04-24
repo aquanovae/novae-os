@@ -27,7 +27,7 @@ in {
         ];
 
         modules-center = lib.mkIf (cfg.mode != "minimal") [
-          "custom/playerctl-info"
+          "custom/spotify-info"
         ];
 
         modules-right = [
