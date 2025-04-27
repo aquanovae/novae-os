@@ -1,9 +1,8 @@
-{ config, lib, username, ... }: {
+{ config, inputs, lib, pkgs, username, ... }: {
 
   config = lib.mkIf config.novaeOs.virtualMachine.enable {
     home-manager.users.${username}.programs.looking-glass-client = {
       enable = true;
-      #package = looking-glass-client-experimental;
 
       settings = {
         input = {
@@ -18,9 +17,7 @@
       };
     };
 
-    environment.systemPackages = [
-      config.boot.kernelPackages.kvmfr
-    ];
+    environment.systemPackages = [ config.boot.kernelPackages.kvmfr ];
 
     # Give user access to shared memory file
     systemd.tmpfiles.rules = [

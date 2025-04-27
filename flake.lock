@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745439012,
-        "narHash": "sha256-TwbdiH28QK7Da2JQTqFHdb+UCJq6QbF2mtf+RxHVzEA=",
+        "lastModified": 1745593878,
+        "narHash": "sha256-Rq5qNnUWuhQTqzXDcminu7Z1FPSB1wUaKIEfPTyZkAs=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d31710fb2cd536b1966fee2af74e99a0816a61a8",
+        "rev": "542078066b1a99cdc5d5fce1365f98b847ca0b5a",
         "type": "github"
       },
       "original": {
@@ -20,14 +20,30 @@
         "type": "github"
       }
     },
+    "looking-glass": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743722580,
+        "narHash": "sha256-3+fIboEtSxXGCJVRDyu85Hq/oJxza3cA7yFGLQJMad4=",
+        "owner": "gnif",
+        "repo": "LookingGlass",
+        "rev": "54d811e09847fcd4a4ad7361c33fd354d703152d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gnif",
+        "repo": "LookingGlass",
+        "type": "github"
+      }
+    },
     "moon-fly": {
       "flake": false,
       "locked": {
-        "lastModified": 1745380498,
-        "narHash": "sha256-adANtCL193r/1QgNGyMO+m3WZza4hMABCzAK4+VAZ7g=",
+        "lastModified": 1745567604,
+        "narHash": "sha256-9LRE8dwifN8oVzb96+/ZT+30o1YFecKipLkqNsCJ7UY=",
         "owner": "bluz71",
         "repo": "vim-moonfly-colors",
-        "rev": "27e8e0d7ccc2654c29370815d0f9d15e87ac8ea8",
+        "rev": "cc4ad7e8bdb94723dc4e5356916b9c4a4ed1892b",
         "type": "github"
       },
       "original": {
@@ -89,6 +105,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "looking-glass": "looking-glass",
         "moon-fly": "moon-fly",
         "nixpkgs": "nixpkgs",
         "openrgb": "openrgb",
@@ -157,7 +174,7 @@
     "zen-browser": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-a2FbtEwyre9uIcqD/tKRXjpjG+Xu2aYpXA3axd5tTO8=",
+        "narHash": "sha256-GMje7G9ngvEpd2e/nS7S1viv0xfxQvYJi/vhv8ph7lk=",
         "type": "file",
         "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen-x86_64.AppImage"
       },

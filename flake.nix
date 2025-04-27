@@ -39,6 +39,11 @@
       url = "github:bluz71/vim-moonfly-colors";
       flake = false;
     };
+
+    looking-glass = {
+      url = "github:gnif/LookingGlass";
+      flake = false;
+    };
   };
 
 

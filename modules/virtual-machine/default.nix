@@ -10,7 +10,7 @@
     # Vm hardware settings
     "-smp ${cfg.coreCount}"
     "-m ${cfg.memory}"
-    "-device virtio-vga,edid=on,xres=1904,yres=1023"
+    "-device virtio-vga,edid=on,xres=1910,yres=1035"
     "-display none"
 
     # Memory device for looking glass
@@ -35,7 +35,7 @@
     "-nic user,id=nic0,smb=/home/${username}/"
 
   ] ++ lib.optionals cfg.gpuPassthrough.enable [
-    "-device vfio-pci,host=${cfg.gpuPassthrough.gpuPciId},romfile=/home/rico/vm/GA107.bin"
+    "-device vfio-pci,host=${cfg.gpuPassthrough.gpuPciId}"
 
   ] ++ lib.optionals cfg.gpuPassthrough.fakeBattery.enable [
     "-acpitable file=/home/${username}/vm/battery.dat"
