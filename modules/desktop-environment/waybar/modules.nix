@@ -49,7 +49,7 @@ in {
       "custom/spotify-info" = {
         format = "${toSpan "󰓇" theme.green}  {}";
         tooltip = false;
-        restart-interval = 1;
+        interval = 1;
 
         exec = pkgs.writeShellScript "spotify-info" ''
           spotify-manager track-info
