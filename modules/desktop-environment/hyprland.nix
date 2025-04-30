@@ -42,6 +42,7 @@ in {
         exec-once = [
           "swaybg -m fill -i ${wallpaper}"
           "waybar &"
+          "spotify-manager track-info -d &"
         ];
 
         general = {
