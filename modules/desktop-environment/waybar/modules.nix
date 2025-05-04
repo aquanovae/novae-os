@@ -138,7 +138,7 @@ in {
 
       # Display time and date on hover
       clock = {
-        format = "{:%H:%M %d/%m}";
+        format = "{:%d/%m %H:%M}";
         tooltip-format = "{:%d/%m/%Y}";
         interval = 1;
       };
