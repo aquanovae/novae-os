@@ -4,6 +4,7 @@
 
   blacklistedEntries = "-e " + lib.strings.concatStringsSep " -e " [
     "code-url-handler"
+    "coolercontrol"
     "htop"
     "nixos-manual"
     "xdg-desktop-portal"

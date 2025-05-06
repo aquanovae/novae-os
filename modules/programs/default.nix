@@ -6,6 +6,7 @@ in {
 
   imports = [
     ./alacritty.nix
+    ./coolercontrol.nix
     ./openrgb.nix
     ./nvim
     ./ranger.nix
@@ -34,7 +35,6 @@ in {
   ];
 
   programs = {
-    coolercontrol.enable = cfg.coolercontrol.enable;
     htop.enable = true;
     steam.enable = cfg.steam.enable;
   };
