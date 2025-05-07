@@ -17,8 +17,8 @@ in {
       moon-fly
       onedark-nvim
       otter-nvim
-      #rustaceanvim
       telescope-nvim
+      trouble-nvim
       wgsl-vim
     ];
 
@@ -54,6 +54,14 @@ in {
       require("lspconfig").pylsp.setup {}
       require("lspconfig").rust_analyzer.setup {}
       require("lspconfig").wgsl_analyzer.setup {}
+
+      require("trouble").setup {}
+      vim.keymap.set(
+        "n",
+        "<leader>t",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        {}
+      )
     '';
   };
 }
