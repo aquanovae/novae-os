@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746585355,
-        "narHash": "sha256-p+3fK8HEYC+0q4gPKSE4OSRxqt5H/tWZkB9wF7aaWOY=",
+        "lastModified": 1746727295,
+        "narHash": "sha256-0364XVBdfEA8rWfqEPvsgBqGFfq5r9LAo9CS9tvT7tg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "35535345be0be7dbae2e9b787c6cf790f8c893d5",
+        "rev": "a51598236f23c89e59ee77eb8e0614358b0e896c",
         "type": "github"
       },
       "original": {
@@ -71,11 +71,11 @@
     "openrgb": {
       "flake": false,
       "locked": {
-        "lastModified": 1746273203,
-        "narHash": "sha256-pHMhLNc2ZZuIrrO+9QdA4utuTXUc+RokfbLmuQzubgc=",
+        "lastModified": 1746724203,
+        "narHash": "sha256-k+TSKDF6PmfmtXcmDBOW1k83+9vSRVk1eeJe8vgB0r0=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "c1d055386630fe3df748e05c67af2a3e1b8a5639",
+        "rev": "14d0388a6537ded1be416188560296ad2cfdbb58",
         "type": "gitlab"
       },
       "original": {
@@ -174,7 +174,7 @@
     "zen-browser": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-nsuBKcF/LFHn8bJNxDC58chII+MQIedWvSERQqnAbzU=",
+        "narHash": "sha256-kDGJV2OcBDag85RQpjzV+jXOoVRvRG47q/+XT8OCzK8=",
         "type": "file",
         "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen-x86_64.AppImage"
       },
