@@ -44,7 +44,8 @@
 
       # Modify window state
       bind = super, F, fullscreen, 1
-      bind = super shift, F, togglefloating, active
+      bind = super shift, F, fullscreen, 0
+      bind = super, T, togglefloating, active
 
       # Open programs
       bind = super, Return, exec, alacritty
