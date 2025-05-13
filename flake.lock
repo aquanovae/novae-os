@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746727295,
-        "narHash": "sha256-0364XVBdfEA8rWfqEPvsgBqGFfq5r9LAo9CS9tvT7tg=",
+        "lastModified": 1747147271,
+        "narHash": "sha256-ORthkM8I3GpWDK/pjOSXPuxWjLJV2AwWERKQCsjPPAk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a51598236f23c89e59ee77eb8e0614358b0e896c",
+        "rev": "df556f2a17b7b94148d0275c1a57fed20e62ad18",
         "type": "github"
       },
       "original": {
@@ -23,11 +23,11 @@
     "looking-glass": {
       "flake": false,
       "locked": {
-        "lastModified": 1743722580,
-        "narHash": "sha256-3+fIboEtSxXGCJVRDyu85Hq/oJxza3cA7yFGLQJMad4=",
+        "lastModified": 1746839577,
+        "narHash": "sha256-ehXvg9hev3bUVXcRGqm9o35NZXy51lfbq64f13Gg5mU=",
         "owner": "gnif",
         "repo": "LookingGlass",
-        "rev": "54d811e09847fcd4a4ad7361c33fd354d703152d",
+        "rev": "f15d72cdfef744399cb46b95c21846ac00e0285a",
         "type": "github"
       },
       "original": {
@@ -54,11 +54,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1746461020,
-        "narHash": "sha256-7+pG1I9jvxNlmln4YgnlW4o+w0TZX24k688mibiFDUE=",
+        "lastModified": 1746904237,
+        "narHash": "sha256-3e+AVBczosP5dCLQmMoMEogM57gmZ2qrVSrmq9aResQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3730d8a308f94996a9ba7c7138ede69c1b9ac4ae",
+        "rev": "d89fc19e405cb2d55ce7cc114356846a0ee5e956",
         "type": "github"
       },
       "original": {
@@ -71,11 +71,11 @@
     "openrgb": {
       "flake": false,
       "locked": {
-        "lastModified": 1746724203,
-        "narHash": "sha256-k+TSKDF6PmfmtXcmDBOW1k83+9vSRVk1eeJe8vgB0r0=",
+        "lastModified": 1747082468,
+        "narHash": "sha256-GrA5pTqBHsYZbJ1qw0meqGVCH0Y0uL8a6XSOmCBVflk=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "14d0388a6537ded1be416188560296ad2cfdbb58",
+        "rev": "b83cc7fecd698296f5841d4fb2f075374605bd67",
         "type": "gitlab"
       },
       "original": {
@@ -123,11 +123,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1746551108,
-        "narHash": "sha256-sTghs3HNf/hwPXJb5Ii8G53PhQNE1ayWgY9IOYSHAOY=",
+        "lastModified": 1746937129,
+        "narHash": "sha256-Dx/YpnRridWnxF0Xpz9FUP3kl/m2QAOM2BM3KNls3sk=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "133e882f1266f1bb580bea64b9082d423fa005ba",
+        "rev": "8f1c5c34cf5f99e1d7197d6d9fa7dd44f00966f0",
         "type": "github"
       },
       "original": {
@@ -174,7 +174,7 @@
     "zen-browser": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-kDGJV2OcBDag85RQpjzV+jXOoVRvRG47q/+XT8OCzK8=",
+        "narHash": "sha256-1hYM66uuu5rF17adEfRKW/u0+r3MwMC35/PckL8qigc=",
         "type": "file",
         "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen-x86_64.AppImage"
       },
