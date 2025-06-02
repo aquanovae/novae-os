@@ -29,6 +29,7 @@
     };
 
     programs = {
+      circuitsApps.enable = mkEnableOption "circuits apps";
       coolercontrol.enable = mkEnableOption "coolercontrol";
       discord.enable = mkEnableOption "discord";
       documentEditingApps.enable = mkEnableOption "document editing apps";

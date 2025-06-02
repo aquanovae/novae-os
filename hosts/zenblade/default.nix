@@ -18,6 +18,7 @@
     };
 
     programs = {
+      circuitsApps.enable = true;
       documentEditingApps.enable = true;
       imageEditingApps.enable = true;
       spotify.enable = true;
@@ -26,7 +27,7 @@
     };
 
     virtualMachine = {
-      enable = true;
+      enable = false;
       coreCount = "12";
       memory = "10G";
       gpuPassthrough = {

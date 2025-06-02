@@ -22,14 +22,17 @@ in {
     git
     neofetch
     tree
+  ] ++ lib.optionals cfg.circuitsApps.enable [
+    kicad
+    logisim-evolution
   ] ++ lib.optionals cfg.discord.enable [
     discord
-  ] ++ lib.optionals cfg.imageEditingApps.enable [
-    inkscape
-    gimp
   ] ++ lib.optionals cfg.documentEditingApps.enable [
     onlyoffice-desktopeditors
     pdfarranger
+  ] ++ lib.optionals cfg.imageEditingApps.enable [
+    inkscape
+    gimp
   ] ++ lib.optionals cfg.vscode.enable [
     vscode
   ];
