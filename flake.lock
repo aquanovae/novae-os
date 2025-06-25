@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749400020,
-        "narHash": "sha256-0nTmHO8AYgRYk5v6zw5oZ3x9nh+feb+Isn7WNe318M0=",
+        "lastModified": 1750798083,
+        "narHash": "sha256-DTCCcp6WCFaYXWKFRA6fiI2zlvOLCf5Vwx8+/0R8Wc4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2835e8ba0ad99ba86d4a5e497a962ec9fa35e48f",
+        "rev": "ff31a4677c1a8ae506aa7e003a3dba08cb203f82",
         "type": "github"
       },
       "original": {
@@ -54,11 +54,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1749285348,
-        "narHash": "sha256-frdhQvPbmDYaScPFiCnfdh3B/Vh81Uuoo0w5TkWmmjU=",
+        "lastModified": 1750506804,
+        "narHash": "sha256-VLFNc4egNjovYVxDGyBYTrvVCgDYgENp5bVi9fPTDYc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+        "rev": "4206c4cb56751df534751b058295ea61357bbbaa",
         "type": "github"
       },
       "original": {
@@ -71,11 +71,11 @@
     "openrgb": {
       "flake": false,
       "locked": {
-        "lastModified": 1749220031,
-        "narHash": "sha256-o/Eo1oDft9LpAW/kdRDQ3+oOlrWnypY2stWGyX3Kjrs=",
+        "lastModified": 1750358936,
+        "narHash": "sha256-/DusVAfTYmWR6oiFAVKAENaqx5V2kwjgkGtFAVnGeRA=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "5b1b9b011a929c6167447603dc572c5d2fd7e819",
+        "rev": "ce32b8801001992796dde69ce5a4b0f1f1e1d504",
         "type": "gitlab"
       },
       "original": {
@@ -87,11 +87,11 @@
     "openrgb-effects-plugin": {
       "flake": false,
       "locked": {
-        "lastModified": 1743612132,
-        "narHash": "sha256-FRa4RnSbYMP9fhD8/ERkZwmCIcnZwGBkPri6HhoxA1U=",
+        "lastModified": 1749711239,
+        "narHash": "sha256-cmIVE72OhFIjf3eoLB9LfgYaB0n2fDrs3hqFuyrhvm0=",
         "ref": "refs/heads/master",
-        "rev": "4256e6a83912176c7edc22b99c61fd15e624864a",
-        "revCount": 786,
+        "rev": "a398bf1575e111da3701975d49a870094884d9c7",
+        "revCount": 787,
         "submodules": true,
         "type": "git",
         "url": "https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin"
@@ -123,11 +123,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1749357231,
-        "narHash": "sha256-AbrPgGFVYR45TlYLHYTppayG0xzOG9XXhi+1j3Klbw8=",
+        "lastModified": 1750567035,
+        "narHash": "sha256-GVNXxMZynKZt+83QQQEVXscqtkJbScvaBrwianovUW4=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "03783416f7416715c52166d4e8ba0492a7149397",
+        "rev": "e32285f5d1dfc184b039a813644e226c3914e7d7",
         "type": "github"
       },
       "original": {
@@ -174,7 +174,7 @@
     "zen-browser": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-aTUXB1bkDG5H92fB5gR0zJt/WbnTJFpK8lNwd27xw4I=",
+        "narHash": "sha256-M0nRvPCLpgdPpUdspFe0XBlMmZGEEN6R3Lfp/dCGgcw=",
         "type": "file",
         "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen-x86_64.AppImage"
       },
