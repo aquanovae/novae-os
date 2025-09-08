@@ -26,6 +26,10 @@
         };
       };
 
+      logind.settings.Login = {
+        HandlePowerKey = "ignore";
+      };
+
       pipewire = {
         enable = true;
         pulse.enable = true;
