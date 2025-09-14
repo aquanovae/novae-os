@@ -5,7 +5,7 @@
     echo -e "\e[1;32m-> \e[37mFetching git\e[0m" && \
     git fetch && \
     git pull --rebase && \
-    echo -e "\e[1;32m-> \e[37mUpdating flake\e[0m" && \
+    echo -e "\n\e[1;32m-> \e[37mUpdating flake\e[0m" && \
     nix flake update --flake . 2>&1 | grep "Updated" | sed -e "s/• //" -e "s/://" && \
     echo -e "\n\e[1;32m-> \e[37mBuilding configuration\e[0m" && \
     sudo nixos-rebuild switch --impure --flake . --log-format bar && \
