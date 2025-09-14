@@ -21,17 +21,17 @@
     };
 
     zen-browser = {
-      url = "https://github.com/zen-browser/desktop/releases/download/twilight/zen-x86_64.AppImage";
+      url = "https://github.com/zen-browser/desktop/releases/download/1.13.2b/zen-x86_64.AppImage";
       flake = false;
     };
 
     openrgb = {
-      url = "gitlab:CalcProgrammer1/OpenRGB";
+      url = "git+https://gitlab.com/CalcProgrammer1/OpenRGB?rev=acca2baa57217e26e4fc2e08477142cd67759b08";
       flake = false;
     };
 
     openrgb-effects-plugin = {
-      url = "git+https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin?submodules=1";
+      url = "git+https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin?submodules=1&rev=4a345b46bae83180df529a83c3b4077a6c084eda";
       flake = false;
     };
 

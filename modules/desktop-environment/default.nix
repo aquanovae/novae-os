@@ -13,6 +13,7 @@
     hardware.graphics.enable = true;
 
     services = {
+      displayManager.gdm.enable = true;
       xserver = {
         enable = true;
         videoDrivers = [ "amdgpu" ];

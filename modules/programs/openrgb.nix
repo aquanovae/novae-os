@@ -19,8 +19,6 @@
       substituteInPlace OpenRGBEffectsPlugin.pro \
         --replace "/usr/include/pipewire-0.3" "${pkgs.pipewire.dev}/include/pipewire-0.3" \
         --replace "/usr/include/spa-0.2" "${pkgs.pipewire.dev}/include/spa-0.2" 
-      substituteInPlace ./*.h ./Audio/*.h ./Effects/*.h ./Effects/**/*.h \
-        --replace "\"json.hpp\"" "<nlohmann/json.hpp>"
     '';
     nativeBuildInputs = prev.nativeBuildInputs ++ [
       pkgs.libsForQt5.qttools
@@ -78,7 +76,7 @@ in {
 
       # Load profile on startup
       postStart = ''
-        sleep 5
+        sleep 4
         ${openrgb} -p ${configPath}/purple.orp
       '';
 
