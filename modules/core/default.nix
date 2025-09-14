@@ -3,6 +3,7 @@
   imports = [
     ./silent-boot.nix
     ./theme.nix
+    ./update-script.nix
     ./user.nix
   ];
 

@@ -71,12 +71,13 @@
     "openrgb": {
       "flake": false,
       "locked": {
-        "lastModified": 1757800882,
-        "narHash": "sha256-mxm54YcI8CO5G9OJHi7owUDdD3Yt6nZ4SsKz0wrfqtY=",
-        "owner": "CalcProgrammer1",
-        "repo": "OpenRGB",
-        "rev": "2609822f8aee69210dfa01d7f10c256e978839c1",
-        "type": "gitlab"
+        "lastModified": 1743755193,
+        "narHash": "sha256-CuYhv9eMmWutiQa3CLQUyJmV6rmN+O8EOg6S01SmTH8=",
+        "ref": "refs/heads/master",
+        "rev": "acca2baa57217e26e4fc2e08477142cd67759b08",
+        "revCount": 4531,
+        "type": "git",
+        "url": "https://gitlab.com/CalcProgrammer1/OpenRGB"
       },
       "original": {
         "rev": "acca2baa57217e26e4fc2e08477142cd67759b08",
@@ -87,11 +88,11 @@
     "openrgb-effects-plugin": {
       "flake": false,
       "locked": {
-        "lastModified": 1757522235,
-        "narHash": "sha256-Dd3t8ABspxyDGzRKBl0ZX3jFFQqEm5VAfAZSqksm4eU=",
+        "lastModified": 1753074119,
+        "narHash": "sha256-w0HBqk9DfROUvb8SpYmqmVMrGL5Vf3QwPn4CC+QuPPA=",
         "ref": "refs/heads/master",
-        "rev": "6cf3f445b050941d9dc17d1ab66575daa4360885",
-        "revCount": 801,
+        "rev": "4a345b46bae83180df529a83c3b4077a6c084eda",
+        "revCount": 795,
         "submodules": true,
         "type": "git",
         "url": "https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin"
@@ -124,11 +125,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1757219159,
-        "narHash": "sha256-bpiaovTLPeScpnOdqfgq3oy4B/sD2Wnb5EdQZZM2tCY=",
+        "lastModified": 1757824114,
+        "narHash": "sha256-cyVbc8UxyWKAuXOgqLggil2mXLZWY0wyfBWYqUwgYjM=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "404130798716449bbd02e5f1b54272be55218644",
+        "rev": "d23584b2000b7f7a59a1764ff9ab93b89444bfd9",
         "type": "github"
       },
       "original": {
@@ -175,7 +176,7 @@
     "zen-browser": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-49iU7dkUYRf/0d7AZNXDVpHro6Xhsmrab+Zriigru4M=",
+        "narHash": "sha256-Lp5/i2sXiu2WN9y2y542VqjlQn8kYyzsPvvK1U+i5zc=",
         "type": "file",
         "url": "https://github.com/zen-browser/desktop/releases/download/1.13.2b/zen-x86_64.AppImage"
       },
