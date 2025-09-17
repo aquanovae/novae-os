@@ -20,22 +20,6 @@
         "type": "github"
       }
     },
-    "looking-glass": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1757807379,
-        "narHash": "sha256-rDpKD//UCSFIHCxJsNPGQLsUN/lrTnuWjGBCWf6hHmQ=",
-        "owner": "gnif",
-        "repo": "LookingGlass",
-        "rev": "67e1574d205f0b8ca601afd5364e83e4b0aad9e9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gnif",
-        "repo": "LookingGlass",
-        "type": "github"
-      }
-    },
     "moon-fly": {
       "flake": false,
       "locked": {
@@ -107,7 +91,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "looking-glass": "looking-glass",
         "moon-fly": "moon-fly",
         "nixpkgs": "nixpkgs",
         "openrgb": "openrgb",
