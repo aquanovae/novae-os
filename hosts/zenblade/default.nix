@@ -27,14 +27,14 @@
     };
 
     virtualMachine = {
-      enable = false;
+      enable = true;
       coreCount = "12";
-      memory = "10G";
+      memory = "8G";
       gpuPassthrough = {
         enable = false;
         gpuId = "10de:25a0";
         gpuPciId = "01:00.0";
-        fakeBattery.enable = true;
+        fakeBattery.enable = false;
       };
     };
   };

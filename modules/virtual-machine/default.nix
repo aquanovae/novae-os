@@ -2,16 +2,21 @@
 
   cfg = config.novaeOs.virtualMachine;
 
+  tpmPath = "/home/${username}/vm/tmp";
+
   qemuOptions = lib.concatStringsSep " " ([
-    "-machine q35,kernel_irqchip=on"
+    "-machine q35"
     "-accel kvm"
-    "-cpu host,topoext,kvm=off"
+    "-cpu host,topoext"
 
     # Vm hardware settings
     "-smp ${cfg.coreCount}"
     "-m ${cfg.memory}"
     "-device virtio-vga,edid=on,xres=1910,yres=1035"
-    "-display none"
+    #"-vga std"
+    #"-display sdl"
+    #"-display none"
+    #"-nographic"
 
     # Memory device for looking glass
     "-device ivshmem-plain,memdev=ivshmem,bus=pcie.0"
@@ -31,6 +36,11 @@
     "-drive if=pflash,format=raw,readonly=on,file=/tmp/OVMF_CODE.fd"
     "-drive if=pflash,format=raw,file=/tmp/OVMF_VARS.ms.fd"
 
+    # TPM
+    "-chardev socket,id=chrtpm,path=${tpmPath}/swtpm-sock"
+    "-tpmdev emulator,id=tpm0,chardev=chrtpm"
+    "-device tpm-tis,tpmdev=tpm0"
+
     # Host guest file share
     "-nic user,id=nic0,smb=/home/${username}/"
 
@@ -41,9 +51,10 @@
     "-acpitable file=/home/${username}/vm/battery.dat"
   ]);
 
-  diskPath = "/home/${username}/vm/win-10";
+  diskPath = "/home/${username}/vm/win-11";
 
   vm-launch-script = pkgs.writeShellScriptBin "windows-vm" ''
+    swtpm socket --tpm2 --tpmstate dir=${tpmPath} --ctrl type=unixio,path=${tpmPath}/swtpm-sock &
     qemu-system-x86_64  ${qemuOptions} ${diskPath} &
     sleep 1
     looking-glass-client
@@ -64,9 +75,10 @@ in {
   ];
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [
-      pkgs.OVMFFull
-      (pkgs.qemu.override {
+    environment.systemPackages = with pkgs; [
+      OVMFFull
+      swtpm
+      (qemu.override {
         smbdSupport = true;
       })
       vm-launch-script
@@ -110,7 +122,7 @@ in {
 
     ] ++ lib.optionals cfg.gpuPassthrough.enable [
       # Give user permission to GPU
-      "z /dev/vfio/11 - ${username} users -"
+      "z /dev/vfio/12 - ${username} users -"
     ];
 
     home-manager.users.${username} = {
