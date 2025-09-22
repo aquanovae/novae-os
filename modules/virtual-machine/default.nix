@@ -12,7 +12,7 @@
     # Vm hardware settings
     "-smp ${cfg.coreCount}"
     "-m ${cfg.memory}"
-    "-device virtio-vga,edid=on,xres=1910,yres=1035"
+    "-device virtio-vga,edid=on,xres=1920,yres=1080"
     #"-vga std"
     #"-display sdl"
     #"-display none"
@@ -41,8 +41,18 @@
     "-tpmdev emulator,id=tpm0,chardev=chrtpm"
     "-device tpm-tis,tpmdev=tpm0"
 
-    # Host guest file share
-    "-nic user,id=nic0,smb=/home/${username}/"
+    # File share
+    "-object memory-backend-memfd,id=mem,size=${cfg.memory},share=on"
+    "-numa node,memdev=mem"
+    "-chardev socket,id=char0,path=/tmp/vm-share.sock"
+    "-device vhost-user-fs-pci,chardev=char0,tag=hostshr"
+
+    # QEMU monitor
+    "-monitor unix:qemu-monitor-socket,server,nowait"
+
+  ] ++ lib.optionals cfg.laptopUsbPassthrough.enable [
+    "-device qemu-xhci,id=xhci"
+    "-device usb-host,bus=xhci.0,vendorid=0x0451,productid=0xf432"
 
   ] ++ lib.optionals cfg.gpuPassthrough.enable [
     "-device vfio-pci,host=${cfg.gpuPassthrough.gpuPciId}"
@@ -55,6 +65,7 @@
 
   vm-launch-script = pkgs.writeShellScriptBin "windows-vm" ''
     swtpm socket --tpm2 --tpmstate dir=${tpmPath} --ctrl type=unixio,path=${tpmPath}/swtpm-sock &
+    unshare -r --map-auto -- ${pkgs.virtiofsd}/bin/virtiofsd --socket-path=/tmp/vm-share.sock --shared-dir /home/${username}/ --sandbox chroot &
     qemu-system-x86_64  ${qemuOptions} ${diskPath} &
     sleep 1
     looking-glass-client
@@ -77,13 +88,19 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       OVMFFull
+      qemu
+      socat
+      spice-gtk
       swtpm
-      (qemu.override {
-        smbdSupport = true;
-      })
-      vm-launch-script
+      virtiofsd
       vm-desktop-file
+      vm-launch-script
     ];
+
+    # USB passthroug for laptop
+    services.udev.extraRules = lib.mkIf cfg.laptopUsbPassthrough.enable ''
+      ACTION!="remove", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0451", ATTRS{idProduct}=="f432", MODE="0660", TAG+="uaccess"
+    '';
 
     # Capture GPU on boot
     boot = lib.mkIf cfg.gpuPassthrough.enable {

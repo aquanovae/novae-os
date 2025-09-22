@@ -10,6 +10,7 @@
           ignoreWindowsKeys = true;
           grabKeyboard = false;
           autoCapture = true;
+          captureOnFocus = true;
         };
 
         egl.vsync = true;

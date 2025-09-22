@@ -28,8 +28,9 @@
 
     virtualMachine = {
       enable = true;
-      coreCount = "12";
+      coreCount = "8";
       memory = "8G";
+      laptopUsbPassthrough.enable = true;
       gpuPassthrough = {
         enable = false;
         gpuId = "10de:25a0";

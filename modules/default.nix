@@ -50,6 +50,7 @@
       memory = mkOption {
         type = types.str;
       };
+      laptopUsbPassthrough.enable = mkEnableOption "enable usb passthrough for laptop";
       gpuPassthrough = {
         enable = mkEnableOption "enable gpu passthrough for virtual machine";
         gpuId = mkOption {
