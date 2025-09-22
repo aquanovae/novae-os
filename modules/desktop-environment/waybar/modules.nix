@@ -34,13 +34,13 @@ in {
           alacritty = "󰆍";
           coolercontrol = "󰔐";
           discord = "󰋎";
+          firefox = "󰈹";
           gimp = "󱇣";
           inkscape = "󰕙";
           openrgb = "󰌬";
           pavucontrol = "󰙪";
           spotify = "󰓇";
           steam = "󰓓";
-          zen = "󰖟";
         };
       };
 

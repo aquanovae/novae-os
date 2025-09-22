@@ -19,12 +19,12 @@ in {
       }
 
       .modules-left {
-        border: 2px solid #${theme.bg3};
+        border: 1px solid #${theme.bg3};
         background-color: #${theme.bg1};
       }
 
       .modules-right {
-        border: 2px solid #${theme.bg3};
+        border: 1px solid #${theme.bg3};
         background-color: #${theme.bg1};
       }
 
