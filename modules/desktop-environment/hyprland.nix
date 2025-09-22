@@ -77,7 +77,9 @@ in {
           ];
         };
 
-        binds.workspace_back_and_forth = true;
+        binds = {
+          hide_special_on_workspace_change = true;
+        };
 
         input = {
           kb_layout = "ch";
