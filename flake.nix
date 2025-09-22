@@ -20,11 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zen-browser = {
-      url = "https://github.com/zen-browser/desktop/releases/download/1.13.2b/zen-x86_64.AppImage";
-      flake = false;
-    };
-
     openrgb = {
       url = "git+https://gitlab.com/CalcProgrammer1/OpenRGB?rev=acca2baa57217e26e4fc2e08477142cd67759b08";
       flake = false;
@@ -47,10 +42,8 @@
     nixosConfigurations = let
 
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
       extraPkgs = {
         spotify-manager = inputs.spotify-manager.packages.${system}.default;
-        zen-browser = pkgs.callPackage ./extra-pkgs/zen-browser.nix { inherit inputs; };
       };
       specialArgs = { 
         inherit inputs extraPkgs;
