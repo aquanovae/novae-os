@@ -89,7 +89,6 @@ in {
     environment.systemPackages = with pkgs; [
       OVMFFull
       qemu
-      socat
       spice-gtk
       swtpm
       virtiofsd
@@ -98,9 +97,15 @@ in {
     ];
 
     # USB passthroug for laptop
-    services.udev.extraRules = lib.mkIf cfg.laptopUsbPassthrough.enable ''
-      ACTION!="remove", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0451", ATTRS{idProduct}=="f432", MODE="0660", TAG+="uaccess"
-    '';
+    services.udev.packages = [
+      (pkgs.writeTextFile {
+        name = "qemu-udev-rule";
+        text = ''
+          ACTION!="remove", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0451", ATTRS{idProduct}=="f432", MODE="0660", TAG+="uaccess"
+        '';
+        destination = "/etc/udev/rules.d/70-qemu-udev.rules";
+      })
+    ];
 
     # Capture GPU on boot
     boot = lib.mkIf cfg.gpuPassthrough.enable {
