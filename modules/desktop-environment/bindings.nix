@@ -89,6 +89,9 @@
       # Monitor brightness control
       binde = , XF86MonBrightnessUp, exec, brightnessctl set 5%+
       binde = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
+
+      # Lock and suspend on lid close
+      bind = , switch:on:Lid Switch, exec, hyprlock & systemctl suspend
     '';
   };
 }
