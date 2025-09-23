@@ -37,6 +37,7 @@ in {
           firefox = "󰈹";
           gimp = "󱇣";
           inkscape = "󰕙";
+          looking-glass-client = "󰖳";
           openrgb = "󰌬";
           pavucontrol = "󰙪";
           spotify = "󰓇";
