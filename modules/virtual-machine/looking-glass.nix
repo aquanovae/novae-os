@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, username, ... }: {
+{ config, lib, username, ... }: {
 
   config = lib.mkIf config.novaeOs.virtualMachine.enable {
     home-manager.users.${username}.programs.looking-glass-client = {
@@ -9,8 +9,15 @@
           escapeKey = "KEY_INSERT";
           ignoreWindowsKeys = true;
           grabKeyboard = false;
-          autoCapture = true;
           captureOnFocus = true;
+          rawMouse = false;
+        };
+
+        win = {
+          title = "windows-vm";
+          alerts = false;
+          quickSplash = false;
+          ignoreQuit = true;
         };
 
         egl.vsync = true;

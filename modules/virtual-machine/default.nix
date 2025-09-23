@@ -13,10 +13,6 @@
     "-smp ${cfg.coreCount}"
     "-m ${cfg.memory}"
     "-device virtio-vga,edid=on,xres=1920,yres=1080"
-    #"-vga std"
-    #"-display sdl"
-    #"-display none"
-    #"-nographic"
 
     # Memory device for looking glass
     "-device ivshmem-plain,memdev=ivshmem,bus=pcie.0"
@@ -46,9 +42,6 @@
     "-numa node,memdev=mem"
     "-chardev socket,id=char0,path=/tmp/vm-share.sock"
     "-device vhost-user-fs-pci,chardev=char0,tag=hostshr"
-
-    # QEMU monitor
-    "-monitor unix:qemu-monitor-socket,server,nowait"
 
   ] ++ lib.optionals cfg.laptopUsbPassthrough.enable [
     "-device qemu-xhci,id=xhci"
@@ -97,7 +90,7 @@ in {
     ];
 
     # USB passthroug for laptop
-    services.udev.packages = [
+    services.udev.packages = lib.mkIf cfg.laptopUsbPassthrough.enable [
       (pkgs.writeTextFile {
         name = "qemu-udev-rule";
         text = ''
