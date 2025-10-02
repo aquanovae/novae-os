@@ -30,7 +30,7 @@
         "󰔛 Timer")
           set_timer;;
         "󰤄 Suspend")
-          systemctl suspend;;
+          hyprlock & systemctl suspend;;
         "󰜉 Reboot")
           systemctl reboot;;
         "󱑡 Reboot into firmware")
