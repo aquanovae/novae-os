@@ -22,6 +22,7 @@ in {
     git
     neofetch
     tree
+    unzip
   ] ++ lib.optionals cfg.circuitsApps.enable [
     kicad
     logisim-evolution
