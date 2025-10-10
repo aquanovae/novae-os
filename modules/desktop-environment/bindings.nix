@@ -47,6 +47,13 @@
       bind = super shift, F, fullscreen, 0
       bind = super, T, togglefloating, active
 
+      # Manage groups
+      bind = super, G, togglegroup
+      bind = super, N, changegroupactive, f
+      bind = super shift, N, changegroupactive, b
+      bind = super, B, movegroupwindow, f
+      bind = super shift, B, movegroupwindow, b
+
       # Open programs
       bind = super, Return, exec, alacritty
       bind = super, O, exec, quicklaunch

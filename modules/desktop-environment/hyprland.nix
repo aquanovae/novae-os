@@ -59,6 +59,28 @@ in {
           force_split = 2;
         };
 
+        group = {
+          "col.border_active" = "rgb(${theme.blue}) rgb(${theme.magenta}) 45deg";
+          "col.border_inactive" = "rgb(${theme.bg3})";
+          groupbar = {
+            font_family = "JetBrainsMono Nerd Font";
+            font_size = 13;
+            font_weight_active = "bold";
+            height = 19;
+            indicator_height = 0;
+            gaps_in = 3;
+            gaps_out = 3;
+            keep_upper_gap = false;
+            gradients = true;
+            gradient_rounding = 5;
+            gradient_round_only_edges = false;
+            text_color = "rgb(${theme.bg0})";
+            text_color_inactive = "rgb(${theme.fg})";
+            "col.active" = "rgb(${theme.blue})";
+            "col.inactive" = "rgb(${theme.bg0})";
+          };
+        };
+
         decoration = {
           rounding = 7;
           blur = {
