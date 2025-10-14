@@ -54,7 +54,7 @@ in {
       nr      = "nix run -vL --option substitute false";
       nra     = "nix run -vL --option substitute false . --";
       nrs     = "sudo nixos-rebuild switch --impure --flake ${novae-os}";
-      nrsm    = "NIX_SSHOPTS='-i ~/.ssh/minix -p 777' nixos-rebuild switch --flake ~/novae-os/#minix --target-host aquanovae@aquanovae.space --use-remote-sudo";
+      nrsm    = "NIX_SSHOPTS='-i ~/.ssh/minix -p 777' nixos-rebuild switch --flake ~/novae-os/#minix --target-host aquanovae@aquanovae.space --sudo --ask-sudo-password";
       nrsv    = "sudo nixos-rebuild switch --impure --flake ${novae-os} --verbose --print-build-logs";
       ns      = "nix-shell --run zsh";
       nsg     = "l /nix/store | grep -i";
