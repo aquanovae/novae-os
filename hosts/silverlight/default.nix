@@ -12,6 +12,8 @@
       mode = "desktop";
     };
 
+    hardware.wireless.enable = true;
+
     programs = {
       coolercontrol.enable = true;
       discord.enable = true;
