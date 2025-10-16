@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759337100,
-        "narHash": "sha256-CcT3QvZ74NGfM+lSOILcCEeU+SnqXRvl1XCRHenZ0Us=",
+        "lastModified": 1760500983,
+        "narHash": "sha256-zfY4F4CpeUjTGgecIJZ+M7vFpwLc0Gm9epM/iMQd4w8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "004753ae6b04c4b18aa07192c1106800aaacf6c3",
+        "rev": "c53e65ec92f38d30e3c14f8d628ab55d462947aa",
         "type": "github"
       },
       "original": {
@@ -23,11 +23,11 @@
     "moon-fly": {
       "flake": false,
       "locked": {
-        "lastModified": 1759379319,
-        "narHash": "sha256-tb+OOFyUztfbIYF1KmxG96TLt8DpyDg3hqIBAtNsPb8=",
+        "lastModified": 1760153662,
+        "narHash": "sha256-FKldGEut7u4sqRa5SpJPcFRuqP1Jtdy3ejUOGHuKsDo=",
         "owner": "bluz71",
         "repo": "vim-moonfly-colors",
-        "rev": "c1add33aec2bd36621f865ab11552129ca01d353",
+        "rev": "8129169a07cb64fef644f73c3fd27db2e50e818a",
         "type": "github"
       },
       "original": {
@@ -38,11 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1759036355,
-        "narHash": "sha256-0m27AKv6ka+q270dw48KflE0LwQYrO7Fm4/2//KCVWg=",
+        "lastModified": 1760284886,
+        "narHash": "sha256-TK9Kr0BYBQ/1P5kAsnNQhmWWKgmZXwUQr4ZMjCzWf2c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e9f00bd893984bc8ce46c895c3bf7cac95331127",
+        "rev": "cf3f5c4def3c7b5f1fc012b3d839575dbe552d43",
         "type": "github"
       },
       "original": {
@@ -55,16 +55,16 @@
     "openrgb": {
       "flake": false,
       "locked": {
-        "lastModified": 1743755193,
-        "narHash": "sha256-CuYhv9eMmWutiQa3CLQUyJmV6rmN+O8EOg6S01SmTH8=",
+        "lastModified": 1757878317,
+        "narHash": "sha256-vdIA9i1ewcrfX5U7FkcRR+ISdH5uRi9fz9YU5IkPKJQ=",
         "ref": "refs/heads/master",
-        "rev": "acca2baa57217e26e4fc2e08477142cd67759b08",
-        "revCount": 4531,
+        "rev": "0fca93e4544f943d4d7ec8073dba4e47c18ef54b",
+        "revCount": 4893,
         "type": "git",
         "url": "https://gitlab.com/CalcProgrammer1/OpenRGB"
       },
       "original": {
-        "rev": "acca2baa57217e26e4fc2e08477142cd67759b08",
+        "rev": "0fca93e4544f943d4d7ec8073dba4e47c18ef54b",
         "type": "git",
         "url": "https://gitlab.com/CalcProgrammer1/OpenRGB"
       }
@@ -72,17 +72,17 @@
     "openrgb-effects-plugin": {
       "flake": false,
       "locked": {
-        "lastModified": 1753074119,
-        "narHash": "sha256-w0HBqk9DfROUvb8SpYmqmVMrGL5Vf3QwPn4CC+QuPPA=",
+        "lastModified": 1757879190,
+        "narHash": "sha256-0W0hO3PSMpPLc0a7g/Nn7GWMcwBXhOxh1Y2flpdcnfE=",
         "ref": "refs/heads/master",
-        "rev": "4a345b46bae83180df529a83c3b4077a6c084eda",
-        "revCount": 795,
+        "rev": "415dc20ef44cbad5546b4987b50764de44a0622e",
+        "revCount": 802,
         "submodules": true,
         "type": "git",
         "url": "https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin"
       },
       "original": {
-        "rev": "4a345b46bae83180df529a83c3b4077a6c084eda",
+        "rev": "415dc20ef44cbad5546b4987b50764de44a0622e",
         "submodules": true,
         "type": "git",
         "url": "https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin"
@@ -108,11 +108,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1759033744,
-        "narHash": "sha256-fQovpddotIEsvdJzpQhtb3wYZYGIg4I/QUX5rJJQTi4=",
+        "lastModified": 1760243311,
+        "narHash": "sha256-LNrok211+WWlMGWqpGPpnGcnWhyo5SfvMv62uDiLzoI=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "f102312235c3628fc3eddfb8cc6d7d0922427f46",
+        "rev": "93f1d45e48191a0b24c5c15e5cf369566ff75be9",
         "type": "github"
       },
       "original": {
@@ -163,11 +163,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759967818,
-        "narHash": "sha256-IdUo5sdrvr4TUbdtrmFzPzG6mMDCt0WKDd1cOmUpcIU=",
+        "lastModified": 1760459934,
+        "narHash": "sha256-OQn5UqCOXsvaAwOG0p3ZiXmR+WfN3wf7H3zlc+uiByM=",
         "owner": "TibixDev",
         "repo": "winboat",
-        "rev": "3c8c4d711b1b466433d85f14b973d5de24ffc554",
+        "rev": "eac9a7f48ce9bf9c60b9e7743aaf53d5a0f6351e",
         "type": "github"
       },
       "original": {

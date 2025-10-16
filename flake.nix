@@ -21,12 +21,12 @@
     };
 
     openrgb = {
-      url = "git+https://gitlab.com/CalcProgrammer1/OpenRGB?rev=acca2baa57217e26e4fc2e08477142cd67759b08";
+      url = "git+https://gitlab.com/CalcProgrammer1/OpenRGB?rev=0fca93e4544f943d4d7ec8073dba4e47c18ef54b";
       flake = false;
     };
 
     openrgb-effects-plugin = {
-      url = "git+https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin?submodules=1&rev=4a345b46bae83180df529a83c3b4077a6c084eda";
+      url = "git+https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin?submodules=1&rev=415dc20ef44cbad5546b4987b50764de44a0622e";
       flake = false;
     };
 
