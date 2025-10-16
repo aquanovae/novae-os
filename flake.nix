@@ -34,11 +34,6 @@
       url = "github:bluz71/vim-moonfly-colors";
       flake = false;
     };
-
-    winboat = {
-      url = "github:TibixDev/winboat";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
 
@@ -49,7 +44,6 @@
       system = "x86_64-linux";
       extraPkgs = {
         spotify-manager = inputs.spotify-manager.packages.${system}.default;
-        winboat = inputs.winboat.packages.${system}.winboat;
       };
       specialArgs = { 
         inherit inputs extraPkgs;
