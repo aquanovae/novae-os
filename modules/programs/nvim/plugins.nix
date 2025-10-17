@@ -49,11 +49,10 @@ in {
 
       -- LSP
       require("lsp-zero")
-      require("lspconfig").ccls.setup {}
-      require("lspconfig").nixd.setup {}
-      require("lspconfig").pylsp.setup {}
-      require("lspconfig").rust_analyzer.setup {}
-      require("lspconfig").wgsl_analyzer.setup {}
+      vim.lsp.enable("ccls")
+      vim.lsp.enable("nixd")
+      vim.lsp.enable("rust_analyzer")
+      vim.lsp.enable("wgsl_analyzer")
 
       require("trouble").setup {}
       vim.keymap.set(
