@@ -1,7 +1,8 @@
 { ... }: {
 
   imports = [
-    ./ssh.nix
     ./daily-playlist.nix
+    ./git.nix
+    ./ssh.nix
   ];
 }

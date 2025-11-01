@@ -15,7 +15,7 @@
     security.pam.sshAgentAuth.enable = true;
     nix.settings.trusted-users = [ "${username}" ];
     users.users.${username}.openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcGJirjfFVjalp0oCE9QxtSVkQm+eB3pqqeizfZwgXw rico"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcGJirjfFVjalp0oCE9QxtSVkQm+eB3pqqeizfZwgXw"
     ];
   };
 }
