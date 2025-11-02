@@ -15,8 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    spotify-manager = {
-      url = "github:aquanovae/spotify-manager";
+    spotify-daily = {
+      url = "github:aquanovae/spotify-daily";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -38,18 +38,15 @@
 
 
   outputs = { nixpkgs, ... }@inputs: {
-
     nixosConfigurations = let
-
       system = "x86_64-linux";
       extraPkgs = {
-        spotify-manager = inputs.spotify-manager.packages.${system}.default;
+        spotify-daily = inputs.spotify-daily.packages.${system}.default;
       };
       specialArgs = { 
         inherit inputs extraPkgs;
         username = "aquanovae";
       };
-
     in {
 
       silverlight = nixpkgs.lib.nixosSystem {

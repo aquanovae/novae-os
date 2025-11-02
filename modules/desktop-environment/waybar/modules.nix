@@ -53,7 +53,6 @@ in {
         interval = 1;
 
         exec = pkgs.writeShellScript "spotify-info" ''
-          spotify-manager track-info
         '';
       };
 

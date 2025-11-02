@@ -13,11 +13,13 @@
       };
 
       services.daily-playlist = {
-        path = [ extraPkgs.spotify-manager ];
+        path = [ extraPkgs.spotify-daily ];
         script = ''
-          spotify-manager generate
+          spotify-daily
         '';
       };
     };
+
+    environment.systemPackages = [ extraPkgs.spotify-daily ];
   };
 }
