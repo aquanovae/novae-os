@@ -38,6 +38,7 @@ in {
   ];
 
   programs = {
+    ssh.startAgent = true;
     htop.enable = true;
     steam.enable = cfg.steam.enable;
   };
