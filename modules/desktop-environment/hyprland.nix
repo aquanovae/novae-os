@@ -83,11 +83,6 @@ in {
 
         decoration = {
           rounding = 7;
-          blur = {
-            enabled = true;
-            size = 3;
-            passes = 3;
-          };
         };
 
         animations = {
