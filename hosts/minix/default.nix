@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "minix-server";
+  networking.hostName = "minix";
 
   novaeOs = {
     server.enable = true;

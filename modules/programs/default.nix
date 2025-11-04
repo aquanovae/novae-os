@@ -12,6 +12,7 @@ in {
     ./ranger.nix
     ./starship.nix
     ./spotify.nix
+    ./syncthing
     ./zsh.nix
   ];
 
