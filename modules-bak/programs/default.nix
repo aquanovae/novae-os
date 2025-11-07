@@ -10,10 +10,8 @@ in {
     ./openrgb.nix
     ./nvim
     ./ranger.nix
-    ./starship.nix
     ./spotify.nix
     ./syncthing
-    ./zsh.nix
   ];
 
   environment.systemPackages = with pkgs; [

@@ -1,9 +1,19 @@
 { pkgs, ... }: {
 
   boot = {
-    # Load GPU driver early to display splash screen
-    kernelModules = [ "amdgpu" ];
+    loader = {
+      efi.canTouchEfiVariables = true;
+      timeout = 2;
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+        splashImage = ./grub-background.png;
+      };
+    };
 
+    kernelPackages = pkgs.linuxPackages_zen;
+    kernelModules = [ "amdgpu" ];
     kernelParams = [
       "quiet"
       "splash"

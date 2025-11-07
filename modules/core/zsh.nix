@@ -1,18 +1,16 @@
-{ username, ... }: let
+{ pkgs, ... }: {
 
-  novae-os = "/home/${username}/novae-os/";
-
-in {
-
-  programs.zsh.enable = true;
-
-  home-manager.users.${username}.programs.zsh = {
+  programs.zsh = {
     enable = true;
-
     enableCompletion = true;
+    enableBashCompletion = true;
+    syntaxHighlighting.enable = true;
+    promptInit = ''eval "$(${pkgs.starship}/bin/starship init zsh)"'';
+    interactiveShellInit = "source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
 
     shellAliases = {
       # Aliases for cargo
+      ca      = "cargo add";
       cb      = "cargo build";
       cr      = "cargo run";
 
@@ -47,15 +45,16 @@ in {
 
       # Nix aliases
       nb      = "nix build -vL";
-      nbi     = "sudo nix build --impure ${novae-os}/#nixosConfigurations.live-image.config.system.build.isoImage";
-      ncg     = "sudo nix-collect-garbage --delete-older-than 3d";
+      nbi     = "sudo nix build --impure .#nixosConfigurations.live-image.config.system.build.isoImage";
+      ncg     = "nix-collect-garbage --delete-older-than 3d";
+      ncgs    = "sudo nix-collect-garbage --delete-older-than 3d";
       nd      = "nix develop -c zsh";
-      nfu     = "nix flake update --flake ${novae-os}";
+      nfu     = "nix flake update --flake .";
       nr      = "nix run -vL --option substitute false";
       nra     = "nix run -vL --option substitute false . --";
-      nrs     = "sudo nixos-rebuild switch --impure --flake ${novae-os}";
-      nrsm    = "nixos-rebuild switch --flake ~/novae-os/#minix --target-host aquanovae@aquanovae.space --sudo --ask-sudo-password";
-      nrsv    = "sudo nixos-rebuild switch --impure --flake ${novae-os} --verbose --print-build-logs";
+      nrs     = "sudo nixos-rebuild switch --impure --flake .#";
+      nrsm    = "nixos-rebuild switch --flake .#minix --target-host aquanovae@aquanovae.space --sudo --ask-sudo-password";
+      nrsv    = "sudo nixos-rebuild switch --impure --flake .# --verbose --print-build-logs";
       ns      = "nix-shell --run zsh";
       nsg     = "l /nix/store | grep -i";
       nsp     = "nix-shell --run zsh -p";

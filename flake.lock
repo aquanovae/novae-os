@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "flake-parts": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib"
+      },
+      "locked": {
+        "lastModified": 1762040540,
+        "narHash": "sha256-z5PlZ47j50VNF3R+IMS9LmzI5fYRGY/Z5O5tol1c9I4=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "0010412d62a25d959151790968765a70c436598b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -52,6 +70,37 @@
         "type": "github"
       }
     },
+    "nixpkgs-lib": {
+      "locked": {
+        "lastModified": 1761765539,
+        "narHash": "sha256-b0yj6kfvO8ApcSE+QmA6mUfu8IYG6/uU28OFn4PaC8M=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "719359f4562934ae99f5443f20aa06c2ffff91fc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1758690382,
+        "narHash": "sha256-NY3kSorgqE5LMm1LqNwGne3ZLMF2/ILgLpFr1fS4X3o=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e643668fd71b949c53f8626614b21ff71a07379d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "openrgb": {
       "flake": false,
       "locked": {
@@ -90,13 +139,15 @@
     },
     "root": {
       "inputs": {
+        "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "moon-fly": "moon-fly",
         "nixpkgs": "nixpkgs",
         "openrgb": "openrgb",
         "openrgb-effects-plugin": "openrgb-effects-plugin",
         "spicetify-nix": "spicetify-nix",
-        "spotify-daily": "spotify-daily"
+        "spotify-daily": "spotify-daily",
+        "wrappers": "wrappers"
       }
     },
     "spicetify-nix": {
@@ -152,6 +203,24 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "wrappers": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1762459897,
+        "narHash": "sha256-oUgAjOA6mXUhBoVQGcbfLE6+0tZYbykWx7llLngXkhg=",
+        "owner": "Lassulus",
+        "repo": "wrappers",
+        "rev": "e1314e578b3545702ac7ef03e0b0b516a63771e1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Lassulus",
+        "repo": "wrappers",
         "type": "github"
       }
     }
