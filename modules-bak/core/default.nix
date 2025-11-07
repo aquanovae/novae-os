@@ -5,9 +5,6 @@
     ./update-script.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-
   home-manager.users.${username}.home = {
     username = "${username}";
     homeDirectory = "/home/${username}";

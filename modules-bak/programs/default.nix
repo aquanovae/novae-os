@@ -18,9 +18,6 @@ in {
     jq
     gh
     git
-    neofetch
-    tree
-    unzip
   ] ++ lib.optionals cfg.circuitsApps.enable [
     kicad
     logisim-evolution
@@ -37,8 +34,6 @@ in {
   ];
 
   programs = {
-    ssh.startAgent = true;
-    htop.enable = true;
     steam.enable = cfg.steam.enable;
   };
 }
