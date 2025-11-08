@@ -5,8 +5,15 @@
     enableCompletion = true;
     enableBashCompletion = true;
     syntaxHighlighting.enable = true;
-    promptInit = ''eval "$(${pkgs.starship}/bin/starship init zsh)"'';
-    interactiveShellInit = "source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+
+    promptInit = /*bash*/ ''
+      eval "$(${pkgs.starship}/bin/starship init zsh)"
+    '';
+
+    interactiveShellInit = /*bash*/ ''
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+    '';
 
     shellAliases = {
       # Aliases for cargo
