@@ -2,6 +2,7 @@
 
   imports = [
     ./boot.nix
+    ./locale.nix
     ./neovim.nix
     ./packages.nix
     ./starship.nix
