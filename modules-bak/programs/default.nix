@@ -8,7 +8,6 @@ in {
     ./alacritty.nix
     ./coolercontrol.nix
     ./openrgb.nix
-    ./nvim
     ./ranger.nix
     ./spotify.nix
     ./syncthing

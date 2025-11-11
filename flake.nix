@@ -3,6 +3,13 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     wrappers.url = "github:Lassulus/wrappers";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,10 +28,6 @@
     };
     openrgb-effects-plugin = {
       url = "git+https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin?submodules=1&rev=415dc20ef44cbad5546b4987b50764de44a0622e";
-      flake = false;
-    };
-    moon-fly = {
-      url = "github:bluz71/vim-moonfly-colors";
       flake = false;
     };
   };
