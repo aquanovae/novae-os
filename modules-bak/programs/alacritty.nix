@@ -1,6 +1,6 @@
 { config, lib, username, ... }: let
 
-  theme = config.novaeOs.theme;
+  theme = config.novaeos.theme;
 
 in {
 
@@ -26,14 +26,14 @@ in {
           };
 
           normal = {
-            black = "#${theme.gray}";
+            black = "#${theme.black}";
             red = "#${theme.red}";
             green = "#${theme.green}";
             yellow = "#${theme.yellow}";
             blue = "#${theme.blue}";
             magenta = "#${theme.magenta}";
             cyan = "#${theme.cyan}";
-            white = "#${theme.fg}";
+            white = "#${theme.white}";
           };
         };
 

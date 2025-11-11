@@ -1,7 +1,7 @@
 { config, lib, username, ... }: let
 
   cfg = config.novaeOs.desktopEnvironment;
-  theme = config.novaeOs.theme;
+  theme = config.novaeos.theme;
   wallpaper = "/home/${username}/.config/hypr/wallpaper.png";
 
 in {

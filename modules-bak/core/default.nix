@@ -1,7 +1,6 @@
 { username, ... }: {
 
   imports = [
-    ./theme.nix
     ./update-script.nix
   ];
 

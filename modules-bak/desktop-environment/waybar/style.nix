@@ -1,6 +1,6 @@
 { config, lib, username, ... }: let
 
-  theme = config.novaeOs.theme;
+  theme = config.novaeos.theme;
 
 in {
 

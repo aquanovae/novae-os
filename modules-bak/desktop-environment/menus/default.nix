@@ -1,6 +1,6 @@
 { config, lib, ... }: let
 
-  theme = config.novaeOs.theme;
+  theme = config.novaeos.theme;
 
   # Define bemenu flags used by all menus
   flags = lib.concatStringsSep " " [

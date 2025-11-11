@@ -1,7 +1,7 @@
 { config, lib, pkgs, username, ... }: let
 
   cfg = config.novaeOs.desktopEnvironment;
-  theme = config.novaeOs.theme;
+  theme = config.novaeos.theme;
 
 in {
 

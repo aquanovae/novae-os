@@ -1,6 +1,6 @@
 { config, lib, pkgs, username, ... }: let
 
-  theme = config.novaeOs.theme;
+  theme = config.novaeos.theme;
   toSpan = icon: color: "<span color='#${color}' size='11pt'>${icon}</span>";
 
 in {
