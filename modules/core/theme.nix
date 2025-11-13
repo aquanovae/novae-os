@@ -1,6 +1,6 @@
-{ lib, ... }: with lib; {
+{ lib, ... }: {
   
-  options.novaeos.theme = {
+  options.novaeos.theme = with lib; {
 
     bg0 = mkOption {
       type = types.str;
@@ -66,6 +66,5 @@
       type = types.str;
       default = "c6c6c6";
     };
-
   };
 }
