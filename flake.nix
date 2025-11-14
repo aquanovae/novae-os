@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spotify-daily = {
-      url = "github:aquanovae/spotify-daily";
+      url = "git+ssh://git@aquanovae.space/home/git-server/spotify-daily.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     openrgb = {
