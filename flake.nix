@@ -19,8 +19,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spotify-daily = {
-      url = "git+ssh://git@aquanovae.space/home/git-server/spotify-daily.git";
+      url = "git+ssh://git@aquanovae.space/repos/spotify-daily.git";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    spotify-info = {
+      url = "git+ssh://git@aquanovae.space/repos/spotify-info.git";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
     openrgb = {
       url = "git+https://gitlab.com/CalcProgrammer1/OpenRGB?rev=0fca93e4544f943d4d7ec8073dba4e47c18ef54b";

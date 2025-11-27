@@ -1,4 +1,4 @@
-{ config, lib, pkgs, username, ... }: {
+{ config, lib, pkgs, novaepkgs, username, ... }: {
 
   imports = [
     ./bindings.nix
@@ -61,6 +61,7 @@
       pwvucontrol
       radeontop
       swaybg
+      novaepkgs.spotify-info
     ];
 
     programs = {

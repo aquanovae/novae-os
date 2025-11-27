@@ -5,7 +5,7 @@
     users.users.git = {
       isSystemUser = true;
       group = "git";
-      home = "/home/git-server";
+      home = "/repos";
       createHome = true;
       shell = pkgs.zsh;
       openssh.authorizedKeys.keys = [

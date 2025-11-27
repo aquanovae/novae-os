@@ -1,51 +1,21 @@
 { inputs, self, ... }: {
 
-  flake.nixosConfigurations = let
+  flake.nixosConfigurations = with inputs.nixpkgs.lib; let
     novaeos = self.nixosModules.novaeos;
-    nixosSystem = inputs.nixpkgs.lib.nixosSystem;
-    extraPkgs = {
-      spotify-daily = inputs.spotify-daily.packages.x86_64-linux.default;
+    novaepkgs = let
+      callNovaePackage = package: inputs.${package}.packages.x86_64-linux.default;
+    in{
+      spotify-daily = callNovaePackage "spotify-daily";
+      spotify-info = callNovaePackage "spotify-info";
     };
-    specialArgs = { 
-      inherit inputs extraPkgs;
-      username = "aquanovae";
+    callConfiguration = path: nixosSystem {
+      specialArgs = { inherit inputs novaepkgs; username = "aquanovae"; };
+      modules = [ path novaeos ./../modules-bak ];
     };
   in {
-
-    silverlight = nixosSystem {
-      inherit specialArgs;
-      modules = [
-        novaeos
-        ./silverlight
-        ./../modules-bak
-      ];
-    };
-
-    zenblade = nixosSystem {
-      inherit specialArgs;
-      modules = [
-        novaeos
-        ./zenblade
-        ./../modules-bak
-      ];
-    };
-
-    minix = nixosSystem {
-      inherit specialArgs;
-      modules = [
-        novaeos
-        ./minix
-        ./../modules-bak
-      ];
-    };
-
-    live-image = nixosSystem {
-      inherit specialArgs;
-      modules = [
-        novaeos
-        ./live-image
-        ./../modules-bak
-      ];
-    };
+    silverlight = callConfiguration ./silverlight;
+    zenblade = callConfiguration ./zenblade;
+    minix = callConfiguration ./minix;
+    live-image = callConfiguration ./live-image;
   };
 }

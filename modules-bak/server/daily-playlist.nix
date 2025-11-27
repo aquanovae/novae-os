@@ -1,4 +1,4 @@
-{ config, extraPkgs, lib, ... }: {
+{ config, lib, novaepkgs, ... }: {
 
   config = lib.mkIf config.novaeOs.server.enable {
 
@@ -13,13 +13,13 @@
       };
 
       services.daily-playlist = {
-        path = [ extraPkgs.spotify-daily ];
+        path = [ novaepkgs.spotify-daily ];
         script = ''
           spotify-daily
         '';
       };
     };
 
-    environment.systemPackages = [ extraPkgs.spotify-daily ];
+    environment.systemPackages = [ novaepkgs.spotify-daily ];
   };
 }

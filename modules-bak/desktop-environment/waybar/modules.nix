@@ -52,7 +52,8 @@ in {
         tooltip = false;
         interval = 1;
 
-        exec = pkgs.writeShellScript "spotify-info" ''
+        exec = pkgs.writeShellScript "spotify-info-module" ''
+          spotify-info
         '';
       };
 
