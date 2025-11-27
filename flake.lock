@@ -252,16 +252,19 @@
     },
     "spotify-daily": {
       "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1761995819,
-        "narHash": "sha256-TNAE6kDT0SWZnW33F8dXQJQdDjlLBHBw/Dnm312ycWw=",
+        "lastModified": 1764209552,
+        "narHash": "sha256-QzvjVGU3USW143h8cFTSg2ReUx6XX2bawjuD9UmnhPA=",
         "ref": "refs/heads/master",
-        "rev": "cb3bd19e2c8f30e8d506b81ea9f4e86abcb0405f",
-        "revCount": 1,
+        "rev": "814deb4a655a3f71a1e43485188da743044e6fde",
+        "revCount": 4,
         "type": "git",
         "url": "ssh://git@aquanovae.space/repos/spotify-daily.git"
       },

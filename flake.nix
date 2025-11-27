@@ -20,7 +20,10 @@
     };
     spotify-daily = {
       url = "git+ssh://git@aquanovae.space/repos/spotify-daily.git";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
     spotify-info = {
       url = "git+ssh://git@aquanovae.space/repos/spotify-info.git";
