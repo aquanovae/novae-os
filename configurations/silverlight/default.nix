@@ -15,6 +15,7 @@
     hardware.wireless.enable = true;
 
     programs = {
+      circuitsApps.enable = true;
       coolercontrol.enable = true;
       discord.enable = true;
       documentEditingApps.enable = true;
