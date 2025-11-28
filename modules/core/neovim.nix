@@ -93,5 +93,12 @@
         mockDevIcons = true;
       };
     };
+
+    dependencies = {
+      fd.enable = true;
+      gcc.enable = true;
+      ripgrep.enable = true;
+      tree-sitter.enable = true;
+    };
   };
 }
