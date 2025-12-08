@@ -56,6 +56,19 @@
         };
       };
 
+      cmp = {
+        enable = true;
+        autoEnableSources = true;
+        settings = {
+          view.docs.auto_open = false;
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "path"; }
+            { name = "buffer"; }
+          ];
+        };
+      };
+
       telescope = {
         enable = true;
         keymaps = {
