@@ -53,6 +53,7 @@
             installRustc = true;
             installRustfmt = false;
           };
+          wgsl_analyzer.enable = true;
         };
       };
 
