@@ -88,12 +88,28 @@
 
       neo-tree = {
         enable = true;
-        autoLoad = true;
         settings = {
           close_if_last_window = true;
-          enable_git_status = false;
           window.width = 50;
-          filesystem.follow_current_file.enabled = true;
+          default_component_configs = {
+            name.use_git_status_colors = false;
+            git_status.symbols = {
+              modified = "󱇨 ";
+              deleted = "󱀷 ";
+              renamed = "󱀹 ";
+              untracked = "󱀶 ";
+              unstaged = "";
+              staged = "󰻭 ";
+              conflict = "󰩌 ";
+            };
+          };
+          filesystem = {
+            use_libuv_file_watcher = true;
+            follow_current_file = {
+              enabled = true;
+              leave_dirs_open = true;
+            };
+          };
         };
       };
 
