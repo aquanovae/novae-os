@@ -1,4 +1,4 @@
-{ nixvimLib, ... }: {
+{ ... }: {
 
   programs.nixvim = {
     enable = true;
@@ -7,6 +7,12 @@
     defaultEditor = true;
 
     colorschemes.moonfly.enable = true;
+
+    autoCmd = [
+      { command = "Neotree show";
+        event = "VimEnter";
+      }
+    ];
 
     opts = {
       number = true;
@@ -34,13 +40,6 @@
     globals = {
       mapleader = " ";
     };
-
-    keymaps = with nixvimLib.nixvim; [
-      { key = "<leader>e";
-        action = mkRaw "vim.cmd.Ex";
-        mode = "n";
-      }
-    ];
 
     plugins = {
       lsp = {
@@ -75,18 +74,44 @@
         };
       };
 
+      lualine = {
+        enable = true;
+        settings.sections = {
+          lualine_a = [ "mode" ];
+          lualine_b = [ "diagnostics" ];
+          lualine_c = [ "filename" ];
+          lualine_x = [ "filetype" ];
+          lualine_y = [ "lsp_status" ];
+          lualine_z = [ "location" ];
+        };
+      };
+
+      neo-tree = {
+        enable = true;
+        autoLoad = true;
+        settings = {
+          close_if_last_window = true;
+          enable_git_status = false;
+          window.width = 50;
+          filesystem.follow_current_file.enabled = true;
+        };
+      };
+
+      toggleterm = {
+        enable = true;
+        settings = {
+          open_mapping = "[[<C-j>]]";
+          direction = "float";
+          float_opts.border = "curved";
+        };
+      };
+
+      tiny-inline-diagnostic.enable = true;
+
       telescope = {
         enable = true;
         keymaps = {
           "<leader>s" = "find_files";
-        };
-      };
-
-      trouble = {
-        enable = true;
-        settings = {
-          modes.diagnostics.auto_open = true;
-          auto_close = true;
         };
       };
 
