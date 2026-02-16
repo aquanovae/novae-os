@@ -84,6 +84,11 @@ in {
         background-color: #${theme.red};
       }
 
+      #battery.charging {
+        color: #${theme.fg};
+        background-color: #${theme.bg0};
+      }
+
       #wireplumber,
       #disk,
       #memory,
@@ -91,6 +96,7 @@ in {
       #custom-gpu-info,
       #battery,
       #clock {
+        color: #${theme.fg};
         background-color: #${theme.bg0};
       }
 
