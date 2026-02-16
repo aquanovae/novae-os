@@ -79,12 +79,17 @@ in {
         min-width: 80px;
       }
 
+      #battery.low {
+        color: #${theme.bg0};
+        background-color: #${theme.red};
+      }
+
       #wireplumber,
       #disk,
       #memory,
       #cpu,
-      #battery,
       #custom-gpu-info,
+      #battery,
       #clock {
         background-color: #${theme.bg0};
       }

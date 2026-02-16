@@ -129,7 +129,7 @@ in {
       battery = {
         states = { low = 20; };
         format = "{capacity}% ${toSpan "{icon}" theme.blue}";
-        format-low = "{capacity}% ${toSpan "󰂃" theme.red}";
+        format-low = "{capacity}% ${toSpan "󰂃" theme.bg0}";
         format-charging = "{capacity}% ${toSpan "󰂄" theme.green}";
         format-icons = [ "󰁼" "󰁾" "󰂀" "󰂂" ];
         interval = 1;
