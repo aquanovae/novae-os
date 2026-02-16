@@ -32,11 +32,11 @@ in {
           "10, monitor:DP-2"
         ];
 
-        windowrulev2 = [
-          "workspace config, title:(config)"
-          "workspace ranger, title:(ranger)"
-          "float, title:(ranger)"
-          "size 75% 75%, title:(ranger)"
+        windowrule = [
+          "workspace config, match:title config"
+          "workspace ranger, match:title ranger"
+          "float on, match:title ranger"
+          "size 75% 75%, match:title ranger"
         ];
 
         exec-once = [
