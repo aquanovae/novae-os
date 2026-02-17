@@ -6,7 +6,7 @@
       enable = true;
 
       settings.format = ''
-        [┏━<$nix_shell$git_branch$git_status](bold cyan)
+        [┏━<$nix_shell$git_branch$git_status$custom](bold cyan)
         [┃](cyan)[\[$username@$hostname:$directory\]](bold cyan)
         [┗╸$character](bold cyan)
       '';
@@ -64,6 +64,14 @@
         success_symbol = "[━>](bold green)";
         error_symbol = "[━>](bold red)";
         vicmd_symbol = "[╺>](bold purple)";
+      };
+
+      settings.custom.sshagent = {
+        command = "ssh-add -l | grep -q '256'";
+        when = true;
+        format = "[ ssh:](bold blue)[$symbol$output]($style)";
+        style = "green";
+        symbol = "󰿆";
       };
     };
   };
