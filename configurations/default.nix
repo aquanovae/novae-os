@@ -10,11 +10,11 @@
     };
     callConfiguration = path: nixosSystem {
       specialArgs = { inherit inputs novaepkgs; username = "aquanovae"; };
-      modules = [ path novaeos ./../modules-bak ];
+      modules = [ path novaeos ./../modules-bak-bak ];
     };
   in {
     silverlight = callConfiguration ./silverlight;
-    zenblade = callConfiguration ./zenblade;
+    #zenblade = callConfiguration ./zenblade;
     minix = callConfiguration ./minix;
     live-image = callConfiguration ./live-image;
   };
