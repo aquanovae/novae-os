@@ -86,7 +86,7 @@
 
 
       plugins.neo-tree.enable = true;
-      plugins.neo-tree.settings.settings = {
+      plugins.neo-tree.settings = {
         close_if_last_window = true;
         enable_git_status = false;
         window.width = 50;
@@ -99,7 +99,7 @@
 
 
       plugins.toggleterm.enable = true;
-      plugins.toggleterm.settings.settings = {
+      plugins.toggleterm.settings = {
         open_mapping = "[[<C-j>]]";
         direction = "float";
         float_opts.border = "curved";

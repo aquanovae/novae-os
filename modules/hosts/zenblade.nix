@@ -7,6 +7,7 @@
     };
 
 in {
+
   flake.nixosConfigurations.zenblade = inputs.nixpkgs.lib.nixosSystem {
 
     specialArgs = { inherit inputs novaepkgs; };
@@ -28,7 +29,7 @@ in {
   };
 
 
-  flake.nixosModules.zenblade = { config, lib, ... }: {
+  flake.nixosModules.zenblade = { config, lib, modulesPath, ... }: {
 
     networking.hostName = "zenblade";
 
@@ -65,6 +66,8 @@ in {
         };
       };
     };
+
+    imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
     system.stateVersion = "23.11";
     home-manager.users.aquanovae.home.stateVersion = "23.11";
