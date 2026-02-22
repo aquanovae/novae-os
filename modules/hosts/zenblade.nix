@@ -13,23 +13,20 @@ in {
     specialArgs = { inherit inputs novaepkgs; };
     modules = with self.nixosModules; [
       zenblade
+
       core
-      neovim
-      starship
-      theme
-      user
-      zsh
+      desktop
+      lockscreenBattery
+      waybarLaptopModules
 
       inputs.spicetify-nix.nixosModules.default
-      inputs.home-manager.nixosModules.default
-      inputs.nixvim.nixosModules.default
 
-      ../../modules-bak-bak
+      ../../modules-bak
     ];
   };
 
 
-  flake.nixosModules.zenblade = { config, lib, modulesPath, ... }: {
+  flake.nixosModules.zenblade = { modulesPath, ... }: {
 
     networking.hostName = "zenblade";
 
@@ -67,10 +64,11 @@ in {
       };
     };
 
-    imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
     system.stateVersion = "23.11";
-    home-manager.users.aquanovae.home.stateVersion = "23.11";
+
+
+    # Hardware configuration
+    imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
     boot.initrd.availableKernelModules = [
       "nvme"
@@ -94,9 +92,9 @@ in {
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-    networking.useDHCP = lib.mkDefault true;
+    networking.useDHCP = true;
 
-    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    nixpkgs.hostPlatform = "x86_64-linux";
+    hardware.cpu.amd.updateMicrocode = true;
   };
 }

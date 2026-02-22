@@ -1,7 +1,14 @@
-{ config, lib, ... }: {
+{ ... }: let 
 
-  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
-    home-manager.users.${config.novaeos.username}.wayland.windowManager.hyprland.extraConfig = /*hyprlang*/ ''
+  launchOnce = title: command: /*bash*/ ''
+    hyprctl -j clients | jq ".[].title" | grep "${title}" || ${command}
+  '';
+
+in {
+
+  flake.nixosModules.bindings = { config, ... }: with config.novaeos; {
+
+    home-manager.users.${username}.wayland.windowManager.hyprland.extraConfig = /*hyprlang*/ ''
 
       # Focus workspace
       bind = super, 1, workspace, 1
@@ -59,21 +66,22 @@
       bind = super, O, exec, quicklaunch
 
       # Special workspace to edit config
-      bind = super, R, exec, launch-config
       bind = super, R, togglespecialworkspace, config
+      bind = super, R, exec, ${launchOnce "config" ''
+        alacritty -T config --working-directory /home/${username}/novae-os -e vim &
+      ''}
 
       # Special workspace for file explorer
-      bind = super, E, exec, launch-ranger
       bind = super, E, togglespecialworkspace, ranger
+      bind = super, E, exec, ${launchOnce "ranger" ''
+        alacritty -T ranger -e ranger &
+      ''}
 
       # Close program
       bind = super shift, Q, killactive
 
       # Open powermenu
       bind = super, Escape, exec, powermenu
-
-      # Open spotify menu
-      bind = super, P, exec, spotify-menu
 
       # Lock screen
       bind = super shift, Escape, exec, hyprlock
@@ -98,7 +106,7 @@
       binde = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
 
       # Lock and suspend on lid close
-      bind = , switch:on:Lid Switch, exec, hyprlock & systemctl suspend
+      bind = , switch:on:Lid Switch, exec, hyprlock & sleep 1 && systemctl suspend
     '';
   };
 }

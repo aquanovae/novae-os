@@ -1,11 +1,8 @@
-{ config, lib, ... }: let
+{ ... }: {
 
-  theme = config.novaeos.theme;
+  flake.nixosModules.waybarStyle = { config, ... }: with config.novaeos; {
 
-in {
-
-  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
-    home-manager.users.${config.novaeos.username}.programs.waybar.style = /*css*/ ''
+    home-manager.users.${username}.programs.waybar.style = /*css*/ ''
 
       * {
         border-radius: 7px;

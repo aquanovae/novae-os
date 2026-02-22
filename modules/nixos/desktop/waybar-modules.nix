@@ -1,34 +1,29 @@
-{ config, lib, pkgs, ... }: let
+{ ... }: let
 
-  theme = config.novaeos.theme;
   toSpan = icon: color: "<span color='#${color}' size='11pt'>${icon}</span>";
 
 in {
 
-  config = lib.mkIf config.novaeOs.desktopEnvironment.enable {
-    home-manager.users.${config.novaeos.username}.programs.waybar.settings.bar = {
+  flake.nixosModules.waybarModules = { config, pkgs, ... }: with config.novaeos; {
 
-      # Decorative module displaying distro logo
+    home-manager.users.${username}.programs.waybar.settings.bar = {
+
       "custom/os-icon" = {
         format = "󱄅";
         tooltip = false;
       };
 
 
-      # Display window manager active workspaces
       "hyprland/workspaces" = {
         format = "{icon} {windows}";
         format-icons = {
           config = "󱇧";
           ranger = "󰝰";
         };
-
         all-outputs = true;
         show-special = true;
         special-visible-only = true;
         tooltip = false;
-
-        # Assign logo to programs
         window-rewrite-default = "󰘔";
         window-rewrite = {
           alacritty = "󰆍";
@@ -39,43 +34,37 @@ in {
           inkscape = "󰕙";
           looking-glass-client = "󰖳";
           openrgb = "󰌬";
-          pavucontrol = "󰙪";
+          pwvucontrol = "󰙪";
           spotify = "󰓇";
           steam = "󰓓";
         };
       };
 
 
-      # Display currently playing track info
       "custom/spotify-info" = {
         format = "${toSpan "󰓇" theme.green}  {}";
         tooltip = false;
         interval = 1;
-
         exec = pkgs.writeShellScript "spotify-info-module" ''
           spotify-info
         '';
       };
 
 
-      # Display shutdown time if shutdown timer is active
       "custom/shutdowntime" = {
         format = "{} 󱫌";
         tooltip = false;
         interval = 1;
-
         exec = pkgs.writeShellScript "shutdowntime" ''
           shutdown --show 2>&1 | \
             grep -Eo "[0-9]{2}:[0-9]{2}"
         '';
-
         on-click = pkgs.writeShellScript "shutdown-cancel" ''
           shutdown -c
         '';
       };
 
 
-      # Display volume info
       wireplumber = {
         format = "{volume}% ${toSpan "{icon}" theme.blue}";
         format-muted = "${toSpan "󰝟" theme.blue}";
@@ -84,7 +73,6 @@ in {
       };
 
 
-      # Display disk usage
       disk = {
       format = "{percentage_used}% ${toSpan "󰋊" theme.blue}";
       path = "/";
@@ -93,7 +81,6 @@ in {
       };
 
 
-      # Display memory usage
       memory = {
         format = "{used}GB ${toSpan "󰘚" theme.blue}";
         interval = 1;
@@ -101,7 +88,6 @@ in {
         };
 
 
-      # Display CPU usage
       cpu = {
         format = "{usage}% ${toSpan "󰍛" theme.blue}";
         interval = 1;
@@ -109,14 +95,10 @@ in {
       };
 
 
-      # Display GPU usage
       "custom/gpu-info" = {
         format = "{} ${toSpan "󰾲" theme.blue}";
         tooltip = false;
         interval = 1;
-
-        # radeontop is rather slow
-        # Probably can find lighter program
         exec = pkgs.writeShellScript "gpu-info" ''
           radeontop -b 3 -d - -l 1 | \
             grep -Eo "gpu [0-9]+\." | \
@@ -125,9 +107,10 @@ in {
       };
 
 
-      # Display battery status
       battery = {
-        states = { low = 20; };
+        states = {
+          low = 20;
+        };
         format = "{capacity}% ${toSpan "{icon}" theme.blue}";
         format-low = "{capacity}% ${toSpan "󰂃" theme.bg0}";
         format-charging = "{capacity}% ${toSpan "󰂄" theme.green}";
@@ -137,10 +120,8 @@ in {
       };
 
 
-      # Display time and date on hover
       clock = {
         format = "{:%d/%m %H:%M}";
-        tooltip-format = "{:%d/%m/%Y}";
         interval = 1;
       };
     };

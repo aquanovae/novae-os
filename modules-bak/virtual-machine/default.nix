@@ -103,12 +103,12 @@ in {
     # Capture GPU on boot
     boot = lib.mkIf cfg.gpuPassthrough.enable {
       blacklistedKernelModules = [
-        "nouveau"
-        "nvidiafb"
-        "nvidia"
-        "nvidia-uvm"
-        "nvidia-drm"
-        "nvidia-modeset"
+        #"nouveau"
+        #"nvidiafb"
+        #"nvidia"
+        #"nvidia-uvm"
+        #"nvidia-drm"
+        #"nvidia-modeset"
       ];
 
       initrd.kernelModules = [

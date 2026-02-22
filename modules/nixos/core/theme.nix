@@ -1,10 +1,11 @@
-{ ... }: {
+{ lib, ... }: let
 
-  flake.nixosModules.theme = { lib, ... }: let 
+  mkColor = color: lib.mkOption { type = lib.types.str; default = "${color}"; };
 
-    mkColor = color: lib.mkOption { type = lib.types.str; default = "${color}"; };
+in {
 
-  in {
+  flake.nixosModules.theme = { ... }: {
+
     options.novaeos.theme = {
       bg0     = mkColor "080808";
       bg1     = mkColor "181818";

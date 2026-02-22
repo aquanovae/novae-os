@@ -1,6 +1,8 @@
-{ ... }: {
+{ inputs, ... }: {
 
   flake.nixosModules.neovim = { ... }: {
+
+    imports = [ inputs.nixvim.nixosModules.default ];
 
     programs.nixvim = {
       enable = true;
@@ -43,9 +45,11 @@
         }
       ];
 
-
       plugins.lsp.enable = true;
       plugins.lsp.servers = {
+        luaConfig.pre = ''
+          vim.lsp.set_log_level("OFF")
+        '';
         nixd.enable = true;
         wgsl_analyzer.enable = true;
         rust_analyzer = {
@@ -55,7 +59,6 @@
           installRustfmt = false;
         };
       };
-
 
       plugins.cmp = {
         enable = true;
@@ -73,7 +76,6 @@
         "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
       };
 
-
       plugins.lualine.enable = true;
       plugins.lualine.settings.sections = {
         lualine_a = [ "mode" ];
@@ -83,7 +85,6 @@
         lualine_y = [ "lsp_status" ];
         lualine_z = [ "location" ];
       };
-
 
       plugins.neo-tree.enable = true;
       plugins.neo-tree.settings = {
@@ -97,7 +98,6 @@
         };
       };
 
-
       plugins.toggleterm.enable = true;
       plugins.toggleterm.settings = {
         open_mapping = "[[<C-j>]]";
@@ -105,17 +105,14 @@
         float_opts.border = "curved";
       };
 
-
       plugins.telescope.enable = true;
       plugins.telescope.keymaps = {
         "<leader>s" = "find_files";
       };
 
-
       plugins.treesitter.enable = true;
       plugins.treesitter.settings.highlight.enable = true;
       plugins.treesitter-context.enable = true;
-
 
       plugins.indent-blankline.enable = true;
       plugins.indent-blankline.settings = {
@@ -123,15 +120,12 @@
         scope.enabled = false;
       };
 
-
       plugins.mini-icons = {
         enable = true;
         mockDevIcons = true;
       };
 
-
       plugins.tiny-inline-diagnostic.enable = true;
-
 
       dependencies = {
         fd.enable = true;

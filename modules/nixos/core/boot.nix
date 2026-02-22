@@ -1,14 +1,6 @@
 { ... }: {
 
-  flake.nixosModules.core = { pkgs, ... }: {
-
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    nixpkgs.config.allowUnfree = true;
-
-    programs = {
-      ssh.startAgent = true;
-      htop.enable = true;
-    };
+  flake.nixosModules.boot = { pkgs, ... }: {
 
     boot = {
       consoleLogLevel = 0;
@@ -34,7 +26,7 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
-      splashImage = ../../assets/grub-background.png;
+      splashImage = ../../../assets/grub-background.png;
       useOSProber = true;
     };
 
@@ -43,9 +35,5 @@
       theme = "nixos-bgrt";
       themePackages = [ pkgs.nixos-bgrt-plymouth ];
     };
-
-    time.timeZone = "Europe/Zurich";
-    i18n.defaultLocale = "en_GB.UTF-8";
-    console.keyMap = "fr_CH";
   };
 }

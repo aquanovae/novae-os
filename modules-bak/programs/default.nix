@@ -28,8 +28,6 @@ in {
   ] ++ lib.optionals cfg.imageEditingApps.enable [
     inkscape
     gimp
-  ] ++ lib.optionals cfg.vscode.enable [
-    vscode
   ];
 
   programs = {

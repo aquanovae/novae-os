@@ -3,35 +3,23 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
-    wrappers.url = "github:Lassulus/wrappers";
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    spotify-daily = {
-      url = "git+ssh://git@aquanovae.space/repos/spotify-daily.git";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
-    };
     spotify-info = {
-      url = "git+ssh://git@aquanovae.space/repos/spotify-info.git";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
+      url = "github:aquanovae/spotify-info";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
     openrgb = {
       url = "git+https://gitlab.com/CalcProgrammer1/OpenRGB?rev=0fca93e4544f943d4d7ec8073dba4e47c18ef54b";
@@ -43,14 +31,10 @@
     };
   };
 
-  outputs = { flake-parts, ... }@inputs: (
+  outputs = { flake-parts, import-tree, ... }@inputs: (
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
-      imports = [
-        (inputs.import-tree ./modules)
-        ./configurations
-        ./wrappers
-      ];
+      imports = [ (import-tree ./modules) ];
     }
   );
 }

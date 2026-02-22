@@ -14,12 +14,12 @@
     };
 
     boot = {
-      kernelModules = [
-        "nvidia"
-        "nvidia_modeset"
-        "nvidia_uvm"
-        "nvidia_drm"
-      ];
+      #kernelModules = [
+        #"nvidia"
+        #"nvidia_modeset"
+        #"nvidia_uvm"
+        #"nvidia_drm"
+      #];
 
       kernelParams = [
         "nvidia_drm.modeset=1"
@@ -27,11 +27,11 @@
     };
 
     # Pass GPU drivers to wayland
-    services.xserver.videoDrivers = [
-      "nvidia"
-      "nvidia_modeset"
-      "nvidia_uvm"
-      "nvidia_drm"
-    ];
+    #services.xserver.videoDrivers = [
+      #"nvidia"
+      #"nvidia_modeset"
+      #"nvidia_uvm"
+      #"nvidia_drm"
+    #];
   };
 }
