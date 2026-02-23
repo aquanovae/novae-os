@@ -4,7 +4,7 @@
 
     backgroundImage = {
       monitor = "";
-      path = "${../../../../assets/wallpaper.png}";
+      path = "${../../assets/wallpaper.png}";
       blur_passes = 3;
       blur_size = 5;
     };
@@ -41,6 +41,18 @@
       font_size = "47";
     };
 
+    batteryLabel = {
+      monitor = "";
+      position = "200, 77";
+      halign = "left";
+      valign = "center";
+      font_family = "JetBrainsMono Nerd Font";
+      font_size = "11";
+      text = ''
+        cmd[update:60000] echo "$(cat /sys/class/power_supply/BAT0/capacity)% 󰁹"
+      '';
+    };
+
     inputField = {
       monitor = "";
       size = "200, 30";
@@ -73,7 +85,7 @@
 
         background = [ backgroundImage ];
         shape = [ inputBox ];
-        label = [ usernameLabel timeLabel ];
+        label = [ usernameLabel timeLabel batteryLabel ];
         input-field = [ inputField ];
       };
     };

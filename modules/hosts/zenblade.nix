@@ -1,4 +1,5 @@
 { inputs, self, ... }: let
+
     novaepkgs = let
       callNovaePackage = package: inputs.${package}.packages.x86_64-linux.default;
     in{
@@ -16,15 +17,14 @@ in {
 
       core
       desktop
-      lockscreenBattery
-      waybarLaptopModules
+      lockscreen
+      waybarZenblade
 
       inputs.spicetify-nix.nixosModules.default
 
       ../../modules-bak
     ];
   };
-
 
   flake.nixosModules.zenblade = { modulesPath, ... }: {
 
@@ -65,7 +65,6 @@ in {
     };
 
     system.stateVersion = "23.11";
-
 
     # Hardware configuration
     imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];

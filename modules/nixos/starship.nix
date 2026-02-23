@@ -11,7 +11,6 @@
         [┗╸$character](bold cyan)
       '';
 
-
       settings.username = {
         format = "[$user]($style)";
         style_user = "bold blue";

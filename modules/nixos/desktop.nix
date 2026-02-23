@@ -4,7 +4,7 @@
 
     imports = with self.nixosModules; [
       hyprland
-      waybar
+      plymouth
     ];
 
     hardware.graphics.enable = true;
