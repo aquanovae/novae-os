@@ -2,7 +2,7 @@
 
   cfg = config.novaeOs.virtualMachine;
 
-  tpmPath = "/home/${config.novaeos.username}/vm/tmp";
+  tpmPath = "/home/aquanovae/vm/tmp";
 
   qemuOptions = lib.concatStringsSep " " ([
     "-machine q35"
@@ -51,14 +51,14 @@
     "-device vfio-pci,host=${cfg.gpuPassthrough.gpuPciId}"
 
   ] ++ lib.optionals cfg.gpuPassthrough.fakeBattery.enable [
-    "-acpitable file=/home/${config.novaeos.username}/vm/battery.dat"
+    "-acpitable file=/home/aquanovae/vm/battery.dat"
   ]);
 
-  diskPath = "/home/${config.novaeos.username}/vm/win-11";
+  diskPath = "/home/aquanovae/vm/win-11";
 
   vm-launch-script = pkgs.writeShellScriptBin "windows-vm" ''
     swtpm socket --tpm2 --tpmstate dir=${tpmPath} --ctrl type=unixio,path=${tpmPath}/swtpm-sock &
-    unshare -r --map-auto -- ${pkgs.virtiofsd}/bin/virtiofsd --socket-path=/tmp/vm-share.sock --shared-dir /home/${config.novaeos.username}/ --sandbox chroot &
+    unshare -r --map-auto -- ${pkgs.virtiofsd}/bin/virtiofsd --socket-path=/tmp/vm-share.sock --shared-dir /home/aquanovae/ --sandbox chroot &
     qemu-system-x86_64  ${qemuOptions} ${diskPath} &
     sleep 1
     looking-glass-client
@@ -132,15 +132,15 @@ in {
 
     systemd.tmpfiles.rules = [
       # Create temp files for UEFI boot
-      "C /tmp/OVMF_VARS.ms.fd 0600 ${config.novaeos.username} users - ${pkgs.OVMFFull.fd}/FV/OVMF_VARS.ms.fd"
-      "C /tmp/OVMF_CODE.fd 0600 ${config.novaeos.username} users - ${pkgs.OVMFFull.fd}/FV/OVMF_CODE.fd"
+      "C /tmp/OVMF_VARS.ms.fd 0600 aquanovae - ${pkgs.OVMFFull.fd}/FV/OVMF_VARS.ms.fd"
+      "C /tmp/OVMF_CODE.fd 0600 aquanovae users - ${pkgs.OVMFFull.fd}/FV/OVMF_CODE.fd"
 
     ] ++ lib.optionals cfg.gpuPassthrough.enable [
       # Give user permission to GPU
-      "z /dev/vfio/12 - ${config.novaeos.username} users -"
+      "z /dev/vfio/12 - aquanovae users -"
     ];
 
-    home-manager.users.${config.novaeos.username} = {
+    home-manager.users.aquanovae = {
       home = lib.mkIf cfg.gpuPassthrough.fakeBattery.enable {
         file."vm/battery.dat".source = ./fake-battery.dat;
       };

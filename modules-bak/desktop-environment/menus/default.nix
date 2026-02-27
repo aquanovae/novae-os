@@ -33,8 +33,6 @@ in {
 
   imports = [
     (import ./powermenu.nix { inherit flags; })
-    (import ./quicklaunch.nix { inherit flags; })
-    (import ./spotify-menu.nix { inherit flags; })
     (import ./wireless-menu.nix { inherit flags; })
   ];
 }

@@ -4,91 +4,29 @@
 
 in {
 
-  flake.nixosModules.waybar = { config, ... }: with config.novaeos; {
-
-    imports = with self.nixosModules; [
-      waybarModules
-      waybarStyle
-    ];
-
-    home-manager.users.${username}.programs.waybar = {
-      enable = true;
-
-      settings.bar = {
-        layer = "top";
-        position = "top";
-        margin = "3px 3px 0px";
-        spacing = 7;
-        reload_style_on_change = true;
-
-        modules-left = [
-          "custom/os-icon"
-          "hyprland/workspaces"
-        ];
-      };
-    };
-  };
-
-  flake.nixosModules.waybarSilverlight = { config, ... }: with config.novaeos; {
-
-    imports = [ self.nixosModules.waybar ];
-
-    home-manager.users.${username}.programs.waybar.settings.bar = {
-      modules-center = [
-        "custom/spotify-info"
-      ];
-      modules-right = [
-        "custom/shutdowntime"
-        "disk"
-        "memory"
-        "cpu"
-        "custom/gpu-info"
-        "clock"
-      ];
-    };
-  };
-
-  flake.nixosModules.waybarZenblade = { config, ... }: with config.novaeos; {
-
-    imports = [ self.nixosModules.waybar ];
-
-    home-manager.users.${username}.programs.waybar.settings.bar = {
-      modules-center = [
-        "custom/spotify-info"
-      ];
-      modules-right = [
-        "custom/shutdowntime"
-        "wireplumber"
-        "disk"
-        "memory"
-        "cpu"
-        "battery"
-        "clock"
-      ];
-    };
-  };
-
-  flake.nixosModules.waybarLiveImage = { config, ... }: with config.novaeos; {
-
-    imports = [ self.nixosModules.waybar ];
-
-    home-manager.users.${username}.programs.waybar.settings.bar = {
-      modules-right = [
-        "memory"
-        "cpu"
-        "clock"
-      ];
-    };
-  };
-
-  flake.nixosModules.waybarModules = { config, pkgs, ... }: with config.novaeos; {
+  flake.nixosModules.waybar = { config, pkgs, ... }: with config; {
 
     environment.systemPackages = with pkgs; [
       radeontop
       inputs.spotify-info.packages.${pkgs.system}.default
     ];
 
-    home-manager.users.${username}.programs.waybar.settings.bar = {
+    home-manager.users.aquanovae.programs.waybar.enable = true;
+    home-manager.users.aquanovae.programs.waybar.settings.bar = {
+      layer = "top";
+      position = "top";
+      margin = "3px 3px 0px";
+      spacing = 7;
+      reload_style_on_change = true;
+
+      modules-left = [
+        "custom/os-icon"
+        "hyprland/workspaces"
+      ];
+    };
+
+    # Modules
+    home-manager.users.aquanovae.programs.waybar.settings.bar = {
       "custom/os-icon" = {
         format = "󱄅";
         tooltip = false;
@@ -112,9 +50,12 @@ in {
           firefox = "󰈹";
           gimp = "󱇣";
           inkscape = "󰕙";
+          kicad = "󰭄";
+          logisim-evolution = "󰣢";
           looking-glass-client = "󰖳";
+          onlyoffice-desktopeditors = "󰈬";
           openrgb = "󰌬";
-          pwvucontrol = "󰙪";
+          pdfarranger = "󱔗";
           spotify = "󰓇";
           steam = "󰓓";
         };
@@ -194,10 +135,10 @@ in {
         interval = 1;
       };
     };
-  };
 
-  flake.nixosModules.waybarStyle = { config, ... }: with config.novaeos; {
-    home-manager.users.${username}.programs.waybar.style = /*css*/ ''
+    # Style
+    home-manager.users.aquanovae.programs.waybar.style = /*css*/ ''
+
       * {
         border-radius: 7px;
       }
@@ -307,5 +248,57 @@ in {
         min-width: 100px;
       }
     '';
+  };
+
+  flake.nixosModules.waybarSilverlight = { ... }: {
+
+    imports = [ self.nixosModules.waybar ];
+
+    home-manager.users.aquanovae.programs.waybar.settings.bar = {
+      modules-center = [
+        "custom/spotify-info"
+      ];
+      modules-right = [
+        "custom/shutdowntime"
+        "disk"
+        "memory"
+        "cpu"
+        "custom/gpu-info"
+        "clock"
+      ];
+    };
+  };
+
+  flake.nixosModules.waybarZenblade = { ... }: {
+
+    imports = [ self.nixosModules.waybar ];
+
+    home-manager.users.aquanovae.programs.waybar.settings.bar = {
+      modules-center = [
+        "custom/spotify-info"
+      ];
+      modules-right = [
+        "custom/shutdowntime"
+        "wireplumber"
+        "disk"
+        "memory"
+        "cpu"
+        "battery"
+        "clock"
+      ];
+    };
+  };
+
+  flake.nixosModules.waybarLiveImage = { ... }: {
+
+    imports = [ self.nixosModules.waybar ];
+
+    home-manager.users.aquanovae.programs.waybar.settings.bar = {
+      modules-right = [
+        "memory"
+        "cpu"
+        "clock"
+      ];
+    };
   };
 }

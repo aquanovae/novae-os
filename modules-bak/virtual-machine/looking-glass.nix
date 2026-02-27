@@ -1,7 +1,7 @@
 { config, lib, ... }: {
 
   config = lib.mkIf config.novaeOs.virtualMachine.enable {
-    home-manager.users.${config.novaeos.username}.programs.looking-glass-client = {
+    home-manager.users.aquanovae.programs.looking-glass-client = {
       enable = true;
 
       settings = {
@@ -29,7 +29,7 @@
 
     # Give user access to shared memory file
     systemd.tmpfiles.rules = [
-      "f /dev/shm/looking-glass 0660 ${config.novaeos.username} users -"
+      "f /dev/shm/looking-glass 0660 aquanovae users -"
     ];
   };
 }

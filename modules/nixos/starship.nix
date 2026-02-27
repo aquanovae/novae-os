@@ -2,41 +2,40 @@
 
   flake.nixosModules.starship = { ... }: {
 
-    programs.starship = {
-      enable = true;
-
-      settings.format = ''
+    programs.starship.enable = true;
+    programs.starship.settings = {
+      format = ''
         [┏━<$nix_shell$git_branch$git_status](bold cyan)
         [┃](cyan)[\[$username@$hostname:$directory\]](bold cyan)
         [┗╸$character](bold cyan)
       '';
 
-      settings.username = {
+      username = {
         format = "[$user]($style)";
         style_user = "bold blue";
         style_root = "bold blue";
         show_always = true;
       };
 
-      settings.hostname = {
+      hostname = {
         format = "[$ssh_symbol](bold red)[$hostname]($style)";
         style = "bold purple";
         ssh_only = false;
         ssh_symbol = "ssh=>";
       };
 
-      settings.directory = {
+      directory = {
         format = "[$path]($style)";
         style = "white";
       };
 
-      settings.git_branch = {
+      git_branch = {
         format = "[ $symbol]($style)[$branch\\[ ](green)";
         style = "bold blue";
         symbol = "git:";
       };
 
-      settings.git_status = {
+      git_status = {
         format = "[$ahead_behind$all_status]($style)[\\]](green)";
         style = "bold red";
         conflicted = "󰩌 ";
@@ -52,13 +51,13 @@
         deleted = "󱀷 ";
       };
 
-      settings.nix_shell = {
+      nix_shell = {
         format = "$symbol[$name]($style)";
         style = "yellow";
         symbol = "[ nix-shell:](bold blue)";
       };
 
-      settings.character = {
+      character = {
         format = "$symbol ";
         success_symbol = "[━>](bold green)";
         error_symbol = "[━>](bold red)";

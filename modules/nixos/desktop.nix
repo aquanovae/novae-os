@@ -1,6 +1,6 @@
 { self, ... }: {
 
-  flake.nixosModules.desktop = { config, pkgs, ... }: with config.novaeos; {
+  flake.nixosModules.desktop = { pkgs, ... }: {
 
     imports = with self.nixosModules; [
       hyprland
@@ -17,7 +17,7 @@
     services.displayManager = {
       gdm.enable = true;
       autoLogin.enable = true;
-      autoLogin.user = "${username}";
+      autoLogin.user = "aquanovae";
     };
     systemd.services = {
       "getty@tty1".enable = false;
@@ -38,7 +38,7 @@
 
     fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
-    home-manager.users.${username} = {
+    home-manager.users.aquanovae = {
       gtk.enable = true;
       home.pointerCursor = {
         package = pkgs.lyra-cursors;

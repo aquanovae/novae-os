@@ -6,7 +6,7 @@ in {
 
   flake.nixosModules.theme = { ... }: {
 
-    options.novaeos.theme = {
+    options.theme = {
       bg0     = mkColor "080808";
       bg1     = mkColor "181818";
       bg2     = mkColor "282828";

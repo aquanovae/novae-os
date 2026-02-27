@@ -1,11 +1,7 @@
 { flags }: { config, lib, pkgs, ... }: let
 
   menuOptions = lib.concatStringsSep "\n" [
-    "󰤁 Poweroff"
-    "󰔛 Timer"
     "󰤄 Suspend"
-    "󰜉 Reboot"
-    "󱑡 Reboot into firmware"
     "󰖳 Reboot into windows"
   ];
 

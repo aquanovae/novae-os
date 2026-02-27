@@ -1,11 +1,11 @@
-{ config, pkgs, ... }: {
+{ config, ... }: {
   
-  home-manager.users.${config.novaeos.username}.programs.ranger = {
+  home-manager.users.aquanovae.programs.ranger = {
     enable = true;
 
     rifle = [{
       condition = "ext x?pdf?";
-      command = "${pkgs.firefox}/bin/firefox \"$@\" &";
+      command = "firefox \"$@\" &";
     }];
   };
 }

@@ -1,4 +1,4 @@
-{ self, ... }: let
+{ ... }: let
 
   launchOnce = title: command: /*bash*/ ''
     hyprctl -j clients | jq ".[].title" | grep "${title}" || ${command}
@@ -6,9 +6,22 @@
 
 in {
 
-  flake.nixosModules.bindings = { config, ... }: with config.novaeos; {
+  flake.nixosModules.hyprland = { config, pkgs, ... }: with config; {
 
-    home-manager.users.${username}.wayland.windowManager.hyprland.extraConfig = /*hyprlang*/ ''
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+
+    environment.systemPackages = with pkgs; [
+      brightnessctl
+      pamixer
+      playerctl
+      swaybg
+    ];
+
+    home-manager.users.aquanovae.wayland.windowManager.hyprland.enable = true;
+    home-manager.users.aquanovae.wayland.windowManager.hyprland.extraConfig = /*hyprlang*/ ''
       # Focus workspace
       bind = super, 1, workspace, 1
       bind = super, 2, workspace, 2
@@ -62,25 +75,22 @@ in {
 
       # Open programs
       bind = super, Return, exec, alacritty
-      bind = super, O, exec, quicklaunch
+      bind = super, O, exec, alacritty -T launcher -e otter-launcher &
 
       # Special workspace to edit config
       bind = super, R, togglespecialworkspace, config
-      bind = super, R, exec, ${launchOnce "config" ''
-        alacritty -T config --working-directory /home/${username}/novae-os -e vim &
+      bind = super, R, exec, ${launchOnce "config" /*bash*/ ''
+        alacritty -T config --working-directory /home/aquanovae/novae-os -e vim &
       ''}
 
       # Special workspace for file explorer
       bind = super, E, togglespecialworkspace, ranger
-      bind = super, E, exec, ${launchOnce "ranger" ''
+      bind = super, E, exec, ${launchOnce "ranger" /*bash*/ ''
         alacritty -T ranger -e ranger &
       ''}
 
       # Close program
       bind = super shift, Q, killactive
-
-      # Open powermenu
-      bind = super, Escape, exec, powermenu
 
       # Lock screen
       bind = super shift, Escape, exec, hyprlock
@@ -107,132 +117,113 @@ in {
       # Lock and suspend on lid close
       bind = , switch:on:Lid Switch, exec, hyprlock & sleep 1 && systemctl suspend
     '';
-  };
 
-  flake.nixosModules.hyprland = { config, pkgs, ... }: with config.novaeos; {
+    home-manager.users.aquanovae.wayland.windowManager.hyprland.settings = {
+      monitor = [
+        ", prefered, auto, 1"
+        "DP-1, 2560x1440@165, 0x0, 1"
+        "DP-2, 2560x1440@165, 2560x0, 1"
+      ];
 
-    imports = [ self.nixosModules.bindings ];
+      workspace = [
+        "monitor:DP-1, 1"
+        "monitor:DP-1, 3"
+        "monitor:DP-1, 5"
+        "monitor:DP-1, 7"
+        "monitor:DP-1, 9"
 
-    programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
+        "monitor:DP-2, 2"
+        "monitor:DP-2, 4"
+        "monitor:DP-2, 6"
+        "monitor:DP-2, 8"
+        "monitor:DP-2, 10"
+      ];
 
-    environment.systemPackages = with pkgs; [
-      brightnessctl
-      pamixer
-      playerctl
-      swaybg
-    ];
+      windowrule = [
+        "match:title launcher, float on"
+        "match:title launcher, size monitor_w*0.25 300"
+        "match:title config, workspace config"
+        "match:title ranger, workspace ranger"
+        "match:title ranger, float on"
+        "match:title ranger, size 75% 75%"
+      ];
 
-    home-manager.users.${username}.wayland.windowManager.hyprland = {
-      enable = true;
+      exec-once = [
+        "swaybg -m fill -i ${../../assets/wallpaper.png}"
+        "waybar &"
+      ];        
 
-      settings = {
-        monitor = [
-          ", prefered, auto, 1"
-          "DP-1, 2560x1440@165, 0x0, 1"
-          "DP-2, 2560x1440@165, 2560x0, 1"
+      general = {
+        layout = "dwindle";
+        gaps_in = 3;
+        gaps_out = 3;
+        border_size = 1;
+        "col.active_border" = "rgb(${theme.blue}) rgb(${theme.magenta}) 45deg";
+        "col.inactive_border" = "rgb(${theme.bg3})";
+      };
+
+      dwindle = {
+        pseudotile = true;
+        force_split = 2;
+      };
+
+      decoration = {
+        rounding = 7;
+      };
+
+      animations = {
+        enabled = true;
+        animation = [
+          "global, 1, 3, default"
+          "windows, 1, 3, default, popin"
+          "workspaces, 1, 3, default, slide"
         ];
+      };
 
-        workspace = [
-          "monitor:DP-1, 1"
-          "monitor:DP-1, 3"
-          "monitor:DP-1, 5"
-          "monitor:DP-1, 7"
-          "monitor:DP-1, 9"
+      binds = {
+        hide_special_on_workspace_change = true;
+        movefocus_cycles_fullscreen = true;
+      };
 
-          "monitor:DP-2, 2"
-          "monitor:DP-2, 4"
-          "monitor:DP-2, 6"
-          "monitor:DP-2, 8"
-          "monitor:DP-2, 10"
-        ];
+      input = {
+        kb_layout = "ch";
+        kb_variant = "fr_nodeadkeys";
+        kb_model = "asus_laptop";
+        numlock_by_default = true;
+        follow_mouse = 1;
+        touchpad.natural_scroll = true;
+      };
 
-        windowrule = [
-          "workspace config, match:title config"
-          "workspace ranger, match:title ranger"
-          "float on, match:title ranger"
-          "size 75% 75%, match:title ranger"
-        ];
+      misc = {
+        force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
+      };
 
-        exec-once = [
-          "swaybg -m fill -i ${../../assets/wallpaper.png}"
-          "waybar &"
-        ];        
+      ecosystem = {
+        no_update_news = true;
+        no_donation_nag = true;
+      };
 
-        general = {
-          layout = "dwindle";
-          gaps_in = 3;
-          gaps_out = 3;
-          border_size = 1;
-          "col.active_border" = "rgb(${theme.blue}) rgb(${theme.magenta}) 45deg";
-          "col.inactive_border" = "rgb(${theme.bg3})";
-        };
-
-        dwindle = {
-          pseudotile = true;
-          force_split = 2;
-        };
-
-        decoration = {
-          rounding = 7;
-        };
-
-        animations = {
-          enabled = true;
-          animation = [
-            "global, 1, 3, default"
-            "windows, 1, 3, default, popin"
-            "workspaces, 1, 3, default, slide"
-          ];
-        };
-
-        binds = {
-          hide_special_on_workspace_change = true;
-          movefocus_cycles_fullscreen = true;
-        };
-
-        input = {
-          kb_layout = "ch";
-          kb_variant = "fr_nodeadkeys";
-          kb_model = "asus_laptop";
-          numlock_by_default = true;
-          follow_mouse = 1;
-          touchpad.natural_scroll = true;
-        };
-
-        misc = {
-          force_default_wallpaper = 0;
-          disable_hyprland_logo = true;
-        };
-
-        ecosystem = {
-          no_update_news = true;
-          no_donation_nag = true;
-        };
-
-        group = {
-          "col.border_active" = "rgb(${theme.blue}) rgb(${theme.magenta}) 45deg";
-          "col.border_inactive" = "rgb(${theme.bg3})";
-          groupbar = {
-            font_family = "JetBrainsMono Nerd Font";
-            font_size = 13;
-            font_weight_active = "bold";
-            height = 19;
-            indicator_height = 0;
-            gaps_in = 3;
-            gaps_out = 3;
-            keep_upper_gap = false;
-            gradients = true;
-            gradient_rounding = 5;
-            gradient_round_only_edges = false;
-            text_color = "rgb(${theme.bg0})";
-            text_color_inactive = "rgb(${theme.fg})";
-            "col.active" = "rgb(${theme.blue})";
-            "col.inactive" = "rgb(${theme.bg0})";
-          };
-        };
+      group = {
+        "col.border_active" = "rgb(${theme.blue}) rgb(${theme.magenta}) 45deg";
+        "col.border_inactive" = "rgb(${theme.bg3})";
+      };
+      group.groupbar = {
+        font_family = "JetBrainsMono Nerd Font";
+        font_size = 13;
+        font_weight_active = "bold";
+        height = 19;
+        indicator_height = 0;
+        gaps_in = 3;
+        gaps_out = 3;
+        keep_upper_gap = false;
+        gradients = true;
+        gradient_rounding = 5;
+        gradient_round_only_edges = false;
+        text_color = "rgb(${theme.bg0})";
+        text_color_inactive = "rgb(${theme.fg})";
+        "col.active" = "rgb(${theme.blue})";
+        "col.inactive" = "rgb(${theme.bg0})";
       };
     };
   };
