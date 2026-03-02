@@ -108,42 +108,6 @@
         "type": "github"
       }
     },
-    "openrgb": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1757878317,
-        "narHash": "sha256-vdIA9i1ewcrfX5U7FkcRR+ISdH5uRi9fz9YU5IkPKJQ=",
-        "ref": "refs/heads/master",
-        "rev": "0fca93e4544f943d4d7ec8073dba4e47c18ef54b",
-        "revCount": 4893,
-        "type": "git",
-        "url": "https://gitlab.com/CalcProgrammer1/OpenRGB"
-      },
-      "original": {
-        "rev": "0fca93e4544f943d4d7ec8073dba4e47c18ef54b",
-        "type": "git",
-        "url": "https://gitlab.com/CalcProgrammer1/OpenRGB"
-      }
-    },
-    "openrgb-effects-plugin": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1757879190,
-        "narHash": "sha256-0W0hO3PSMpPLc0a7g/Nn7GWMcwBXhOxh1Y2flpdcnfE=",
-        "ref": "refs/heads/master",
-        "rev": "415dc20ef44cbad5546b4987b50764de44a0622e",
-        "revCount": 802,
-        "submodules": true,
-        "type": "git",
-        "url": "https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin"
-      },
-      "original": {
-        "rev": "415dc20ef44cbad5546b4987b50764de44a0622e",
-        "submodules": true,
-        "type": "git",
-        "url": "https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin"
-      }
-    },
     "otter-launcher": {
       "inputs": {
         "flake-parts": [
@@ -178,8 +142,6 @@
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "openrgb": "openrgb",
-        "openrgb-effects-plugin": "openrgb-effects-plugin",
         "otter-launcher": "otter-launcher",
         "spicetify-nix": "spicetify-nix",
         "spotify-info": "spotify-info"

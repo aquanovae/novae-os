@@ -4,7 +4,6 @@
 { inputs, lib, ... }: {
 
   imports = [
-    ./desktop-environment
     ./hardware
     ./programs
     ./server

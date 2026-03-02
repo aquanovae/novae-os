@@ -27,7 +27,6 @@
       description = "powermenu"
       prefix = "pw"
       cmd = "${powermenu}"
-      cmd = "${powermenu}"
 
       [[modules]]
       description = "shutdown timer"

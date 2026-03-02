@@ -22,6 +22,7 @@ in {
 
     home-manager.users.aquanovae.wayland.windowManager.hyprland.enable = true;
     home-manager.users.aquanovae.wayland.windowManager.hyprland.extraConfig = /*hyprlang*/ ''
+
       # Focus workspace
       bind = super, 1, workspace, 1
       bind = super, 2, workspace, 2
@@ -75,7 +76,9 @@ in {
 
       # Open programs
       bind = super, Return, exec, alacritty
-      bind = super, O, exec, alacritty -T launcher -e otter-launcher &
+      bind = super, O, exec, ${launchOnce "launcher" /*bash*/ ''
+        alacritty -T launcher -e otter-launcher &
+      ''}
 
       # Special workspace to edit config
       bind = super, R, togglespecialworkspace, config
@@ -141,11 +144,11 @@ in {
 
       windowrule = [
         "match:title launcher, float on"
-        "match:title launcher, size monitor_w*0.25 300"
+        "match:title launcher, size monitor_w*0.25 140"
         "match:title config, workspace config"
         "match:title ranger, workspace ranger"
         "match:title ranger, float on"
-        "match:title ranger, size 75% 75%"
+        "match:title ranger, size monitor_w*0.75 monitor_h*0.75"
       ];
 
       exec-once = [

@@ -23,6 +23,7 @@
 
     imports = with self.nixosModules; [
       programsMinimal
+      ranger
       spotify
     ];
 
@@ -98,7 +99,10 @@
 
   flake.nixosModules.programsSilverlight = { ... }: {
 
-    imports = [ self.nixosModules.programsFull ];
+    imports = with self.nixosModules; [
+      openrgb
+      programsFull
+    ];
 
     programs.coolercontrol.enable = true;
 
@@ -108,6 +112,12 @@
       description = "coolercontrol"
       prefix = "cc"
       cmd = "coolercontrol"
+      unbind_proc = true
+
+      [[modules]]
+      description = "openrgb"
+      prefix = "or"
+      cmd = "openrgb"
       unbind_proc = true
     '';
   };

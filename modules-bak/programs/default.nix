@@ -5,8 +5,6 @@
 in {
 
   imports = [
-    ./openrgb.nix
-    ./ranger.nix
     ./syncthing
   ];
 

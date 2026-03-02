@@ -27,14 +27,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
-    openrgb = {
-      url = "git+https://gitlab.com/CalcProgrammer1/OpenRGB?rev=0fca93e4544f943d4d7ec8073dba4e47c18ef54b";
-      flake = false;
-    };
-    openrgb-effects-plugin = {
-      url = "git+https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin?submodules=1&rev=415dc20ef44cbad5546b4987b50764de44a0622e";
-      flake = false;
-    };
   };
 
   outputs = { flake-parts, import-tree, ... }@inputs: (
