@@ -21,6 +21,7 @@ in {
       lockscreen
       programsFull
       waybarZenblade
+      wireless
 
       ../../modules-bak
     ];
