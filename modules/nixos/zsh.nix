@@ -2,21 +2,23 @@
 
   flake.nixosModules.zsh = { pkgs, ... }: {
 
+    home-manager.users.aquanovae.programs.zsh.enable = true;
+
     programs.zsh = {
       enable = true;
       enableCompletion = true;
       enableBashCompletion = true;
       syntaxHighlighting.enable = true;
-
-      promptInit = /*bash*/ ''
-        eval "$(${pkgs.starship}/bin/starship init zsh)"
-      '';
-
-      interactiveShellInit = /*bash*/ ''
-        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-        export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
-      '';
     };
+
+    programs.zsh.promptInit = /*bash*/ ''
+      eval "$(${pkgs.starship}/bin/starship init zsh)"
+    '';
+
+    programs.zsh.interactiveShellInit = /*bash*/ ''
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+    '';
 
     programs.zsh.shellAliases = {
 
