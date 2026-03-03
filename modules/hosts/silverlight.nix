@@ -3,22 +3,20 @@
   flake.nixosConfigurations.zenblade = inputs.nixpkgs.lib.nixosSystem {
 
     modules = with self.nixosModules; [
-      zenblade
+      silverlight
 
       core
       desktop
-      lockscreen
-      programsFull
-      waybarZenblade
-      wireless
+      programsSilverlight
+      waybarSilverlight
     ];
   };
 
-  flake.nixosModules.zenblade = { modulesPath, ... }: {
+  flake.nixosModules.silverlight = { modulesPath, ... }: {
 
-    networking.hostName = "zenblade";
+    networking.hostName = "silverlight";
 
-    system.stateVersion = "23.11";
+    system.stateVersion = "24.05";
 
     # Hardware configuration
     imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
@@ -29,17 +27,17 @@
       "xhci_pci"
       "ahci"
       "usb_storage"
+      "usbhid"
       "sd_mod"
-      "rtsx_pci_sdmmc"
     ];
 
     fileSystems."/" = {
-      device = "/dev/disk/by-uuid/195abbd2-fab5-4be8-9a43-2f12ff8871fd";
+      device = "/dev/disk/by-uuid/aaf146d2-b32e-4808-a772-3dd3bea216bd";
       fsType = "ext4";
     };
 
     fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/3969-43D0";
+      device = "/dev/disk/by-uuid/2A7C-EF90";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
