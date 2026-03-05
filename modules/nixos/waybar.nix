@@ -8,7 +8,7 @@ in {
 
     environment.systemPackages = with pkgs; [
       radeontop
-      inputs.spotify-info.packages.${pkgs.system}.default
+      inputs.spotify-info.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     home-manager.users.aquanovae.programs.waybar.enable = true;

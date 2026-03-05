@@ -1,14 +1,18 @@
 { inputs, ... }: {
 
-  flake.nixosModules.spotify = { pkgs, ... }: {
+  flake.nixosModules.spotify = { pkgs, ... }: let
+
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+
+  in {
 
     imports = [ inputs.spicetify-nix.nixosModules.default ];
 
-    programs.spicetify = with inputs.spicetify-nix.legacyPackages.${pkgs.system}; {
+    programs.spicetify = {
       enable = true;
-      theme = themes.hazy;
+      theme = spicePkgs.themes.hazy;
       colorScheme = "Base";
-      enabledExtensions = [ extensions.hidePodcasts ];
+      enabledExtensions = [ spicePkgs.extensions.hidePodcasts ];
     };
   };
 }
