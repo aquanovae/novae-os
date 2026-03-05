@@ -3,7 +3,6 @@
   flake.nixosModules.wireless = { pkgs, ... }: let
     
     wirelessmenu = pkgs.writeShellScript "wirelessmenu" ''
-      hyprctl dispatch movewindowpixel "exact 12% 12%, title:launcher"
       hyprctl dispatch resizewindowpixel "exact 75% 75%, title:launcher"
       impala
     '';

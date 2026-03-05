@@ -2,7 +2,7 @@
 
   flake.nixosModules.dailyPlaylist = { pkgs, ... }: let
     
-    spotify-daily = inputs.spotify-daily.${pkgs.stdenv.hostPlaform.system}.default;
+    spotify-daily = inputs.spotify-daily.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
   in {
 

@@ -27,6 +27,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
+    spotify-daily = {
+      url = "github:aquanovae/spotify-daily";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
   };
 
   outputs = { flake-parts, import-tree, ... }@inputs: (

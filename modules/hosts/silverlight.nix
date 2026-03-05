@@ -1,6 +1,6 @@
 { inputs, self, ... }: {
 
-  flake.nixosConfigurations.zenblade = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.silverlight = inputs.nixpkgs.lib.nixosSystem {
 
     modules = with self.nixosModules; [
       silverlight
