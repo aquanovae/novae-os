@@ -179,11 +179,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764209552,
-        "narHash": "sha256-QzvjVGU3USW143h8cFTSg2ReUx6XX2bawjuD9UmnhPA=",
+        "lastModified": 1772790454,
+        "narHash": "sha256-SOh+hcEOyYyM7tD+fb0J+S+BUfgRI9XFhjcJhoCpelU=",
         "owner": "aquanovae",
         "repo": "spotify-daily",
-        "rev": "814deb4a655a3f71a1e43485188da743044e6fde",
+        "rev": "ffa6ee9637503cb835ad4506b4be2704df04e865",
         "type": "github"
       },
       "original": {
