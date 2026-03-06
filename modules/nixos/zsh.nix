@@ -66,17 +66,22 @@
       nr      = "nix run -vL --option substitute false";
       nra     = "nix run -vL --option substitute false . --";
       nrs     = "sudo nixos-rebuild switch --impure --flake .#";
-      nrsm    = "nixos-rebuild switch --flake .#minix --target-host aquanovae@aquanovae.space --sudo --ask-sudo-password";
       nrsv    = "sudo nixos-rebuild switch --impure --flake .# --verbose --print-build-logs";
       ns      = "nix-shell --run zsh";
+      nsa     = "nix-sweep analyze";
+      nscs    = "sudo nix-sweep cleanout --keep-max=3 --gc system";
+      nscu    = "nix-sweep cleanout --keep-max=3 --gc user";
       nsg     = "l /nix/store | grep -i";
       nsp     = "nix-shell --run zsh -p";
+
+      # Ssh aliases
+      scpn    = "scp /home/aquanovae/novae-os/ aquanovae@aquanovae.space:";
+      ssham   = "ssh-add ~/.ssh/minix";
+      sshm    = "ssh aquanovae@aquanovae.space";
 
       # Other aliases
       ".."    = "cd ..";
       tree    = "tree --dirsfirst";
-      ssham   = "ssh-add ~/.ssh/minix";
-      sshm    = "ssh aquanovae@aquanovae.space";
     };
   };
 }
