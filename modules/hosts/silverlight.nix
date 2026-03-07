@@ -9,6 +9,7 @@
       desktop
       programsSilverlight
       waybarSilverlight
+      wireless
     ];
   };
 
