@@ -6,6 +6,7 @@
       boot
       neovim
       starship
+      syncthing
       theme
       zsh
 
