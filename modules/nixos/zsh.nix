@@ -75,7 +75,7 @@
       nsp     = "nix-shell --run zsh -p";
 
       # Ssh aliases
-      scpn    = "scp /home/aquanovae/novae-os/ aquanovae@aquanovae.space:";
+      scpn    = "scp -r /home/aquanovae/novae-os/ aquanovae@aquanovae.space:";
       ssham   = "ssh-add ~/.ssh/minix";
       sshm    = "ssh aquanovae@aquanovae.space";
 
