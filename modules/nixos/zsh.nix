@@ -2,8 +2,6 @@
 
   flake.nixosModules.zsh = { pkgs, ... }: {
 
-    home-manager.users.aquanovae.programs.zsh.enable = true;
-
     programs.zsh = {
       enable = true;
       enableCompletion = true;
@@ -72,6 +70,7 @@
       nscs    = "sudo nix-sweep cleanout --keep-max=3 --gc system";
       nscu    = "nix-sweep cleanout --keep-max=3 --gc user";
       nsg     = "l /nix/store | grep -i";
+      nso     = "nix-store --optimize --log-format bar";
       nsp     = "nix-shell --run zsh -p";
 
       # Ssh aliases
