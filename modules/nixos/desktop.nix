@@ -3,6 +3,7 @@
   flake.nixosModules.desktop = { pkgs, ... }: {
 
     imports = with self.nixosModules; [
+      home
       hyprland
       plymouth
     ];

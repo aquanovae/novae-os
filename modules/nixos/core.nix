@@ -1,4 +1,4 @@
-{ inputs, self, ... }: {
+{ self, ... }: {
 
   flake.nixosModules.core = { config, pkgs, ... }: with config; {
 
@@ -9,8 +9,6 @@
       syncthing
       theme
       zsh
-
-      inputs.home-manager.nixosModules.default
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -20,12 +18,6 @@
       isNormalUser = true;
       extraGroups = [ "wheel" ];
       shell = pkgs.zsh;
-    };
-
-    home-manager.users.aquanovae.home = {
-      username = "aquanovae";
-      homeDirectory = "/home/aquanovae";
-      stateVersion = "24.05";
     };
 
     environment.systemPackages = with pkgs; [
