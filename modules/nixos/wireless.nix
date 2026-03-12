@@ -1,6 +1,6 @@
 { ... }: {
 
-  flake.nixosModules.wireless = { pkgs, ... }: let
+  flake.nixosModules.wireless = { lib, pkgs, ... }: let
     
     wirelessmenu = pkgs.writeShellScript "wirelessmenu" ''
       hyprctl dispatch resizewindowpixel "exact 75% 75%, title:launcher"
@@ -10,7 +10,7 @@
   in {
 
     networking.wireless = {
-      enable = false;
+      enable = lib.mkForce false;
       iwd.enable = true;
     };
 
