@@ -3,6 +3,7 @@
   flake.nixosModules.desktop = { pkgs, ... }: {
 
     imports = with self.nixosModules; [
+      audio
       home
       hyprland
       plymouth
@@ -28,13 +29,6 @@
     services.logind.settings.Login = {
       HandlePowerKey = "ignore";
       HandleLidSwitch = "ignore";
-    };
-
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      pulse.enable = true;
-      alsa.enable = true;
     };
 
     fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
