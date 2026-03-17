@@ -1,4 +1,4 @@
-{ self, ... }: {
+{ inputs, self, ... }: {
 
   flake.nixosModules.programsMinimal = { pkgs, ... }: {
 
@@ -7,14 +7,16 @@
       launcher
     ];
 
-    environment.systemPackages = [ pkgs.firefox ];
+    environment.systemPackages = [
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
 
     programs.otter-launcher.settingsExtra = /*toml*/ ''
 
       [[modules]]
-      description = "firefox"
-      prefix = "ff"
-      cmd = "firefox"
+      description = "zen browser"
+      prefix = "ze"
+      cmd = "zen"
       unbind_proc = true
     '';
   };
