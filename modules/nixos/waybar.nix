@@ -8,6 +8,7 @@ in {
 
     environment.systemPackages = with pkgs; [
       radeontop
+      papirus-icon-theme
       inputs.spotify-info.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
@@ -42,22 +43,9 @@ in {
         show-special = true;
         special-visible-only = true;
         tooltip = false;
-        window-rewrite-default = "󰘔";
-        window-rewrite = {
-          alacritty = "󰆍";
-          coolercontrol = "󰔐";
-          discord = "󰋎";
-          firefox = "󰈹";
-          gimp = "󱇣";
-          inkscape = "󰕙";
-          kicad = "󰭄";
-          logisim-evolution = "󰣢";
-          looking-glass-client = "󰖳";
-          onlyoffice-desktopeditors = "󰈬";
-          openrgb = "󰌬";
-          pdfarranger = "󱔗";
-          spotify = "󰓇";
-          steam = "󰓓";
+        workspace-taskbar = {
+          enable = true;
+          icon-theme = "Papirus-Dark";
         };
       };
 
