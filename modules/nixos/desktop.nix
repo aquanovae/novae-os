@@ -1,6 +1,6 @@
 { self, ... }: {
 
-  flake.nixosModules.desktop = { pkgs, ... }: {
+  flake.nixosModules.desktop = { config, pkgs, ... }: {
 
     imports = with self.nixosModules; [
       audio
@@ -35,6 +35,7 @@
 
     home-manager.users.aquanovae = {
       gtk.enable = true;
+      gtk.gtk4.theme = config.home-manager.users.aquanovae.gtk.theme;
       home.pointerCursor = {
         package = pkgs.lyra-cursors;
         name = "LyraP-cursors";
