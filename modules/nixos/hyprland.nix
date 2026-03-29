@@ -128,20 +128,6 @@ in {
         "DP-2, 2560x1440@165, 2560x0, 1"
       ];
 
-      workspace = [
-        "1, monitor:DP-1"
-        "3, monitor:DP-1"
-        "5, monitor:DP-1"
-        "7, monitor:DP-1"
-        "9, monitor:DP-1"
-
-        "2, monitor:DP-2"
-        "4, monitor:DP-2"
-        "6, monitor:DP-2"
-        "8, monitor:DP-2"
-        "10, monitor:DP-2"
-      ];
-
       windowrule = [
         "match:title launcher, float on"
         "match:title launcher, size monitor_w*0.25 140"
@@ -229,5 +215,22 @@ in {
         "col.inactive" = "rgb(${theme.bg0})";
       };
     };
+  };
+
+  flake.nixosModules.hyprlandDualMonitor = { ... }: {
+
+    home-manager.users.aquanovae.wayland.windowManager.hyprland.settings.workspace = [
+      "1, monitor:DP-1"
+      "3, monitor:DP-1"
+      "5, monitor:DP-1"
+      "7, monitor:DP-1"
+      "9, monitor:DP-1"
+
+      "2, monitor:DP-2"
+      "4, monitor:DP-2"
+      "6, monitor:DP-2"
+      "8, monitor:DP-2"
+      "10, monitor:DP-2"
+    ];
   };
 }
