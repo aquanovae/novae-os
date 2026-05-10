@@ -7,7 +7,7 @@
 
       core
       desktop
-      hyprlandDualMonitor
+      hyprlandSilverlight
       programsSilverlight
       waybarSilverlight
       wireless

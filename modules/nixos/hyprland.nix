@@ -35,9 +35,6 @@ in {
       bind = super, 9, workspace, 9
       bind = super, 0, workspace, 10
 
-      # Swap focused workspace between monitors
-      bind = super, N, swapactiveworkspaces, 0 1
-
       # Move focus
       bind = super, H, movefocus, l
       bind = super, L, movefocus, r
@@ -135,6 +132,7 @@ in {
         "match:title ranger, workspace ranger"
         "match:title ranger, float on"
         "match:title ranger, size monitor_w*0.75 monitor_h*0.75"
+        "match:class steam, workspace 5"
       ];
 
       exec-once = [
@@ -217,7 +215,7 @@ in {
     };
   };
 
-  flake.nixosModules.hyprlandDualMonitor = { ... }: {
+  flake.nixosModules.hyprlandSilverlight = { ... }: {
 
     home-manager.users.aquanovae.wayland.windowManager.hyprland.settings.workspace = [
       "1, monitor:DP-1"
@@ -231,6 +229,12 @@ in {
       "6, monitor:DP-2"
       "8, monitor:DP-2"
       "10, monitor:DP-2"
+    ];
+
+    home-manager.users.aquanovae.wayland.windowManager.hyprland.settings.exec-once = [
+      "hyprctl dispatch exec [workspace 2] zen"
+      "hyprctl dispatch exec [workspace 4] spotify"
+      "hyprctl dispatch exec [workspace 6] openrgb"
     ];
   };
 }
