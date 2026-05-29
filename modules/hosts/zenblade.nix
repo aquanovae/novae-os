@@ -7,7 +7,6 @@
 
       core
       desktop
-      lockscreen
       programsFull
       waybarZenblade
       wireless

@@ -6,6 +6,7 @@
       audio
       home
       hyprland
+      lockscreen
       plymouth
     ];
 
