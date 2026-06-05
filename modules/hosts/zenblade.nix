@@ -7,6 +7,7 @@
 
       core
       desktop
+      hyprlandZenblade
       programsFull
       waybarZenblade
       wireless

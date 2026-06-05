@@ -241,6 +241,10 @@
 
   flake.nixosModules.hyprlandZenblade = { ... }: {
 
+    home-manager.users.aquanovae.wayland.windowManager.hyprland.settings.monitor = [
+      { output = ""; mode = "preferred"; position = "auto"; scale = 1; }
+    ];
+
     home-manager.users.aquanovae.wayland.windowManager.hyprland.settings.config = {
       input = {
         kb_model = "asus_laptop";
