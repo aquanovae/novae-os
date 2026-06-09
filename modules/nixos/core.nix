@@ -5,6 +5,7 @@
     imports = with self.nixosModules; [
       boot
       neovim
+      printer
       starship
       syncthing
       theme
