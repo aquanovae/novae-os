@@ -127,6 +127,8 @@
 
       plugins.tiny-inline-diagnostic.enable = true;
 
+      plugins.markdown-preview.enable = true;
+
       dependencies = {
         fd.enable = true;
         gcc.enable = true;
