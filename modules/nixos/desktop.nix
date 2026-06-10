@@ -18,7 +18,8 @@
     };
 
     services.displayManager = {
-      gdm.enable = true;
+      sddm.enable = true;
+      sddm.wayland.enable = true;
       autoLogin.enable = true;
       autoLogin.user = "aquanovae";
     };
