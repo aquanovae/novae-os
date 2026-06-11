@@ -116,9 +116,6 @@
       hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"), { repeating = true })
       hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { repeating = true })
 
-      -- Lid close
-      hl.bind("switch:on:Lid", hl.dsp.exec_cmd("hyprlock & sleep 1 && systemctl suspend"))
-
       -- Autostart
       hl.on("hyprland.start", function()
         hl.exec_cmd("swaybg -m fill -i ${../../assets/wallpaper.png}")
@@ -251,5 +248,10 @@
         touchpad.natural_scroll = true;
       };
     };
+
+    home-manager.users.aquanovae.wayland.windowManager.hyprland.extraConfig = /*lua*/ ''
+      -- Lid close
+      hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprlock & sleep 1 && systemctl suspend"))
+    '';
   };
 }
