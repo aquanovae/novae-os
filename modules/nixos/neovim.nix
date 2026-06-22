@@ -48,7 +48,7 @@
 
       plugins.lsp.enable = true;
       plugins.lsp.luaConfig.pre = ''
-        vim.lsp.set_log_level("OFF")
+        vim.lsp.log.set_level("OFF")
       '';
       plugins.lsp.servers = {
         nixd.enable = true;
