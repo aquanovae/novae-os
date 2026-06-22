@@ -136,6 +136,7 @@
 
       decoration = {
         rounding = 7;
+        blur.enabled = false;
       };
 
       animations = [

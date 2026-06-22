@@ -11,6 +11,7 @@
       defaultEditor = true;
 
       colorschemes.moonfly.enable = true;
+      colorschemes.moonfly.settings = { Transparent = true; };
 
       globals = {
         mapleader = " ";
