@@ -47,10 +47,10 @@
       ];
 
       plugins.lsp.enable = true;
+      plugins.lsp.luaConfig.pre = ''
+        vim.lsp.set_log_level("OFF")
+      '';
       plugins.lsp.servers = {
-        luaConfig.pre = ''
-          vim.lsp.set_log_level("OFF")
-        '';
         nixd.enable = true;
         wgsl_analyzer.enable = true;
         rust_analyzer = {
