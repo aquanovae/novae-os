@@ -232,7 +232,6 @@
       hl.on("hyprland.start", function()
         hl.exec_cmd("zen",     { workspace = 2 })
         hl.exec_cmd("spotify", { workspace = 4 })
-        hl.exec_cmd("openrgb", { workspace = 6 })
       end)
     '';
   };
