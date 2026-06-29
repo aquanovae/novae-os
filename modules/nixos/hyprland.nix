@@ -96,8 +96,11 @@
       -- Close window
       hl.bind("SUPER + SHIFT + Q", hl.dsp.window.close())
 
-      -- Lock screen
+      -- Lock session
       hl.bind("SUPER + SHIFT + ESCAPE", hl.dsp.exec_cmd("hyprlock"))
+
+      -- Suspend
+      hl.bind("SUPER + CONTROL + ESCAPE", hl.dsp.exec_cmd("systemctl suspend &"))
 
       -- Volume control
       hl.bind("XF86AudioMute", hl.dsp.exec_cmd("pamixer -t"))
