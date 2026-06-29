@@ -24,37 +24,35 @@
 
     systemd.services.openrgb-startup = {
       path = [ pkgs.openrgb-with-all-plugins ];
-      wantedBy = [ "graphical.target" ];
-      after = [ "multi-user.target" ];
+      wantedBy = [
+        "graphical.target"
+        "sleep.target"
+      ];
+      after = [
+        "multi-user.target"
+        "sleep.target"
+      ];
       before = [ "graphical.target" ];
       script = ''
         openrgb --profile ${../../assets/openrgb-startup.orp}
-      '';
-    };
-
-    systemd.services.openrgb-resume = {
-      path = [ pkgs.openrgb-with-all-plugins ];
-      wantedBy = [ "sleep.target" ];
-      after = [ "sleep.target" ];
-      before = [ "graphical.target" ];
-      script = ''
-        openrgb --profile ${../../assets/openrgb-startup.orp}
-      '';
-    };
-
-    systemd.services.openrgb-shutdown = {
-      path = [ pkgs.openrgb-with-all-plugins ];
-      wantedBy = [ "shutdown.target" ];
-      before = [ "shutdown.target" ];
-      script = ''
-        openrgb --profile ${../../assets/openrgb-shutdown.orp}
       '';
     };
 
     systemd.services.openrgb-suspend = {
       path = [ pkgs.openrgb-with-all-plugins ];
+      serviceConfig.Type = "oneshot";
       wantedBy = [ "sleep.target" ];
       before = [ "sleep.target" ];
+      script = ''
+        openrgb --profile ${../../assets/openrgb-suspend.orp}
+      '';
+    };
+
+    systemd.services.openrgb-shutdown = {
+      path = [ pkgs.openrgb-with-all-plugins ];
+      serviceConfig.Type = "oneshot";
+      wantedBy = [ "shutdown.target" ];
+      before = [ "shutdown.target" ];
       script = ''
         openrgb --profile ${../../assets/openrgb-shutdown.orp}
       '';
