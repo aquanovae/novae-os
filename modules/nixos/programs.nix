@@ -35,6 +35,7 @@
       inkscape
       kicad
       logisim-evolution
+      mixxx
       onlyoffice-desktopeditors
       pdfarranger
     ];
@@ -71,6 +72,12 @@
       description = "logisim"
       prefix = "ls"
       cmd = "logisim-evolution"
+      unbind_proc = true
+
+      [[modules]]
+      description = "mixxx"
+      prefix = "mx"
+      cmd = "mixxx"
       unbind_proc = true
 
       [[modules]]
