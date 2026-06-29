@@ -10,7 +10,6 @@
       hyprlandSilverlight
       programsSilverlight
       waybarSilverlight
-      wireless
     ];
   };
 
