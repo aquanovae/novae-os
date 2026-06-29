@@ -62,7 +62,7 @@
     powermenu = pkgs.writeShellScript "powermenu" ''
       case $(echo -e "${menuOptions}" | fzf --prompt " > ") in
         " Poweroff") systemctl poweroff;;
-        " Suspend") (sleep 1 && systemctl suspend) & hyprlock -q;;
+        " Suspend") systemctl suspend;;
         " Reboot") systemctl reboot;;
         " Firmware") systemctl reboot --firmware-setup;;
         *) ;;

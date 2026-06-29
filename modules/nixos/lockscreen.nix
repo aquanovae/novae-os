@@ -1,6 +1,15 @@
 { ... }: {
 
-  flake.nixosModules.lockscreen = { config, ... }: with config; {
+  flake.nixosModules.lockscreen = { config, pkgs, ... }: with config; {
+
+    systemd.services.lockscreen = {
+      path = [ pkgs.hyprlock ];
+      wantedBy = [ "suspend.target" ];
+      before = [ "suspend.target" ];
+      script = ''
+        hyprlock
+      '';
+    };
 
     home-manager.users.aquanovae.programs.hyprlock.enable = true;
     home-manager.users.aquanovae.programs.hyprlock.settings = {
