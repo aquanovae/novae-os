@@ -22,11 +22,14 @@
     };
 
     environment.systemPackages = with pkgs; [
+      bat
+      cmus
       jq
       gh
       git
       nix-sweep
       tree
+      unzip
     ];
 
     programs = {
