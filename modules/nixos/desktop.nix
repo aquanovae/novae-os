@@ -39,6 +39,7 @@
       gtk.enable = true;
       gtk.gtk4.theme = config.home-manager.users.aquanovae.gtk.theme;
       home.pointerCursor = {
+        enable = true;
         package = pkgs.lyra-cursors;
         name = "LyraP-cursors";
         x11.enable = true;
