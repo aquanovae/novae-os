@@ -7,7 +7,7 @@
       font.normal.family = "JetBrainsMono Nerd Font";
       font.size = 12;
 
-      window.opacity = 0.83;
+      window.opacity = 1.0;
 
       colors.primary = {
         background = "#${theme.bg0}";
